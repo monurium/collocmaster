@@ -64,7 +64,23 @@ export function renderSentenceWithHighlight(
     );
   }
 
-  // Fallback: match first word inflections (e.g., "made an effort" for "make an effort")
-  // or return sentence cleanly
+  // Fallback: match inflected verb forms in the sentence (e.g., "made an effort" for "make an effort")
+  const firstWord = words[0];
+  const restWords = words.slice(1).map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+');
+  const inflectedReg = new RegExp(`(\\b\\w+\\s+${restWords})`, 'gi');
+
+  if (inflectedReg.test(sentence)) {
+    const parts = sentence.split(inflectedReg);
+    return parts.map((part, i) =>
+      inflectedReg.test(part) ? (
+        <span key={i} className={highlightClass}>
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  }
+
   return sentence;
 }

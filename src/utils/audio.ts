@@ -33,17 +33,35 @@ export function speakCollocation(text: string, rate: number = 0.95): Promise<voi
   });
 }
 
+// Reusable singleton AudioContext
+let sharedAudioCtx: AudioContext | null = null;
+
+function getAudioContext(): AudioContext | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    if (!sharedAudioCtx) {
+      const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      if (AudioContextClass) {
+        sharedAudioCtx = new AudioContextClass();
+      }
+    }
+    if (sharedAudioCtx && sharedAudioCtx.state === 'suspended') {
+      sharedAudioCtx.resume();
+    }
+    return sharedAudioCtx;
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Subtle synthesized sound effects using the Web Audio API
  */
 export function playChime(type: 'success' | 'flip' | 'again' | 'complete') {
-  if (typeof window === 'undefined') return;
-
   try {
-    const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-    if (!AudioContextClass) return;
+    const ctx = getAudioContext();
+    if (!ctx) return;
 
-    const ctx = new AudioContextClass();
     const now = ctx.currentTime;
 
     if (type === 'flip') {

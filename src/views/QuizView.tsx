@@ -213,52 +213,54 @@ export const QuizView: React.FC = () => {
   return (
     <div className="max-w-2xl mx-auto space-y-5 pb-24 md:pb-10 animate-fadeIn">
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div className="flex items-center justify-between gap-2">
         <button
           onClick={() => navigate(-1)}
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white transition-colors px-3 py-1.5 rounded-xl hover:bg-[#131D2E] self-start"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-400 hover:text-white transition-colors px-2.5 py-1.5 rounded-xl hover:bg-[#131D2E] shrink-0"
         >
           <ArrowLeft className="w-4 h-4" />
-          Geri Dön
+          <span className="hidden sm:inline">Geri</span>
         </button>
 
-        {/* Controls: Mode Switcher & Unit Selector */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+        {/* Unified Mobile-friendly Controls */}
+        <div className="flex items-center gap-1.5 max-w-[calc(100%-48px)] overflow-x-auto scrollbar-none py-0.5">
           {/* Mode Switcher */}
-          <div className="flex items-center bg-[#131D2E] p-1 rounded-xl border border-[#1E2D45]">
+          <div className="flex items-center bg-[#131D2E] p-1 rounded-xl border border-[#1E2D45] shrink-0">
             <button
               onClick={() => {
                 setQuizMode('cloze');
                 handleRestart();
               }}
-              className={`flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 ${
                 quizMode === 'cloze'
                   ? 'bg-indigo-600 text-white shadow-sm'
                   : 'text-zinc-400 hover:text-white'
               }`}
+              title="Boşluk Doldurma Testi"
             >
               <FileCheck2 className="w-3.5 h-3.5" />
-              <span>Boşluk Doldurma</span>
+              <span>Boşluk</span>
             </button>
             <button
               onClick={() => {
                 setQuizMode('recall');
                 handleRestart();
               }}
-              className={`flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 ${
                 quizMode === 'recall'
                   ? 'bg-gradient-to-r from-amber-600 to-indigo-600 text-white shadow-sm'
                   : 'text-zinc-400 hover:text-white'
               }`}
+              title="Türkçe Anlamdan Hatırlama Testi"
             >
               <Brain className="w-3.5 h-3.5" />
-              <span>Hatırlama</span>
+              <span>Hatırla</span>
             </button>
           </div>
 
           {/* Unit Selector dropdown */}
-          <div className="flex items-center gap-1.5 bg-[#131D2E] px-3 py-2 sm:py-1.5 rounded-xl border border-[#1E2D45]">
-            <Filter className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
+          <div className="flex items-center gap-1 bg-[#131D2E] px-2.5 py-1 rounded-xl border border-[#1E2D45] shrink-0 max-w-[140px] sm:max-w-[200px]">
+            <Filter className="w-3 h-3 text-zinc-400 shrink-0" />
             <select
               value={selectedUnit}
               onChange={(e) => {
@@ -266,12 +268,12 @@ export const QuizView: React.FC = () => {
                 setSelectedUnit(val === 'all' ? 'all' : Number(val));
                 handleRestart();
               }}
-              className="w-full bg-transparent text-xs font-semibold text-zinc-200 focus:outline-none cursor-pointer"
+              className="w-full bg-transparent text-[11px] font-bold text-zinc-200 focus:outline-none cursor-pointer truncate"
             >
-              <option value="all">Tüm Ünitelerden Karışık</option>
+              <option value="all">Tüm Üniteler</option>
               {unitSummaries.map((u) => (
                 <option key={`${u.level}_${u.unitNumber}`} value={u.unitNumber} className="bg-[#111927]">
-                  Unit {u.unitNumber}: {u.unitTitle}
+                  U{u.unitNumber}: {u.unitTitle}
                 </option>
               ))}
             </select>

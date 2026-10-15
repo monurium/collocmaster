@@ -329,14 +329,14 @@ export const UnitsView: React.FC = () => {
       {/* ── Unit Detail Drawer / Modal rendered directly in document.body via Portal ── */}
       {selectedUnit && createPortal(
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md overflow-hidden animate-fadeIn"
+          className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center p-0 sm:p-6 bg-black/85 backdrop-blur-md overflow-hidden animate-fadeIn"
           onClick={(e) => {
             if (e.target === e.currentTarget) setSelectedUnit(null);
           }}
         >
-          <div className="bg-[#111927] border border-[#1E2D45] rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-slideUp">
+          <div className="bg-[#111927] border-t sm:border border-[#1E2D45] rounded-t-3xl sm:rounded-3xl max-w-2xl w-full max-h-[90vh] sm:max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-slideUp">
             {/* Modal Header */}
-            <div className="p-5 border-b border-[#1E2D45] flex items-center justify-between bg-[#0F172A] shrink-0">
+            <div className="p-4 sm:p-5 border-b border-[#1E2D45] flex items-center justify-between bg-[#0F172A] shrink-0">
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-xs font-bold text-indigo-400">

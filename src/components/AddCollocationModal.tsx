@@ -88,14 +88,14 @@ export const AddCollocationModal: React.FC<AddCollocationModalProps> = ({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-hidden animate-fadeIn"
+      className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/80 backdrop-blur-md overflow-hidden animate-fadeIn"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="bg-[#111927] border border-[#1E2D45] rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-slideUp">
+      <div className="bg-[#111927] border-t sm:border border-[#1E2D45] rounded-t-3xl sm:rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-slideUp">
         {/* Header */}
-        <div className="p-5 border-b border-[#1E2D45] flex items-center justify-between bg-[#0F172A] shrink-0">
+        <div className="p-4 sm:p-5 border-b border-[#1E2D45] flex items-center justify-between bg-[#0F172A] shrink-0">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center text-white">
               <Plus className="w-4 h-4" />

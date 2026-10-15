@@ -213,17 +213,17 @@ export const QuizView: React.FC = () => {
   return (
     <div className="max-w-2xl mx-auto space-y-5 pb-24 md:pb-10 animate-fadeIn">
       {/* Top Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <button
           onClick={() => navigate(-1)}
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white transition-colors px-3 py-1.5 rounded-xl hover:bg-[#131D2E]"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white transition-colors px-3 py-1.5 rounded-xl hover:bg-[#131D2E] self-start"
         >
           <ArrowLeft className="w-4 h-4" />
           Geri Dön
         </button>
 
         {/* Controls: Mode Switcher & Unit Selector */}
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
           {/* Mode Switcher */}
           <div className="flex items-center bg-[#131D2E] p-1 rounded-xl border border-[#1E2D45]">
             <button
@@ -231,7 +231,7 @@ export const QuizView: React.FC = () => {
                 setQuizMode('cloze');
                 handleRestart();
               }}
-              className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+              className={`flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
                 quizMode === 'cloze'
                   ? 'bg-indigo-600 text-white shadow-sm'
                   : 'text-zinc-400 hover:text-white'
@@ -245,20 +245,20 @@ export const QuizView: React.FC = () => {
                 setQuizMode('recall');
                 handleRestart();
               }}
-              className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+              className={`flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
                 quizMode === 'recall'
                   ? 'bg-gradient-to-r from-amber-600 to-indigo-600 text-white shadow-sm'
                   : 'text-zinc-400 hover:text-white'
               }`}
             >
               <Brain className="w-3.5 h-3.5" />
-              <span>Aktif Hatırlama (Türkçe→İng)</span>
+              <span>Hatırlama</span>
             </button>
           </div>
 
           {/* Unit Selector dropdown */}
-          <div className="flex items-center gap-1.5 bg-[#131D2E] px-2.5 py-1 rounded-xl border border-[#1E2D45]">
-            <Filter className="w-3.5 h-3.5 text-zinc-500" />
+          <div className="flex items-center gap-1.5 bg-[#131D2E] px-3 py-2 sm:py-1.5 rounded-xl border border-[#1E2D45]">
+            <Filter className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
             <select
               value={selectedUnit}
               onChange={(e) => {
@@ -266,12 +266,12 @@ export const QuizView: React.FC = () => {
                 setSelectedUnit(val === 'all' ? 'all' : Number(val));
                 handleRestart();
               }}
-              className="bg-transparent text-xs font-semibold text-zinc-200 focus:outline-none cursor-pointer"
+              className="w-full bg-transparent text-xs font-semibold text-zinc-200 focus:outline-none cursor-pointer"
             >
               <option value="all">Tüm Ünitelerden Karışık</option>
               {unitSummaries.map((u) => (
                 <option key={`${u.level}_${u.unitNumber}`} value={u.unitNumber} className="bg-[#111927]">
-                  Unit {u.unitNumber}: {u.unitTitle} ({u.level})
+                  Unit {u.unitNumber}: {u.unitTitle}
                 </option>
               ))}
             </select>
@@ -367,13 +367,13 @@ export const QuizView: React.FC = () => {
             </div>
 
             {/* Multiple Choice Options */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-2">
               {currentQ.options.map((option, optIdx) => {
                 const isSelected = selectedOption === option;
                 const isCorrect = option.toLowerCase() === currentQ.correctAnswer.toLowerCase();
                 const keyLabel = (optIdx + 1).toString();
 
-                let style = 'bg-[#162235] border-[#1E2D45] text-zinc-200 hover:bg-[#1C2C45] hover:border-indigo-500/40';
+                let style = 'bg-[#162235] border-[#1E2D45] text-zinc-200 hover:bg-[#1C2C45] hover:border-indigo-500/40 active:scale-[0.98]';
 
                 if (isAnswered) {
                   if (isCorrect) {
@@ -390,7 +390,7 @@ export const QuizView: React.FC = () => {
                     key={option}
                     disabled={isAnswered}
                     onClick={() => handleSelectOption(option)}
-                    className={`p-4 rounded-2xl border text-sm sm:text-base font-bold text-left transition-all duration-200 flex items-center justify-between group ${style}`}
+                    className={`p-3.5 sm:p-4 rounded-2xl border text-sm sm:text-base font-bold text-left transition-all duration-200 flex items-center justify-between group ${style}`}
                   >
                     <div className="flex items-center gap-2.5">
                       <kbd className="hidden sm:inline-flex w-5 h-5 items-center justify-center text-[10px] font-mono rounded-md bg-[#0F172A] border border-[#1E2D45] text-zinc-400 group-hover:text-indigo-300">
@@ -420,18 +420,18 @@ export const QuizView: React.FC = () => {
                   "{renderSentenceWithHighlight(currentQ.sentence, currentQ.correctAnswer)}"
                 </div>
 
-                <div className="flex items-center justify-between pt-2 border-t border-[#1E2D45]">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2 border-t border-[#1E2D45]">
                   <button
                     onClick={() => speakCollocation(currentQ.correctAnswer)}
-                    className="flex items-center gap-1.5 text-xs text-indigo-400 hover:text-indigo-300 font-bold"
+                    className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-[#162235] sm:bg-transparent text-xs text-indigo-400 hover:text-indigo-300 font-bold active:scale-95"
                   >
-                    <Volume2 className="w-3.5 h-3.5" />
+                    <Volume2 className="w-4 h-4" />
                     Kollokasyonu Dinle
                   </button>
 
                   <button
                     onClick={handleNext}
-                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white shadow-md shadow-indigo-600/30 transition-all"
+                    className="flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white shadow-md shadow-indigo-600/30 transition-all active:scale-95"
                   >
                     <span>{currentIndex + 1 < questions.length ? 'Sonraki Soru' : 'Sonuçları Gör'}</span>
                     <kbd className="hidden sm:inline-block px-1.5 py-0.2 rounded bg-black/25 text-[10px] font-mono">

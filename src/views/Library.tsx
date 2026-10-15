@@ -392,12 +392,12 @@ export const Library: React.FC = () => {
       {/* ── Detail Modal rendered directly in document.body via Portal ── */}
       {modal && createPortal(
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md overflow-hidden animate-fadeIn"
+          className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center p-0 sm:p-6 bg-black/85 backdrop-blur-md overflow-hidden animate-fadeIn"
           onClick={(e) => {
             if (e.target === e.currentTarget) setModal(null);
           }}
         >
-          <div className="relative w-full sm:max-w-lg max-h-[90vh] overflow-y-auto rounded-3xl bg-[#0F1829] border border-[#1E2D45] p-5 sm:p-7 shadow-2xl animate-slideUp">
+          <div className="relative w-full sm:max-w-lg max-h-[90vh] sm:max-h-[85vh] overflow-y-auto rounded-t-3xl sm:rounded-3xl bg-[#0F1829] border-t sm:border border-[#1E2D45] p-5 sm:p-7 shadow-2xl animate-slideUp">
             <button
               onClick={() => setModal(null)}
               className="absolute right-4 top-4 p-2 rounded-xl text-zinc-500 hover:text-white hover:bg-[#131D2E] transition-colors"

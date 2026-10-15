@@ -239,7 +239,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
 
             {/* Input */}
             <div className="space-y-3">
-              <div className="relative">
+              <div className="flex flex-col sm:relative gap-2">
                 <input
                   ref={inputRef}
                   type="text"
@@ -247,24 +247,24 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                   onChange={(e) => setUserInput(e.target.value)}
                   onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); if (userInput.trim()) handleCheck(); else handleReveal(); } }}
                   placeholder="Kollokasyonu yazın..."
-                  className="input-base pr-28"
+                  className="input-base sm:pr-28 text-sm sm:text-base py-3 sm:py-3.5"
                 />
                 <button
                   onClick={() => userInput.trim() ? handleCheck() : handleReveal()}
-                  className="absolute right-2 top-2 bottom-2 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition-all flex items-center gap-1.5 shadow-md shadow-indigo-600/25"
+                  className="w-full sm:w-auto sm:absolute sm:right-2 sm:top-2 sm:bottom-2 px-4 py-3 sm:py-0 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md shadow-indigo-600/25 active:scale-95"
                 >
                   Kontrol Et
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
 
-              <div className="flex items-center justify-between text-xs text-zinc-500">
+              <div className="flex items-center justify-between text-xs text-zinc-500 pt-1">
                 <button
                   onClick={handleReveal}
-                  className="flex items-center gap-1.5 hover:text-zinc-200 transition-colors py-1"
+                  className="flex items-center gap-1.5 hover:text-zinc-200 text-zinc-400 transition-colors py-1.5 active:scale-95"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
-                  Bilmiyorum, göster
+                  Bilmiyorum, cevabı göster
                 </button>
                 <span className="hidden sm:flex items-center gap-1.5">
                   <kbd className="px-1.5 py-0.5 bg-[#131D2E] border border-[#1E2D45] rounded text-[10px] font-mono">Enter</kbd>
@@ -416,7 +416,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
                 {GRADE_CONFIG.map(({ grade, label, sublabel, emoji, colorClass, hotkey }) => {
                   const preview = intervalPreviews[grade];
                   return (
@@ -424,14 +424,14 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                       key={grade}
                       id={`grade-btn-${grade}`}
                       onClick={() => submitGrade(grade)}
-                      className={`grade-btn border ${colorClass} select-none`}
+                      className={`grade-btn py-3 px-2 sm:py-3.5 border ${colorClass} select-none active:scale-95`}
                     >
-                      <span className="text-xl mb-1">{emoji}</span>
-                      <span className="text-xs font-extrabold">{label}</span>
-                      <span className="text-[10px] opacity-70 mt-0.5 font-mono">
+                      <span className="text-xl sm:text-2xl mb-1">{emoji}</span>
+                      <span className="text-xs sm:text-sm font-extrabold">{label}</span>
+                      <span className="text-[10px] opacity-80 mt-0.5 font-mono">
                         {sublabel || preview}
                       </span>
-                      <kbd className="mt-1.5 px-1.5 py-0.5 text-[9px] bg-black/20 border border-white/10 rounded font-mono opacity-50">
+                      <kbd className="hidden sm:inline-block mt-1.5 px-1.5 py-0.5 text-[9px] bg-black/20 border border-white/10 rounded font-mono opacity-50">
                         {hotkey}
                       </kbd>
                     </button>

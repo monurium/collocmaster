@@ -219,29 +219,29 @@ export const MatchGame: React.FC = () => {
   return (
     <div className="max-w-2xl mx-auto space-y-5 pb-24 md:pb-10 animate-fadeIn">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <button
           onClick={() => navigate(-1)}
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white transition-colors px-3 py-1.5 rounded-xl hover:bg-[#131D2E]"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white transition-colors px-3 py-1.5 rounded-xl hover:bg-[#131D2E] self-start"
         >
           <ArrowLeft className="w-4 h-4" />
           Geri Dön
         </button>
 
         {/* Unit Selector */}
-        <div className="flex items-center gap-2">
-          <Filter className="w-3.5 h-3.5 text-zinc-500" />
+        <div className="flex items-center gap-2 bg-[#131D2E] px-3 py-2 sm:py-1.5 rounded-xl border border-[#1E2D45]">
+          <Filter className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
           <select
             value={selectedUnit}
             onChange={(e) => {
               const val = e.target.value;
               setSelectedUnit(val === 'all' ? 'all' : Number(val));
             }}
-            className="bg-[#131D2E] text-xs font-semibold text-zinc-200 border border-[#1E2D45] rounded-xl px-2.5 py-1.5 focus:outline-none focus:border-indigo-500"
+            className="w-full bg-transparent text-xs font-semibold text-zinc-200 focus:outline-none cursor-pointer"
           >
             <option value="all">Tüm Ünitelerden Karışık</option>
             {unitSummaries.map((u) => (
-              <option key={`${u.level}_${u.unitNumber}`} value={u.unitNumber}>
+              <option key={`${u.level}_${u.unitNumber}`} value={u.unitNumber} className="bg-[#111927]">
                 Unit {u.unitNumber}: {u.unitTitle}
               </option>
             ))}
@@ -270,25 +270,25 @@ export const MatchGame: React.FC = () => {
 
       {/* Main Board */}
       {!isGameOver ? (
-        <div className="bg-[#111927] border border-[#1E2D45] rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+        <div className="bg-[#111927] border border-[#1E2D45] rounded-3xl p-4 sm:p-8 space-y-4 sm:space-y-6 shadow-xl">
           <div className="text-center">
-            <h2 className="text-lg font-bold text-white">Doğru Kollokasyon Çiftlerini Eşleştirin</h2>
-            <p className="text-xs text-zinc-400 mt-1">
+            <h2 className="text-base sm:text-lg font-bold text-white">Doğru Kollokasyon Çiftlerini Eşleştirin</h2>
+            <p className="text-[11px] sm:text-xs text-zinc-400 mt-1">
               Sol taraftan bir kelime, sağ taraftan onunla doğal olarak birleşen kelimeyi seçin.
             </p>
           </div>
 
           {mismatchFeedback && (
-            <div className="p-3.5 bg-rose-500/15 border border-rose-500/30 rounded-2xl text-xs sm:text-sm text-rose-300 flex items-center gap-2.5 animate-fadeIn">
+            <div className="p-3 bg-rose-500/15 border border-rose-500/30 rounded-2xl text-xs sm:text-sm text-rose-300 flex items-center gap-2.5 animate-fadeIn">
               <AlertTriangle className="w-4 h-4 shrink-0 text-rose-400" />
               <span className="font-medium">{mismatchFeedback}</span>
             </div>
           )}
 
-          <div className="grid grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-6">
             {/* Left Column */}
-            <div className="space-y-3">
-              <div className="text-center text-xs font-bold uppercase tracking-wider text-indigo-400">
+            <div className="space-y-2 sm:space-y-3">
+              <div className="text-center text-[10px] sm:text-xs font-bold uppercase tracking-wider text-indigo-400">
                 Fiil / Zarf / Sıfat
               </div>
               {leftTiles.map((tile) => {
@@ -296,7 +296,7 @@ export const MatchGame: React.FC = () => {
                 const isMatched = tile.isMatched;
 
                 let style =
-                  'bg-[#162235] border-[#1E2D45] text-zinc-100 hover:border-indigo-500/50 hover:bg-[#1C2C45]';
+                  'bg-[#162235] border-[#1E2D45] text-zinc-100 hover:border-indigo-500/50 hover:bg-[#1C2C45] active:scale-95';
 
                 if (isMatched) {
                   style = 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300 opacity-40 cursor-default';
@@ -311,7 +311,7 @@ export const MatchGame: React.FC = () => {
                     key={tile.id}
                     disabled={isMatched}
                     onClick={() => handleSelectTile(tile)}
-                    className={`w-full py-4 px-3 rounded-2xl border text-sm sm:text-base font-bold text-center transition-all duration-200 flex items-center justify-center ${style}`}
+                    className={`w-full py-3 px-2 sm:py-4 sm:px-3 rounded-xl sm:rounded-2xl border text-xs sm:text-base font-bold text-center transition-all duration-150 flex items-center justify-center ${style}`}
                   >
                     <span>{tile.text}</span>
                   </button>
@@ -320,8 +320,8 @@ export const MatchGame: React.FC = () => {
             </div>
 
             {/* Right Column */}
-            <div className="space-y-3">
-              <div className="text-center text-xs font-bold uppercase tracking-wider text-cyan-400">
+            <div className="space-y-2 sm:space-y-3">
+              <div className="text-center text-[10px] sm:text-xs font-bold uppercase tracking-wider text-cyan-400">
                 Tamamlayıcı İsim / Kelime
               </div>
               {rightTiles.map((tile) => {
@@ -329,7 +329,7 @@ export const MatchGame: React.FC = () => {
                 const isMatched = tile.isMatched;
 
                 let style =
-                  'bg-[#162235] border-[#1E2D45] text-zinc-100 hover:border-cyan-500/50 hover:bg-[#1C2C45]';
+                  'bg-[#162235] border-[#1E2D45] text-zinc-100 hover:border-cyan-500/50 hover:bg-[#1C2C45] active:scale-95';
 
                 if (isMatched) {
                   style = 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300 opacity-40 cursor-default';
@@ -344,7 +344,7 @@ export const MatchGame: React.FC = () => {
                     key={tile.id}
                     disabled={isMatched}
                     onClick={() => handleSelectTile(tile)}
-                    className={`w-full py-4 px-3 rounded-2xl border text-sm sm:text-base font-bold text-center transition-all duration-200 flex items-center justify-center ${style}`}
+                    className={`w-full py-3 px-2 sm:py-4 sm:px-3 rounded-xl sm:rounded-2xl border text-xs sm:text-base font-bold text-center transition-all duration-150 flex items-center justify-center ${style}`}
                   >
                     <span>{tile.text}</span>
                   </button>

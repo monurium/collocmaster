@@ -69,7 +69,33 @@ export const MatchGame: React.FC = () => {
     if (pool.length < 3) return;
 
     const shuffled = [...pool].sort(() => Math.random() - 0.5);
-    const roundItems = shuffled.slice(0, Math.min(6, pool.length));
+    const roundItems: Collocation[] = [];
+    const usedLeftWords = new Set<string>();
+    const usedRightWords = new Set<string>();
+
+    // Pass 1: Prioritize collocations with distinct left and right words to avoid identical tiles
+    for (const col of shuffled) {
+      if (roundItems.length >= 6) break;
+      const parts = col.chunk.trim().split(/\s+/);
+      const firstWord = parts[0].toLowerCase();
+      const rest = parts.slice(1).join(' ').toLowerCase();
+
+      if (!usedLeftWords.has(firstWord) && !usedRightWords.has(rest)) {
+        roundItems.push(col);
+        usedLeftWords.add(firstWord);
+        usedRightWords.add(rest);
+      }
+    }
+
+    // Pass 2: Fallback fill for units with limited vocabulary (e.g. Unit 2 'make & do')
+    if (roundItems.length < Math.min(6, pool.length)) {
+      for (const col of shuffled) {
+        if (roundItems.length >= Math.min(6, pool.length)) break;
+        if (!roundItems.some((r) => r.id === col.id)) {
+          roundItems.push(col);
+        }
+      }
+    }
 
     const left: GameTile[] = [];
     const right: GameTile[] = [];
@@ -157,13 +183,28 @@ export const MatchGame: React.FC = () => {
   const checkMatch = (left: GameTile, right: GameTile) => {
     setMoves((m) => m + 1);
 
-    if (left.pairId === right.pairId) {
+    const combined = `${left.text} ${right.text}`.trim().toLowerCase();
+
+    // Check if directly paired, or if combined forms either tile's collocation,
+    // or if combined forms ANY currently active (unmatched) collocation in this round:
+    const activeUnmatchedCollocations = leftTiles
+      .filter((t) => !t.isMatched)
+      .map((t) => t.collocation);
+
+    const matchedCollocation =
+      (left.pairId === right.pairId ? left.collocation : null) ||
+      (left.collocation.chunk.trim().toLowerCase() === combined ? left.collocation : null) ||
+      (right.collocation.chunk.trim().toLowerCase() === combined ? right.collocation : null) ||
+      activeUnmatchedCollocations.find((c) => c.chunk.trim().toLowerCase() === combined);
+
+    if (matchedCollocation) {
       // MATCH!
       playChime('success');
-      speakCollocation(left.collocation.chunk);
-      recordReview(left.collocation.id, 4, 2500);
+      speakCollocation(matchedCollocation.chunk);
+      recordReview(matchedCollocation.id, 4, 2500);
 
-      const newMatched = [...matchedPairs, left.pairId];
+      const matchKey = `${left.id}_${right.id}`;
+      const newMatched = [...matchedPairs, matchKey];
       setMatchedPairs(newMatched);
       setCombo((c) => c + 1);
       setMismatchFeedback(null);
@@ -190,7 +231,7 @@ export const MatchGame: React.FC = () => {
       setCombo(0);
       setMismatched(true);
       const wrongChunk = `${left.text} ${right.text}`;
-      setMismatchFeedback(`"${wrongChunk}" is not a natural collocation. Target: "${left.collocation.chunk}"!`);
+      setMismatchFeedback(`"${wrongChunk}" is not a natural collocation in this round.`);
 
       setTimeout(() => {
         setSelectedLeft(null);

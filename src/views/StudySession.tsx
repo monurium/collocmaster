@@ -18,17 +18,22 @@ export const StudySession: React.FC = () => {
   const recordReview  = useAppStore((s) => s.recordReview);
   const settings      = useAppStore((s) => s.settings);
 
-  const stateObj = location.state as { targetId?: string; unitNumber?: number; level?: string } | undefined;
+  const stateObj = location.state as {
+    targetId?: string;
+    unitNumber?: number;
+    unitNumbers?: number[];
+    level?: string;
+  } | undefined;
   const targetId = stateObj?.targetId;
-  const unitNumber = stateObj?.unitNumber;
+  const unitNumbers = stateObj?.unitNumbers || (stateObj?.unitNumber != null ? [stateObj.unitNumber] : undefined);
 
   const queue = useMemo<Collocation[]>(() => {
     if (targetId) {
       const single = collocations.find((c) => c.id === targetId);
       if (single) return [single];
     }
-    if (unitNumber != null) {
-      const unitCards = collocations.filter((c) => c.unitNumber === unitNumber);
+    if (unitNumbers && unitNumbers.length > 0) {
+      const unitCards = collocations.filter((c) => c.unitNumber && unitNumbers.includes(c.unitNumber));
       if (unitCards.length > 0) return unitCards;
     }
     const due = getDueCards();
@@ -36,7 +41,7 @@ export const StudySession: React.FC = () => {
     const newItems = getNewCards(settings.dailyGoal || 10);
     if (newItems.length > 0) return newItems;
     return collocations.slice(0, 5);
-  }, [targetId, unitNumber, collocations, getDueCards, getNewCards, settings.dailyGoal]);
+  }, [targetId, unitNumbers, collocations, getDueCards, getNewCards, settings.dailyGoal]);
 
   const [index, setIndex] = useState(0);
   const [done, setDone]   = useState(false);
@@ -92,15 +97,22 @@ export const StudySession: React.FC = () => {
   return (
     <div className="max-w-2xl mx-auto py-2 pb-24 md:pb-6 space-y-5 animate-fadeIn">
       {/* Top bar */}
-      <div className="flex items-center justify-between">
-        <button
-          id="exit-session-btn"
-          onClick={() => navigate('/')}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-zinc-400 hover:text-white transition-colors px-3 py-1.5 rounded-xl hover:bg-[#131D2E]"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Exit
-        </button>
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <button
+            id="exit-session-btn"
+            onClick={() => navigate('/')}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-zinc-400 hover:text-white transition-colors px-3 py-1.5 rounded-xl hover:bg-[#131D2E]"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Exit
+          </button>
+          {unitNumbers && unitNumbers.length > 0 && (
+            <span className="hidden sm:inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">
+              {unitNumbers.length === 1 ? `Unit ${unitNumbers[0]}` : `Units (${unitNumbers.length}): ${unitNumbers.sort((a,b)=>a-b).join(', ')}`}
+            </span>
+          )}
+        </div>
 
         {!done && queue.length > 0 && (
           <div className="flex items-center gap-3">

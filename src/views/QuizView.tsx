@@ -22,6 +22,7 @@ import {
   Lightbulb,
   Languages,
 } from 'lucide-react';
+import { MultiUnitModal } from '../components/MultiUnitModal';
 
 export const QuizView: React.FC = () => {
   const navigate = useNavigate();
@@ -31,8 +32,8 @@ export const QuizView: React.FC = () => {
   const recordReview = useAppStore((s) => s.recordReview);
   const getUnitSummaries = useAppStore((s) => s.getUnitSummaries);
 
-  const navState = location.state as { unitNumber?: number; level?: string } | undefined;
-  const initialUnit = navState?.unitNumber;
+  const navState = location.state as { unitNumber?: number; unitNumbers?: number[]; level?: string } | undefined;
+  const initialUnits = navState?.unitNumbers || (navState?.unitNumber != null ? [navState.unitNumber] : []);
 
   const TYPE_LABELS: Record<string, string> = {
     'verb-noun': 'Verb + Noun',
@@ -47,7 +48,8 @@ export const QuizView: React.FC = () => {
       explanation: (m.match(/\(([^)]+)\)/) || [])[1] || '',
     }));
 
-  const [selectedUnit, setSelectedUnit] = useState<number | 'all'>(initialUnit ?? 'all');
+  const [selectedUnits, setSelectedUnits] = useState<number[]>(initialUnits);
+  const [isUnitModalOpen, setIsUnitModalOpen] = useState(false);
   const [quizMode, setQuizMode] = useState<'cloze' | 'recall'>('cloze');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -60,11 +62,11 @@ export const QuizView: React.FC = () => {
 
   // Filter pool of collocations
   const pool = useMemo(() => {
-    if (selectedUnit === 'all') {
+    if (selectedUnits.length === 0) {
       return collocations;
     }
-    return collocations.filter((c) => c.unitNumber === selectedUnit);
-  }, [collocations, selectedUnit]);
+    return collocations.filter((c) => c.unitNumber && selectedUnits.includes(c.unitNumber));
+  }, [collocations, selectedUnits]);
 
   // Generate quiz questions
   const questions = useMemo<QuizQuestion[]>(() => {
@@ -268,26 +270,21 @@ export const QuizView: React.FC = () => {
             </button>
           </div>
 
-          {/* Unit Selector dropdown */}
-          <div className="flex items-center gap-1 bg-[#131D2E] px-2.5 py-1 rounded-xl border border-[#1E2D45] shrink-0 max-w-[140px] sm:max-w-[200px]">
-            <Filter className="w-3 h-3 text-zinc-400 shrink-0" />
-            <select
-              value={selectedUnit}
-              onChange={(e) => {
-                const val = e.target.value;
-                setSelectedUnit(val === 'all' ? 'all' : Number(val));
-                handleRestart();
-              }}
-              className="w-full bg-transparent text-[11px] font-bold text-zinc-200 focus:outline-none cursor-pointer truncate"
-            >
-              <option value="all">All Units</option>
-              {unitSummaries.map((u) => (
-                <option key={`${u.level}_${u.unitNumber}`} value={u.unitNumber} className="bg-[#111927]">
-                  U{u.unitNumber}: {u.unitTitle}
-                </option>
-              ))}
-            </select>
-          </div>
+          {/* Unit Selector Button (Multi-Unit Picker) */}
+          <button
+            onClick={() => setIsUnitModalOpen(true)}
+            className="flex items-center gap-1.5 bg-[#131D2E] px-2.5 py-1.5 rounded-xl border border-[#1E2D45] hover:border-indigo-500/40 text-[11px] font-bold text-zinc-200 transition-all max-w-[150px] sm:max-w-[220px] shrink-0"
+            title="Choose one or multiple units to practice"
+          >
+            <Filter className="w-3 h-3 text-indigo-400 shrink-0" />
+            <span className="truncate">
+              {selectedUnits.length === 0
+                ? 'All Units'
+                : selectedUnits.length === 1
+                ? `Unit ${selectedUnits[0]}`
+                : `Units (${selectedUnits.length}): ${selectedUnits.sort((a, b) => a - b).join(', ')}`}
+            </span>
+          </button>
         </div>
       </div>
 
@@ -626,6 +623,18 @@ export const QuizView: React.FC = () => {
           </div>
         </div>
       ) : null}
+
+      {/* Multi-Unit Selection Modal */}
+      <MultiUnitModal
+        isOpen={isUnitModalOpen}
+        onClose={() => setIsUnitModalOpen(false)}
+        selectedUnits={selectedUnits}
+        onApply={(units) => {
+          setSelectedUnits(units);
+          handleRestart();
+        }}
+        unitSummaries={unitSummaries}
+      />
     </div>
   );
 };

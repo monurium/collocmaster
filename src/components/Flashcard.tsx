@@ -305,7 +305,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                     className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#131D2E] text-zinc-400 hover:text-cyan-300 border border-[#1E2D45] transition-all"
                   >
                     <Languages className="w-3.5 h-3.5" />
-                    <span>{showTurkish ? 'Hide Turkish' : '🇹🇷 Türkçe Göster'}</span>
+                    <span>{showTurkish ? 'Hide TR' : '🇹🇷 Show TR'}</span>
                   </button>
                   {showTurkish && (
                     <motion.p
@@ -470,7 +470,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                   </div>
                   {showTurkish && turkishTranslation && (
                     <p className="mt-1.5 pt-1.5 border-t border-amber-500/20 text-xs text-amber-300">
-                      <strong>Türkçe:</strong> {turkishTranslation}
+                      <strong>TR:</strong> {turkishTranslation}
                     </p>
                   )}
                 </motion.div>
@@ -563,7 +563,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                       title="Toggle Turkish translation"
                     >
                       <Languages className="w-3 h-3" />
-                      <span>{showTurkish ? 'Hide TR' : '🇹🇷 Türkçe'}</span>
+                      <span>{showTurkish ? 'Hide TR' : '🇹🇷 Show TR'}</span>
                     </button>
                   )}
                 </div>
@@ -582,7 +582,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                     animate={{ opacity: 1, y: 0 }}
                     className="mt-2 p-2.5 rounded-xl bg-indigo-950/40 border border-indigo-500/25 text-xs text-indigo-200"
                   >
-                    <span className="font-bold text-indigo-400 mr-1.5 uppercase text-[10px]">Türkçe:</span>
+                    <span className="font-bold text-indigo-400 mr-1.5 uppercase text-[10px]">TR:</span>
                     {turkishTranslation}
                   </motion.div>
                 )}
@@ -707,30 +707,84 @@ export const Flashcard: React.FC<FlashcardProps> = ({
               </div>
             )}
 
-            {/* Write Your Own Sentence */}
-            <AnimatePresence>
-              {!showSentenceBox ? (
+            {/* ─── GRADE BUTTONS (Moved up for instant, scroll-free action) ─── */}
+            <div className="pt-2">
+              <div className="flex items-center justify-between mb-2.5">
+                <p className="text-xs font-bold text-zinc-300">
+                  Rate your recall
+                </p>
+                <span className="text-[11px] text-zinc-500 hidden sm:inline">
+                  Keys: 1, 2, 3, 4
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
+                {GRADE_CONFIG.map(({ grade, label, sublabel, emoji, colorClass, hotkey }) => {
+                  const preview = intervalPreviews[grade];
+                  return (
+                    <button
+                      key={grade}
+                      id={`grade-btn-${grade}`}
+                      onClick={() => submitGrade(grade)}
+                      className={`grade-btn py-3 px-2 sm:py-3.5 border ${colorClass} select-none active:scale-95`}
+                    >
+                      <span className="text-xl sm:text-2xl mb-1">{emoji}</span>
+                      <span className="text-xs sm:text-sm font-extrabold">{label}</span>
+                      <span className="text-[10px] opacity-80 mt-0.5 font-mono">
+                        {sublabel || preview}
+                      </span>
+                      <kbd className="hidden sm:inline-block mt-1.5 px-1.5 py-0.5 text-[9px] bg-black/20 border border-white/10 rounded font-mono opacity-50">
+                        {hotkey}
+                      </kbd>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* ─── OPTIONAL EXPANDABLE TOOLS (Compact pills below grade buttons) ─── */}
+            <div className="pt-3 border-t border-[#1E2D45]/60 space-y-2.5">
+              <div className="flex items-center gap-2">
                 <button
-                  onClick={() => setShowSentenceBox(true)}
-                  className="w-full mb-4 py-2.5 rounded-xl border border-dashed border-indigo-500/30 text-xs text-indigo-400 hover:bg-indigo-500/5 hover:border-indigo-400/50 transition-all flex items-center justify-center gap-2"
+                  onClick={() => setShowSentenceBox(!showSentenceBox)}
+                  className={`flex-1 py-1.5 px-2.5 rounded-xl border text-[11px] font-semibold transition-all flex items-center justify-center gap-1.5 ${
+                    showSentenceBox
+                      ? 'bg-indigo-600/20 border-indigo-500/50 text-indigo-200'
+                      : 'bg-[#131D2E] border-[#1E2D45] text-zinc-400 hover:text-zinc-200 hover:border-zinc-700'
+                  }`}
                 >
                   <BookOpen className="w-3.5 h-3.5" />
-                  Use in your own sentence (Optional Practice)
+                  <span>{showSentenceBox ? 'Close Writing' : '✍️ Sentence Output'}</span>
                 </button>
-              ) : (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="mb-4"
+
+                <button
+                  onClick={() => setShowRegisterQ(!showRegisterQ)}
+                  className={`flex-1 py-1.5 px-2.5 rounded-xl border text-[11px] font-semibold transition-all flex items-center justify-center gap-1.5 ${
+                    showRegisterQ
+                      ? 'bg-amber-500/20 border-amber-500/50 text-amber-200'
+                      : 'bg-[#131D2E] border-[#1E2D45] text-zinc-400 hover:text-zinc-200 hover:border-zinc-700'
+                  }`}
                 >
-                  <div className="p-3.5 rounded-xl bg-[#0D1525] border border-indigo-500/20">
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-indigo-400 mb-2 flex items-center gap-1">
+                  <Lightbulb className="w-3.5 h-3.5" />
+                  <span>{showRegisterQ ? 'Close Context' : '💬 Register / Context'}</span>
+                </button>
+              </div>
+
+              {/* Collapsible Write Your Own Sentence */}
+              <AnimatePresence>
+                {showSentenceBox && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="p-3 rounded-xl bg-[#0D1525] border border-indigo-500/20"
+                  >
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-indigo-400 mb-1.5 flex items-center gap-1">
                       <BookOpen className="w-3 h-3" />
                       Active Output Practice
                     </p>
                     <p className="text-[11px] text-zinc-400 mb-2">
-                      Write a sentence incorporating <strong className="text-indigo-300">"{collocation.chunk}"</strong>:
+                      Write a sentence using <strong className="text-indigo-300">"{collocation.chunk}"</strong>:
                     </p>
                     <div className="flex gap-2">
                       <input
@@ -739,13 +793,13 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                         onChange={(e) => { setOwnSentence(e.target.value); setOwnSentenceResult(null); }}
                         onKeyDown={(e) => { if (e.key === 'Enter') handleCheckOwnSentence(); }}
                         placeholder={`... ${collocation.chunk} ...`}
-                        className="flex-1 input-base text-xs py-2"
+                        className="flex-1 input-base text-xs py-1.5"
                         aria-label="Write your own sentence"
                       />
                       <button
                         onClick={handleCheckOwnSentence}
                         disabled={!ownSentence.trim()}
-                        className="px-3 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white text-xs font-bold transition-all active:scale-95 shrink-0"
+                        className="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white text-xs font-bold transition-all active:scale-95 shrink-0"
                       >
                         Check
                       </button>
@@ -753,44 +807,33 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                     <AnimatePresence>
                       {ownSentenceResult === 'ok' && (
                         <motion.p
-                          initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
-                          className="mt-2 text-xs text-emerald-300 flex items-center gap-1"
+                          initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }}
+                          className="mt-1.5 text-xs text-emerald-300 flex items-center gap-1"
                         >
-                          <CheckCircle2 className="w-3.5 h-3.5" /> Well done! You used the collocation accurately. 🎉
+                          <CheckCircle2 className="w-3.5 h-3.5" /> Well done! You used the collocation accurately.
                         </motion.p>
                       )}
                       {ownSentenceResult === 'missing' && (
                         <motion.p
-                          initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
-                          className="mt-2 text-xs text-amber-300 flex items-center gap-1"
+                          initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }}
+                          className="mt-1.5 text-xs text-amber-300 flex items-center gap-1"
                         >
-                          <AlertCircle className="w-3.5 h-3.5" /> <strong className="text-white">"{collocation.chunk}"</strong> was not detected in your sentence. Try again!
+                          <AlertCircle className="w-3.5 h-3.5" /> <strong className="text-white">"{collocation.chunk}"</strong> was not detected.
                         </motion.p>
                       )}
                     </AnimatePresence>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-            {/* ─── GRADE BUTTONS ─── */}
-            <div>
-              {/* Register Awareness Question */}
+              {/* Collapsible Register Awareness Question */}
               <AnimatePresence>
-                {!showRegisterQ ? (
-                  <button
-                    onClick={() => setShowRegisterQ(true)}
-                    className="w-full mb-3 py-2 rounded-xl border border-dashed border-zinc-700 text-[11px] text-zinc-500 hover:text-zinc-300 hover:border-zinc-500 transition-all flex items-center justify-center gap-1.5"
-                  >
-                    <Lightbulb className="w-3 h-3" />
-                    Where would you use this collocation? (Register Awareness)
-                  </button>
-                ) : (
+                {showRegisterQ && (
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="mb-3 p-3 rounded-xl bg-[#0D1525] border border-amber-500/20"
+                    className="p-3 rounded-xl bg-[#0D1525] border border-amber-500/20"
                   >
                     <p className="text-[10px] font-bold uppercase tracking-wider text-amber-400 mb-2 flex items-center gap-1">
                       <Lightbulb className="w-3 h-3" />
@@ -822,42 +865,6 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                   </motion.div>
                 )}
               </AnimatePresence>
-
-              <div className="flex items-center justify-between mb-3">
-                <p className="text-xs font-bold text-zinc-300">
-                  How well did you remember?
-                </p>
-                <span className="text-[11px] text-zinc-500 hidden sm:inline">
-                  Keys: 1, 2, 3, 4
-                </span>
-              </div>
-
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
-                {GRADE_CONFIG.map(({ grade, label, sublabel, emoji, colorClass, hotkey }) => {
-                  const preview = intervalPreviews[grade];
-                  return (
-                    <button
-                      key={grade}
-                      id={`grade-btn-${grade}`}
-                      onClick={() => submitGrade(grade)}
-                      className={`grade-btn py-3 px-2 sm:py-3.5 border ${colorClass} select-none active:scale-95`}
-                    >
-                      <span className="text-xl sm:text-2xl mb-1">{emoji}</span>
-                      <span className="text-xs sm:text-sm font-extrabold">{label}</span>
-                      <span className="text-[10px] opacity-80 mt-0.5 font-mono">
-                        {sublabel || preview}
-                      </span>
-                      <kbd className="hidden sm:inline-block mt-1.5 px-1.5 py-0.5 text-[9px] bg-black/20 border border-white/10 rounded font-mono opacity-50">
-                        {hotkey}
-                      </kbd>
-                    </button>
-                  );
-                })}
-              </div>
-
-              <p className="text-center text-[11px] text-zinc-600 mt-3">
-                💡 Choosing <strong className="text-zinc-500">Good</strong> schedules this card at the optimal spaced interval.
-              </p>
             </div>
           </motion.div>
         )}

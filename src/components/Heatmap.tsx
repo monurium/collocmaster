@@ -34,12 +34,12 @@ export const Heatmap: React.FC<HeatmapProps> = ({ history }) => {
       <div className="flex items-center justify-between gap-2 mb-4">
         <div className="flex items-center gap-2">
           <Calendar className="w-4 h-4 text-indigo-400" />
-          <h3 className="text-sm font-bold text-white">Son 30 Gün Aktivitesi</h3>
+          <h3 className="text-sm font-bold text-white">Last 30 Days Activity</h3>
         </div>
         <div className="flex items-center gap-3 text-xs text-zinc-500">
-          <span><span className="font-mono font-bold text-white">{totalReviews}</span> tekrar</span>
+          <span><span className="font-mono font-bold text-white">{totalReviews}</span> reviews</span>
           <span>•</span>
-          <span><span className="font-mono font-bold text-white">{activeDays}</span>/30 gün aktif</span>
+          <span><span className="font-mono font-bold text-white">{activeDays}</span>/30 days active</span>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ export const Heatmap: React.FC<HeatmapProps> = ({ history }) => {
             onMouseEnter={() => setHovered(day)}
             onMouseLeave={() => setHovered(null)}
             className={`aspect-square w-full rounded-md border transition-all duration-100 cursor-pointer ${getCellColor(day.intensity)}`}
-            title={`${formatDate(day.date)}: ${day.count} tekrar`}
+            title={`${formatDate(day.date)}: ${day.count} reviews`}
           />
         ))}
       </div>
@@ -62,20 +62,20 @@ export const Heatmap: React.FC<HeatmapProps> = ({ history }) => {
           {hovered ? (
             <span className="animate-fadeIn text-zinc-300">
               <strong className="text-white">{formatDate(hovered.date)}</strong>:{' '}
-              <span className="text-indigo-400 font-mono">{hovered.count} tekrar</span>
+              <span className="text-indigo-400 font-mono">{hovered.count} reviews</span>
             </span>
           ) : (
-            'Bir kare üzerine gelin'
+            'Hover over any cell'
           )}
         </span>
 
         {/* Legend */}
         <div className="flex items-center gap-1 text-[10px] text-zinc-600">
-          <span>Az</span>
+          <span>Less</span>
           {[0, 1, 2, 3, 4].map((i) => (
             <div key={i} className={`w-2.5 h-2.5 rounded-sm border ${getCellColor(i)}`} />
           ))}
-          <span>Çok</span>
+          <span>More</span>
         </div>
       </div>
     </div>

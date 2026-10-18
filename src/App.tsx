@@ -30,11 +30,11 @@ export const App: React.FC = () => {
         {/* Footer */}
         <footer className="hidden md:block border-t border-[#1E2D45] py-5 text-center text-[11px] text-zinc-600 bg-[#0A0E1A]">
           <div className="max-w-5xl mx-auto px-4 flex items-center justify-between">
-            <span>CollocMaster © 2026 — Cambridge English Collocations in Use Çalışma Asistanı</span>
+            <span>CollocMaster © 2026 — Cambridge English Collocations in Use Study Companion</span>
             <div className="flex items-center gap-4">
               <span>Intermediate & Advanced</span>
               <span>•</span>
-              <span>SM-2 Aralıklı Tekrar & Test & Eşleştirme</span>
+              <span>SM-2 Spaced Repetition & Sentence Quizzes & Matching Games</span>
             </div>
           </div>
         </footer>

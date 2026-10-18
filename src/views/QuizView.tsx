@@ -346,12 +346,12 @@ export const QuizView: React.FC = () => {
                       onClick={() => setShowTurkish(!showTurkish)}
                       className="text-xs text-zinc-400 hover:text-cyan-300 underline"
                     >
-                      {showTurkish ? 'Hide Turkish' : '🇹🇷 Türkçe Göster'}
+                      {showTurkish ? 'Hide TR' : '🇹🇷 Show TR'}
                     </button>
                   )}
                   {showTurkish && currentQ.collocation.meaningTr && (
                     <div className="text-xs text-indigo-300 bg-indigo-500/10 p-2 rounded-xl max-w-md mx-auto">
-                      <strong>Türkçe:</strong> {currentQ.collocation.meaningTr}
+                      <strong>TR:</strong> {currentQ.collocation.meaningTr}
                     </div>
                   )}
                   <div className="text-xs sm:text-sm text-zinc-300 italic bg-[#0F172A] p-3.5 rounded-2xl border border-[#1E2D45]/70 max-w-xl mx-auto">
@@ -471,7 +471,7 @@ export const QuizView: React.FC = () => {
                   {/* Show Turkish Translation */}
                   {showTurkish && trMeaning && (
                     <div className="p-2.5 rounded-xl bg-indigo-950/40 border border-indigo-500/25 text-xs text-indigo-200">
-                      <span className="font-bold text-indigo-400 mr-1.5 uppercase text-[10px]">Türkçe:</span>
+                      <span className="font-bold text-indigo-400 mr-1.5 uppercase text-[10px]">TR:</span>
                       {trMeaning}
                     </div>
                   )}

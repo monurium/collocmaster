@@ -22,17 +22,17 @@ import {
 type FilterKey = 'cefr' | 'category' | 'type' | 'status';
 
 const FILTER_OPTIONS: Record<FilterKey, { label: string; values: string[] }> = {
-  cefr:     { label: 'Seviye', values: ['Tümü', 'B1', 'B2', 'C1', 'C2'] },
-  category: { label: 'Alan', values: ['Tümü', 'academic', 'business', 'everyday', 'literature'] },
-  type:     { label: 'Tür', values: ['Tümü', 'verb-noun', 'adj-noun', 'adv-adj', 'phrase'] },
-  status:   { label: 'Durum', values: ['Tümü', 'Sırada', 'Öğreniliyor', 'Öğrenildi', 'Görülmedi'] },
+  cefr:     { label: 'Level', values: ['All', 'B1', 'B2', 'C1', 'C2'] },
+  category: { label: 'Domain', values: ['All', 'academic', 'business', 'everyday', 'literature'] },
+  type:     { label: 'Type', values: ['All', 'verb-noun', 'adj-noun', 'adv-adj', 'phrase'] },
+  status:   { label: 'Status', values: ['All', 'Due', 'Learning', 'Mastered', 'Unseen'] },
 };
 
-const CATEGORY_TR: Record<string, string> = {
-  academic: 'Akademik', business: 'İş', everyday: 'Günlük', literature: 'Edebiyat', Tümü: 'Tümü',
+const CATEGORY_NAMES: Record<string, string> = {
+  academic: 'Academic', business: 'Business', everyday: 'Everyday', literature: 'Literature', All: 'All',
 };
-const TYPE_TR: Record<string, string> = {
-  'verb-noun': 'Fiil+İsim', 'adj-noun': 'Sıfat+İsim', 'adv-adj': 'Zarf+Sıfat', phrase: 'Deyim', Tümü: 'Tümü',
+const TYPE_NAMES: Record<string, string> = {
+  'verb-noun': 'Verb+Noun', 'adj-noun': 'Adj+Noun', 'adv-adj': 'Adv+Adj', phrase: 'Phrase', All: 'All',
 };
 
 const ITEMS_PER_PAGE = 24;
@@ -45,10 +45,10 @@ export const Library: React.FC = () => {
   const deleteCollocation = useAppStore((s) => s.deleteCollocation);
 
   const [q, setQ] = useState('');
-  const [cefr, setCefr] = useState('Tümü');
-  const [cat, setCat] = useState('Tümü');
-  const [type, setType] = useState('Tümü');
-  const [status, setStatus] = useState('Tümü');
+  const [cefr, setCefr] = useState('All');
+  const [cat, setCat] = useState('All');
+  const [type, setType] = useState('All');
+  const [status, setStatus] = useState('All');
   const [modal, setModal] = useState<Collocation | null>(null);
   const [showFilters, setShowFilters] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -91,16 +91,16 @@ export const Library: React.FC = () => {
         if (!hit) return false;
       }
 
-      if (cefr !== 'Tümü' && col.cefrLevel !== cefr) return false;
-      if (cat !== 'Tümü' && col.category !== cat) return false;
-      if (type !== 'Tümü' && col.type !== type) return false;
+      if (cefr !== 'All' && col.cefrLevel !== cefr) return false;
+      if (cat !== 'All' && col.category !== cat) return false;
+      if (type !== 'All' && col.type !== type) return false;
 
-      if (status !== 'Tümü') {
+      if (status !== 'All') {
         const seen = item.history.length > 0;
-        if (status === 'Görülmedi' && seen) return false;
-        if (status === 'Öğrenildi' && !isMastered(item)) return false;
-        if (status === 'Sırada' && (!seen || !isDue(item, now))) return false;
-        if (status === 'Öğreniliyor' && (!seen || isMastered(item))) return false;
+        if (status === 'Unseen' && seen) return false;
+        if (status === 'Mastered' && !isMastered(item)) return false;
+        if (status === 'Due' && (!seen || !isDue(item, now))) return false;
+        if (status === 'Learning' && (!seen || isMastered(item))) return false;
       }
 
       return true;
@@ -119,23 +119,23 @@ export const Library: React.FC = () => {
     return filtered.slice(start, start + ITEMS_PER_PAGE);
   }, [filtered, currentPage]);
 
-  const hasActiveFilters = cefr !== 'Tümü' || cat !== 'Tümü' || type !== 'Tümü' || status !== 'Tümü';
+  const hasActiveFilters = cefr !== 'All' || cat !== 'All' || type !== 'All' || status !== 'All';
 
   const getStatusBadge = (item: SRSItem) => {
     if (item.history.length === 0)
-      return <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-800 text-zinc-400">Görülmedi</span>;
+      return <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-800 text-zinc-400">Unseen</span>;
     if (isMastered(item))
-      return <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-cyan-950/50 text-cyan-300 border border-cyan-800/30">✅ Öğrenildi</span>;
+      return <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-cyan-950/50 text-cyan-300 border border-cyan-800/30">✅ Mastered</span>;
     if (isDue(item))
-      return <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-rose-950/50 text-rose-300 border border-rose-800/30">⏰ Sırada</span>;
-    return <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-indigo-950/50 text-indigo-300 border border-indigo-800/30">{item.interval}g aralık</span>;
+      return <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-rose-950/50 text-rose-300 border border-rose-800/30">⏰ Due</span>;
+    return <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-indigo-950/50 text-indigo-300 border border-indigo-800/30">{item.interval}d interval</span>;
   };
 
   const clearFilters = () => {
-    setCefr('Tümü');
-    setCat('Tümü');
-    setType('Tümü');
-    setStatus('Tümü');
+    setCefr('All');
+    setCat('All');
+    setType('All');
+    setStatus('All');
   };
 
   return (
@@ -145,16 +145,16 @@ export const Library: React.FC = () => {
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2.5">
             <BookOpen className="w-6 h-6 text-indigo-400" />
-            Kollokasyon Kütüphanesi
+            Collocation Library
           </h1>
           <p className="text-sm text-zinc-400 mt-1">
-            {collocations.length} adet Cambridge İngilizce kollokasyon
+            {collocations.length} Cambridge English collocations
           </p>
         </div>
 
         <div className="flex items-center gap-2 self-start sm:self-auto">
           <div className="text-xs font-mono text-zinc-400 bg-[#0F1829] px-3 py-2 rounded-xl border border-[#1E2D45]">
-            <span className="text-white font-bold">{filtered.length}</span> sonuç (Sayfa {currentPage}/{totalPages})
+            <span className="text-white font-bold">{filtered.length}</span> results (Page {currentPage}/{totalPages})
           </div>
 
           <button
@@ -162,7 +162,7 @@ export const Library: React.FC = () => {
             className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-md shadow-indigo-600/30"
           >
             <Plus className="w-4 h-4" />
-            <span>Yeni Ekle</span>
+            <span>Add New</span>
           </button>
         </div>
       </div>
@@ -176,7 +176,7 @@ export const Library: React.FC = () => {
               type="text"
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder="Kollokasyon, anlam, ünite adı veya örnek cümle ara..."
+              placeholder="Search collocations, meanings, unit or examples..."
               className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-[#070B14] border border-[#1E2D45] text-sm text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
             />
             {q && (
@@ -198,7 +198,7 @@ export const Library: React.FC = () => {
             }`}
           >
             <Filter className="w-4 h-4" />
-            <span className="hidden sm:inline">Filtrele</span>
+            <span className="hidden sm:inline">Filters</span>
             {hasActiveFilters && (
               <span className="text-xs bg-white/20 rounded-full w-4 h-4 flex items-center justify-center font-bold">
                 !
@@ -212,7 +212,7 @@ export const Library: React.FC = () => {
           <div className="space-y-3 pt-2 border-t border-[#1E2D45]">
             {/* CEFR */}
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs font-semibold text-zinc-500 w-16 shrink-0">Seviye:</span>
+              <span className="text-xs font-semibold text-zinc-500 w-16 shrink-0">Level:</span>
               {FILTER_OPTIONS.cefr.values.map((v) => (
                 <button
                   key={v}
@@ -230,7 +230,7 @@ export const Library: React.FC = () => {
 
             {/* Type */}
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs font-semibold text-zinc-500 w-16 shrink-0">Tür:</span>
+              <span className="text-xs font-semibold text-zinc-500 w-16 shrink-0">Type:</span>
               {FILTER_OPTIONS.type.values.map((v) => (
                 <button
                   key={v}
@@ -241,14 +241,14 @@ export const Library: React.FC = () => {
                       : 'bg-[#131D2E] text-zinc-400 hover:text-white hover:bg-[#1A263C]'
                   }`}
                 >
-                  {TYPE_TR[v] || v}
+                  {TYPE_NAMES[v] || v}
                 </button>
               ))}
             </div>
 
             {/* Status */}
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs font-semibold text-zinc-500 w-16 shrink-0">Durum:</span>
+              <span className="text-xs font-semibold text-zinc-500 w-16 shrink-0">Status:</span>
               {FILTER_OPTIONS.status.values.map((v) => (
                 <button
                   key={v}
@@ -269,7 +269,7 @@ export const Library: React.FC = () => {
                 onClick={clearFilters}
                 className="text-xs text-rose-400 hover:text-rose-300 font-semibold flex items-center gap-1"
               >
-                <X className="w-3.5 h-3.5" /> Filtreleri temizle
+                <X className="w-3.5 h-3.5" /> Clear filters
               </button>
             )}
           </div>
@@ -297,11 +297,11 @@ export const Library: React.FC = () => {
                     {col.cefrLevel}
                   </span>
                   <span className="px-2 py-0.5 text-[10px] font-medium rounded bg-[#131D2E] text-zinc-500">
-                    {TYPE_TR[col.type] || col.type}
+                    {TYPE_NAMES[col.type] || col.type}
                   </span>
                   {col.isCustom && (
                     <span className="px-1.5 py-0.5 text-[9px] font-bold rounded bg-amber-500/15 text-amber-300 border border-amber-500/25">
-                      Özel
+                      Custom
                     </span>
                   )}
                 </div>
@@ -325,7 +325,7 @@ export const Library: React.FC = () => {
 
               <div className="flex items-center justify-between text-xs text-zinc-500 pt-1 border-t border-[#1E2D45] mt-auto">
                 <span className="capitalize text-[11px] truncate max-w-[150px]">
-                  {col.unitTitle || CATEGORY_TR[col.category] || col.category}
+                  {col.unitTitle || CATEGORY_NAMES[col.category] || col.category}
                 </span>
                 <button
                   onClick={(e) => {
@@ -334,7 +334,7 @@ export const Library: React.FC = () => {
                   }}
                   className="text-indigo-400 hover:text-indigo-300 flex items-center gap-1 font-semibold text-[11px]"
                 >
-                  Detayları Gör <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  View Details <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </button>
               </div>
             </div>
@@ -353,11 +353,11 @@ export const Library: React.FC = () => {
             }}
             className="flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-[#162235] text-zinc-300 hover:text-white disabled:opacity-40 disabled:hover:text-zinc-300 transition-all"
           >
-            <ChevronLeft className="w-4 h-4" /> Önceki
+            <ChevronLeft className="w-4 h-4" /> Previous
           </button>
 
           <div className="flex items-center gap-1 text-xs text-zinc-400">
-            <span>Sayfa <strong className="text-white">{currentPage}</strong> / {totalPages}</span>
+            <span>Page <strong className="text-white">{currentPage}</strong> / {totalPages}</span>
           </div>
 
           <button
@@ -368,7 +368,7 @@ export const Library: React.FC = () => {
             }}
             className="flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-[#162235] text-zinc-300 hover:text-white disabled:opacity-40 disabled:hover:text-zinc-300 transition-all"
           >
-            Sonraki <ChevronRight className="w-4 h-4" />
+            Next <ChevronRight className="w-4 h-4" />
           </button>
         </div>
       )}
@@ -376,14 +376,14 @@ export const Library: React.FC = () => {
       {filtered.length === 0 && (
         <div className="text-center py-16 card">
           <BookOpen className="w-10 h-10 text-zinc-700 mx-auto mb-3" />
-          <h3 className="text-base font-bold text-zinc-300">Sonuç bulunamadı</h3>
-          <p className="text-sm text-zinc-500 mt-1">Filtre veya arama terimini değiştirmeyi deneyin.</p>
+          <h3 className="text-base font-bold text-zinc-300">No results found</h3>
+          <p className="text-sm text-zinc-500 mt-1">Try adjusting your filters or search terms.</p>
           {hasActiveFilters && (
             <button
               onClick={clearFilters}
               className="mt-4 text-sm text-indigo-400 hover:text-indigo-300 font-semibold"
             >
-              Tüm filtreleri kaldır
+              Clear all filters
             </button>
           )}
         </div>
@@ -416,7 +416,7 @@ export const Library: React.FC = () => {
                 {modal.cefrLevel}
               </span>
               <span className="px-2.5 py-1 text-xs rounded-lg bg-cyan-950/40 text-cyan-300 capitalize">
-                {TYPE_TR[modal.type] || modal.type}
+                {TYPE_NAMES[modal.type] || modal.type}
               </span>
               {modal.level && (
                 <span className="px-2.5 py-1 text-xs rounded-lg bg-[#162235] text-zinc-400">
@@ -432,12 +432,12 @@ export const Library: React.FC = () => {
                 <p className="mt-1 text-sm text-zinc-300 leading-relaxed">{modal.meaning}</p>
                 {modal.unitTitle && (
                   <p className="text-xs text-indigo-400 font-semibold mt-1">
-                    Konu: {modal.unitTitle}
+                    Topic: {modal.unitTitle}
                   </p>
                 )}
                 {modal.synonyms && modal.synonyms.length > 0 && (
                   <div className="flex flex-wrap items-center gap-1.5 mt-2">
-                    <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider">Eş Anlamlılar:</span>
+                    <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider">Synonyms:</span>
                     {modal.synonyms.map((s, idx) => (
                       <span key={idx} className="px-2 py-0.5 rounded-md text-[11px] bg-cyan-500/10 text-cyan-300 border border-cyan-500/25">
                         {s}
@@ -451,7 +451,7 @@ export const Library: React.FC = () => {
 
             {/* Examples */}
             <div className="space-y-2 mb-4">
-              <p className="text-xs font-bold uppercase tracking-wider text-zinc-500">Örnek Cümleler</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-zinc-500">Example Sentences</p>
               {modal.examples.map((ex, i) => (
                 <div key={i} className="p-3.5 rounded-xl bg-[#070B14] border border-[#1E2D45]">
                   <p className="text-sm text-zinc-200 leading-relaxed">
@@ -464,7 +464,7 @@ export const Library: React.FC = () => {
             {/* Mistakes */}
             {modal.commonMistakes && modal.commonMistakes.length > 0 && (
               <div className="mb-4 p-3.5 rounded-xl bg-rose-500/8 border border-rose-500/15">
-                <p className="text-xs font-bold text-rose-400 mb-2">❌ Kaçınılacak Hatalar</p>
+                <p className="text-xs font-bold text-rose-400 mb-2">❌ Common Mistakes to Avoid</p>
                 <div className="flex flex-wrap gap-1.5">
                   {modal.commonMistakes.map((m, i) => (
                     <span
@@ -489,7 +489,7 @@ export const Library: React.FC = () => {
                   className="px-3 py-2 rounded-xl text-xs text-rose-400 hover:text-rose-300 hover:bg-rose-500/10 flex items-center gap-1 font-semibold"
                 >
                   <Trash2 className="w-3.5 h-3.5" />
-                  <span>Kollokasyonu Sil</span>
+                  <span>Delete Collocation</span>
                 </button>
               ) : (
                 <div />
@@ -500,7 +500,7 @@ export const Library: React.FC = () => {
                   onClick={() => setModal(null)}
                   className="px-4 py-2 rounded-xl text-xs text-zinc-400 hover:text-white font-semibold"
                 >
-                  Kapat
+                  Close
                 </button>
                 <button
                   id={`practice-${modal.id}-btn`}
@@ -512,7 +512,7 @@ export const Library: React.FC = () => {
                   className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-all flex items-center gap-2 shadow-md shadow-indigo-600/25"
                 >
                   <Play className="w-3.5 h-3.5 fill-current" />
-                  Kartla Çalış
+                  Study Card
                 </button>
               </div>
             </div>

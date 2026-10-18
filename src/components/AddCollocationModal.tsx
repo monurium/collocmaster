@@ -24,7 +24,7 @@ export const AddCollocationModal: React.FC<AddCollocationModalProps> = ({
   const [level, setLevel] = useState<'Intermediate' | 'Advanced'>('Intermediate');
   const [cefrLevel, setCefrLevel] = useState<'B1' | 'B2' | 'C1' | 'C2'>('B2');
   const [unitNumber, setUnitNumber] = useState<number>(defaultUnitNumber ?? 1);
-  const [unitTitle, setUnitTitle] = useState<string>(defaultUnitTitle ?? 'Kişisel Notlar');
+  const [unitTitle, setUnitTitle] = useState<string>(defaultUnitTitle ?? 'Personal Notes');
   const [meaning, setMeaning] = useState('');
   const [sentence, setSentence] = useState('');
   const [commonMistake, setCommonMistake] = useState('');
@@ -49,7 +49,7 @@ export const AddCollocationModal: React.FC<AddCollocationModalProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!chunk.trim()) {
-      setError('Lütfen bir kollokasyon ifadesi girin (Örn: make an effort).');
+      setError('Please enter a collocation phrase (e.g. make an effort).');
       return;
     }
 
@@ -101,8 +101,8 @@ export const AddCollocationModal: React.FC<AddCollocationModalProps> = ({
               <Plus className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="text-base font-bold text-white">Yeni Kollokasyon Ekle</h2>
-              <p className="text-[11px] text-zinc-400">Kitaptan çalıştığınız yeni kalıbı defterinize ekleyin</p>
+              <h2 className="text-base font-bold text-white">Add New Collocation</h2>
+              <p className="text-[11px] text-zinc-400">Add a new phrase or collocation from your study book</p>
             </div>
           </div>
           <button
@@ -125,14 +125,14 @@ export const AddCollocationModal: React.FC<AddCollocationModalProps> = ({
           {/* Collocation chunk */}
           <div className="space-y-1.5">
             <label className="text-xs font-semibold text-zinc-300">
-              Kollokasyon İfadesi <span className="text-rose-400">*</span>
+              Collocation Phrase <span className="text-rose-400">*</span>
             </label>
             <input
               type="text"
               required
               value={chunk}
               onChange={(e) => setChunk(e.target.value)}
-              placeholder="Örn: make an effort, bitterly cold, cast doubt"
+              placeholder="e.g. make an effort, bitterly cold, cast doubt"
               className="w-full bg-[#162235] border border-[#1E2D45] rounded-xl px-3.5 py-2 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-indigo-500"
             />
           </div>
@@ -140,21 +140,21 @@ export const AddCollocationModal: React.FC<AddCollocationModalProps> = ({
           {/* Type & Level row */}
           <div className="grid grid-cols-3 gap-2.5">
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-zinc-300">Kalıp Türü</label>
+              <label className="text-xs font-semibold text-zinc-300">Phrase Type</label>
               <select
                 value={type}
                 onChange={(e) => setType(e.target.value as any)}
                 className="w-full bg-[#162235] border border-[#1E2D45] rounded-xl px-2.5 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"
               >
-                <option value="verb-noun">Fiil + İsim</option>
-                <option value="adv-adj">Zarf + Sıfat</option>
-                <option value="adj-noun">Sıfat + İsim</option>
-                <option value="phrase">Deyim / Kalıp</option>
+                <option value="verb-noun">Verb + Noun</option>
+                <option value="adv-adj">Adverb + Adjective</option>
+                <option value="adj-noun">Adjective + Noun</option>
+                <option value="phrase">Idiom / Phrase</option>
               </select>
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-zinc-300">Kitap Seviyesi</label>
+              <label className="text-xs font-semibold text-zinc-300">Level</label>
               <select
                 value={level}
                 onChange={(e) => setLevel(e.target.value as any)}
@@ -183,7 +183,7 @@ export const AddCollocationModal: React.FC<AddCollocationModalProps> = ({
           {/* Unit mapping */}
           <div className="grid grid-cols-3 gap-3">
             <div className="space-y-1.5 col-span-1">
-              <label className="text-xs font-semibold text-zinc-300">Ünite No</label>
+              <label className="text-xs font-semibold text-zinc-300">Unit No</label>
               <input
                 type="number"
                 min="1"
@@ -194,12 +194,12 @@ export const AddCollocationModal: React.FC<AddCollocationModalProps> = ({
               />
             </div>
             <div className="space-y-1.5 col-span-2">
-              <label className="text-xs font-semibold text-zinc-300">Ünite Başlığı</label>
+              <label className="text-xs font-semibold text-zinc-300">Unit Title</label>
               <input
                 type="text"
                 value={unitTitle}
                 onChange={(e) => setUnitTitle(e.target.value)}
-                placeholder="Örn: Everyday verbs 1"
+                placeholder="e.g. Everyday verbs 1"
                 className="w-full bg-[#162235] border border-[#1E2D45] rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-indigo-500"
               />
             </div>
@@ -207,24 +207,24 @@ export const AddCollocationModal: React.FC<AddCollocationModalProps> = ({
 
           {/* Turkish Meaning */}
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-zinc-300">Türkçe Anlamı / Açıklama</label>
+            <label className="text-xs font-semibold text-zinc-300">Meaning / Definition</label>
             <input
               type="text"
               value={meaning}
               onChange={(e) => setMeaning(e.target.value)}
-              placeholder="Örn: Çaba sarf etmek, gayret göstermek"
+              placeholder="e.g. to try hard to achieve something"
               className="w-full bg-[#162235] border border-[#1E2D45] rounded-xl px-3.5 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-indigo-500"
             />
           </div>
 
           {/* Example sentence */}
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-zinc-300">Örnek Cümle</label>
+            <label className="text-xs font-semibold text-zinc-300">Example Sentence</label>
             <textarea
               rows={2}
               value={sentence}
               onChange={(e) => setSentence(e.target.value)}
-              placeholder="Örn: You should make an effort to arrive early."
+              placeholder="e.g. You should make an effort to arrive early."
               className="w-full bg-[#162235] border border-[#1E2D45] rounded-xl px-3.5 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-indigo-500"
             />
           </div>
@@ -232,13 +232,13 @@ export const AddCollocationModal: React.FC<AddCollocationModalProps> = ({
           {/* Common mistake */}
           <div className="space-y-1.5">
             <label className="text-xs font-semibold text-zinc-300">
-              Sık Yapılan Hata (Kitaptaki Yanlış Kullanım Uyarısı)
+              Common Mistake (Wrong usage to avoid)
             </label>
             <input
               type="text"
               value={commonMistake}
               onChange={(e) => setCommonMistake(e.target.value)}
-              placeholder="Örn: do an effort, make a homework"
+              placeholder="e.g. do an effort, make a homework"
               className="w-full bg-[#162235] border border-[#1E2D45] rounded-xl px-3.5 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-indigo-500"
             />
           </div>
@@ -250,13 +250,13 @@ export const AddCollocationModal: React.FC<AddCollocationModalProps> = ({
               onClick={onClose}
               className="px-4 py-2 rounded-xl text-xs font-semibold text-zinc-400 hover:text-white hover:bg-[#162235]"
             >
-              İptal
+              Cancel
             </button>
             <button
               type="submit"
               className="px-5 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white shadow-md shadow-indigo-600/30 transition-all"
             >
-              Kollokasyonu Kaydet
+              Save Collocation
             </button>
           </div>
         </form>

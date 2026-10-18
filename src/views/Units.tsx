@@ -487,7 +487,7 @@ export const UnitsView: React.FC = () => {
                   className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-semibold bg-[#162235] text-zinc-400 hover:text-cyan-300 border border-[#1E2D45] transition-all"
                 >
                   <Languages className="w-3.5 h-3.5" />
-                  <span>{showTurkishModal ? 'Hide TR' : '🇹🇷 Türkçe'}</span>
+                  <span>{showTurkishModal ? 'Hide TR' : '🇹🇷 Show TR'}</span>
                 </button>
                 <button
                   onClick={() => setSelectedUnit(null)}

@@ -62,7 +62,7 @@ export const InstallPwaPrompt: React.FC = () => {
 
         <div className="flex-1">
           <h4 className="text-sm font-bold text-white flex items-center gap-2">
-            Telefonda Mobil Uygulama Olarak Kullanın
+            Install as Mobile App
             <span className="text-[10px] bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full font-semibold">
               PWA
             </span>
@@ -70,10 +70,10 @@ export const InstallPwaPrompt: React.FC = () => {
           <p className="text-xs text-zinc-300 mt-1 leading-relaxed">
             {isIOS ? (
               <span className="flex items-center flex-wrap gap-1">
-                Safari'de alttaki <Share className="w-3.5 h-3.5 inline text-cyan-400" /> <b>Paylaş</b> butonuna basıp ardından <PlusSquare className="w-3.5 h-3.5 inline text-cyan-400" /> <b>"Ana Ekrana Ekle"</b> seçeneğini seçin.
+                In Safari, tap <Share className="w-3.5 h-3.5 inline text-cyan-400" /> <b>Share</b> then select <PlusSquare className="w-3.5 h-3.5 inline text-cyan-400" /> <b>"Add to Home Screen"</b>.
               </span>
             ) : (
-              'Tarayıcı çubuğundan bağımsız, tam ekran ve kesintisiz mobil deneyim için ana ekrana ekleyin.'
+              'Add to your home screen for a seamless, full-screen mobile app experience.'
             )}
           </p>
         </div>
@@ -84,7 +84,7 @@ export const InstallPwaPrompt: React.FC = () => {
             className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md shadow-indigo-600/30 transition-all shrink-0 active:scale-95"
           >
             <Check className="w-3.5 h-3.5" />
-            <span>Yükle</span>
+            <span>Install</span>
           </button>
         )}
       </div>
@@ -96,7 +96,7 @@ export const InstallPwaPrompt: React.FC = () => {
             className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md shadow-indigo-600/30 transition-all active:scale-95"
           >
             <Smartphone className="w-4 h-4" />
-            <span>Ana Ekrana Ekle</span>
+            <span>Add to Home Screen</span>
           </button>
         </div>
       )}

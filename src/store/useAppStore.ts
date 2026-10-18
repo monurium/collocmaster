@@ -283,11 +283,11 @@ export const useAppStore = create<AppState>()(
         try {
           const parsed = JSON.parse(jsonString);
           if (!parsed || typeof parsed !== 'object') {
-            return { success: false, error: 'Geçersiz JSON formatı' };
+            return { success: false, error: 'Invalid JSON format' };
           }
 
           if (!parsed.srsItems || typeof parsed.srsItems !== 'object') {
-            return { success: false, error: 'Yedek dosyasında SRS verisi bulunamadı' };
+            return { success: false, error: 'No SRS data found in backup file' };
           }
 
           const custom = Array.isArray(parsed.customCollocations) ? parsed.customCollocations : [];
@@ -310,7 +310,7 @@ export const useAppStore = create<AppState>()(
         } catch (err: unknown) {
           return {
             success: false,
-            error: err instanceof Error ? err.message : 'Ayrıştırma hatası',
+            error: err instanceof Error ? err.message : 'Parsing error',
           };
         }
       },

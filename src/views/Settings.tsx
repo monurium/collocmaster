@@ -38,14 +38,14 @@ export const Settings: React.FC = () => {
       const url  = URL.createObjectURL(blob);
       const a    = document.createElement('a');
       a.href     = url;
-      a.download = `collocmaster_yedek_${new Date().toISOString().slice(0, 10)}.json`;
+      a.download = `collocmaster_backup_${new Date().toISOString().slice(0, 10)}.json`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      notify('ok', 'Veriler başarıyla dışa aktarıldı! ✅');
+      notify('ok', 'Data exported successfully! ✅');
     } catch {
-      notify('err', 'Dışa aktarma başarısız oldu.');
+      notify('err', 'Export failed.');
     }
   };
 
@@ -55,8 +55,8 @@ export const Settings: React.FC = () => {
     const reader = new FileReader();
     reader.onload = (ev) => {
       const res = importDataJSON(ev.target?.result as string);
-      if (res.success) notify('ok', 'Veriler başarıyla içe aktarıldı! ✅');
-      else notify('err', `İçe aktarma başarısız: ${res.error}`);
+      if (res.success) notify('ok', 'Data imported successfully! ✅');
+      else notify('err', `Import failed: ${res.error}`);
       if (fileRef.current) fileRef.current.value = '';
     };
     reader.readAsText(file);
@@ -65,7 +65,7 @@ export const Settings: React.FC = () => {
   const handleReset = () => {
     resetProgress();
     setShowReset(false);
-    notify('ok', 'Tüm ilerleme sıfırlandı.');
+    notify('ok', 'All study progress has been reset.');
   };
 
   return (
@@ -75,10 +75,10 @@ export const Settings: React.FC = () => {
       <div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2.5">
           <SettingsIcon className="w-6 h-6 text-indigo-400" />
-          Ayarlar
+          Settings
         </h1>
         <p className="text-sm text-zinc-400 mt-1">
-          Çalışma tercihlerin ve veri yönetimi
+          Study preferences and data management
         </p>
       </div>
 
@@ -101,15 +101,15 @@ export const Settings: React.FC = () => {
       <div className="card p-5 sm:p-6 space-y-5">
         <h2 className="text-base font-bold text-white flex items-center gap-2">
           <Target className="w-5 h-5 text-indigo-400" />
-          Çalışma Tercihleri
+          Study Preferences
         </h2>
 
         {/* Daily goal */}
         <div>
           <div className="flex items-center justify-between mb-2">
             <div>
-              <p className="text-sm font-bold text-zinc-200">Günlük Kart Hedefi</p>
-              <p className="text-xs text-zinc-500">Her gün kaç kart öğrenmek istiyorsun?</p>
+              <p className="text-sm font-bold text-zinc-200">Daily Card Goal</p>
+              <p className="text-xs text-zinc-500">How many cards do you want to learn each day?</p>
             </div>
             <span className="text-lg font-black font-mono text-indigo-400">{settings.dailyGoal}</span>
           </div>
@@ -130,7 +130,7 @@ export const Settings: React.FC = () => {
             ))}
           </div>
           <p className="text-xs text-zinc-600 mt-1.5">
-            Yeni başlayanlar için <strong className="text-zinc-400">10</strong> önerilir. Deneyimliler <strong className="text-zinc-400">20+</strong> seçebilir.
+            Recommended: <strong className="text-zinc-400">10</strong> for steady pace, <strong className="text-zinc-400">20+</strong> for intensive practice.
           </p>
         </div>
 
@@ -142,9 +142,9 @@ export const Settings: React.FC = () => {
             <div>
               <p className="text-sm font-bold text-zinc-200 flex items-center gap-1.5">
                 <Volume2 className="w-4 h-4 text-zinc-400" />
-                Konuşma Hızı (TTS)
+                Speech Rate (TTS)
               </p>
-              <p className="text-xs text-zinc-500">İngilizce telaffuz hızını ayarla</p>
+              <p className="text-xs text-zinc-500">Adjust English pronunciation speed</p>
             </div>
             <span className="text-sm font-mono font-bold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-lg">
               {settings.speechRate.toFixed(2)}×
@@ -160,9 +160,9 @@ export const Settings: React.FC = () => {
             className="w-full h-2 accent-indigo-500 cursor-pointer rounded-full"
           />
           <div className="flex justify-between text-[10px] text-zinc-600 mt-1">
-            <span>Yavaş (0.6×)</span>
+            <span>Slow (0.6×)</span>
             <span>Normal (0.95×)</span>
-            <span>Hızlı (1.2×)</span>
+            <span>Fast (1.2×)</span>
           </div>
         </div>
 
@@ -171,8 +171,8 @@ export const Settings: React.FC = () => {
         {/* Auto audio */}
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-bold text-zinc-200">Otomatik Telaffuz</p>
-            <p className="text-xs text-zinc-500">Cevap gösterilince otomatik seslendir</p>
+            <p className="text-sm font-bold text-zinc-200">Auto Audio</p>
+            <p className="text-xs text-zinc-500">Automatically play pronunciation when answer is revealed</p>
           </div>
           <input
             type="checkbox"
@@ -188,8 +188,8 @@ export const Settings: React.FC = () => {
         {/* Sound effects */}
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-bold text-zinc-200">Ses Efektleri</p>
-            <p className="text-xs text-zinc-500">Doğru/yanlış cevap sesleri</p>
+            <p className="text-sm font-bold text-zinc-200">Sound Effects</p>
+            <p className="text-xs text-zinc-500">Audio cues for correct/incorrect answers</p>
           </div>
           <input
             type="checkbox"
@@ -206,28 +206,28 @@ export const Settings: React.FC = () => {
         <div>
           <h2 className="text-base font-bold text-white flex items-center gap-2 mb-1">
             <FileJson className="w-5 h-5 text-indigo-400" />
-            Veri Yedekleme
+            Data Backup
           </h2>
           <p className="text-xs text-zinc-500 leading-relaxed">
-            Tüm ilerleme ve SM-2 aralıkların tarayıcı <code className="text-indigo-300 bg-indigo-500/10 px-1 rounded">localStorage</code>'da saklanır.
-            Bilgisayar değiştirmeden önce dışa aktar!
+            All progress and SM-2 intervals are stored in your browser's <code className="text-indigo-300 bg-indigo-500/10 px-1 rounded">localStorage</code>.
+            Export your data before switching devices!
           </p>
         </div>
 
         {/* Storage stats */}
         <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-[#070B14] border border-[#1E2D45]">
           <div>
-            <p className="text-[10px] uppercase font-bold text-zinc-500 mb-0.5">Toplam Tekrar</p>
+            <p className="text-[10px] uppercase font-bold text-zinc-500 mb-0.5">Total Reviews</p>
             <p className="text-xl font-bold font-mono text-white">{reviewLogs.length}</p>
           </div>
           <div>
-            <p className="text-[10px] uppercase font-bold text-zinc-500 mb-0.5">Aktif Kart</p>
+            <p className="text-[10px] uppercase font-bold text-zinc-500 mb-0.5">Active Cards</p>
             <p className="text-xl font-bold font-mono text-indigo-400">{Object.keys(srsItems).length}</p>
           </div>
           <div>
-            <p className="text-[10px] uppercase font-bold text-zinc-500 mb-0.5">Depolama</p>
+            <p className="text-[10px] uppercase font-bold text-zinc-500 mb-0.5">Storage</p>
             <p className="text-xs font-semibold text-emerald-400 flex items-center gap-1 mt-1.5">
-              <ShieldCheck className="w-3.5 h-3.5" /> Aktif
+              <ShieldCheck className="w-3.5 h-3.5" /> Active
             </p>
           </div>
         </div>
@@ -239,7 +239,7 @@ export const Settings: React.FC = () => {
             className="flex-1 px-4 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-md shadow-indigo-600/25"
           >
             <Download className="w-4 h-4" />
-            Dışa Aktar (JSON)
+            Export (JSON)
           </button>
 
           <input ref={fileRef} type="file" accept=".json" onChange={handleImport} className="hidden" />
@@ -249,7 +249,7 @@ export const Settings: React.FC = () => {
             className="flex-1 px-4 py-3 rounded-xl border border-[#1E2D45] bg-[#131D2E] hover:bg-[#1A2539] text-zinc-200 font-bold text-sm transition-all flex items-center justify-center gap-2"
           >
             <Upload className="w-4 h-4" />
-            İçe Aktar (JSON)
+            Import (JSON)
           </button>
         </div>
       </div>
@@ -258,11 +258,11 @@ export const Settings: React.FC = () => {
       <div className="rounded-2xl border border-rose-900/40 bg-rose-950/15 p-5 sm:p-6 space-y-4">
         <div className="flex items-center gap-2 text-rose-400">
           <Trash2 className="w-5 h-5" />
-          <h2 className="text-base font-bold">İlerlemeyi Sıfırla</h2>
+          <h2 className="text-base font-bold">Reset Progress</h2>
         </div>
         <p className="text-xs text-rose-200/70 leading-relaxed">
-          Tüm SM-2 geçmişi, tekrar aralıkları ve seri kayıtları silinir.
-          Kollokasyon tanımları kalır. Bu işlem geri alınamaz!
+          All SM-2 review history, intervals, and streaks will be cleared.
+          Collocations will remain intact. This action cannot be undone!
         </p>
 
         {!showReset ? (
@@ -271,12 +271,12 @@ export const Settings: React.FC = () => {
             onClick={() => setShowReset(true)}
             className="px-4 py-2.5 rounded-xl border border-rose-800/50 bg-rose-950/40 hover:bg-rose-900/50 text-rose-300 text-sm font-bold transition-all"
           >
-            Sıfırla...
+            Reset Progress...
           </button>
         ) : (
           <div className="p-4 rounded-xl bg-rose-950/60 border border-rose-700/50 space-y-3">
             <p className="text-sm font-bold text-rose-200">
-              ⚠️ Emin misin? JSON yedeğin yoksa bu işlem kalıcıdır!
+              ⚠️ Are you sure? If you don't have a JSON backup, this cannot be reversed!
             </p>
             <div className="flex gap-2">
               <button
@@ -284,13 +284,13 @@ export const Settings: React.FC = () => {
                 onClick={handleReset}
                 className="px-4 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm"
               >
-                Evet, Sıfırla
+                Yes, Reset All
               </button>
               <button
                 onClick={() => setShowReset(false)}
                 className="px-4 py-2 rounded-lg bg-[#131D2E] hover:bg-[#1A2539] text-zinc-300 font-bold text-sm"
               >
-                İptal
+                Cancel
               </button>
             </div>
           </div>

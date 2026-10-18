@@ -20,6 +20,7 @@ import {
   AlertCircle,
   Link2,
   Lightbulb,
+  Languages,
 } from 'lucide-react';
 
 export const QuizView: React.FC = () => {
@@ -33,12 +34,11 @@ export const QuizView: React.FC = () => {
   const navState = location.state as { unitNumber?: number; level?: string } | undefined;
   const initialUnit = navState?.unitNumber;
 
-  // Collocation type explanations for quiz teaching
   const TYPE_LABELS: Record<string, string> = {
-    'verb-noun': 'Fiil + İsim',
-    'adj-noun': 'Sıfat + İsim',
-    'adv-adj': 'Zarf + Sıfat',
-    'phrase': 'Deyimsel İfade',
+    'verb-noun': 'Verb + Noun',
+    'adj-noun': 'Adjective + Noun',
+    'adv-adj': 'Adverb + Adjective',
+    'phrase': 'Idiomatic Phrase',
   };
 
   const parseCommonMistakes = (mistakes: string[]) =>
@@ -56,6 +56,7 @@ export const QuizView: React.FC = () => {
   const [streak, setStreak] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const [wrongAnswers, setWrongAnswers] = useState<Array<{ q: QuizQuestion; chosen: string }>>([]);
+  const [showTurkish, setShowTurkish] = useState(false);
 
   // Filter pool of collocations
   const pool = useMemo(() => {
@@ -69,12 +70,10 @@ export const QuizView: React.FC = () => {
   const questions = useMemo<QuizQuestion[]>(() => {
     if (pool.length === 0) return [];
 
-    // Shuffle pool
     const shuffled = [...pool].sort(() => Math.random() - 0.5);
     const selected = shuffled.slice(0, Math.min(10, pool.length));
 
     return selected.map((col, idx) => {
-      // Pick a random example from the available examples so questions vary every time
       const exampleList = col.examples && col.examples.length > 0 ? col.examples : [];
       const randomExample = exampleList.length > 0
         ? exampleList[Math.floor(Math.random() * exampleList.length)]
@@ -86,17 +85,11 @@ export const QuizView: React.FC = () => {
         missingWord: col.chunk,
       };
 
-      // Correct answer is the chunk
       const correct = col.chunk;
-
-      // Smart distractors:
-      // 1. From commonMistakes if available
-      // 2. From other collocations in same category or type
       const distractors = new Set<string>();
 
       if (col.commonMistakes && col.commonMistakes.length > 0) {
         for (const mistake of col.commonMistakes) {
-          // clean up mistake string e.g. "do a mistake"
           const clean = mistake.split('(')[0].trim();
           if (clean && clean.toLowerCase() !== correct.toLowerCase()) {
             distractors.add(clean);
@@ -104,7 +97,6 @@ export const QuizView: React.FC = () => {
         }
       }
 
-      // Fill remaining distractors from other collocations in the pool
       const otherCols = pool.filter((c) => c.id !== col.id);
       const shuffledOthers = [...otherCols].sort(() => Math.random() - 0.5);
 
@@ -115,7 +107,6 @@ export const QuizView: React.FC = () => {
         }
       }
 
-      // Fallback distractors if pool is small
       const fallbackChoices = ['make an effort', 'do your best', 'take a look', 'pay attention', 'keep in touch', 'cast doubt'];
       for (const fb of fallbackChoices) {
         if (distractors.size >= 3) break;
@@ -128,9 +119,9 @@ export const QuizView: React.FC = () => {
         () => Math.random() - 0.5
       );
 
-      const explanation = col.commonMistakes.length > 0
-        ? `İpucu (${col.unitTitle || 'Kitap Notu'}): Doğru kullanım "${correct}" şeklindedir. "${col.commonMistakes.join(', ')}" demek doğallıktan uzaktır veya yanlıştır.`
-        : `İpucu (${col.unitTitle || 'Kitap Notu'}): Doğru kollokasyon "${correct}" - Anlamı: ${col.meaning}`;
+      const explanation = col.commonMistakes && col.commonMistakes.length > 0
+        ? `Note (${col.unitTitle || 'Curriculum'}): The natural collocation is "${correct}". Avoid non-standard forms like "${col.commonMistakes.join(', ')}".`
+        : `Note (${col.unitTitle || 'Curriculum'}): Correct collocation is "${correct}" — Meaning: ${col.meaning}`;
 
       return {
         id: `quiz_${idx}_${col.id}`,
@@ -158,18 +149,17 @@ export const QuizView: React.FC = () => {
       setScore((s) => s + 1);
       setStreak((st) => st + 1);
       playChime('success');
-      // Record SRS review (Grade 3 - Good)
       recordReview(currentQ.collocation.id, 3, 3000);
     } else {
       setStreak(0);
       playChime('again');
       setWrongAnswers((prev) => [...prev, { q: currentQ, chosen: opt }]);
-      // Record SRS review (Grade 1 - Again)
       recordReview(currentQ.collocation.id, 1, 3000);
     }
   };
 
   const handleNext = () => {
+    setShowTurkish(false);
     if (currentIndex + 1 < questions.length) {
       setCurrentIndex((i) => i + 1);
       setSelectedOption(null);
@@ -181,10 +171,9 @@ export const QuizView: React.FC = () => {
     }
   };
 
-  // Keyboard navigation for Quiz (1-4 / A-D to select, Enter to proceed)
+  // Keyboard navigation
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Don't capture when typing in an input or select
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLSelectElement || e.target instanceof HTMLTextAreaElement) {
         return;
       }
@@ -207,6 +196,9 @@ export const QuizView: React.FC = () => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           handleNext();
+        } else if (e.key === 't' || e.key === 'T') {
+          e.preventDefault();
+          setShowTurkish((prev) => !prev);
         }
       }
     };
@@ -219,6 +211,7 @@ export const QuizView: React.FC = () => {
     setCurrentIndex(0);
     setSelectedOption(null);
     setIsAnswered(false);
+    setShowTurkish(false);
     setScore(0);
     setStreak(0);
     setIsComplete(false);
@@ -236,7 +229,7 @@ export const QuizView: React.FC = () => {
           className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-400 hover:text-white transition-colors px-2.5 py-1.5 rounded-xl hover:bg-[#131D2E] shrink-0"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span className="hidden sm:inline">Geri</span>
+          <span className="hidden sm:inline">Back</span>
         </button>
 
         {/* Unified Mobile-friendly Controls */}
@@ -253,10 +246,10 @@ export const QuizView: React.FC = () => {
                   ? 'bg-indigo-600 text-white shadow-sm'
                   : 'text-zinc-400 hover:text-white'
               }`}
-              title="Boşluk Doldurma Testi"
+              title="Cloze sentence completion quiz"
             >
               <FileCheck2 className="w-3.5 h-3.5" />
-              <span>Boşluk</span>
+              <span>Cloze</span>
             </button>
             <button
               onClick={() => {
@@ -268,10 +261,10 @@ export const QuizView: React.FC = () => {
                   ? 'bg-gradient-to-r from-amber-600 to-indigo-600 text-white shadow-sm'
                   : 'text-zinc-400 hover:text-white'
               }`}
-              title="Türkçe Anlamdan Hatırlama Testi"
+              title="Meaning to collocation recall test"
             >
               <Brain className="w-3.5 h-3.5" />
-              <span>Hatırla</span>
+              <span>Recall</span>
             </button>
           </div>
 
@@ -287,7 +280,7 @@ export const QuizView: React.FC = () => {
               }}
               className="w-full bg-transparent text-[11px] font-bold text-zinc-200 focus:outline-none cursor-pointer truncate"
             >
-              <option value="all">Tüm Üniteler</option>
+              <option value="all">All Units</option>
               {unitSummaries.map((u) => (
                 <option key={`${u.level}_${u.unitNumber}`} value={u.unitNumber} className="bg-[#111927]">
                   U{u.unitNumber}: {u.unitTitle}
@@ -303,15 +296,15 @@ export const QuizView: React.FC = () => {
           {/* Progress and Streak */}
           <div className="flex items-center justify-between text-xs font-semibold text-zinc-400">
             <span>
-              Soru <strong className="text-white">{currentIndex + 1}</strong> / {questions.length}
+              Question <strong className="text-white">{currentIndex + 1}</strong> / {questions.length}
             </span>
             <div className="flex items-center gap-3">
               {streak > 1 && (
                 <span className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 text-[11px] font-black animate-pulse">
-                  🔥 {streak} Seri!
+                  🔥 {streak} Streak!
                 </span>
               )}
-              <span className="text-emerald-400">Puan: {score}</span>
+              <span className="text-emerald-400">Score: {score}</span>
             </div>
           </div>
 
@@ -332,10 +325,10 @@ export const QuizView: React.FC = () => {
               <button
                 onClick={() => speakCollocation(currentQ.sentence)}
                 className="flex items-center gap-1 text-xs text-zinc-400 hover:text-cyan-400 transition-colors p-1.5 rounded-xl hover:bg-[#162235]"
-                title="Cümleyi seslendir"
+                title="Pronounce sentence"
               >
                 <Volume2 className="w-4 h-4" />
-                <span className="hidden sm:inline">Sesli Dinle</span>
+                <span className="hidden sm:inline">Listen</span>
               </button>
             </div>
 
@@ -345,13 +338,27 @@ export const QuizView: React.FC = () => {
                 <div className="space-y-3">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30">
                     <Brain className="w-3.5 h-3.5" />
-                    Bu Türkçe anlama gelen İngilizce kollokasyon hangisidir?
+                    Which English collocation matches this meaning?
                   </span>
                   <div className="text-xl sm:text-2xl font-black text-white leading-snug max-w-xl mx-auto">
                     "{currentQ.collocation.meaning}"
                   </div>
+                  {/* Optional Turkish in Recall mode */}
+                  {currentQ.collocation.meaningTr && (
+                    <button
+                      onClick={() => setShowTurkish(!showTurkish)}
+                      className="text-xs text-zinc-400 hover:text-cyan-300 underline"
+                    >
+                      {showTurkish ? 'Hide Turkish' : '🇹🇷 Türkçe Göster'}
+                    </button>
+                  )}
+                  {showTurkish && currentQ.collocation.meaningTr && (
+                    <div className="text-xs text-indigo-300 bg-indigo-500/10 p-2 rounded-xl max-w-md mx-auto">
+                      <strong>Türkçe:</strong> {currentQ.collocation.meaningTr}
+                    </div>
+                  )}
                   <div className="text-xs sm:text-sm text-zinc-300 italic bg-[#0F172A] p-3.5 rounded-2xl border border-[#1E2D45]/70 max-w-xl mx-auto">
-                    <span className="text-[10px] font-bold text-zinc-500 uppercase not-italic block mb-1">Cümle İpucu:</span>
+                    <span className="text-[10px] font-bold text-zinc-500 uppercase not-italic block mb-1">Sentence Context:</span>
                     {currentQ.clozeSentence.split('___').map((part, i, arr) => (
                       <React.Fragment key={i}>
                         <span>{part}</span>
@@ -379,7 +386,7 @@ export const QuizView: React.FC = () => {
                     ))}
                   </div>
                   <p className="text-xs text-zinc-400 mt-3 font-medium">
-                    Boşluğa en doğal ve doğru uyan İngilizce kollokasyonu seçin
+                    Choose the natural collocation that fits the blank
                   </p>
                 </div>
               )}
@@ -430,35 +437,58 @@ export const QuizView: React.FC = () => {
               const col = currentQ.collocation;
               const parsed = parseCommonMistakes(col.commonMistakes || []);
               const typeLabel = TYPE_LABELS[col.type] || col.type;
+              const trMeaning = col.meaningTr || (col.meaning.match(/[çğıöşüÇĞİÖŞÜ]/) ? col.meaning : null);
+
               return (
                 <div className="p-4 rounded-2xl bg-[#0F172A] border border-[#1E2D45] space-y-3 animate-fadeIn">
                   {/* Result + meaning */}
-                  <div className="flex items-start gap-2.5">
-                    {isRight
-                      ? <Sparkles className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                      : <AlertCircle className="w-5 h-5 text-rose-400 shrink-0 mt-0.5" />}
-                    <div className="flex-1 min-w-0">
-                      <p className={`text-sm font-bold mb-0.5 ${isRight ? 'text-emerald-300' : 'text-rose-300'}`}>
-                        {isRight ? '✅ Doğru!' : '❌ Yanlış — öğretici açıklama:'}
-                      </p>
-                      <p className="text-xs text-zinc-300 leading-relaxed">
-                        <strong className="text-white">{col.chunk}</strong>{' '}
-                        <span className="text-zinc-400">—</span>{' '}
-                        {col.meaning}
-                      </p>
+                  <div className="flex items-start justify-between gap-2.5">
+                    <div className="flex items-start gap-2.5 flex-1 min-w-0">
+                      {isRight
+                        ? <Sparkles className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                        : <AlertCircle className="w-5 h-5 text-rose-400 shrink-0 mt-0.5" />}
+                      <div className="flex-1 min-w-0">
+                        <p className={`text-sm font-bold mb-0.5 ${isRight ? 'text-emerald-300' : 'text-rose-300'}`}>
+                          {isRight ? '✅ Correct!' : '❌ Incorrect — Explanatory Insight:'}
+                        </p>
+                        <p className="text-xs text-zinc-300 leading-relaxed">
+                          <strong className="text-white">{col.chunk}</strong>{' '}
+                          <span className="text-zinc-400">—</span>{' '}
+                          {col.meaning}
+                        </p>
+                      </div>
                     </div>
+
+                    {/* Show TR Button */}
+                    {trMeaning && (
+                      <button
+                        onClick={() => setShowTurkish(!showTurkish)}
+                        className="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-[10px] font-bold bg-[#162235] text-zinc-400 hover:text-cyan-300 border border-[#1E2D45] shrink-0"
+                      >
+                        <Languages className="w-3 h-3" />
+                        <span>{showTurkish ? 'Hide TR' : '🇹🇷 Show TR'}</span>
+                      </button>
+                    )}
                   </div>
+
+                  {/* Show Turkish Translation */}
+                  {showTurkish && trMeaning && (
+                    <div className="p-2.5 rounded-xl bg-indigo-950/40 border border-indigo-500/25 text-xs text-indigo-200">
+                      <span className="font-bold text-indigo-400 mr-1.5 uppercase text-[10px]">Türkçe:</span>
+                      {trMeaning}
+                    </div>
+                  )}
 
                   {/* Collocation type tip */}
                   <div className="flex items-start gap-2 p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-xs">
                     <Link2 className="w-3.5 h-3.5 text-indigo-400 shrink-0 mt-0.5" />
                     <div className="text-indigo-200">
                       <span className="font-bold text-indigo-300">{typeLabel}: </span>
-                      {col.type === 'verb-noun' && 'Fiil ve nesnesini bir bütün olarak ezberlemelisin; bunlar ayrılmaz bir çift.'}
-                      {col.type === 'adj-noun' && 'Sıfat her zaman isimden önce gelir; Türkçe eşdeğerinden farklı eşleşme olabilir.'}
-                      {col.type === 'adv-adj' && 'Zarf, sıfatın güçlendiricisidir. Birlikte "bir bütün" gibi öğren.'}
-                      {col.type === 'phrase' && 'Kelime kelime çevirme; bu ifadeyi deyimsel bir bütün olarak kullan.'}
-                      {!['verb-noun','adj-noun','adv-adj','phrase'].includes(col.type) && 'Bu kollokasyon tipini bir bütün olarak öğren.'}
+                      {col.type === 'verb-noun' && 'Always memorize the verb and its noun as a cohesive pair.'}
+                      {col.type === 'adj-noun' && 'The adjective always precedes the noun; native pairs often differ from literal translations.'}
+                      {col.type === 'adv-adj' && 'The adverb intensifies the adjective. Acquire them as a single expression.'}
+                      {col.type === 'phrase' && 'Do not translate word-for-word; use this as a full idiomatic expression.'}
+                      {!['verb-noun','adj-noun','adv-adj','phrase'].includes(col.type) && 'Acquire this collocation pattern as an indivisible unit.'}
                     </div>
                   </div>
 
@@ -467,7 +497,7 @@ export const QuizView: React.FC = () => {
                     <div className="p-2.5 rounded-xl bg-rose-500/10 border border-rose-500/20 space-y-2">
                       <p className="text-[10px] font-bold uppercase tracking-wider text-rose-400 flex items-center gap-1">
                         <AlertCircle className="w-3 h-3" />
-                        Neden yanlış? — Sık yapılan hatalar
+                        Why is this wrong? — Common Learner Pitfalls
                       </p>
                       {parsed.map((m, i) => (
                         <div key={i} className="flex items-start gap-2 text-xs">
@@ -484,7 +514,7 @@ export const QuizView: React.FC = () => {
 
                   {/* Full sentence context */}
                   <div className="p-3 bg-[#0B101C] rounded-xl border border-[#1E2D45] text-xs text-zinc-200">
-                    <span className="text-[10px] font-bold text-zinc-500 uppercase block mb-1">Tam Cümle &amp; Kalıp:</span>
+                    <span className="text-[10px] font-bold text-zinc-500 uppercase block mb-1">Full Sentence &amp; Pattern:</span>
                     "{renderSentenceWithHighlight(currentQ.sentence, currentQ.correctAnswer)}"
                   </div>
 
@@ -493,7 +523,7 @@ export const QuizView: React.FC = () => {
                     <div className="flex items-center gap-1.5 flex-wrap">
                       <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-1">
                         <Lightbulb className="w-3 h-3" />
-                        Alternatifler:
+                        Alternatives:
                       </span>
                       {col.synonyms.slice(0, 3).map((s, i) => (
                         <span key={i} className="px-2 py-0.5 rounded-md text-[11px] bg-cyan-500/10 text-cyan-300 border border-cyan-500/25">{s}</span>
@@ -507,14 +537,14 @@ export const QuizView: React.FC = () => {
                       className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-[#162235] sm:bg-transparent text-xs text-indigo-400 hover:text-indigo-300 font-bold active:scale-95"
                     >
                       <Volume2 className="w-4 h-4" />
-                      Kollokasyonu Dinle
+                      Listen to Collocation
                     </button>
 
                     <button
                       onClick={handleNext}
                       className="flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white shadow-md shadow-indigo-600/30 transition-all active:scale-95"
                     >
-                      <span>{currentIndex + 1 < questions.length ? 'Sonraki Soru' : 'Sonuçları Gör'}</span>
+                      <span>{currentIndex + 1 < questions.length ? 'Next Question' : 'View Results'}</span>
                       <kbd className="hidden sm:inline-block px-1.5 py-0.2 rounded bg-black/25 text-[10px] font-mono">
                         Enter ↵
                       </kbd>
@@ -534,23 +564,23 @@ export const QuizView: React.FC = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-extrabold text-white">Test Tamamlandı!</h2>
+            <h2 className="text-2xl font-extrabold text-white">Quiz Completed! 🎉</h2>
             <p className="text-sm text-zinc-400 mt-1">
-              Harika pratik! Kitaptaki kollokasyonları pekiştirdiniz.
+              Outstanding practice! You've strengthened your collocation fluency.
             </p>
           </div>
 
           <div className="grid grid-cols-3 gap-3 max-w-sm mx-auto bg-[#0F172A] p-4 rounded-2xl border border-[#1E2D45]">
             <div>
-              <div className="text-xs text-zinc-400">Doğru</div>
+              <div className="text-xs text-zinc-400">Score</div>
               <div className="text-xl font-extrabold text-emerald-400 mt-0.5">{score}</div>
             </div>
             <div>
-              <div className="text-xs text-zinc-400">Toplam</div>
+              <div className="text-xs text-zinc-400">Total</div>
               <div className="text-xl font-extrabold text-white mt-0.5">{questions.length}</div>
             </div>
             <div>
-              <div className="text-xs text-zinc-400">Başarı</div>
+              <div className="text-xs text-zinc-400">Accuracy</div>
               <div className="text-xl font-extrabold text-cyan-400 mt-0.5">
                 {questions.length > 0 ? `${Math.round((score / questions.length) * 100)}%` : '100%'}
               </div>
@@ -561,13 +591,13 @@ export const QuizView: React.FC = () => {
           {wrongAnswers.length > 0 && (
             <div className="text-left space-y-3 bg-[#0F172A]/70 p-4 rounded-2xl border border-[#1E2D45]">
               <div className="text-xs font-bold text-rose-400 uppercase tracking-wider">
-                Gözden Geçirilecekler ({wrongAnswers.length})
+                Items to Review ({wrongAnswers.length})
               </div>
               <div className="space-y-2 max-h-48 overflow-y-auto">
                 {wrongAnswers.map(({ q, chosen }) => (
                   <div key={q.id} className="text-xs text-zinc-300 p-2 rounded-xl bg-[#162235]">
                     <div>
-                      Doğru: <strong className="text-emerald-300">{q.correctAnswer}</strong> (Seçilen:{' '}
+                      Target: <strong className="text-emerald-300">{q.correctAnswer}</strong> (Chosen:{' '}
                       <span className="line-through text-rose-400">{chosen}</span>)
                     </div>
                     <div className="text-[11px] text-zinc-400 italic mt-0.5">"{q.sentence}"</div>
@@ -583,7 +613,7 @@ export const QuizView: React.FC = () => {
               className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold bg-[#162235] hover:bg-[#1C2C45] text-zinc-200 border border-[#1E2D45] transition-all"
             >
               <RotateCcw className="w-4 h-4" />
-              Yeniden Çöz
+              Retake Quiz
             </button>
 
             <button
@@ -591,7 +621,7 @@ export const QuizView: React.FC = () => {
               className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-md shadow-indigo-600/30"
             >
               <FileCheck2 className="w-4 h-4" />
-              Diğer Ünitelere Git
+              Explore Units
             </button>
           </div>
         </div>

@@ -16,6 +16,7 @@ import {
   AlertCircle,
   Lightbulb,
   Link2,
+  Languages,
 } from 'lucide-react';
 
 interface FlashcardProps {
@@ -30,16 +31,16 @@ interface FlashcardProps {
   onStudyRelated?: (chunk: string) => void;
 }
 
-// Maps grammatical type codes to human-readable explanations
+// Maps grammatical type codes to human-readable explanations in English
 const TYPE_EXPLANATIONS: Record<string, { label: string; tip: string; color: string }> = {
-  'verb-noun':  { label: 'Fiil + İsim',   tip: 'Fiil ve nesnesini birlikte ezberle — bunlar ayrılmaz ikilidir.',           color: 'text-violet-300 bg-violet-500/10 border-violet-500/25' },
-  'adj-noun':   { label: 'Sıfat + İsim',  tip: "Sıfat her zaman isimden önce gelir; Türkçe'den farklı eşleşmeler olabilir.", color: 'text-sky-300 bg-sky-500/10 border-sky-500/25' },
-  'adv-adj':    { label: 'Zarf + Sıfat',  tip: 'Zarf, sıfatın derecesini güçlendirir. Örn: "deeply concerned".',             color: 'text-teal-300 bg-teal-500/10 border-teal-500/25' },
-  'phrase':     { label: 'Deyimsel İfade', tip: 'Bu ifadeyi kelime kelime çevirme; bir bütün olarak anla ve kullan.',          color: 'text-amber-300 bg-amber-500/10 border-amber-500/25' },
+  'verb-noun':  { label: 'Verb + Noun',        tip: 'Learn the verb and noun together as an indivisible unit.', color: 'text-violet-300 bg-violet-500/10 border-violet-500/25' },
+  'adj-noun':   { label: 'Adjective + Noun',   tip: 'The adjective always precedes the noun; native pairings often differ from Turkish.', color: 'text-sky-300 bg-sky-500/10 border-sky-500/25' },
+  'adv-adj':    { label: 'Adverb + Adjective', tip: 'The adverb intensifies the adjective. E.g., "deeply concerned".', color: 'text-teal-300 bg-teal-500/10 border-teal-500/25' },
+  'phrase':     { label: 'Idiomatic Phrase',   tip: 'Do not translate word-for-word; acquire it as a complete expression.', color: 'text-amber-300 bg-amber-500/10 border-amber-500/25' },
 };
 
 const getTypeInfo = (type: string) =>
-  TYPE_EXPLANATIONS[type] ?? { label: type, tip: 'Bu kollokasyon tipini bir bütün olarak öğren.', color: 'text-zinc-300 bg-zinc-500/10 border-zinc-500/25' };
+  TYPE_EXPLANATIONS[type] ?? { label: type, tip: 'Learn this collocation pattern as a whole.', color: 'text-zinc-300 bg-zinc-500/10 border-zinc-500/25' };
 
 /** Extracts the core wrong usage from a commonMistake string like "make research (açıklama)" */
 const extractMistakeCore = (m: string): string => m.split('(')[0].trim();
@@ -50,7 +51,7 @@ const extractMistakeExplanation = (m: string): string => {
   return match ? match[1] : '';
 };
 
-// Grade button configs — plain language labels
+// Grade button configs — international SRS labels
 const GRADE_CONFIG: {
   grade: Grade;
   label: string;
@@ -61,15 +62,15 @@ const GRADE_CONFIG: {
 }[] = [
   {
     grade: 1,
-    label: 'Bilmedim',
-    sublabel: '10 dk sonra tekrar',
+    label: 'Again',
+    sublabel: 'in 10 min',
     emoji: '😣',
     colorClass: 'border-rose-500/40 bg-rose-500/10 hover:bg-rose-500/20 text-rose-200',
     hotkey: '1',
   },
   {
     grade: 2,
-    label: 'Zor geldi',
+    label: 'Hard',
     sublabel: '',
     emoji: '😓',
     colorClass: 'border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-amber-200',
@@ -77,7 +78,7 @@ const GRADE_CONFIG: {
   },
   {
     grade: 3,
-    label: 'Hallettim',
+    label: 'Good',
     sublabel: '',
     emoji: '😊',
     colorClass: 'border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-200 ring-1 ring-emerald-500/25',
@@ -85,7 +86,7 @@ const GRADE_CONFIG: {
   },
   {
     grade: 4,
-    label: 'Çok kolay!',
+    label: 'Easy',
     sublabel: '',
     emoji: '🚀',
     colorClass: 'border-cyan-500/40 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-200',
@@ -102,7 +103,6 @@ export const Flashcard: React.FC<FlashcardProps> = ({
   recognitionFirst = false,
   onStudyRelated,
 }) => {
-  // Recognition mode: show the card fully before asking for production
   const isNew = srsItem.repetitionCount === 0;
   const [phase, setPhase] = useState<'recognition' | 'production' | 'feedback'>(
     recognitionFirst && isNew ? 'recognition' : 'production'
@@ -111,21 +111,25 @@ export const Flashcard: React.FC<FlashcardProps> = ({
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showHint, setShowHint] = useState(false);
   const [showTypeInfo, setShowTypeInfo] = useState(false);
-  // 2B: Register awareness state
+  const [showTurkish, setShowTurkish] = useState(false);
+
+  // Register awareness state
   const [registerChoice, setRegisterChoice] = useState<string | null>(null);
   const [showRegisterQ, setShowRegisterQ] = useState(false);
-  // 3A: Sentence production state
+
+  // Sentence production state
   const [ownSentence, setOwnSentence] = useState('');
   const [ownSentenceResult, setOwnSentenceResult] = useState<'ok' | 'missing' | null>(null);
   const [showSentenceBox, setShowSentenceBox] = useState(false);
+
   const startTimeRef = useRef<number>(Date.now());
   const inputRef = useRef<HTMLInputElement>(null);
   const typeInfo = getTypeInfo(collocation.type);
 
   const REGISTER_OPTIONS = [
-    { id: 'daily',    label: 'Günlük Konuşma',  emoji: '💬' },
-    { id: 'work',     label: 'İş / Akademi',      emoji: '💼' },
-    { id: 'writing',  label: 'Yazılı İfade',     emoji: '✍️' },
+    { id: 'daily',    label: 'Everyday Conversation', emoji: '💬' },
+    { id: 'work',     label: 'Work / Academic',        emoji: '💼' },
+    { id: 'writing',  label: 'Formal Writing',         emoji: '✍️' },
   ];
 
   const handleCheckOwnSentence = () => {
@@ -155,6 +159,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
     setIsCorrect(null);
     setShowHint(false);
     setShowTypeInfo(false);
+    setShowTurkish(false);
     setRegisterChoice(null);
     setShowRegisterQ(false);
     setOwnSentence('');
@@ -222,6 +227,12 @@ export const Flashcard: React.FC<FlashcardProps> = ({
         else if (e.key === '3') { e.preventDefault(); submitGrade(3); }
         else if (e.key === '4') { e.preventDefault(); submitGrade(4); }
         else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); submitGrade(3); }
+        else if (e.key === 't' || e.key === 'T') {
+          if (!(e.target instanceof HTMLInputElement)) {
+            e.preventDefault();
+            setShowTurkish((prev) => !prev);
+          }
+        }
       }
     };
     window.addEventListener('keydown', handler);
@@ -243,6 +254,8 @@ export const Flashcard: React.FC<FlashcardProps> = ({
     ));
   };
 
+  const turkishTranslation = collocation.meaningTr || (collocation.meaning.match(/[çğıöşüÇĞİÖŞÜ]/) ? collocation.meaning : null);
+
   return (
     <div className="w-full max-w-2xl mx-auto" aria-live="polite">
       <AnimatePresence mode="wait">
@@ -261,18 +274,18 @@ export const Flashcard: React.FC<FlashcardProps> = ({
               <div className="flex items-center gap-1.5 flex-wrap">
                 <span className="px-2.5 py-1 text-xs font-bold rounded-lg bg-emerald-500/15 text-emerald-300 border border-emerald-500/25 flex items-center gap-1">
                   <BookOpen className="w-3 h-3" />
-                  Yeni Kelime
+                  New Item
                 </span>
                 <span className="px-2.5 py-1 text-xs font-bold rounded-lg bg-indigo-500/15 text-indigo-300 border border-indigo-500/25">
                   {collocation.cefrLevel}
                 </span>
               </div>
-              <span className="text-[10px] text-zinc-500 font-mono">Adım 1 / 2: Tanıma</span>
+              <span className="text-[10px] text-zinc-500 font-mono">Step 1 / 2: Recognition</span>
             </div>
 
             {/* Instruction */}
             <p className="text-xs font-bold uppercase tracking-wider text-zinc-500 mb-3">
-              👁️ Bu kollokasyonu incele ve seslendir
+              👁️ Study this collocation & pronounce it aloud
             </p>
 
             {/* The collocation chunk — large, prominent */}
@@ -280,7 +293,31 @@ export const Flashcard: React.FC<FlashcardProps> = ({
               <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
                 {collocation.chunk}
               </div>
-              <div className="text-sm text-zinc-300">{collocation.meaning}</div>
+              <div className="text-sm text-zinc-300 max-w-lg mx-auto leading-relaxed">
+                {collocation.meaning}
+              </div>
+
+              {/* Show Turkish Toggle */}
+              {turkishTranslation && (
+                <div className="mt-3">
+                  <button
+                    onClick={() => setShowTurkish(!showTurkish)}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#131D2E] text-zinc-400 hover:text-cyan-300 border border-[#1E2D45] transition-all"
+                  >
+                    <Languages className="w-3.5 h-3.5" />
+                    <span>{showTurkish ? 'Hide Turkish' : '🇹🇷 Türkçe Göster'}</span>
+                  </button>
+                  {showTurkish && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-2 text-xs text-indigo-300 bg-indigo-500/10 py-1.5 px-3 rounded-lg border border-indigo-500/20 max-w-md mx-auto"
+                    >
+                      {turkishTranslation}
+                    </motion.p>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Type explanation */}
@@ -290,7 +327,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
             >
               <Link2 className="w-3.5 h-3.5 mt-0.5 shrink-0" />
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider">Tip: {typeInfo.label}</span>
+                <span className="text-[11px] font-bold uppercase tracking-wider">Type: {typeInfo.label}</span>
                 {showTypeInfo && (
                   <p className="text-xs mt-1 opacity-90">{typeInfo.tip}</p>
                 )}
@@ -299,18 +336,18 @@ export const Flashcard: React.FC<FlashcardProps> = ({
 
             {/* Example sentence */}
             <div className="mb-5 p-3.5 rounded-xl bg-[#070B14] border border-[#1E2D45]">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 mb-1.5">Örnek Kullanım</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 mb-1.5">Contextual Example</p>
               <p className="text-sm text-zinc-200 leading-relaxed italic">
                 "{renderSentenceWithHighlight(primaryExample.sentence, collocation.chunk)}"
               </p>
             </div>
 
             {/* Common mistakes preview */}
-            {collocation.commonMistakes?.length > 0 && (
+            {collocation.commonMistakes && collocation.commonMistakes.length > 0 && (
               <div className="mb-5 p-3.5 rounded-xl bg-rose-500/8 border border-rose-500/15">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-rose-400 mb-2 flex items-center gap-1">
                   <AlertCircle className="w-3 h-3" />
-                  Dikkat: Sık Yapılan Hatalar
+                  Watch out: Common Mistakes
                 </p>
                 <div className="space-y-1.5">
                   {collocation.commonMistakes.slice(0, 2).map((m, i) => {
@@ -319,7 +356,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                     return (
                       <div key={i} className="text-xs">
                         <span className="text-rose-300 line-through decoration-rose-500 mr-2">{core}</span>
-                        {expl && <span className="text-zinc-400 italic">{expl}</span>}
+                        {expl && <span className="text-zinc-400 italic">({expl})</span>}
                       </div>
                     );
                   })}
@@ -336,7 +373,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
               className="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-md shadow-indigo-600/25 active:scale-95"
             >
               <Eye className="w-4 h-4" />
-              Anladım, Şimdi Uygula
+              Got It — Let's Practice
               <span className="text-[11px] font-mono opacity-70">(Enter)</span>
             </button>
           </motion.div>
@@ -362,7 +399,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                 <button
                   onClick={() => setShowTypeInfo(!showTypeInfo)}
                   className={`px-2.5 py-1 text-xs font-medium rounded-lg border capitalize flex items-center gap-1 transition-all ${typeInfo.color} hover:opacity-80`}
-                  title="Kollokasyon tipi hakkında bilgi al"
+                  title="Learn about this collocation pattern"
                 >
                   <Link2 className="w-3 h-3" />
                   {typeInfo.label}
@@ -371,10 +408,10 @@ export const Flashcard: React.FC<FlashcardProps> = ({
               <button
                 onClick={() => setShowHint(!showHint)}
                 className="flex items-center gap-1 text-xs text-zinc-400 hover:text-indigo-300 transition-colors px-2 py-1 rounded-lg hover:bg-[#131D2E]"
-                title="İpucu göster"
+                title="Toggle meaning hint"
               >
                 <HelpCircle className="w-3.5 h-3.5" />
-                {showHint ? 'İpucu gizle' : 'İpucu'}
+                {showHint ? 'Hide Hint' : 'Hint'}
               </button>
             </div>
 
@@ -398,7 +435,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
 
             {/* Task label */}
             <p className="text-xs font-bold uppercase tracking-wider text-zinc-500 mb-3">
-              📝 Boşluğu doğru kollokasyonla doldurun
+              📝 Fill in the blank with the natural collocation
             </p>
 
             {/* Cloze sentence */}
@@ -417,8 +454,25 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                   exit={{ opacity: 0, height: 0 }}
                   className="mb-5 p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-sm text-amber-200"
                 >
-                  <span className="font-bold text-amber-400">💡 Anlam: </span>
-                  {collocation.meaning}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <span className="font-bold text-amber-400">💡 Meaning: </span>
+                      {collocation.meaning}
+                    </div>
+                    {turkishTranslation && (
+                      <button
+                        onClick={() => setShowTurkish(!showTurkish)}
+                        className="text-xs text-amber-300/80 hover:text-amber-100 underline shrink-0 ml-2"
+                      >
+                        {showTurkish ? 'Hide TR' : '🇹🇷 Show TR'}
+                      </button>
+                    )}
+                  </div>
+                  {showTurkish && turkishTranslation && (
+                    <p className="mt-1.5 pt-1.5 border-t border-amber-500/20 text-xs text-amber-300">
+                      <strong>Türkçe:</strong> {turkishTranslation}
+                    </p>
+                  )}
                 </motion.div>
               )}
             </AnimatePresence>
@@ -432,14 +486,14 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                   value={userInput}
                   onChange={(e) => setUserInput(e.target.value)}
                   onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); if (userInput.trim()) handleCheck(); else handleReveal(); } }}
-                  placeholder="Kollokasyonu yazın..."
+                  placeholder="Type the collocation here..."
                   className="input-base sm:pr-28 text-sm sm:text-base py-3 sm:py-3.5"
                 />
                 <button
                   onClick={() => userInput.trim() ? handleCheck() : handleReveal()}
                   className="w-full sm:w-auto sm:absolute sm:right-2 sm:top-2 sm:bottom-2 px-4 py-3 sm:py-0 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md shadow-indigo-600/25 active:scale-95"
                 >
-                  Kontrol Et
+                  Check
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
@@ -450,11 +504,11 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                   className="flex items-center gap-1.5 hover:text-zinc-200 text-zinc-400 transition-colors py-1.5 active:scale-95"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
-                  Bilmiyorum, cevabı göster
+                  Don't know, reveal answer
                 </button>
                 <span className="hidden sm:flex items-center gap-1.5">
                   <kbd className="px-1.5 py-0.5 bg-[#131D2E] border border-[#1E2D45] rounded text-[10px] font-mono">Enter</kbd>
-                  kontrol eder
+                  to submit
                 </span>
               </div>
             </div>
@@ -485,10 +539,10 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                 )}
                 <span className={`text-sm font-bold ${isCorrect ? 'text-emerald-300' : 'text-rose-300'}`}>
                   {isCorrect
-                    ? '✨ Harika! Tam doğru yazdın.'
+                    ? '✨ Excellent! Spot on.'
                     : userInput
-                    ? `Senin cevabın: "${userInput}"`
-                    : '🔎 Doğru cevabı gör ve sor'}
+                    ? `Your input: "${userInput}"`
+                    : '🔎 Solution & Deep Dive'}
                 </span>
               </div>
               <span className="text-xs text-zinc-500 font-mono shrink-0">{collocation.cefrLevel}</span>
@@ -497,18 +551,45 @@ export const Flashcard: React.FC<FlashcardProps> = ({
             {/* Answer reveal */}
             <div className="flex items-start justify-between gap-4 mb-5 pb-5 border-b border-[#1E2D45]">
               <div className="flex-1 min-w-0">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-indigo-400 mb-1">
-                  Doğru Kollokasyon
-                </p>
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-indigo-400">
+                    Correct Collocation
+                  </p>
+                  {/* Show Turkish Toggle Button */}
+                  {turkishTranslation && (
+                    <button
+                      onClick={() => setShowTurkish(!showTurkish)}
+                      className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-[#131D2E] text-zinc-400 hover:text-cyan-300 border border-[#1E2D45] transition-all"
+                      title="Toggle Turkish translation"
+                    >
+                      <Languages className="w-3 h-3" />
+                      <span>{showTurkish ? 'Hide TR' : '🇹🇷 Türkçe'}</span>
+                    </button>
+                  )}
+                </div>
+
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                   {collocation.chunk}
                 </h2>
                 <p className="mt-2 text-sm text-zinc-300 leading-relaxed">
                   {collocation.meaning}
                 </p>
+
+                {/* Turkish translation reveal */}
+                {showTurkish && turkishTranslation && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 3 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-2 p-2.5 rounded-xl bg-indigo-950/40 border border-indigo-500/25 text-xs text-indigo-200"
+                  >
+                    <span className="font-bold text-indigo-400 mr-1.5 uppercase text-[10px]">Türkçe:</span>
+                    {turkishTranslation}
+                  </motion.div>
+                )}
+
                 {collocation.synonyms && collocation.synonyms.length > 0 && (
                   <div className="flex flex-wrap items-center gap-1.5 mt-2.5">
-                    <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider">Eş Anlamlılar:</span>
+                    <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider">Alternatives:</span>
                     {collocation.synonyms.map((s, idx) => (
                       <span key={idx} className="px-2 py-0.5 rounded-md text-[11px] bg-cyan-500/10 text-cyan-300 border border-cyan-500/25">
                         {s}
@@ -520,7 +601,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
               <button
                 onClick={() => speakCollocation(collocation.chunk, speechRate)}
                 className="shrink-0 p-3 rounded-xl bg-[#131D2E] border border-[#1E2D45] hover:border-indigo-500/40 text-zinc-300 hover:text-indigo-300 transition-all"
-                title="Telaffuzu duy (R)"
+                title="Listen (Hotkey: R)"
               >
                 <Volume2 className="w-5 h-5" />
               </button>
@@ -530,17 +611,17 @@ export const Flashcard: React.FC<FlashcardProps> = ({
             <div className="mb-4 p-3.5 rounded-xl bg-[#070B14] border border-[#1E2D45]">
               <div className="flex items-center justify-between mb-1.5">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-500">
-                  Örnek Cümle {collocation.examples.length > 1 && `(1 / ${collocation.examples.length})`}
+                  Example Sentence {collocation.examples && collocation.examples.length > 1 && `(1 / ${collocation.examples.length})`}
                 </p>
               </div>
               <p className="text-base text-zinc-200 leading-relaxed font-medium">
                 "{renderSentenceWithHighlight(primaryExample.sentence, collocation.chunk)}"
               </p>
 
-              {collocation.examples.length > 1 && (
+              {collocation.examples && collocation.examples.length > 1 && (
                 <div className="mt-3 pt-3 border-t border-[#1E2D45]/60 space-y-1.5">
                   <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-400">
-                    Alternatif Kullanımlar ({collocation.examples.length - 1}):
+                    Additional Contexts ({collocation.examples.length - 1}):
                   </p>
                   {collocation.examples
                     .filter((ex) => ex.sentence !== primaryExample.sentence)
@@ -553,26 +634,24 @@ export const Flashcard: React.FC<FlashcardProps> = ({
               )}
             </div>
 
-            {/* Teaching: Why Wrong panel — richer when user made an error */}
-            {collocation.commonMistakes?.length > 0 && (
+            {/* Teaching: Why Wrong panel */}
+            {collocation.commonMistakes && collocation.commonMistakes.length > 0 && (
               <div className="mb-4 p-3.5 rounded-xl bg-rose-500/8 border border-rose-500/15">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-rose-400 mb-2.5 flex items-center gap-1">
                   <AlertCircle className="w-3 h-3" />
                   {isCorrect === false && userInput
-                    ? '📚 Neden Yanlış? — Öğretici Not'
-                    : 'Sık yapılan hatalar (bunlardan kaçın)'}
+                    ? '📚 Why is this wrong? — Learner Analysis'
+                    : 'Common Mistakes (Avoid These)'}
                 </p>
 
-                {/* If user was wrong, show a personalized "why" explanation */}
                 {isCorrect === false && userInput && (
                   <div className="mb-3 p-2.5 rounded-lg bg-[#0F1829] border border-rose-500/20 text-xs text-zinc-200">
-                    <span className="font-bold text-rose-300">Yazdığın:</span>{' '}
+                    <span className="font-bold text-rose-300">You wrote:</span>{' '}
                     <span className="text-rose-200">"{userInput}"</span>
                     <span className="mx-2 text-zinc-500">→</span>
-                    <span className="font-bold text-emerald-300">Doğrusu:</span>{' '}
+                    <span className="font-bold text-emerald-300">Correct:</span>{' '}
                     <span className="text-emerald-200">"{collocation.chunk}"</span>
                     {(() => {
-                      // Try to find a matching mistake explanation for what the user typed
                       const match = collocation.commonMistakes.find((m) =>
                         extractMistakeCore(m).toLowerCase() === userInput.trim().toLowerCase()
                       );
@@ -603,12 +682,12 @@ export const Flashcard: React.FC<FlashcardProps> = ({
               </div>
             )}
 
-            {/* 2A: Collocates — now navigable */}
-            {collocation.collocates?.length > 0 && (
+            {/* Related Collocates */}
+            {collocation.collocates && collocation.collocates.length > 0 && (
               <div className="mb-5">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 mb-2">
-                  🔗 İlgili Kollokasyonlar
-                  {onStudyRelated && <span className="ml-1 text-indigo-400">(Çalışmak için tıkla)</span>}
+                  🔗 Related Collocations
+                  {onStudyRelated && <span className="ml-1 text-indigo-400">(Click to practice)</span>}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {collocation.collocates.map((c, i) =>
@@ -628,7 +707,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
               </div>
             )}
 
-            {/* 3A: Write Your Own Sentence — Output Hypothesis */}
+            {/* Write Your Own Sentence */}
             <AnimatePresence>
               {!showSentenceBox ? (
                 <button
@@ -636,7 +715,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                   className="w-full mb-4 py-2.5 rounded-xl border border-dashed border-indigo-500/30 text-xs text-indigo-400 hover:bg-indigo-500/5 hover:border-indigo-400/50 transition-all flex items-center justify-center gap-2"
                 >
                   <BookOpen className="w-3.5 h-3.5" />
-                  Kendi cümlenle kullan (isteğe bağlı)
+                  Use in your own sentence (Optional Practice)
                 </button>
               ) : (
                 <motion.div
@@ -648,10 +727,10 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                   <div className="p-3.5 rounded-xl bg-[#0D1525] border border-indigo-500/20">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-indigo-400 mb-2 flex items-center gap-1">
                       <BookOpen className="w-3 h-3" />
-                      Kendi Cümlen — Üretim Pratiği
+                      Active Output Practice
                     </p>
                     <p className="text-[11px] text-zinc-400 mb-2">
-                      <strong className="text-indigo-300">"{collocation.chunk}"</strong> ifadesini kullanarak anlamlı bir cümle yaz:
+                      Write a sentence incorporating <strong className="text-indigo-300">"{collocation.chunk}"</strong>:
                     </p>
                     <div className="flex gap-2">
                       <input
@@ -661,14 +740,14 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                         onKeyDown={(e) => { if (e.key === 'Enter') handleCheckOwnSentence(); }}
                         placeholder={`... ${collocation.chunk} ...`}
                         className="flex-1 input-base text-xs py-2"
-                        aria-label="Kendi cümleni yaz"
+                        aria-label="Write your own sentence"
                       />
                       <button
                         onClick={handleCheckOwnSentence}
                         disabled={!ownSentence.trim()}
                         className="px-3 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white text-xs font-bold transition-all active:scale-95 shrink-0"
                       >
-                        Kontrol
+                        Check
                       </button>
                     </div>
                     <AnimatePresence>
@@ -677,7 +756,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                           initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
                           className="mt-2 text-xs text-emerald-300 flex items-center gap-1"
                         >
-                          <CheckCircle2 className="w-3.5 h-3.5" /> Harika! Kollokasyonu cümleye başarıyla dahil ettin. 🎉
+                          <CheckCircle2 className="w-3.5 h-3.5" /> Well done! You used the collocation accurately. 🎉
                         </motion.p>
                       )}
                       {ownSentenceResult === 'missing' && (
@@ -685,7 +764,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                           initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
                           className="mt-2 text-xs text-amber-300 flex items-center gap-1"
                         >
-                          <AlertCircle className="w-3.5 h-3.5" /> Cümlende <strong className="text-white">"{collocation.chunk}"</strong> tam olarak geçmiyor. Tekrar dene!
+                          <AlertCircle className="w-3.5 h-3.5" /> <strong className="text-white">"{collocation.chunk}"</strong> was not detected in your sentence. Try again!
                         </motion.p>
                       )}
                     </AnimatePresence>
@@ -696,7 +775,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
 
             {/* ─── GRADE BUTTONS ─── */}
             <div>
-              {/* 2B: Register Awareness Question */}
+              {/* Register Awareness Question */}
               <AnimatePresence>
                 {!showRegisterQ ? (
                   <button
@@ -704,7 +783,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                     className="w-full mb-3 py-2 rounded-xl border border-dashed border-zinc-700 text-[11px] text-zinc-500 hover:text-zinc-300 hover:border-zinc-500 transition-all flex items-center justify-center gap-1.5"
                   >
                     <Lightbulb className="w-3 h-3" />
-                    Bu kollokasyonu nerede kullanırsın? (bağlam farkındalığı)
+                    Where would you use this collocation? (Register Awareness)
                   </button>
                 ) : (
                   <motion.div
@@ -715,7 +794,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                   >
                     <p className="text-[10px] font-bold uppercase tracking-wider text-amber-400 mb-2 flex items-center gap-1">
                       <Lightbulb className="w-3 h-3" />
-                      Register Farkındalığı — Bu kolokasyonu nerede kullanırsın?
+                      Register Awareness — Context of Use
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {REGISTER_OPTIONS.map((opt) => (
@@ -735,9 +814,9 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                     </div>
                     {registerChoice && (
                       <p className="mt-2 text-[11px] text-zinc-400 italic">
-                        {registerChoice === 'daily' && `"${collocation.chunk}" günlük konuşmada doğal bir ifadedir.`}
-                        {registerChoice === 'work' && `"${collocation.chunk}" iş ve akademik bağlamlarda sık kullanılır.`}
-                        {registerChoice === 'writing' && `"${collocation.chunk}" yazılı ifadelerde güçlü bir seçimdir.`}
+                        {registerChoice === 'daily' && `"${collocation.chunk}" is widely used in casual, everyday speech.`}
+                        {registerChoice === 'work' && `"${collocation.chunk}" is prominent in workplace and academic discourse.`}
+                        {registerChoice === 'writing' && `"${collocation.chunk}" is a strong choice in formal writing and essays.`}
                       </p>
                     )}
                   </motion.div>
@@ -746,10 +825,10 @@ export const Flashcard: React.FC<FlashcardProps> = ({
 
               <div className="flex items-center justify-between mb-3">
                 <p className="text-xs font-bold text-zinc-300">
-                  Ne kadar iyi hatırladın?
+                  How well did you remember?
                 </p>
                 <span className="text-[11px] text-zinc-500 hidden sm:inline">
-                  Klavye: 1, 2, 3, 4
+                  Keys: 1, 2, 3, 4
                 </span>
               </div>
 
@@ -777,7 +856,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
               </div>
 
               <p className="text-center text-[11px] text-zinc-600 mt-3">
-                💡 <strong className="text-zinc-500">Hallettim</strong> seçersen algoritma optimum aralıkla geri getirecek.
+                💡 Choosing <strong className="text-zinc-500">Good</strong> schedules this card at the optimal spaced interval.
               </p>
             </div>
           </motion.div>
@@ -786,3 +865,4 @@ export const Flashcard: React.FC<FlashcardProps> = ({
     </div>
   );
 };
+export default Flashcard;

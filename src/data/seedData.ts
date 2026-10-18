@@ -1,9 +1,8 @@
 import { Collocation } from '../types';
 
 /**
- * DeepSeek AI Enriched Cambridge English Collocations in Use Corpus
- * Contains 4 to 5 authentic, contextual example sentences per collocation,
- * accurate cloze blanks, nuanced Turkish translations, and common learner mistakes.
+ * Cambridge English Collocations in Use Corpus
+ * Enriched with English definitions (Cambridge B2/C1) and Turkish reference translations.
  * Total Collocations: 642
  */
 export const SEED_COLLOCATIONS: Collocation[] = [
@@ -13,7 +12,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Çok eski çağlardan kalma, tarihi ve kültürel değeri yüksek yapı veya anıt; antik eser, tarihi anıt.",
+    "meaning": "A very old building or structure of great historical or cultural importance.",
     "collocates": [],
     "commonMistakes": [
       "old monument (yaşlı/canlılar için 'old' kullanılır; tarihi yapılar için 'ancient' tercih edilir)",
@@ -54,7 +53,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "ancient structure",
       "historical landmark",
       "age-old monument"
-    ]
+    ],
+    "meaningTr": "Çok eski çağlardan kalma, tarihi ve kültürel değeri yüksek yapı veya anıt; antik eser, tarihi anıt."
   },
   {
     "id": "col_u01_0002",
@@ -62,7 +62,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Ün kazanmak, meşhur olmak; bir kişinin veya şeyin geniş kitlelerce tanınır hale gelmesi.",
+    "meaning": "To become known and recognized by a very large number of people.",
     "collocates": [],
     "commonMistakes": [
       "make famous (birini meşhur etmek anlamına gelir; özne kendisi ünlü oluyorsa 'become famous' kullanılır)",
@@ -103,7 +103,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "rise to fame",
       "achieve celebrity",
       "become well-known"
-    ]
+    ],
+    "meaningTr": "Ün kazanmak, meşhur olmak; bir kişinin veya şeyin geniş kitlelerce tanınır hale gelmesi."
   },
   {
     "id": "col_u01_0003",
@@ -111,7 +112,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Doyurucu, bol miktarda yemek; genellikle akşam yemeği gibi ana öğünler için kullanılan büyük porsiyonlu yemek.",
+    "meaning": "A large, filling meal, especially a main meal such as dinner.",
     "collocates": [],
     "commonMistakes": [
       "large meal (doğru ama 'big meal' daha yaygın ve doğal)",
@@ -152,7 +153,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "substantial meal",
       "large meal",
       "heavy meal"
-    ]
+    ],
+    "meaningTr": "Doyurucu, bol miktarda yemek; genellikle akşam yemeği gibi ana öğünler için kullanılan büyük porsiyonlu yemek."
   },
   {
     "id": "col_u01_0009",
@@ -160,7 +162,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Ağır soğuk algınlığı; şiddetli, kişiyi yatağa düşüren yoğun nezle. 'Heavy' sıfatı 'cold' ile eşdizim oluşturarak soğuk algınlığının ciddiyetini vurgular.",
+    "meaning": "A severe cold that makes you feel very ill and keeps you in bed.",
     "collocates": [],
     "commonMistakes": [
       "strong cold (yanlış; 'heavy cold' veya 'bad cold' kullanılmalı)",
@@ -202,7 +204,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "severe cold",
       "nasty cold",
       "serious cold"
-    ]
+    ],
+    "meaningTr": "Ağır soğuk algınlığı; şiddetli, kişiyi yatağa düşüren yoğun nezle. 'Heavy' sıfatı 'cold' ile eşdizim oluşturarak soğuk algınlığının ciddiyetini vurgular."
   },
   {
     "id": "col_u06_03",
@@ -210,7 +213,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çok büyük hayal kırıklığına uğramış, derin bir şekilde hayal kırıklığı yaşamış; 'bitterly' burada hayal kırıklığının yoğunluğunu vurgular.",
+    "meaning": "Extremely disappointed and deeply upset about something.",
     "collocates": [
       "bitterly cold",
       "bitterly regret",
@@ -256,7 +259,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "extremely disappointed",
       "profoundly disappointed",
       "sorely disappointed"
-    ]
+    ],
+    "meaningTr": "Çok büyük hayal kırıklığına uğramış, derin bir şekilde hayal kırıklığı yaşamış; 'bitterly' burada hayal kırıklığının yoğunluğunu vurgular."
   },
   {
     "id": "col_u01_0006",
@@ -264,7 +268,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Suç üretmek, suça zemin hazırlamak; belirli koşulların (yoksulluk, işsizlik, eğitimsizlik gibi) suçun artmasına yol açması anlamında kullanılır. Genellikle olumsuz toplumsal koşulların suçu doğurduğunu vurgular.",
+    "meaning": "To create the conditions that lead to criminal behaviour, especially poverty or poor education.",
     "collocates": [],
     "commonMistakes": [
       "make crime (yanlış; 'breed crime' veya 'cause crime' kullanılmalı)",
@@ -306,7 +310,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "give rise to crime",
       "spawn crime",
       "foster criminality"
-    ]
+    ],
+    "meaningTr": "Suç üretmek, suça zemin hazırlamak; belirli koşulların (yoksulluk, işsizlik, eğitimsizlik gibi) suçun artmasına yol açması anlamında kullanılır. Genellikle olumsuz toplumsal koşulların suçu doğurduğunu vurgular."
   },
   {
     "id": "col_u01_0007",
@@ -314,7 +319,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Hızlı araba; yüksek hız yapabilen, genellikle sportif veya güçlü motorlu otomobil. 'Fast' sıfatı 'car' ile doğal bir eşdizim oluşturur ve hız vurgusu yapar.",
+    "meaning": "A car that can travel at high speed, often a powerful or sporty one.",
     "collocates": [],
     "commonMistakes": [
       "quick car (bazı bağlamlarda kabul edilebilir ama 'fast car' daha doğal ve yaygın)",
@@ -356,7 +361,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "high-performance car",
       "quick car",
       "powerful car"
-    ]
+    ],
+    "meaningTr": "Hızlı araba; yüksek hız yapabilen, genellikle sportif veya güçlü motorlu otomobil. 'Fast' sıfatı 'car' ile doğal bir eşdizim oluşturur ve hız vurgusu yapar."
   },
   {
     "id": "col_u01_0008",
@@ -364,7 +370,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Suça neden olmak, suçun ortaya çıkmasına yol açmak. Genellikle belirli faktörlerin (yoksulluk, uyuşturucu, işsizlik gibi) suçu doğrudan tetiklediğini ifade eder.",
+    "meaning": "To be the reason that crime happens or increases.",
     "collocates": [],
     "commonMistakes": [
       "make crime (yanlış; 'cause crime' kullanılmalı)",
@@ -406,7 +412,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "result in crime",
       "trigger crime",
       "contribute to crime"
-    ]
+    ],
+    "meaningTr": "Suça neden olmak, suçun ortaya çıkmasına yol açmak. Genellikle belirli faktörlerin (yoksulluk, uyuşturucu, işsizlik gibi) suçu doğrudan tetiklediğini ifade eder."
   },
   {
     "id": "col_u01_0009",
@@ -414,7 +421,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Ağır soğuk algınlığı; şiddetli, kişiyi yatağa düşüren yoğun nezle. 'Heavy' sıfatı 'cold' ile eşdizim oluşturarak soğuk algınlığının ciddiyetini vurgular.",
+    "meaning": "A severe cold that makes you feel very ill and keeps you in bed.",
     "collocates": [],
     "commonMistakes": [
       "strong cold (yanlış; 'heavy cold' veya 'bad cold' kullanılmalı)",
@@ -456,7 +463,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "severe cold",
       "nasty cold",
       "serious cold"
-    ]
+    ],
+    "meaningTr": "Ağır soğuk algınlığı; şiddetli, kişiyi yatağa düşüren yoğun nezle. 'Heavy' sıfatı 'cold' ile eşdizim oluşturarak soğuk algınlığının ciddiyetini vurgular."
   },
   {
     "id": "col_u01_0010",
@@ -464,7 +472,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Zifiri karanlık, kapkaranlık; hiçbir ışığın olmadığı, tamamen karanlık ortam. 'Pitch' burada 'zifiri' anlamında pekiştirici olarak kullanılır.",
+    "meaning": "Completely dark, with no light at all.",
     "collocates": [],
     "commonMistakes": [
       "very dark (doğal ama 'pitch dark' kadar güçlü değil; 'pitch dark' vurgu için kullanılır)",
@@ -506,7 +514,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "completely dark",
       "utterly dark",
       "jet black"
-    ]
+    ],
+    "meaningTr": "Zifiri karanlık, kapkaranlık; hiçbir ışığın olmadığı, tamamen karanlık ortam. 'Pitch' burada 'zifiri' anlamında pekiştirici olarak kullanılır."
   },
   {
     "id": "col_u02_0011",
@@ -514,7 +523,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir kişiye yol göstermek, yardımcı olmak amacıyla verilen tek bir öneri ya da tavsiye; 'bir parça tavsiye' değil, 'bir tavsiye' anlamında kullanılan sayılabilir kalıp.",
+    "meaning": "A single suggestion or recommendation given to help someone.",
     "collocates": [],
     "commonMistakes": [
       "a advice (piece of advice) — 'advice' sayılamaz, bu yüzden 'a piece of advice' veya 'some advice' kullanılır.",
@@ -556,7 +565,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "bit of advice",
       "suggestion",
       "recommendation"
-    ]
+    ],
+    "meaningTr": "Bir kişiye yol göstermek, yardımcı olmak amacıyla verilen tek bir öneri ya da tavsiye; 'bir parça tavsiye' değil, 'bir tavsiye' anlamında kullanılan sayılabilir kalıp."
   },
   {
     "id": "col_u02_0012",
@@ -564,7 +574,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Küveti sıcak suyla doldurup banyo yapmaya hazırlamak; 'banyo çalıştırmak' değil, 'küveti doldurmak' anlamında İngiliz İngilizcesinde yaygın bir kalıp.",
+    "meaning": "To fill a bath with water so that it is ready to use.",
     "collocates": [],
     "commonMistakes": [
       "make a bath (run a bath) — 'banyo yapmak' anlamında 'make a bath' yanlıştır; küveti doldurmak için 'run/draw a bath' kullanılır.",
@@ -601,7 +611,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "fill the tub",
       "prepare a bath",
       "get a bath ready"
-    ]
+    ],
+    "meaningTr": "Küveti sıcak suyla doldurup banyo yapmaya hazırlamak; 'banyo çalıştırmak' değil, 'küveti doldurmak' anlamında İngiliz İngilizcesinde yaygın bir kalıp."
   },
   {
     "id": "col_u02_0013",
@@ -609,7 +620,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Ani ve keskin bir viraj; yolda direksiyonun hızla kırılmasını gerektiren dar dönemeç. 'Keskin viraj' anlamında trafik ve yol tariflerinde kullanılır.",
+    "meaning": "A sudden, severe curve in a road that requires careful turning.",
     "collocates": [],
     "commonMistakes": [
       "strong bend (sharp bend) — 'strong' viraj için kullanılmaz; doğrusu 'sharp bend'.",
@@ -646,7 +657,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "sharp curve",
       "hairpin bend",
       "sharp turn"
-    ]
+    ],
+    "meaningTr": "Ani ve keskin bir viraj; yolda direksiyonun hızla kırılmasını gerektiren dar dönemeç. 'Keskin viraj' anlamında trafik ve yol tariflerinde kullanılır."
   },
   {
     "id": "col_u02_0014",
@@ -654,7 +666,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Birini telefonla aramak; 'birine bir arama vermek' değil, 'birini aramak' anlamında günlük ve iş İngilizcesinde yaygın bir kalıp.",
+    "meaning": "To phone someone, especially in an informal or business context.",
     "collocates": [],
     "commonMistakes": [
       "make someone a call (give someone a call) — 'make a call' denir ama 'make someone a call' yanlıştır; doğrusu 'give someone a call'.",
@@ -696,7 +708,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "call someone",
       "phone someone",
       "get in touch with someone"
-    ]
+    ],
+    "meaningTr": "Birini telefonla aramak; 'birine bir arama vermek' değil, 'birini aramak' anlamında günlük ve iş İngilizcesinde yaygın bir kalıp."
   },
   {
     "id": "col_u02_0015",
@@ -704,7 +717,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Birinin veya bir şeyin sorumluluğunu üstlenmek, ilgilenmek, bakmak; ayrıca bir işi halletmek anlamında da kullanılır.",
+    "meaning": "To be responsible for someone or something and look after them or deal with it.",
     "collocates": [],
     "commonMistakes": [
       "take care for (take care of) — 'take care of' kalıbında edat 'of'tur, 'for' değil.",
@@ -746,7 +759,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "care for",
       "attend to",
       "deal with"
-    ]
+    ],
+    "meaningTr": "Birinin veya bir şeyin sorumluluğunu üstlenmek, ilgilenmek, bakmak; ayrıca bir işi halletmek anlamında da kullanılır."
   },
   {
     "id": "col_u02_0016",
@@ -754,7 +768,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Sohbet etmek, kısa ve samimi bir konuşma yapmak. Genellikle resmi olmayan, rahat bir ortamda bir konu hakkında konuşmak anlamına gelir. 'Talk' kelimesinden daha samimi ve gündelik bir tondadır.",
+    "meaning": "To have a short, friendly and informal conversation with someone.",
     "collocates": [],
     "commonMistakes": [
       "make a chat (doğrusu: have a chat)",
@@ -796,7 +810,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have a conversation",
       "have a word",
       "catch up"
-    ]
+    ],
+    "meaningTr": "Sohbet etmek, kısa ve samimi bir konuşma yapmak. Genellikle resmi olmayan, rahat bir ortamda bir konu hakkında konuşmak anlamına gelir. 'Talk' kelimesinden daha samimi ve gündelik bir tondadır."
   },
   {
     "id": "col_u02_0017",
@@ -804,7 +819,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Akıllıca bir seçim, isabetli bir karar. Deneyim ve sağduyuya dayalı, iyi sonuçlar doğuracak doğru bir tercih anlamına gelir.",
+    "meaning": "A decision that shows good judgement and is likely to bring good results.",
     "collocates": [],
     "commonMistakes": [
       "clever choice (genellikle 'wise choice' tercih edilir; 'clever' daha çok zeka ile ilgilidir)",
@@ -841,7 +856,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "sensible decision",
       "sound judgement",
       "prudent option"
-    ]
+    ],
+    "meaningTr": "Akıllıca bir seçim, isabetli bir karar. Deneyim ve sağduyuya dayalı, iyi sonuçlar doğuracak doğru bir tercih anlamına gelir."
   },
   {
     "id": "col_u02_0018",
@@ -849,7 +865,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Keskin bir zıtlık, belirgin bir karşıtlık. İki şey arasındaki çok açık ve dikkat çekici farkı ifade eder.",
+    "meaning": "A very clear and noticeable difference between two things.",
     "collocates": [],
     "commonMistakes": [
       "strong contrast (doğal değildir; 'sharp contrast' veya 'stark contrast' kullanılır)",
@@ -886,7 +902,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "striking contrast",
       "marked difference",
       "clear contrast"
-    ]
+    ],
+    "meaningTr": "Keskin bir zıtlık, belirgin bir karşıtlık. İki şey arasındaki çok açık ve dikkat çekici farkı ifade eder."
   },
   {
     "id": "col_u02_0019",
@@ -894,7 +911,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir kurs yapmak, bir eğitim programına katılmak. Belirli bir süre boyunca bir konuda eğitim almak anlamına gelir.",
+    "meaning": "To take part in a series of lessons or training in a particular subject.",
     "collocates": [],
     "commonMistakes": [
       "make a course (doğrusu: do a course veya take a course)",
@@ -936,7 +953,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "attend a course",
       "complete a course",
       "study on a course"
-    ]
+    ],
+    "meaningTr": "Bir kurs yapmak, bir eğitim programına katılmak. Belirli bir süre boyunca bir konuda eğitim almak anlamına gelir."
   },
   {
     "id": "col_u02_0020",
@@ -944,7 +962,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir kursa kayıt yaptırmak, bir eğitim programına resmi olarak katılmak üzere başvurmak. 'Enrol' fiili İngiliz İngilizcesinde 'enrol on', Amerikan İngilizcesinde ise 'enroll in' şeklinde kullanılır.",
+    "meaning": "To officially register to take part in a course of study.",
     "collocates": [],
     "commonMistakes": [
       "enrol to a course (doğrusu: enrol on a course)",
@@ -981,7 +999,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "register for a course",
       "enroll in a course",
       "join a course"
-    ]
+    ],
+    "meaningTr": "Bir kursa kayıt yaptırmak, bir eğitim programına resmi olarak katılmak üzere başvurmak. 'Enrol' fiili İngiliz İngilizcesinde 'enrol on', Amerikan İngilizcesinde ise 'enroll in' şeklinde kullanılır."
   },
   {
     "id": "col_u03_0021",
@@ -989,7 +1008,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir teklifi kabul etmek; sunulan bir iş, burs, sözleşme veya fırsatı resmen onaylamak.",
+    "meaning": "To formally agree to take a job, place, contract or opportunity that is offered.",
     "collocates": [],
     "commonMistakes": [
       "make an offer kabul etmek anlamında kullanılmaz; 'make an offer' teklifte bulunmak demektir.",
@@ -1031,7 +1050,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "agree to an offer",
       "say yes to an offer",
       "take an offer"
-    ]
+    ],
+    "meaningTr": "Bir teklifi kabul etmek; sunulan bir iş, burs, sözleşme veya fırsatı resmen onaylamak."
   },
   {
     "id": "col_u03_0022",
@@ -1039,7 +1059,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Vücutta hissedilen hafif ama sürekli ağrılar ve sızılar; genellikle yaşlılık, hastalık veya yorgunlukla ilişkili küçük rahatsızlıklar.",
+    "meaning": "Minor but continuous pains in the body, often from age, illness or tiredness.",
     "collocates": [],
     "commonMistakes": [
       "'pain and ache' şeklinde tekil kullanım yaygın değildir; kalıp genellikle çoğul halde 'aches and pains' olarak kullanılır.",
@@ -1081,7 +1101,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "minor ailments",
       "nagging pains",
       "bodily discomfort"
-    ]
+    ],
+    "meaningTr": "Vücutta hissedilen hafif ama sürekli ağrılar ve sızılar; genellikle yaşlılık, hastalık veya yorgunlukla ilişkili küçük rahatsızlıklar."
   },
   {
     "id": "col_u03_0023",
@@ -1089,7 +1110,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Ağrıyı hafifletmek veya azaltmak; acıyı dindirmek, genellikle ilaç, tedavi veya dinlenme yoluyla.",
+    "meaning": "To make pain less severe, usually with medicine, treatment or rest.",
     "collocates": [],
     "commonMistakes": [
       "'solve pain' yanlıştır; ağrı için 'alleviate' veya 'relieve' kullanılır.",
@@ -1131,7 +1152,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "ease pain",
       "reduce pain",
       "soothe pain"
-    ]
+    ],
+    "meaningTr": "Ağrıyı hafifletmek veya azaltmak; acıyı dindirmek, genellikle ilaç, tedavi veya dinlenme yoluyla."
   },
   {
     "id": "col_u03_0024",
@@ -1139,7 +1161,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Acıya veya ağrıya neden olmak; bir durumun, hareketin veya maddenin ağrı yaratması.",
+    "meaning": "To make someone feel physical pain or hurt.",
     "collocates": [],
     "commonMistakes": [
       "'do pain' yanlıştır; doğrusu 'cause pain' olmalıdır.",
@@ -1181,7 +1203,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "produce pain",
       "bring about pain",
       "trigger pain"
-    ]
+    ],
+    "meaningTr": "Acıya veya ağrıya neden olmak; bir durumun, hareketin veya maddenin ağrı yaratması."
   },
   {
     "id": "col_u03_0025",
@@ -1189,7 +1212,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Ağrıdan şikayet etmek; bir hastanın veya kişinin belirli bir ağrıyı doktora veya başkalarına bildirmesi.",
+    "meaning": "To tell a doctor or others that you have a particular pain.",
     "collocates": [],
     "commonMistakes": [
       "'complain about pain' da kullanılabilir ancak tıbbi bağlamda 'complain of pain' daha yaygındır ve doğrudur.",
@@ -1231,7 +1254,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "mention pain",
       "describe pain",
       "suffer from pain"
-    ]
+    ],
+    "meaningTr": "Ağrıdan şikayet etmek; bir hastanın veya kişinin belirli bir ağrıyı doktora veya başkalarına bildirmesi."
   },
   {
     "id": "col_u03_0026",
@@ -1239,7 +1263,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Sürekli ağrı; hiç dinmeyen, kesintisiz devam eden fiziksel acı. Genellikle kronik rahatsızlıklarda kullanılır ve 'sürekli, sabit, değişmeyen' vurgusu taşır.",
+    "meaning": "Physical pain that never stops or goes away, often from a chronic condition.",
     "collocates": [],
     "commonMistakes": [
       "continual pain (yanlış: 'continual' aralıklarla tekrarlanan demektir; kesintisiz ağrı için 'continuous' veya 'constant' kullanılır)",
@@ -1281,7 +1305,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "chronic pain",
       "continuous pain",
       "unrelenting pain"
-    ]
+    ],
+    "meaningTr": "Sürekli ağrı; hiç dinmeyen, kesintisiz devam eden fiziksel acı. Genellikle kronik rahatsızlıklarda kullanılır ve 'sürekli, sabit, değişmeyen' vurgusu taşır."
   },
   {
     "id": "col_u03_0027",
@@ -1289,7 +1314,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Ağrıyı hafifletmek, dindirmek; acıyı azaltmak veya rahatlatmak. Genellikle ilaç, tedavi veya dinlenme yoluyla ağrının şiddetini düşürmek anlamında kullanılır.",
+    "meaning": "To reduce or relieve pain, making it less severe or easier to bear.",
     "collocates": [],
     "commonMistakes": [
       "make pain ease (yanlış: 'ease' zaten fiildir; 'make' ile birlikte kullanılmaz)",
@@ -1331,7 +1356,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "alleviate pain",
       "soothe pain",
       "reduce pain"
-    ]
+    ],
+    "meaningTr": "Ağrıyı hafifletmek, dindirmek; acıyı azaltmak veya rahatlatmak. Genellikle ilaç, tedavi veya dinlenme yoluyla ağrının şiddetini düşürmek anlamında kullanılır."
   },
   {
     "id": "col_u03_0028",
@@ -1339,7 +1365,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Ağrı yaşamak, acı çekmek; belirli bir dönemde veya durumda ağrı hissetmek. Tıbbi ve akademik bağlamlarda sık kullanılan resmi bir ifadedir.",
+    "meaning": "To feel pain, especially over a period or in a medical context.",
     "collocates": [],
     "commonMistakes": [
       "live pain (yanlış: 'live' ile ağrı yaşanmaz; 'experience' veya 'suffer' kullanılır)",
@@ -1381,7 +1407,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "feel pain",
       "endure pain",
       "go through pain"
-    ]
+    ],
+    "meaningTr": "Ağrı yaşamak, acı çekmek; belirli bir dönemde veya durumda ağrı hissetmek. Tıbbi ve akademik bağlamlarda sık kullanılan resmi bir ifadedir."
   },
   {
     "id": "col_u03_0029",
@@ -1389,7 +1416,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Acı hissetmek, ağrı duymak; fiziksel veya duygusal olarak acıyı algılamak. 'Experience pain'den daha kişisel ve anlık bir hissi ifade eder.",
+    "meaning": "To be aware of pain in your body or mind at a particular moment.",
     "collocates": [],
     "commonMistakes": [
       "feel a pain (yanlış: genel ağrı için 'feel pain' kullanılır; 'a pain' belirli bir ağrıyı belirtir)",
@@ -1431,7 +1458,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "perceive pain",
       "be in pain",
       "have pain"
-    ]
+    ],
+    "meaningTr": "Acı hissetmek, ağrı duymak; fiziksel veya duygusal olarak acıyı algılamak. 'Experience pain'den daha kişisel ve anlık bir hissi ifade eder."
   },
   {
     "id": "col_u03_0030",
@@ -1439,7 +1467,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Acı vermek, ağrı çektirmek; birine kasıtlı olarak fiziksel veya duygusal acı yaşatmak. Genellikle olumsuz ve kasıtlı eylemleri tanımlar.",
+    "meaning": "To deliberately make someone suffer physical or emotional pain.",
     "collocates": [],
     "commonMistakes": [
       "give pain (yanlış: 'give' kasıtsız olabilir; kasıtlı acı için 'inflict' kullanılır)",
@@ -1481,7 +1509,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "impose pain",
       "bring pain",
       "deal out pain"
-    ]
+    ],
+    "meaningTr": "Acı vermek, ağrı çektirmek; birine kasıtlı olarak fiziksel veya duygusal acı yaşatmak. Genellikle olumsuz ve kasıtlı eylemleri tanımlar."
   },
   {
     "id": "col_u04_0031",
@@ -1489,7 +1518,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Son derece utanç verici, fazlasıyla mahcup edici; bir durumun kişiyi derinden utandırdığını vurgular.",
+    "meaning": "Extremely embarrassing, making someone feel very ashamed or awkward.",
     "collocates": [],
     "commonMistakes": [
       "very embarrassing (doğal ama 'acutely' kadar güçlü ve edebi değil)",
@@ -1531,7 +1560,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "painfully embarrassing",
       "mortifying",
       "humiliating"
-    ]
+    ],
+    "meaningTr": "Son derece utanç verici, fazlasıyla mahcup edici; bir durumun kişiyi derinden utandırdığını vurgular."
   },
   {
     "id": "col_u04_0032",
@@ -1539,7 +1569,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Ani ve güçlü bir öfke dalgası; kontrol edilmesi zor, yoğun bir kızgınlık patlaması.",
+    "meaning": "A sudden, strong feeling of anger that is hard to control.",
     "collocates": [],
     "commonMistakes": [
       "surge of angry (sıfat değil isim gerekir: 'surge of anger')",
@@ -1576,7 +1606,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "flash of anger",
       "rush of anger",
       "fit of rage"
-    ]
+    ],
+    "meaningTr": "Ani ve güçlü bir öfke dalgası; kontrol edilmesi zor, yoğun bir kızgınlık patlaması."
   },
   {
     "id": "col_u04_0033",
@@ -1584,7 +1615,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Tamamen farkında, bütünüyle haberdar; bir durumun tüm gerçekliğini bilerek.",
+    "meaning": "Completely knowing about something and understanding all its facts.",
     "collocates": [],
     "commonMistakes": [
       "fully aware about (yanlış edat; 'fully aware of' kullanılır)",
@@ -1626,7 +1657,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "perfectly aware",
       "completely aware",
       "conscious of"
-    ]
+    ],
+    "meaningTr": "Tamamen farkında, bütünüyle haberdar; bir durumun tüm gerçekliğini bilerek."
   },
   {
     "id": "col_u04_0034",
@@ -1634,7 +1666,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Son derece mutlu, huzur içinde ve kaygısız bir şekilde mutlu; saf ve derin bir mutluluk hali.",
+    "meaning": "Extremely happy in a calm, peaceful and carefree way.",
     "collocates": [],
     "commonMistakes": [
       "blissful happy (zarf 'blissfully' olmalı, sıfat değil)",
@@ -1671,7 +1703,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "utterly happy",
       "radiantly happy",
       "contentedly happy"
-    ]
+    ],
+    "meaningTr": "Son derece mutlu, huzur içinde ve kaygısız bir şekilde mutlu; saf ve derin bir mutluluk hali."
   },
   {
     "id": "col_adv_u01_01",
@@ -1679,7 +1712,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "C1",
     "category": "everyday",
-    "meaning": "Hiçbir şeyden haberi olmadan, mutlu bir cahillik içinde; olumsuz bir gerçeğin farkında olmadan rahatça yaşamak.",
+    "meaning": "Not knowing about something unpleasant, and so feeling calm and happy.",
     "collocates": [
       "blissfully happy",
       "blissfully quiet"
@@ -1724,7 +1757,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "totally oblivious",
       "happily ignorant",
       "innocently unaware"
-    ]
+    ],
+    "meaningTr": "Hiçbir şeyden haberi olmadan, mutlu bir cahillik içinde; olumsuz bir gerçeğin farkında olmadan rahatça yaşamak."
   },
   {
     "id": "col_u04_0036",
@@ -1732,7 +1766,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Ekonominin hızla büyümesi, canlanması; ekonomik faaliyetlerin, üretimin, istihdamın ve tüketimin hızla arttığı bir döneme girmesi.",
+    "meaning": "The economy grows rapidly, with production, employment and spending all increasing strongly.",
     "collocates": [],
     "commonMistakes": [
       "economy blooms (yanlış eşdizim; 'bloom' çiçekler/bitkiler için kullanılır, ekonomi için değil)",
@@ -1774,7 +1808,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "economy flourishes",
       "economy takes off",
       "economy expands rapidly"
-    ]
+    ],
+    "meaningTr": "Ekonominin hızla büyümesi, canlanması; ekonomik faaliyetlerin, üretimin, istihdamın ve tüketimin hızla arttığı bir döneme girmesi."
   },
   {
     "id": "col_u04_0037",
@@ -1782,7 +1817,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Kısa, genellikle samimi ve resmi olmayan bir sohbet; birkaç dakika süren hafif konuşma.",
+    "meaning": "A short, informal conversation, usually lasting only a few minutes.",
     "collocates": [],
     "commonMistakes": [
       "short chat (anlamca yakın olsa da 'brief chat' daha doğal ve yaygın bir eşdizimdir)",
@@ -1824,7 +1859,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "short conversation",
       "brief word",
       "little chat"
-    ]
+    ],
+    "meaningTr": "Kısa, genellikle samimi ve resmi olmayan bir sohbet; birkaç dakika süren hafif konuşma."
   },
   {
     "id": "col_u04_0038",
@@ -1832,7 +1868,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Canlı, göze çarpan, yoğun ve parlak bir renk; soluk veya mat olmayan, dikkat çeken ton.",
+    "meaning": "A strong, vivid colour that stands out and is not pale or dull.",
     "collocates": [],
     "commonMistakes": [
       "light colour (bu 'açık renk' anlamına gelir; 'bright' parlaklık ve canlılık vurgular)",
@@ -1874,7 +1910,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "bold colour",
       "vibrant colour",
       "strong colour"
-    ]
+    ],
+    "meaningTr": "Canlı, göze çarpan, yoğun ve parlak bir renk; soluk veya mat olmayan, dikkat çeken ton."
   },
   {
     "id": "col_u04_0039",
@@ -1882,7 +1919,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Aniden, genellikle beklenmedik bir anda şarkı söylemeye başlamak; kontrolsüz veya coşkulu bir şekilde şarkıya geçmek.",
+    "meaning": "To suddenly start singing, often unexpectedly and with enthusiasm.",
     "collocates": [],
     "commonMistakes": [
       "burst out song (doğru kalıp 'burst into song' veya 'burst out singing' şeklindedir)",
@@ -1924,7 +1961,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "start singing suddenly",
       "erupt into song",
       "launch into a song"
-    ]
+    ],
+    "meaningTr": "Aniden, genellikle beklenmedik bir anda şarkı söylemeye başlamak; kontrolsüz veya coşkulu bir şekilde şarkıya geçmek."
   },
   {
     "id": "col_u04_0040",
@@ -1932,7 +1970,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Aniden, genellikle kontrol edilemeyen bir şekilde ağlamaya başlamak; gözyaşlarına boğulmak.",
+    "meaning": "To suddenly start crying, often in an uncontrolled way.",
     "collocates": [],
     "commonMistakes": [
       "burst out tears (doğru kalıp 'burst into tears' veya 'burst out crying' şeklindedir)",
@@ -1974,7 +2012,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "burst out crying",
       "dissolve into tears",
       "start crying suddenly"
-    ]
+    ],
+    "meaningTr": "Aniden, genellikle kontrol edilemeyen bir şekilde ağlamaya başlamak; gözyaşlarına boğulmak."
   },
   {
     "id": "col_u05_0041",
@@ -1982,7 +2021,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Uçağa binmek; uçağa kabul edilip yerleşmek (resmî/havacılık dili). 'Get on a plane'ın daha resmî ve teknik karşılığıdır; havalimanı anonslarında ve yazılı talimatlarda sık görülür.",
+    "meaning": "To get onto a plane, especially in formal or official airline language.",
     "collocates": [],
     "commonMistakes": [
       "enter an aircraft (uçağın içine girmek anlamı taşır ama standart kalıp değildir)",
@@ -2024,7 +2063,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "embark on an aircraft",
       "go aboard an aircraft",
       "step onto a plane"
-    ]
+    ],
+    "meaningTr": "Uçağa binmek; uçağa kabul edilip yerleşmek (resmî/havacılık dili). 'Get on a plane'ın daha resmî ve teknik karşılığıdır; havalimanı anonslarında ve yazılı talimatlarda sık görülür."
   },
   {
     "id": "col_u05_0042",
@@ -2032,7 +2072,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Otobüsten inmek (resmî/yazılı dil). Günlük konuşmada 'get off a bus' tercih edilir; 'alight from' daha çok anons, tabela ve resmî metinlerde görülür.",
+    "meaning": "To get off a bus, used mainly in formal notices and announcements.",
     "collocates": [],
     "commonMistakes": [
       "alight a bus ('from' edatı atlanmamalıdır)",
@@ -2074,7 +2114,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "step off a bus",
       "disembark from a bus",
       "exit a bus"
-    ]
+    ],
+    "meaningTr": "Otobüsten inmek (resmî/yazılı dil). Günlük konuşmada 'get off a bus' tercih edilir; 'alight from' daha çok anons, tabela ve resmî metinlerde görülür."
   },
   {
     "id": "col_u05_0043",
@@ -2082,7 +2123,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Oldukça berbat, epey kötü. 'Pretty' burada 'quite/fairly' anlamında bir pekiştirici zarf; konuşma dilinde yaygın ama resmî yazıda 'rather poor' veya 'extremely bad' tercih edilir.",
+    "meaning": "Quite bad or unpleasant, used mainly in informal spoken English.",
     "collocates": [],
     "commonMistakes": [
       "pretty awfully (sıfat yerine zarf kullanımı; 'pretty awful' sıfat tamlamasıdır)",
@@ -2124,7 +2165,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "fairly terrible",
       "quite dreadful",
       "pretty bad"
-    ]
+    ],
+    "meaningTr": "Oldukça berbat, epey kötü. 'Pretty' burada 'quite/fairly' anlamında bir pekiştirici zarf; konuşma dilinde yaygın ama resmî yazıda 'rather poor' veya 'extremely bad' tercih edilir."
   },
   {
     "id": "col_u05_0044",
@@ -2132,7 +2174,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "İşten çıkarmak, kadro kısmak (gazete/iş dünyası dili). 'Axe' burada mecazi olarak 'kesmek, kaldırmak' anlamındadır; resmî raporda 'cut jobs' veya 'make redundancies' tercih edilir.",
+    "meaning": "To remove jobs or make people redundant, used in news and business writing.",
     "collocates": [],
     "commonMistakes": [
       "axe employments ('jobs' çoğul ve sayılabilir; 'employment' soyut isimdir)",
@@ -2174,7 +2216,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "shed jobs",
       "make redundancies",
       "lay off workers"
-    ]
+    ],
+    "meaningTr": "İşten çıkarmak, kadro kısmak (gazete/iş dünyası dili). 'Axe' burada mecazi olarak 'kesmek, kaldırmak' anlamındadır; resmî raporda 'cut jobs' veya 'make redundancies' tercih edilir."
   },
   {
     "id": "col_u05_0045",
@@ -2182,7 +2225,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Çok ihtiyaç duymak, şiddetle gereksinim duymak. 'Badly' burada 'çok, fazlasıyla' anlamında pekiştiricidir; olumsuz bir eksiklik veya aciliyet vurgusu taşır.",
+    "meaning": "To need something very much, often with a sense of urgency.",
     "collocates": [],
     "commonMistakes": [
       "bad need (zarf yerine sıfat kullanımı; 'badly need' doğrudur)",
@@ -2224,7 +2267,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "urgently need",
       "really need",
       "be in dire need of"
-    ]
+    ],
+    "meaningTr": "Çok ihtiyaç duymak, şiddetle gereksinim duymak. 'Badly' burada 'çok, fazlasıyla' anlamında pekiştiricidir; olumsuz bir eksiklik veya aciliyet vurgusu taşır."
   },
   {
     "id": "col_u05_0046",
@@ -2232,7 +2276,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Sel baskınlarına karşı mücadele etmek, su baskınlarıyla savaşmak; genellikle sel felaketlerini önlemek veya etkilerini azaltmak için verilen yoğun çabayı ifade eder.",
+    "meaning": "To make a strong, continuous effort to prevent or reduce flood damage.",
     "collocates": [],
     "commonMistakes": [
       "battle with floods (anlam kayması; 'with' daha çok birlikte savaşma çağrışımı yapar)",
@@ -2274,7 +2318,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "combat flooding",
       "struggle against floods",
       "tackle flood risks"
-    ]
+    ],
+    "meaningTr": "Sel baskınlarına karşı mücadele etmek, su baskınlarıyla savaşmak; genellikle sel felaketlerini önlemek veya etkilerini azaltmak için verilen yoğun çabayı ifade eder."
   },
   {
     "id": "col_u05_0047",
@@ -2282,7 +2327,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Maliyeti üstlenmek, masrafı karşılamak; bir harcamanın veya kaybın finansal yükünü kabul etmek ve ödemek anlamına gelir.",
+    "meaning": "To accept and pay the financial cost of something.",
     "collocates": [],
     "commonMistakes": [
       "carry the cost (daha az yaygın; 'bear' tercih edilir)",
@@ -2324,7 +2369,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "shoulder the cost",
       "meet the cost",
       "absorb the cost"
-    ]
+    ],
+    "meaningTr": "Maliyeti üstlenmek, masrafı karşılamak; bir harcamanın veya kaybın finansal yükünü kabul etmek ve ödemek anlamına gelir."
   },
   {
     "id": "col_u05_0048",
@@ -2332,7 +2378,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Çok sıkılmak, canı sıkılmaktan patlamak; bir durumdan veya etkinlikten aşırı derecede sıkılmış olmak anlamında gayri resmi bir ifade.",
+    "meaning": "Extremely bored, used in informal English to show strong feeling.",
     "collocates": [],
     "commonMistakes": [
       "bored stiffly (zarf kullanımı yanlış; 'stiff' sıfat olarak kalır)",
@@ -2374,7 +2420,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "bored to tears",
       "fed up",
       "bored out of one's mind"
-    ]
+    ],
+    "meaningTr": "Çok sıkılmak, canı sıkılmaktan patlamak; bir durumdan veya etkinlikten aşırı derecede sıkılmış olmak anlamında gayri resmi bir ifade."
   },
   {
     "id": "col_u05_0049",
@@ -2382,7 +2429,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir iş kurmak, yeni bir şirket veya girişim başlatmak; genellikle sıfırdan bir ticari faaliyet başlatmak anlamında kullanılır.",
+    "meaning": "To begin a new company or commercial venture, usually from the start.",
     "collocates": [],
     "commonMistakes": [
       "start a business up (kelime sırası yanlış; 'start up a business' doğru)",
@@ -2424,7 +2471,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "launch a business",
       "establish a business",
       "found a company"
-    ]
+    ],
+    "meaningTr": "Bir iş kurmak, yeni bir şirket veya girişim başlatmak; genellikle sıfırdan bir ticari faaliyet başlatmak anlamında kullanılır."
   },
   {
     "id": "col_u05_0050",
@@ -2432,7 +2480,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Sermaye toplamak, sermaye artırmak; bir işletmenin veya projenin finansmanı için para toplamak anlamına gelir.",
+    "meaning": "To collect money to finance a business or project.",
     "collocates": [],
     "commonMistakes": [
       "raise money capital (gereksiz kelime; 'raise capital' yeterli)",
@@ -2474,7 +2522,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "secure funding",
       "attract investment",
       "generate capital"
-    ]
+    ],
+    "meaningTr": "Sermaye toplamak, sermaye artırmak; bir işletmenin veya projenin finansmanı için para toplamak anlamına gelir."
   },
   {
     "id": "col_u06_0051",
@@ -2482,7 +2531,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "academic",
-    "meaning": "Tamamen saçma, kesinlikle akıl dışı; bir durumun veya fikrin mantıksız, gülünç derecede yanlış olduğunu vurgular.",
+    "meaning": "Completely unreasonable and ridiculous; used to stress how illogical something is.",
     "collocates": [],
     "commonMistakes": [
       "very absurd (absolutely daha güçlü ve doğal bir eşleşmedir)",
@@ -2524,7 +2573,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "completely nonsensical",
       "totally preposterous",
       "downright ludicrous"
-    ]
+    ],
+    "meaningTr": "Tamamen saçma, kesinlikle akıl dışı; bir durumun veya fikrin mantıksız, gülünç derecede yanlış olduğunu vurgular."
   },
   {
     "id": "col_u06_0052",
@@ -2532,7 +2582,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "academic",
-    "meaning": "Tamamen yalnız, hiç kimsesi olmayan; fiziksel veya duygusal olarak tek başına kalma durumunu güçlü biçimde ifade eder.",
+    "meaning": "Completely on your own, with no one else present or supporting you.",
     "collocates": [],
     "commonMistakes": [
       "very alone (absolutely daha doğal ve vurgulu bir eşleşmedir)",
@@ -2574,7 +2624,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "utterly alone",
       "entirely on one's own",
       "totally isolated"
-    ]
+    ],
+    "meaningTr": "Tamamen yalnız, hiç kimsesi olmayan; fiziksel veya duygusal olarak tek başına kalma durumunu güçlü biçimde ifade eder."
   },
   {
     "id": "col_u06_0053",
@@ -2582,7 +2633,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "academic",
-    "meaning": "Son derece dehşete düşmüş, kesinlikle şok olmuş ve öfkelenmiş; bir şey karşısında duyulan yoğun olumsuz tepkiyi ifade eder.",
+    "meaning": "Extremely shocked and disgusted by something.",
     "collocates": [],
     "commonMistakes": [
       "very appalled (absolutely daha güçlü ve doğal bir eşleşmedir)",
@@ -2624,7 +2675,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "completely horrified",
       "deeply shocked",
       "thoroughly disgusted"
-    ]
+    ],
+    "meaningTr": "Son derece dehşete düşmüş, kesinlikle şok olmuş ve öfkelenmiş; bir şey karşısında duyulan yoğun olumsuz tepkiyi ifade eder."
   },
   {
     "id": "col_u06_0054",
@@ -2632,7 +2684,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "academic",
-    "meaning": "Kesinlikle ikna olmuş, tamamen emin; bir fikre veya inanca sarsılmaz bir şekilde bağlı olma durumunu ifade eder.",
+    "meaning": "Completely certain that something is true; having no doubts at all.",
     "collocates": [],
     "commonMistakes": [
       "very convinced (absolutely daha güçlü ve doğal bir eşleşmedir)",
@@ -2674,7 +2726,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "utterly persuaded",
       "fully certain",
       "totally sure"
-    ]
+    ],
+    "meaningTr": "Kesinlikle ikna olmuş, tamamen emin; bir fikre veya inanca sarsılmaz bir şekilde bağlı olma durumunu ifade eder."
   },
   {
     "id": "col_u06_0055",
@@ -2682,7 +2735,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "academic",
-    "meaning": "Tamamen yıkılmış, son derece üzgün ve harap olmuş; genellikle büyük bir kayıp veya kötü haber karşısında duyulan derin duygusal acıyı ifade eder.",
+    "meaning": "Extremely upset and shocked, usually after bad news or a loss.",
     "collocates": [],
     "commonMistakes": [
       "very devastated (absolutely daha güçlü ve doğal bir eşleşmedir)",
@@ -2724,7 +2777,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "completely heartbroken",
       "totally shattered",
       "deeply distressed"
-    ]
+    ],
+    "meaningTr": "Tamamen yıkılmış, son derece üzgün ve harap olmuş; genellikle büyük bir kayıp veya kötü haber karşısında duyulan derin duygusal acıyı ifade eder."
   },
   {
     "id": "col_u06_0056",
@@ -2732,7 +2786,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "academic",
-    "meaning": "Tamamen bitkin, son derece yorgun; hiç enerjisi kalmamış, tükenmiş anlamında. 'Absolutely' burada 'exhausted' sıfatını en üst düzeyde pekiştirir ve günlük konuşmada çok yaygındır.",
+    "meaning": "Extremely tired, with no energy left at all.",
     "collocates": [],
     "commonMistakes": [
       "very exhausted (doğal değil; 'absolutely/completely exhausted' tercih edilir)",
@@ -2774,7 +2828,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "utterly exhausted",
       "totally worn out",
       "dead tired"
-    ]
+    ],
+    "meaningTr": "Tamamen bitkin, son derece yorgun; hiç enerjisi kalmamış, tükenmiş anlamında. 'Absolutely' burada 'exhausted' sıfatını en üst düzeyde pekiştirir ve günlük konuşmada çok yaygındır."
   },
   {
     "id": "col_u06_0057",
@@ -2782,7 +2837,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "academic",
-    "meaning": "Kesinlikle imkânsız, hiçbir şekilde mümkün olmayan anlamında. 'Absolutely' burada 'impossible' sıfatını mutlak bir biçimde güçlendirir; genellikle bir görevin, planın veya durumun gerçekleşemeyeceğini vurgulamak için kullanılır.",
+    "meaning": "Completely unable to happen or be done; used to stress total impossibility.",
     "collocates": [],
     "commonMistakes": [
       "very impossible (doğal değil; 'absolutely/completely impossible' kullanılır)",
@@ -2824,7 +2879,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "utterly impossible",
       "totally out of the question",
       "not possible at all"
-    ]
+    ],
+    "meaningTr": "Kesinlikle imkânsız, hiçbir şekilde mümkün olmayan anlamında. 'Absolutely' burada 'impossible' sıfatını mutlak bir biçimde güçlendirir; genellikle bir görevin, planın veya durumun gerçekleşemeyeceğini vurgulamak için kullanılır."
   },
   {
     "id": "col_u06_0058",
@@ -2832,7 +2888,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "academic",
-    "meaning": "Son derece mutsuz, perişan, çok kötü durumda anlamında. Hem bir kişinin ruh hâli hem de bir durumun/deneyimin çok olumsuz olduğunu anlatmak için kullanılır; 'absolutely' bu olumsuzluğu en üst seviyeye taşır.",
+    "meaning": "Extremely unhappy or very unpleasant; used of a person's mood or a situation.",
     "collocates": [],
     "commonMistakes": [
       "very miserable (mümkün ama 'absolutely miserable' daha güçlü ve doğal bir eşleşmedir)",
@@ -2874,7 +2930,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "utterly miserable",
       "deeply unhappy",
       "thoroughly wretched"
-    ]
+    ],
+    "meaningTr": "Son derece mutsuz, perişan, çok kötü durumda anlamında. Hem bir kişinin ruh hâli hem de bir durumun/deneyimin çok olumsuz olduğunu anlatmak için kullanılır; 'absolutely' bu olumsuzluğu en üst seviyeye taşır."
   },
   {
     "id": "col_u06_0059",
@@ -2882,7 +2939,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "academic",
-    "meaning": "Tamamen saçma, gülünç, akıl dışı anlamında. Bir fikrin, kuralın, fiyatın veya davranışın mantıksız ve kabul edilemez olduğunu vurgulamak için kullanılır; 'absolutely' eleştiri tonunu güçlendirir.",
+    "meaning": "Completely unreasonable or laughable; used to criticize something strongly.",
     "collocates": [],
     "commonMistakes": [
       "very ridiculous (mümkün ama 'absolutely ridiculous' daha vurgulu ve yaygındır)",
@@ -2924,7 +2981,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "utterly absurd",
       "totally ludicrous",
       "plain silly"
-    ]
+    ],
+    "meaningTr": "Tamamen saçma, gülünç, akıl dışı anlamında. Bir fikrin, kuralın, fiyatın veya davranışın mantıksız ve kabul edilemez olduğunu vurgulamak için kullanılır; 'absolutely' eleştiri tonunu güçlendirir."
   },
   {
     "id": "col_u06_0060",
@@ -2932,7 +2990,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "academic",
-    "meaning": "Son derece aptalca, çok budalaca anlamında. Bir davranışı, kararı veya fikri sert biçimde eleştirmek için kullanılır; 'absolutely' bu eleştiriyi en üst düzeye çıkarır. Kişiyi değil genellikle davranışı/kararı nitelemek daha doğaldır.",
+    "meaning": "Extremely foolish; used to criticize a decision or action very strongly.",
     "collocates": [],
     "commonMistakes": [
       "very stupid (mümkün ama 'absolutely stupid' daha vurgulu ve doğal bir eşleşmedir)",
@@ -2974,7 +3032,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "utterly foolish",
       "totally idiotic",
       "extremely silly"
-    ]
+    ],
+    "meaningTr": "Son derece aptalca, çok budalaca anlamında. Bir davranışı, kararı veya fikri sert biçimde eleştirmek için kullanılır; 'absolutely' bu eleştiriyi en üst düzeye çıkarır. Kişiyi değil genellikle davranışı/kararı nitelemek daha doğaldır."
   },
   {
     "id": "col_u07_001",
@@ -2982,7 +3041,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Elinden gelenin en iyisini yapmak; bir işte tüm çabayı ve gayreti göstermek, sonuç ne olursa olsun maksimum performans sergilemek.",
+    "meaning": "To try as hard as you can, whatever the result may be.",
     "collocates": [],
     "commonMistakes": [
       "make your best (yanlış fiil eşleşmesi; doğrusu 'do your best')",
@@ -3024,7 +3083,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "try your hardest",
       "put in maximum effort",
       "do your utmost"
-    ]
+    ],
+    "meaningTr": "Elinden gelenin en iyisini yapmak; bir işte tüm çabayı ve gayreti göstermek, sonuç ne olursa olsun maksimum performans sergilemek."
   },
   {
     "id": "col_u07_0062",
@@ -3032,7 +3092,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Telefonla arama yapmak; birini telefonla aramak, telefon görüşmesi gerçekleştirmek.",
+    "meaning": "To telephone someone; to make a telephone call.",
     "collocates": [],
     "commonMistakes": [
       "do a phone call (yanlış fiil eşleşmesi; doğrusu 'make a phone call')",
@@ -3074,7 +3134,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "place a call",
       "ring someone up",
       "get on the phone"
-    ]
+    ],
+    "meaningTr": "Telefonla arama yapmak; birini telefonla aramak, telefon görüşmesi gerçekleştirmek."
   },
   {
     "id": "col_u07_0063",
@@ -3082,7 +3143,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir değişiklik yapmak; mevcut durumu, düzeni veya davranışı kasıtlı olarak farklılaştırmak, tek bir değişiklik gerçekleştirmek.",
+    "meaning": "To make one alteration to a situation, system or way of doing something.",
     "collocates": [],
     "commonMistakes": [
       "do a change (yanlış fiil eşleşmesi; doğrusu 'make a change')",
@@ -3124,7 +3185,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "introduce a change",
       "implement a change",
       "make an adjustment"
-    ]
+    ],
+    "meaningTr": "Bir değişiklik yapmak; mevcut durumu, düzeni veya davranışı kasıtlı olarak farklılaştırmak, tek bir değişiklik gerçekleştirmek."
   },
   {
     "id": "col_u07_0064",
@@ -3132,7 +3194,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Değişiklikler yapmak; birden fazla değişikliği hayata geçirmek, bir dizi düzenleme veya yenilik gerçekleştirmek.",
+    "meaning": "To make several alterations to something, often to improve it.",
     "collocates": [],
     "commonMistakes": [
       "do changes (yanlış fiil eşleşmesi; doğrusu 'make changes')",
@@ -3174,7 +3236,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "introduce changes",
       "bring about changes",
       "carry out changes"
-    ]
+    ],
+    "meaningTr": "Değişiklikler yapmak; birden fazla değişikliği hayata geçirmek, bir dizi düzenleme veya yenilik gerçekleştirmek."
   },
   {
     "id": "col_u07_011",
@@ -3182,7 +3245,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir seçim yapmak; iki veya daha fazla seçenek arasından bilinçli olarak birini tercih etmek, karar vermek.",
+    "meaning": "To decide between two or more possibilities; to select one option.",
     "collocates": [],
     "commonMistakes": [
       "do a choice (yanlış fiil eşleşmesi; doğrusu 'make a choice')",
@@ -3224,7 +3287,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "opt for something",
       "take a decision",
       "come to a decision"
-    ]
+    ],
+    "meaningTr": "Bir seçim yapmak; iki veya daha fazla seçenek arasından bilinçli olarak birini tercih etmek, karar vermek."
   },
   {
     "id": "col_u07_0066",
@@ -3232,7 +3296,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Yorum yapmak; bir konu hakkında görüş belirtmek, sözlü veya yazılı bir açıklama yapmak.",
+    "meaning": "To give an opinion or remark about something, spoken or written.",
     "collocates": [],
     "commonMistakes": [
       "do a comment (yanlış fiil; doğrusu make a comment)",
@@ -3274,7 +3338,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "make a remark",
       "pass a comment",
       "give an opinion"
-    ]
+    ],
+    "meaningTr": "Yorum yapmak; bir konu hakkında görüş belirtmek, sözlü veya yazılı bir açıklama yapmak."
   },
   {
     "id": "col_u07_0067",
@@ -3282,7 +3347,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Yorumlar yapmak; birden fazla konuda görüş belirtmek, çeşitli açıklamalarda bulunmak.",
+    "meaning": "To give several opinions or remarks about something.",
     "collocates": [],
     "commonMistakes": [
       "do comments (yanlış fiil; doğrusu make comments)",
@@ -3324,7 +3389,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "make remarks",
       "pass remarks",
       "voice opinions"
-    ]
+    ],
+    "meaningTr": "Yorumlar yapmak; birden fazla konuda görüş belirtmek, çeşitli açıklamalarda bulunmak."
   },
   {
     "id": "col_u07_0068",
@@ -3332,7 +3398,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Yemek yapmak; yemek pişirme işini üstlenmek, mutfakla ilgili günlük görevi yerine getirmek.",
+    "meaning": "To prepare meals; to be the person who cooks in a household.",
     "collocates": [],
     "commonMistakes": [
       "make the cooking (yanlış fiil; doğrusu do the cooking)",
@@ -3374,7 +3440,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "cook the meals",
       "handle the cooking",
       "make the food"
-    ]
+    ],
+    "meaningTr": "Yemek yapmak; yemek pişirme işini üstlenmek, mutfakla ilgili günlük görevi yerine getirmek."
   },
   {
     "id": "col_u07_002",
@@ -3382,7 +3449,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Zarar vermek; hasara yol açmak, bir şeye veya birine fiziksel ya da mecazi olarak zarar vermek.",
+    "meaning": "To cause harm or injury to something, physically or in a figurative sense.",
     "collocates": [],
     "commonMistakes": [
       "make damage (yanlış fiil; doğrusu do damage veya cause damage)",
@@ -3424,7 +3491,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "inflict damage",
       "harm",
       "wreak havoc"
-    ]
+    ],
+    "meaningTr": "Zarar vermek; hasara yol açmak, bir şeye veya birine fiziksel ya da mecazi olarak zarar vermek."
   },
   {
     "id": "col_u07_013",
@@ -3432,7 +3500,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Karar vermek; bir konuda seçim yapmak, bir sonuca ulaşmak.",
+    "meaning": "To decide something after considering the options; to reach a conclusion.",
     "collocates": [],
     "commonMistakes": [
       "do a decision (yanlış fiil; doğrusu make a decision)",
@@ -3474,7 +3542,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "come to a decision",
       "take a decision",
       "make up one's mind"
-    ]
+    ],
+    "meaningTr": "Karar vermek; bir konuda seçim yapmak, bir sonuca ulaşmak."
   },
   {
     "id": "col_u08_0071",
@@ -3482,7 +3551,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Öfkelenmek, sinirlenmek; bir durum karşısında kızgın bir ruh haline girmek. 'Become' ile kurulan bu yapı, öfkenin yavaş yavaş veya bir süreç sonucunda ortaya çıktığını vurgular.",
+    "meaning": "to gradually start feeling anger or strong displeasure about something",
     "collocates": [],
     "commonMistakes": [
       "become anger (isimle kullanmak yanlıştır; 'become angry' sıfatla kullanılır)",
@@ -3524,7 +3593,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "get angry",
       "become furious",
       "turn angry"
-    ]
+    ],
+    "meaningTr": "Öfkelenmek, sinirlenmek; bir durum karşısında kızgın bir ruh haline girmek. 'Become' ile kurulan bu yapı, öfkenin yavaş yavaş veya bir süreç sonucunda ortaya çıktığını vurgular."
   },
   {
     "id": "col_u08_0072",
@@ -3532,7 +3602,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Sinirlenmek, kızmak; ani veya günlük bir öfkelenme durumunu ifade eder. 'Become angry'ye göre daha konuşma diline yakın ve daha doğrudan bir kullanımdır.",
+    "meaning": "to start feeling anger, especially suddenly or in everyday situations",
     "collocates": [],
     "commonMistakes": [
       "get anger (isimle kullanmak yanlıştır; 'get angry' sıfatla kullanılır)",
@@ -3574,7 +3644,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "get cross",
       "lose one's temper",
       "get annoyed"
-    ]
+    ],
+    "meaningTr": "Sinirlenmek, kızmak; ani veya günlük bir öfkelenme durumunu ifade eder. 'Become angry'ye göre daha konuşma diline yakın ve daha doğrudan bir kullanımdır."
   },
   {
     "id": "col_u08_0073",
@@ -3582,7 +3653,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Kalp krizi geçirmek; ani ve ciddi bir kalp rahatsızlığı yaşamak. 'Have' fiili ile kurulan bu yapı, olayın gerçekleşmesini ifade eder ve tıbbi bağlamda yaygındır.",
+    "meaning": "to experience a sudden serious medical condition in which the heart stops working properly",
     "collocates": [],
     "commonMistakes": [
       "make a heart attack (yanlış fiil; 'have' veya 'suffer' kullanılır)",
@@ -3623,7 +3694,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "suffer a heart attack",
       "experience a heart attack",
       "have a cardiac arrest"
-    ]
+    ],
+    "meaningTr": "Kalp krizi geçirmek; ani ve ciddi bir kalp rahatsızlığı yaşamak. 'Have' fiili ile kurulan bu yapı, olayın gerçekleşmesini ifade eder ve tıbbi bağlamda yaygındır."
   },
   {
     "id": "col_u08_0074",
@@ -3631,7 +3703,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Kalp krizi geçirmek; genellikle tıbbi ve resmi bağlamlarda kullanılan, olayın ciddiyetini ve olumsuz etkisini vurgulayan bir ifade.",
+    "meaning": "to experience a heart attack, used especially in medical or formal contexts",
     "collocates": [],
     "commonMistakes": [
       "suffer from a heart attack (kronik hastalıklar için 'suffer from' kullanılır; ani olaylar için 'suffer a heart attack' denir)",
@@ -3672,7 +3744,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have a heart attack",
       "experience a heart attack",
       "suffer a cardiac arrest"
-    ]
+    ],
+    "meaningTr": "Kalp krizi geçirmek; genellikle tıbbi ve resmi bağlamlarda kullanılan, olayın ciddiyetini ve olumsuz etkisini vurgulayan bir ifade."
   },
   {
     "id": "col_u19_058",
@@ -3680,7 +3753,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bebek sahibi olmak, doğum yapmak; bir kadının çocuk dünyaya getirmesi anlamında kullanılan yaygın ve doğal bir ifade.",
+    "meaning": "to give birth to a child or become a parent",
     "collocates": [],
     "commonMistakes": [
       "make a baby (cinsel ilişki anlamına gelir; doğum yapmak için 'have a baby' kullanılır)",
@@ -3722,7 +3795,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have a child",
       "deliver a baby",
       "bring a baby into the world"
-    ]
+    ],
+    "meaningTr": "Bebek sahibi olmak, doğum yapmak; bir kadının çocuk dünyaya getirmesi anlamında kullanılan yaygın ve doğal bir ifade."
   },
   {
     "id": "col_u08_01",
@@ -3730,7 +3804,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Saçını kaybetmek, kel olmak; genellikle yaşlanma veya genetik nedenlerle saçın dökülmesi ve kelliğin başlaması anlamına gelir.",
+    "meaning": "to lose your hair and become bald, often because of age or genetics",
     "collocates": [
       "go grey",
       "go blind",
@@ -3777,7 +3851,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "become bald",
       "go thin on top",
       "experience hair loss"
-    ]
+    ],
+    "meaningTr": "Saçını kaybetmek, kel olmak; genellikle yaşlanma veya genetik nedenlerle saçın dökülmesi ve kelliğin başlaması anlamına gelir."
   },
   {
     "id": "col_u08_0077",
@@ -3785,7 +3860,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Sıkılmak, canı sıkılmak; bir şeyden veya durumdan dolayı ilgi kaybı yaşamak, monotonluk hissetmek.",
+    "meaning": "to start feeling tired and uninterested because something is dull or repetitive",
     "collocates": [],
     "commonMistakes": [
       "become boring (yanlış; 'boring' sıkıcı olan şeyi tanımlar, kişi 'bored' olur)",
@@ -3827,7 +3902,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "grow bored",
       "lose interest",
       "tire of something"
-    ]
+    ],
+    "meaningTr": "Sıkılmak, canı sıkılmak; bir şeyden veya durumdan dolayı ilgi kaybı yaşamak, monotonluk hissetmek."
   },
   {
     "id": "col_u08_0078",
@@ -3835,7 +3911,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Depresyona girmek, bunalıma girmek; ruhsal çöküntü yaşamak, moral ve motivasyonun ciddi şekilde düşmesi.",
+    "meaning": "to start suffering from a low mood or a serious mental condition",
     "collocates": [],
     "commonMistakes": [
       "become depressing (yanlış; 'depressing' depresif yapan şeyi tanımlar, kişi 'depressed' olur)",
@@ -3877,7 +3953,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "fall into depression",
       "become despondent",
       "sink into depression"
-    ]
+    ],
+    "meaningTr": "Depresyona girmek, bunalıma girmek; ruhsal çöküntü yaşamak, moral ve motivasyonun ciddi şekilde düşmesi."
   },
   {
     "id": "col_u08_0079",
@@ -3885,7 +3962,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Heyecanlanmak, coşmak; bir olay veya durum karşısında yoğun bir heyecan ve enerji hissetmek.",
+    "meaning": "to start feeling happy, eager and full of energy about something",
     "collocates": [],
     "commonMistakes": [
       "become exciting (yanlış; 'exciting' heyecan veren şeyi tanımlar, kişi 'excited' olur)",
@@ -3927,7 +4004,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "grow excited",
       "become enthusiastic",
       "feel thrilled"
-    ]
+    ],
+    "meaningTr": "Heyecanlanmak, coşmak; bir olay veya durum karşısında yoğun bir heyecan ve enerji hissetmek."
   },
   {
     "id": "col_u08_02",
@@ -3935,7 +4013,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Nesli tükenmek, soyu tükenmek; bir türün tamamen yok olması, dünya üzerinde artık hiçbir bireyinin kalmaması.",
+    "meaning": "to stop existing completely as a species, with no living members left",
     "collocates": [
       "become famous",
       "become unpopular",
@@ -3981,7 +4059,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "go extinct",
       "be wiped out",
       "disappear completely"
-    ]
+    ],
+    "meaningTr": "Nesli tükenmek, soyu tükenmek; bir türün tamamen yok olması, dünya üzerinde artık hiçbir bireyinin kalmaması."
   },
   {
     "id": "col_u09_021",
@@ -3989,7 +4068,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Kaza geçirmek; beklenmedik, istenmeyen bir olay sonucu zarar görmek veya yaralanmak. Genellikle trafik, iş yeri veya ev kazaları için kullanılır.",
+    "meaning": "to experience an unexpected event that causes damage or injury",
     "collocates": [],
     "commonMistakes": [
       "do an accident (yanlış fiil; 'have' veya 'be involved in' kullanılmalı)",
@@ -4031,7 +4110,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "suffer an accident",
       "get into an accident",
       "meet with an accident"
-    ]
+    ],
+    "meaningTr": "Kaza geçirmek; beklenmedik, istenmeyen bir olay sonucu zarar görmek veya yaralanmak. Genellikle trafik, iş yeri veya ev kazaları için kullanılır."
   },
   {
     "id": "col_u09_01",
@@ -4039,7 +4119,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Harekete geçmek; bir sorunu çözmek veya bir durumu değiştirmek için somut adımlar atmak. Genellikle resmi, ciddi veya acil durumlarda kullanılır.",
+    "meaning": "to do something concrete to deal with a problem or change a situation",
     "collocates": [
       "take emergency action",
       "take disciplinary action",
@@ -4085,7 +4165,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "take steps",
       "take measures",
       "do something about it"
-    ]
+    ],
+    "meaningTr": "Harekete geçmek; bir sorunu çözmek veya bir durumu değiştirmek için somut adımlar atmak. Genellikle resmi, ciddi veya acil durumlarda kullanılır."
   },
   {
     "id": "col_u09_022",
@@ -4093,7 +4174,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Tartışmak, münakaşa etmek; genellikle öfke veya anlaşmazlık içeren sözlü bir çatışma yaşamak. 'Have a row' (İngiliz İngilizcesi) ve 'have a fight' ile yakın anlamlıdır.",
+    "meaning": "to have a disagreement in which people speak angrily to each other",
     "collocates": [],
     "commonMistakes": [
       "do an argument (yanlış fiil; 'have an argument' kullanılmalı)",
@@ -4135,7 +4216,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have a quarrel",
       "have a disagreement",
       "fall out"
-    ]
+    ],
+    "meaningTr": "Tartışmak, münakaşa etmek; genellikle öfke veya anlaşmazlık içeren sözlü bir çatışma yaşamak. 'Have a row' (İngiliz İngilizcesi) ve 'have a fight' ile yakın anlamlıdır."
   },
   {
     "id": "col_u09_034",
@@ -4143,7 +4225,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Dikkat etmek, kulak vermek; bir şeye bilinçli olarak odaklanmak ve özen göstermek. Genellikle 'to' edatıyla birlikte kullanılır: 'pay attention to something'.",
+    "meaning": "to watch, listen to or think about something carefully and with interest",
     "collocates": [],
     "commonMistakes": [
       "give attention (yanlış fiil; 'pay attention' kullanılmalı)",
@@ -4185,7 +4267,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "take notice",
       "concentrate on",
       "focus on"
-    ]
+    ],
+    "meaningTr": "Dikkat etmek, kulak vermek; bir şeye bilinçli olarak odaklanmak ve özen göstermek. Genellikle 'to' edatıyla birlikte kullanılır: 'pay attention to something'."
   },
   {
     "id": "col_u09_0085",
@@ -4193,7 +4276,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Mola vermek, ara vermek; bir iş veya aktiviteye kısa bir süre ara vermek. Genellikle dinlenmek, yemek yemek veya enerji toplamak için kullanılır.",
+    "meaning": "to stop working or doing an activity for a short time to rest",
     "collocates": [],
     "commonMistakes": [
       "do a break (yanlış fiil; 'have a break' veya 'take a break' kullanılmalı)",
@@ -4235,7 +4318,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have a rest",
       "take a breather",
       "pause"
-    ]
+    ],
+    "meaningTr": "Mola vermek, ara vermek; bir iş veya aktiviteye kısa bir süre ara vermek. Genellikle dinlenmek, yemek yemek veya enerji toplamak için kullanılır."
   },
   {
     "id": "col_u09_0086",
@@ -4243,7 +4327,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Otobüse binmek; toplu taşıma aracı olarak otobüsü kullanmak. 'Take' burada 'binmek/kullanmak' anlamında olup, araçla seyahat etmeyi ifade eder.",
+    "meaning": "to travel somewhere using a bus as your means of transport",
     "collocates": [],
     "commonMistakes": [
       "get on a bus (kısa mesafe veya durağa yaklaşma bağlamında kullanılır, genel seyahat için 'take a bus' tercih edilir)",
@@ -4285,7 +4369,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "ride a bus",
       "go by bus",
       "travel by bus"
-    ]
+    ],
+    "meaningTr": "Otobüse binmek; toplu taşıma aracı olarak otobüsü kullanmak. 'Take' burada 'binmek/kullanmak' anlamında olup, araçla seyahat etmeyi ifade eder."
   },
   {
     "id": "col_u09_0087",
@@ -4293,7 +4378,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Şansını denemek; risk almak; belirsiz bir durumda cesaret gösterip bir şeyi denemek. Genellikle sonucun belirsiz olduğu durumlarda kullanılır.",
+    "meaning": "to do something risky when the result is uncertain, hoping for a good outcome",
     "collocates": [],
     "commonMistakes": [
       "make a chance (yanlış; 'take a chance' doğrudur)",
@@ -4335,7 +4420,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "take a gamble",
       "risk it",
       "chance it"
-    ]
+    ],
+    "meaningTr": "Şansını denemek; risk almak; belirsiz bir durumda cesaret gösterip bir şeyi denemek. Genellikle sonucun belirsiz olduğu durumlarda kullanılır."
   },
   {
     "id": "col_u09_035",
@@ -4343,7 +4429,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "İltifat etmek; birine güzel veya olumlu bir söz söylemek. 'Pay' burada 'vermek/sunmak' anlamında kullanılır ve genellikle 'to' edatıyla birlikte gelir: pay a compliment to someone.",
+    "meaning": "to say something nice or admiring to someone to praise them",
     "collocates": [],
     "commonMistakes": [
       "make a compliment (yaygın hata; 'pay a compliment' veya 'give a compliment' doğrudur)",
@@ -4385,7 +4471,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "compliment someone",
       "say something nice",
       "flatter someone"
-    ]
+    ],
+    "meaningTr": "İltifat etmek; birine güzel veya olumlu bir söz söylemek. 'Pay' burada 'vermek/sunmak' anlamında kullanılır ve genellikle 'to' edatıyla birlikte gelir: pay a compliment to someone."
   },
   {
     "id": "col_u09_024",
@@ -4393,7 +4480,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Sohbet etmek; konuşmak; karşılıklı bir diyalog kurmak. 'Have' burada 'yapmak/etmek' anlamında olup, genellikle 'with' edatıyla birlikte kullanılır: have a conversation with someone.",
+    "meaning": "to talk with someone in an informal, two-way exchange of ideas",
     "collocates": [],
     "commonMistakes": [
       "make a conversation (yaygın hata; 'have a conversation' doğrudur)",
@@ -4435,7 +4522,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have a talk",
       "engage in conversation",
       "converse"
-    ]
+    ],
+    "meaningTr": "Sohbet etmek; konuşmak; karşılıklı bir diyalog kurmak. 'Have' burada 'yapmak/etmek' anlamında olup, genellikle 'with' edatıyla birlikte kullanılır: have a conversation with someone."
   },
   {
     "id": "col_u09_025",
@@ -4443,7 +4531,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Zorluk çekmek; güçlük yaşamak; bir şeyi yapmakta zorlanmak. Genellikle 'have difficulty doing something' veya 'have difficulty with something' yapısıyla kullanılır.",
+    "meaning": "to find something hard to do or to struggle with a task",
     "collocates": [],
     "commonMistakes": [
       "make difficulty (yanlış; 'have difficulty' doğrudur)",
@@ -4485,7 +4573,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "struggle",
       "find it difficult",
       "have a hard time"
-    ]
+    ],
+    "meaningTr": "Zorluk çekmek; güçlük yaşamak; bir şeyi yapmakta zorlanmak. Genellikle 'have difficulty doing something' veya 'have difficulty with something' yapısıyla kullanılır."
   },
   {
     "id": "col_u10_0091",
@@ -4493,7 +4582,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Tek başına yaşamak; başka biriyle birlikte olmadan, kendi başına bir evde/dairede ikamet etmek. Genellikle bağımsızlık, yalnızlık veya kişisel tercih bağlamında kullanılır.",
+    "meaning": "to live in a home by yourself without other people",
     "collocates": [],
     "commonMistakes": [
       "live lonely (yanlış; 'lonely' sıfattır, 'live alone' kullanılmalı)",
@@ -4535,7 +4624,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "live on one's own",
       "reside alone",
       "live solo"
-    ]
+    ],
+    "meaningTr": "Tek başına yaşamak; başka biriyle birlikte olmadan, kendi başına bir evde/dairede ikamet etmek. Genellikle bağımsızlık, yalnızlık veya kişisel tercih bağlamında kullanılır."
   },
   {
     "id": "col_u10_0092",
@@ -4543,7 +4633,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Yalnız seyahat etmek; bir refakatçi veya grupla değil, tek başına yolculuk yapmak. Bağımsızlık, keşif veya kişisel gelişim temasıyla sık kullanılır.",
+    "meaning": "to make a journey without a companion or group",
     "collocates": [],
     "commonMistakes": [
       "travel lonely (yanlış; 'lonely' duyguyu belirtir, 'travel alone' kullanılmalı)",
@@ -4585,7 +4675,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "travel on one's own",
       "travel solo",
       "journey alone"
-    ]
+    ],
+    "meaningTr": "Yalnız seyahat etmek; bir refakatçi veya grupla değil, tek başına yolculuk yapmak. Bağımsızlık, keşif veya kişisel gelişim temasıyla sık kullanılır."
   },
   {
     "id": "col_u10_0093",
@@ -4593,7 +4684,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Antik tarih; genellikle Mısır, Yunanistan ve Roma gibi eski uygarlıkların incelendiği akademik alan. Günlük dilde mecazen 'artık önemsiz, geçmişte kalmış konu' anlamında da kullanılır.",
+    "meaning": "the study of the history of early civilizations such as Greece and Rome",
     "collocates": [],
     "commonMistakes": [
       "old history (akademik bağlamda doğal değil; 'ancient history' tercih edilir)",
@@ -4635,7 +4726,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "early history",
       "history of antiquity",
       "antiquity"
-    ]
+    ],
+    "meaningTr": "Antik tarih; genellikle Mısır, Yunanistan ve Roma gibi eski uygarlıkların incelendiği akademik alan. Günlük dilde mecazen 'artık önemsiz, geçmişte kalmış konu' anlamında da kullanılır."
   },
   {
     "id": "col_u10_0094",
@@ -4643,7 +4735,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Antik çağlar; tarih öncesi veya çok eski dönemleri ifade eden zaman zarfı. Genellikle 'in ancient times' kalıbıyla kullanılır ve 'günümüzde' ile karşıtlık oluşturur.",
+    "meaning": "the very distant past, especially the period of early civilizations",
     "collocates": [],
     "commonMistakes": [
       "ancient time (tekil kullanım yanlış; 'ancient times' çoğul olmalı)",
@@ -4685,7 +4777,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "in ancient days",
       "in olden times",
       "in classical times"
-    ]
+    ],
+    "meaningTr": "Antik çağlar; tarih öncesi veya çok eski dönemleri ifade eden zaman zarfı. Genellikle 'in ancient times' kalıbıyla kullanılır ve 'günümüzde' ile karşıtlık oluşturur."
   },
   {
     "id": "col_u10_0095",
@@ -4693,7 +4786,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Antika mobilya; genellikle yüz yıldan eski, değerli ve koleksiyonluk ahşap veya döşemeli ev eşyaları. 'Antique' sıfatı yalnızca nesnelerle kullanılır, tarih dönemleriyle değil.",
+    "meaning": "old and valuable furniture, usually more than a hundred years old",
     "collocates": [],
     "commonMistakes": [
       "ancient furniture (yanlış eşleşme; 'ancient' tarih dönemleri için, mobilya için 'antique')",
@@ -4735,7 +4828,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "period furniture",
       "old collectible furniture",
       "heritage furniture"
-    ]
+    ],
+    "meaningTr": "Antika mobilya; genellikle yüz yıldan eski, değerli ve koleksiyonluk ahşap veya döşemeli ev eşyaları. 'Antique' sıfatı yalnızca nesnelerle kullanılır, tarih dönemleriyle değil."
   },
   {
     "id": "col_u10_0096",
@@ -4743,7 +4837,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Eski dönemlere ait, genellikle yüksek değerli ve koleksiyonluk takı; antika mücevher.",
+    "meaning": "old and valuable jewellery from a past period, often collected as a treasure",
     "collocates": [],
     "commonMistakes": [
       "antique jewelery (yanlış yazım: 'jewellery' çift 'l' ile yazılır)",
@@ -4785,7 +4879,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "estate jewellery",
       "period jewellery",
       "heirloom jewellery"
-    ]
+    ],
+    "meaningTr": "Eski dönemlere ait, genellikle yüksek değerli ve koleksiyonluk takı; antika mücevher."
   },
   {
     "id": "col_u10_0097",
@@ -4793,7 +4888,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Evrenin başlangıcı; evrenin var olmaya başlaması (genellikle 'the universe begins' veya 'when the universe began' biçiminde kullanılır).",
+    "meaning": "the point at which the universe starts to exist",
     "collocates": [],
     "commonMistakes": [
       "universe begins to start (gereksiz tekrar)",
@@ -4830,7 +4925,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "universe comes into being",
       "universe starts",
       "creation of the universe"
-    ]
+    ],
+    "meaningTr": "Evrenin başlangıcı; evrenin var olmaya başlaması (genellikle 'the universe begins' veya 'when the universe began' biçiminde kullanılır)."
   },
   {
     "id": "col_u10_0098",
@@ -4838,7 +4934,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Önemli, hayatı etkileyen büyük karar; ciddi sonuçları olan seçim.",
+    "meaning": "an important choice that has serious effects on your life",
     "collocates": [],
     "commonMistakes": [
       "large decision (İngilizcede 'large' karar için kullanılmaz)",
@@ -4880,7 +4976,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "important decision",
       "life-changing decision",
       "significant decision"
-    ]
+    ],
+    "meaningTr": "Önemli, hayatı etkileyen büyük karar; ciddi sonuçları olan seçim."
   },
   {
     "id": "col_u10_0099",
@@ -4888,7 +4985,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Büyük sorun; ciddi ve çözülmesi zor problem.",
+    "meaning": "a serious and difficult issue that needs to be solved",
     "collocates": [],
     "commonMistakes": [
       "large problem (tercih edilmez, 'big/major' daha doğal)",
@@ -4930,7 +5027,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "serious problem",
       "huge problem",
       "significant problem"
-    ]
+    ],
+    "meaningTr": "Büyük sorun; ciddi ve çözülmesi zor problem."
   },
   {
     "id": "col_u10_0100",
@@ -4938,7 +5036,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Eski bina; genellikle tarihi veya yıllanmış yapı.",
+    "meaning": "a building that has existed for many years, often of historical interest",
     "collocates": [],
     "commonMistakes": [
       "antique building (binalar için 'antique' kullanılmaz)",
@@ -4980,7 +5078,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "aged building",
       "ancient building",
       "vintage building"
-    ]
+    ],
+    "meaningTr": "Eski bina; genellikle tarihi veya yıllanmış yapı."
   },
   {
     "id": "col_u11_0101",
@@ -4988,7 +5087,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir yere, bilgiye, sisteme veya kaynağa erişim sağlamak; giriş hakkı elde etmek. Genellikle izin, şifre veya belirli bir süreç sonucunda ulaşılan erişimi ifade eder.",
+    "meaning": "to succeed in entering a place or reaching information or a system",
     "collocates": [],
     "commonMistakes": [
       "make access (yanlış; doğrusu gain access veya get access)",
@@ -5030,7 +5129,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "obtain access",
       "secure access",
       "have access"
-    ]
+    ],
+    "meaningTr": "Bir yere, bilgiye, sisteme veya kaynağa erişim sağlamak; giriş hakkı elde etmek. Genellikle izin, şifre veya belirli bir süreç sonucunda ulaşılan erişimi ifade eder."
   },
   {
     "id": "col_u11_0102",
@@ -5038,7 +5138,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Başarı elde etmek; çaba, yetenek veya strateji sonucunda arzu edilen bir sonuca ulaşmak. Genellikle uzun vadeli bir hedefin gerçekleşmesini ifade eder.",
+    "meaning": "to reach a desired result through effort, skill or planning",
     "collocates": [],
     "commonMistakes": [
       "make success (yanlış; doğrusu achieve success veya be successful)",
@@ -5080,7 +5180,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be successful",
       "reach success",
       "accomplish success"
-    ]
+    ],
+    "meaningTr": "Başarı elde etmek; çaba, yetenek veya strateji sonucunda arzu edilen bir sonuca ulaşmak. Genellikle uzun vadeli bir hedefin gerçekleşmesini ifade eder."
   },
   {
     "id": "col_u11_0103",
@@ -5088,7 +5189,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Hedeflerine ulaşmak; belirlediğin amaçları gerçekleştirmek. Genellikle kişisel veya kurumsal hedefler için kullanılır ve çaba gerektirir.",
+    "meaning": "to succeed in doing the things you have planned or intended to do",
     "collocates": [],
     "commonMistakes": [
       "make your aims (yanlış; doğrusu achieve your aims)",
@@ -5130,7 +5231,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "fulfill your aims",
       "realize your aims",
       "meet your objectives"
-    ]
+    ],
+    "meaningTr": "Hedeflerine ulaşmak; belirlediğin amaçları gerçekleştirmek. Genellikle kişisel veya kurumsal hedefler için kullanılır ve çaba gerektirir."
   },
   {
     "id": "col_u11_0104",
@@ -5138,7 +5240,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Hedeflerine ulaşmak; belirli bir süre içinde gerçekleştirmek istediğin somut sonuçları elde etmek. 'Aims' kelimesinden daha somut ve ölçülebilir hedefler için kullanılır.",
+    "meaning": "to succeed in reaching the specific results you have set for yourself",
     "collocates": [],
     "commonMistakes": [
       "make your goals (yanlış; doğrusu achieve your goals)",
@@ -5180,7 +5282,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "attain your goals",
       "accomplish your goals",
       "meet your goals"
-    ]
+    ],
+    "meaningTr": "Hedeflerine ulaşmak; belirli bir süre içinde gerçekleştirmek istediğin somut sonuçları elde etmek. 'Aims' kelimesinden daha somut ve ölçülebilir hedefler için kullanılır."
   },
   {
     "id": "col_u11_0105",
@@ -5188,7 +5291,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir avantaj elde etmek; rekabet ortamında diğerlerine göre üstün bir konuma geçmek. Genellikle stratejik hamleler veya koşullar sonucu kazanılan üstünlüğü ifade eder.",
+    "meaning": "to get a better position than others in a competitive situation",
     "collocates": [],
     "commonMistakes": [
       "make an advantage (yanlış; doğrusu gain an advantage)",
@@ -5230,7 +5333,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "obtain an advantage",
       "secure an advantage",
       "have an edge"
-    ]
+    ],
+    "meaningTr": "Bir avantaj elde etmek; rekabet ortamında diğerlerine göre üstün bir konuma geçmek. Genellikle stratejik hamleler veya koşullar sonucu kazanılan üstünlüğü ifade eder."
   },
   {
     "id": "col_u11_0106",
@@ -5238,7 +5342,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir ödül kazanmak; bir yarışma, tören veya değerlendirme sonucunda resmi bir ödülü almaya hak kazanmak. Genellikle sanat, bilim, spor veya iş dünyasında başarı karşılığında verilen ödüller için kullanılır.",
+    "meaning": "to receive a prize or honour as a result of winning a competition or being judged successful",
     "collocates": [],
     "commonMistakes": [
       "gain an award (doğal değil; 'win/receive an award' kullanılır)",
@@ -5280,7 +5384,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "take home an award",
       "be given an award",
       "pick up an award"
-    ]
+    ],
+    "meaningTr": "Bir ödül kazanmak; bir yarışma, tören veya değerlendirme sonucunda resmi bir ödülü almaya hak kazanmak. Genellikle sanat, bilim, spor veya iş dünyasında başarı karşılığında verilen ödüller için kullanılır."
   },
   {
     "id": "col_u11_0107",
@@ -5288,7 +5393,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir savaşı veya mücadeleyi kazanmak; askeri bir çatışmada ya da mecazi olarak bir sorunla, hastalıkla veya zorlukla verilen mücadelede üstün gelmek.",
+    "meaning": "to be victorious in a fight or struggle, either military or figurative",
     "collocates": [],
     "commonMistakes": [
       "gain a battle (doğal değil; 'win a battle' kullanılır)",
@@ -5330,7 +5435,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "come out on top in a battle",
       "prevail in a battle",
       "triumph in a battle"
-    ]
+    ],
+    "meaningTr": "Bir savaşı veya mücadeleyi kazanmak; askeri bir çatışmada ya da mecazi olarak bir sorunla, hastalıkla veya zorlukla verilen mücadelede üstün gelmek."
   },
   {
     "id": "col_u11_0108",
@@ -5338,7 +5444,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir rakibi yenmek; bir yarışmada, maçta veya seçimde karşı tarafı mağlup etmek. 'Beat' fiili doğrudan rakip veya kişiyle kullanılır.",
+    "meaning": "to defeat a rival in a contest, match or election",
     "collocates": [],
     "commonMistakes": [
       "win an opponent (yanlış; 'beat/defeat an opponent' kullanılır)",
@@ -5380,7 +5486,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "overcome an opponent",
       "get the better of an opponent",
       "outplay an opponent"
-    ]
+    ],
+    "meaningTr": "Bir rakibi yenmek; bir yarışmada, maçta veya seçimde karşı tarafı mağlup etmek. 'Beat' fiili doğrudan rakip veya kişiyle kullanılır."
   },
   {
     "id": "col_u11_0109",
@@ -5388,7 +5495,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bir takımı yenmek; bir spor müsabakasında veya rekabet ortamında karşı takımı mağlup etmek.",
+    "meaning": "to defeat another team in a sports match or competitive event",
     "collocates": [],
     "commonMistakes": [
       "win a team (yanlış; 'beat/defeat a team' kullanılır)",
@@ -5430,7 +5537,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "overcome a team",
       "get the better of a team",
       "triumph over a team"
-    ]
+    ],
+    "meaningTr": "Bir takımı yenmek; bir spor müsabakasında veya rekabet ortamında karşı takımı mağlup etmek."
   },
   {
     "id": "col_u11_0110",
@@ -5438,7 +5546,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Yanında cep telefonu taşımak; bir kişinin günlük hayatında cep telefonunu yanında bulundurması.",
+    "meaning": "to have a mobile phone with you when you go somewhere",
     "collocates": [],
     "commonMistakes": [
       "take a mobile phone (yanında taşımak anlamında 'carry' daha doğal; 'take' bir yere götürmek anlamında)",
@@ -5480,7 +5588,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "keep a mobile phone on you",
       "take a mobile phone with you",
       "bring a mobile phone"
-    ]
+    ],
+    "meaningTr": "Yanında cep telefonu taşımak; bir kişinin günlük hayatında cep telefonunu yanında bulundurması."
   },
   {
     "id": "col_u12_0111",
@@ -5488,7 +5597,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Ortamın yumuşaması, gerginliğin azalıp havanın rahatlaması; bir toplulukta neşe ve rahatlığın artması (mecazi kullanım).",
+    "meaning": "the mood in a place becomes more relaxed and less tense",
     "collocates": [],
     "commonMistakes": [
       "atmosphere becomes light (doğal değil; 'lightens' kullanılmalı)",
@@ -5530,7 +5639,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "mood lifts",
       "the air clears",
       "things become more relaxed"
-    ]
+    ],
+    "meaningTr": "Ortamın yumuşaması, gerginliğin azalıp havanın rahatlaması; bir toplulukta neşe ve rahatlığın artması (mecazi kullanım)."
   },
   {
     "id": "col_u12_0112",
@@ -5538,7 +5648,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Görkemli bir final, şanlı bir son; genellikle bir kariyerin, performansın veya olayın etkileyici biçimde sona ermesi (çoğu zaman 'go out in a blaze of glory' kalıbında kullanılır).",
+    "meaning": "an impressive and dramatic end to a career or event, often attracting admiration",
     "collocates": [],
     "commonMistakes": [
       "blaze of glories (yanlış çoğul; 'glory' tekil kalır)",
@@ -5580,7 +5690,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "spectacular finale",
       "triumphant ending",
       "grand send-off"
-    ]
+    ],
+    "meaningTr": "Görkemli bir final, şanlı bir son; genellikle bir kariyerin, performansın veya olayın etkileyici biçimde sona ermesi (çoğu zaman 'go out in a blaze of glory' kalıbında kullanılır)."
   },
   {
     "id": "col_u12_0113",
@@ -5588,7 +5699,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Yoğun medya ilgisi, büyük bir tanıtım veya kamuoyu dikkati fırtınası; bir olayın veya kişinin çok fazla basın ilgisi görmesi.",
+    "meaning": "a great deal of attention from newspapers, television and the public",
     "collocates": [],
     "commonMistakes": [
       "blaze of publicities (yanlış çoğul; 'publicity' sayılamaz)",
@@ -5630,7 +5741,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "flurry of media attention",
       "media frenzy",
       "huge public exposure"
-    ]
+    ],
+    "meaningTr": "Yoğun medya ilgisi, büyük bir tanıtım veya kamuoyu dikkati fırtınası; bir olayın veya kişinin çok fazla basın ilgisi görmesi."
   },
   {
     "id": "col_u12_0114",
@@ -5638,7 +5750,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Utançtan yanakların kızarması ve sıcaklık hissetmesi; yoğun utanma duygusunun fiziksel belirtisi (mecazi kullanım).",
+    "meaning": "to feel your face become hot and red because you feel very ashamed",
     "collocates": [],
     "commonMistakes": [
       "cheeks burn of embarrassment (yanlış edat; 'with' kullanılmalı)",
@@ -5680,7 +5792,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "face turns red with embarrassment",
       "blush with embarrassment",
       "cheeks glow with shame"
-    ]
+    ],
+    "meaningTr": "Utançtan yanakların kızarması ve sıcaklık hissetmesi; yoğun utanma duygusunun fiziksel belirtisi (mecazi kullanım)."
   },
   {
     "id": "col_u12_0115",
@@ -5688,7 +5801,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Sohbetin akıcı ve doğal bir şekilde ilerlemesi; konuşmanın takılmadan, rahatça sürmesi (mecazi kullanım).",
+    "meaning": "a discussion continues easily and naturally without awkward pauses",
     "collocates": [],
     "commonMistakes": [
       "conversation flows well (gereksiz zarf; 'flows' zaten akıcılığı belirtir)",
@@ -5730,7 +5843,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "chat flows naturally",
       "talk goes easily",
       "discussion moves along"
-    ]
+    ],
+    "meaningTr": "Sohbetin akıcı ve doğal bir şekilde ilerlemesi; konuşmanın takılmadan, rahatça sürmesi (mecazi kullanım)."
   },
   {
     "id": "col_u12_0116",
@@ -5738,7 +5852,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Gergin, hararetli, öfkeli tartışma; tarafların birbirine sert çıktığı, duyguların yükseldiği konuşma.",
+    "meaning": "a discussion in which people become angry and argue strongly with each other",
     "collocates": [],
     "commonMistakes": [
       "hot conversation (yanlış; 'hot' bu anlamda kullanılmaz)",
@@ -5780,7 +5894,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "fiery exchange",
       "stormy discussion",
       "angry argument"
-    ]
+    ],
+    "meaningTr": "Gergin, hararetli, öfkeli tartışma; tarafların birbirine sert çıktığı, duyguların yükseldiği konuşma."
   },
   {
     "id": "col_u12_0117",
@@ -5788,7 +5903,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Karanlık günler; zorluk, sıkıntı, üzüntü veya kriz dolu dönemler (mecazi anlamda).",
+    "meaning": "a period of time when life is difficult, unhappy or full of problems",
     "collocates": [],
     "commonMistakes": [
       "black days (İngilizcede bu mecazi anlamda yaygın değil)",
@@ -5830,7 +5945,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "hard times",
       "difficult period",
       "bleak period"
-    ]
+    ],
+    "meaningTr": "Karanlık günler; zorluk, sıkıntı, üzüntü veya kriz dolu dönemler (mecazi anlamda)."
   },
   {
     "id": "col_u12_0118",
@@ -5838,7 +5954,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Karanlık düşünceler; karamsar, üzücü, endişe verici veya olumsuz içerikli düşünceler.",
+    "meaning": "unpleasant, sad or worrying thoughts that you cannot stop having",
     "collocates": [],
     "commonMistakes": [
       "black thoughts (bu mecazi anlamda yaygın değil)",
@@ -5880,7 +5996,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "negative thoughts",
       "morbid thoughts",
       "bleak thoughts"
-    ]
+    ],
+    "meaningTr": "Karanlık düşünceler; karamsar, üzücü, endişe verici veya olumsuz içerikli düşünceler."
   },
   {
     "id": "col_u12_0119",
@@ -5888,7 +6005,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Karanlık zamanlar; zorluk, kriz, üzüntü veya belirsizlikle dolu dönemler (mecazi).",
+    "meaning": "a period of difficulty, crisis or uncertainty in a person's life or in society",
     "collocates": [],
     "commonMistakes": [
       "black times (bu mecazi anlamda yaygın değil)",
@@ -5930,7 +6047,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "troubled times",
       "difficult period",
       "tough times"
-    ]
+    ],
+    "meaningTr": "Karanlık zamanlar; zorluk, kriz, üzüntü veya belirsizlikle dolu dönemler (mecazi)."
   },
   {
     "id": "col_u12_0120",
@@ -5938,7 +6056,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Yüz ifadesinin kararması; birinin yüzünün öfke, üzüntü veya endişeyle değişmesi, gölgelenmesi.",
+    "meaning": "someone's face changes and shows anger, sadness or worry",
     "collocates": [],
     "commonMistakes": [
       "expression gets dark (yanlış fiil; 'darkens' kullanılır)",
@@ -5980,7 +6098,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "expression hardens",
       "face clouds over",
       "expression turns grim"
-    ]
+    ],
+    "meaningTr": "Yüz ifadesinin kararması; birinin yüzünün öfke, üzüntü veya endişeyle değişmesi, gölgelenmesi."
   },
   {
     "id": "col_u13_0121",
@@ -5988,7 +6107,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Nehrin yatağından taşarak çevresini su altında bırakması; nehrin taşması, setlerini aşması. Genellikle şiddetli yağış veya sel sonucu kullanılır.",
+    "meaning": "a river overflows and floods the land around it, usually after heavy rain",
     "collocates": [],
     "commonMistakes": [
       "river bursts its bank (tekil kullanım yanlıştır; 'banks' çoğul olmalıdır)",
@@ -6030,7 +6149,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "river floods",
       "river breaks its banks",
       "river swells and overflows"
-    ]
+    ],
+    "meaningTr": "Nehrin yatağından taşarak çevresini su altında bırakması; nehrin taşması, setlerini aşması. Genellikle şiddetli yağış veya sel sonucu kullanılır."
   },
   {
     "id": "col_u13_0122",
@@ -6038,7 +6158,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Isırıcı, keskin ve çok soğuk rüzgar; insanın yüzünü ve tenini âdeta ısıran, acı veren soğuk rüzgar.",
+    "meaning": "a very cold wind that feels sharp and painful on your skin",
     "collocates": [],
     "commonMistakes": [
       "biting weather (weather ile kullanılmaz; sadece wind/cold için)",
@@ -6080,7 +6200,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "icy wind",
       "bitter wind",
       "freezing wind"
-    ]
+    ],
+    "meaningTr": "Isırıcı, keskin ve çok soğuk rüzgar; insanın yüzünü ve tenini âdeta ısıran, acı veren soğuk rüzgar."
   },
   {
     "id": "col_u13_01",
@@ -6088,7 +6209,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Her yeri kaplayan yoğun sis tabakası; bir battaniye gibi çevreyi saran kalın sis.",
+    "meaning": "a thick layer of fog that covers an area and makes it difficult to see",
     "collocates": [
       "patches of fog",
       "dense fog",
@@ -6135,7 +6256,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "dense fog",
       "heavy fog",
       "wall of fog"
-    ]
+    ],
+    "meaningTr": "Her yeri kaplayan yoğun sis tabakası; bir battaniye gibi çevreyi saran kalın sis."
   },
   {
     "id": "col_u13_0124",
@@ -6143,7 +6265,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Her yeri saran ince ama yoğun sis örtüsü; genellikle sabahın erken saatlerinde görülen hafif pus tabakası.",
+    "meaning": "a thin but dense layer of mist covering an area, often in the early morning",
     "collocates": [],
     "commonMistakes": [
       "blanket of mists (mist genelde sayılamaz, çoğul kullanılmaz)",
@@ -6185,7 +6307,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "veil of mist",
       "thin mist",
       "haze of mist"
-    ]
+    ],
+    "meaningTr": "Her yeri saran ince ama yoğun sis örtüsü; genellikle sabahın erken saatlerinde görülen hafif pus tabakası."
   },
   {
     "id": "col_u13_0125",
@@ -6193,7 +6316,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Rüzgarın esmesi; rüzgarın belirli bir yönde hareket etmesi. Genellikle hava durumu tanımlarında kullanılır.",
+    "meaning": "the wind moves through the air in a particular direction",
     "collocates": [],
     "commonMistakes": [
       "wind makes (rüzgar için 'blows' kullanılır, 'makes' yanlıştır)",
@@ -6235,7 +6358,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "wind sweeps",
       "wind howls",
       "wind picks up"
-    ]
+    ],
+    "meaningTr": "Rüzgarın esmesi; rüzgarın belirli bir yönde hareket etmesi. Genellikle hava durumu tanımlarında kullanılır."
   },
   {
     "id": "col_u13_0126",
@@ -6243,7 +6367,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Rüzgarın şiddetinden çitleri devirmek/yıkmak; fırtınanın çitleri yerinden söküp devirmesi.",
+    "meaning": "to knock fences to the ground with strong wind",
     "collocates": [],
     "commonMistakes": [
       "blow off fences (yanlış; 'blow off' genelde çatı/şapka gibi şeylerin uçması için kullanılır)",
@@ -6285,7 +6409,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "tear down fences",
       "bring down fences",
       "flatten fences"
-    ]
+    ],
+    "meaningTr": "Rüzgarın şiddetinden çitleri devirmek/yıkmak; fırtınanın çitleri yerinden söküp devirmesi."
   },
   {
     "id": "col_u13_0127",
@@ -6293,7 +6418,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Bulutların arasında açılan aralık; gökyüzünde bulutların dağılıp güneşin/aydınlığın göründüğü kısa boşluk.",
+    "meaning": "a short period when clouds move apart and light appears in the sky",
     "collocates": [],
     "commonMistakes": [
       "break of the clouds (yanlış; doğru edat 'in'dir)",
@@ -6335,7 +6460,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "opening in the clouds",
       "patch of blue sky",
       "clearing in the clouds"
-    ]
+    ],
+    "meaningTr": "Bulutların arasında açılan aralık; gökyüzünde bulutların dağılıp güneşin/aydınlığın göründüğü kısa boşluk."
   },
   {
     "id": "col_u13_0128",
@@ -6343,7 +6469,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Binaları yıkmak/tahrip etmek; genellikle doğal afetlerin veya şiddetli olayların binalara ciddi zarar vermesi.",
+    "meaning": "to damage buildings so badly that they are completely ruined",
     "collocates": [],
     "commonMistakes": [
       "destroy the buildings (gereksiz tanımlık; genel anlamda 'destroy buildings' daha doğal)",
@@ -6385,7 +6511,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "flatten buildings",
       "wreck buildings",
       "devastate buildings"
-    ]
+    ],
+    "meaningTr": "Binaları yıkmak/tahrip etmek; genellikle doğal afetlerin veya şiddetli olayların binalara ciddi zarar vermesi."
   },
   {
     "id": "col_u13_0129",
@@ -6393,7 +6520,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Zarara yol açmak; hasara neden olmak (genellikle hava koşulları, kazalar veya olaylar bağlamında).",
+    "meaning": "to make something become harmed or broken, often by weather or accidents",
     "collocates": [],
     "commonMistakes": [
       "make damage (yanlış; 'make' yerine 'cause' veya 'do' kullanılır)",
@@ -6435,7 +6562,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "inflict damage",
       "result in damage",
       "lead to damage"
-    ]
+    ],
+    "meaningTr": "Zarara yol açmak; hasara neden olmak (genellikle hava koşulları, kazalar veya olaylar bağlamında)."
   },
   {
     "id": "col_u13_0130",
@@ -6443,7 +6571,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Yoğun/kalın bulut; gökyüzünü kaplayan, içinden ışığın zor geçtiği sık bulut tabakası.",
+    "meaning": "a dense layer of cloud that covers the sky and blocks the light",
     "collocates": [],
     "commonMistakes": [
       "thick clouds (çoğul; genel durumda 'thick cloud' kütle halinde kullanılır, ancak 'thick clouds' da mümkündür — bağlama dikkat)",
@@ -6485,7 +6613,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "heavy cloud",
       "thick cloud cover",
       "heavy cloud cover"
-    ]
+    ],
+    "meaningTr": "Yoğun/kalın bulut; gökyüzünü kaplayan, içinden ışığın zor geçtiği sık bulut tabakası."
   },
   {
     "id": "col_u14_01",
@@ -6493,7 +6622,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Ucuz, ekonomik konaklama; bütçe dostu otel, hostel veya pansiyon gibi düşük maliyetli kalacak yer.",
+    "meaning": "cheap places to stay, such as low-cost hotels, hostels or guesthouses",
     "collocates": [
       "family-run hotel",
       "stopover",
@@ -6540,7 +6669,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "cheap lodging",
       "low-cost housing",
       "economy lodging"
-    ]
+    ],
+    "meaningTr": "Ucuz, ekonomik konaklama; bütçe dostu otel, hostel veya pansiyon gibi düşük maliyetli kalacak yer."
   },
   {
     "id": "col_u14_0132",
@@ -6548,7 +6678,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Seyahat acentesi; uçak bileti, otel rezervasyonu, tur paketleri gibi seyahat hizmetlerini satan kişi veya şirket.",
+    "meaning": "a person or company that arranges flights, hotels and holidays for customers",
     "collocates": [],
     "commonMistakes": [
       "traveler agent (yanlış; 'travel agent' doğru kullanımdır)",
@@ -6590,7 +6720,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "tour operator",
       "booking agent",
       "travel consultant"
-    ]
+    ],
+    "meaningTr": "Seyahat acentesi; uçak bileti, otel rezervasyonu, tur paketleri gibi seyahat hizmetlerini satan kişi veya şirket."
   },
   {
     "id": "col_u14_0133",
@@ -6598,7 +6729,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Koridor koltuğu; uçak, otobüs veya trende koridora bakan koltuk (genellikle tuvalete ve çıkışa kolay erişim için tercih edilir).",
+    "meaning": "a seat next to the passage between rows on a plane, bus or train",
     "collocates": [],
     "commonMistakes": [
       "corridor seat (İngilizcede uçaklarda 'aisle seat' standarttır; 'corridor' daha çok bina koridorları için kullanılır)",
@@ -6639,7 +6770,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "corridor seat",
       "outside seat",
       "passage seat"
-    ]
+    ],
+    "meaningTr": "Koridor koltuğu; uçak, otobüs veya trende koridora bakan koltuk (genellikle tuvalete ve çıkışa kolay erişim için tercih edilir)."
   },
   {
     "id": "col_u14_0134",
@@ -6647,7 +6779,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Seyahat düzenlemeleri; uçuş, konaklama, transfer ve vize gibi seyahatle ilgili tüm plan ve organizasyonlar.",
+    "meaning": "the plans and bookings made for a journey, including flights and hotels",
     "collocates": [],
     "commonMistakes": [
       "travel arrangement (tekil kullanım; genellikle çoğul 'arrangements' tercih edilir)",
@@ -6689,7 +6821,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "trip arrangements",
       "travel logistics",
       "itinerary planning"
-    ]
+    ],
+    "meaningTr": "Seyahat düzenlemeleri; uçuş, konaklama, transfer ve vize gibi seyahatle ilgili tüm plan ve organizasyonlar."
   },
   {
     "id": "col_u14_0135",
@@ -6697,7 +6830,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Uçağa binmek; uçağın kapısından içeri girip uçuş için yerleşmek.",
+    "meaning": "to get on an aircraft before a flight",
     "collocates": [],
     "commonMistakes": [
       "board on a plane (yanlış; 'board a plane' doğru, 'on' gereksizdir)",
@@ -6739,7 +6872,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "embark on a flight",
       "go aboard a plane",
       "step onto a plane"
-    ]
+    ],
+    "meaningTr": "Uçağa binmek; uçağın kapısından içeri girip uçuş için yerleşmek."
   },
   {
     "id": "col_u14_0136",
@@ -6747,7 +6881,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Tekne gezisi; genellikle turistik amaçla, kısa süreliğine bir tekneyle yapılan gezi. Nehir, göl veya denizde yapılabilir; günübirlik turlardan çok günlük seyahatlere kadar uzanır.",
+    "meaning": "a journey made by boat, often for pleasure or sightseeing",
     "collocates": [],
     "commonMistakes": [
       "make a boat trip (doğru: take a boat trip / go on a boat trip)",
@@ -6788,7 +6922,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "boat tour",
       "cruise",
       "sailing trip"
-    ]
+    ],
+    "meaningTr": "Tekne gezisi; genellikle turistik amaçla, kısa süreliğine bir tekneyle yapılan gezi. Nehir, göl veya denizde yapılabilir; günübirlik turlardan çok günlük seyahatlere kadar uzanır."
   },
   {
     "id": "col_u14_0137",
@@ -6796,7 +6931,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Tamamen dolu; rezervasyonu kapanmış. Otel, uçuş, restoran veya etkinlik için tüm yerlerin/odaların/koltukların doldurulmuş olduğunu belirtir.",
+    "meaning": "having no rooms, seats or places left to reserve",
     "collocates": [],
     "commonMistakes": [
       "full booked (doğru: fully booked — 'full' sıfat, 'fully' zarf)",
@@ -6838,7 +6973,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "fully reserved",
       "sold out",
       "no vacancies"
-    ]
+    ],
+    "meaningTr": "Tamamen dolu; rezervasyonu kapanmış. Otel, uçuş, restoran veya etkinlik için tüm yerlerin/odaların/koltukların doldurulmuş olduğunu belirtir."
   },
   {
     "id": "col_u14_0138",
@@ -6846,7 +6982,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Seyahat broşürü; turistik yerleri, turları, otelleri ve fiyatları tanıtan, genellikle resimli basılı veya dijital tanıtım materyali.",
+    "meaning": "a printed or digital booklet advertising holidays, tours, hotels and prices",
     "collocates": [],
     "commonMistakes": [
       "travelling brochure (doğru: travel brochure — isim tamlamasında 'travel' tekil kullanılır)",
@@ -6887,7 +7023,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "tourist brochure",
       "travel guide",
       "tour brochure"
-    ]
+    ],
+    "meaningTr": "Seyahat broşürü; turistik yerleri, turları, otelleri ve fiyatları tanıtan, genellikle resimli basılı veya dijital tanıtım materyali."
   },
   {
     "id": "col_u14_0139",
@@ -6895,7 +7032,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "Sarsıntılı uçuş; hava türbülansı nedeniyle uçağın sık sık sallandığı, konforun azaldığı uçuş.",
+    "meaning": "a flight during which the plane shakes a lot because of turbulence",
     "collocates": [],
     "commonMistakes": [
       "bumpy fly (doğru: bumpy flight — 'flight' isim, 'fly' fiildir)",
@@ -6935,7 +7072,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "rough flight",
       "turbulent flight",
       "uncomfortable flight"
-    ]
+    ],
+    "meaningTr": "Sarsıntılı uçuş; hava türbülansı nedeniyle uçağın sık sık sallandığı, konforun azaldığı uçuş."
   },
   {
     "id": "col_u14_0140",
@@ -6943,7 +7081,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B1",
     "category": "everyday",
-    "meaning": "İş seyahati; çalışanların iş amaçlı yaptığı seyahatler. Toplantı, konferans, müşteri ziyareti gibi nedenlerle yapılan yolculukları kapsar.",
+    "meaning": "journeys made for work purposes, such as meetings or conferences",
     "collocates": [],
     "commonMistakes": [
       "business travelling (doğru: business travel — isim tamlamasında 'travel' kullanılır)",
@@ -6984,7 +7122,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "corporate travel",
       "work travel",
       "business journey"
-    ]
+    ],
+    "meaningTr": "İş seyahati; çalışanların iş amaçlı yaptığı seyahatler. Toplantı, konferans, müşteri ziyareti gibi nedenlerle yapılan yolculukları kapsar."
   },
   {
     "id": "col_u15_0141",
@@ -6992,7 +7131,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Manzarayı hayranlıkla seyretmek; bir manzaranın güzelliğini takdir ederek izlemek.",
+    "meaning": "To look at a beautiful view with pleasure and appreciation.",
     "collocates": [],
     "commonMistakes": [
       "see the view (nötr 'görmek' anlamı taşır; hayranlık vurgusu kaybolur)",
@@ -7034,7 +7173,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "take in the view",
       "soak up the view",
       "appreciate the scenery"
-    ]
+    ],
+    "meaningTr": "Manzarayı hayranlıkla seyretmek; bir manzaranın güzelliğini takdir ederek izlemek."
   },
   {
     "id": "col_u15_046",
@@ -7042,7 +7182,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kumsalın/plajın uzanıp gitmesi; bir kumsalın belirli bir mesafe boyunca kesintisiz devam etmesi.",
+    "meaning": "To continue for a long distance along the coast without a break.",
     "collocates": [],
     "commonMistakes": [
       "beach stretches out (bazı bağlamlarda kabul edilir ama 'stretches' tek başına daha doğal)",
@@ -7079,7 +7219,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "beach runs along",
       "beach goes on for miles",
       "shoreline stretches"
-    ]
+    ],
+    "meaningTr": "Kumsalın/plajın uzanıp gitmesi; bir kumsalın belirli bir mesafe boyunca kesintisiz devam etmesi."
   },
   {
     "id": "col_u15_0143",
@@ -7087,7 +7228,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Issız/kuytu plaj; insanlardan uzak, gözlerden saklı, sakin bir kumsal.",
+    "meaning": "A quiet beach far from other people and difficult to reach.",
     "collocates": [],
     "commonMistakes": [
       "lonely beach (yalnızlık duygusu çağrıştırır; 'secluded' daha nötr ve doğal)",
@@ -7129,7 +7270,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "isolated beach",
       "remote beach",
       "quiet cove"
-    ]
+    ],
+    "meaningTr": "Issız/kuytu plaj; insanlardan uzak, gözlerden saklı, sakin bir kumsal."
   },
   {
     "id": "col_u15_047",
@@ -7137,7 +7279,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kumlu plaj; kumdan oluşan, çakıl veya kayalık olmayan kumsal.",
+    "meaning": "A beach covered with sand rather than stones or rocks.",
     "collocates": [],
     "commonMistakes": [
       "sand beach (isim tamlaması yerine sıfat kullanılmalı: 'sandy beach')",
@@ -7174,7 +7316,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "golden beach",
       "sandy coastline",
       "sandy bay"
-    ]
+    ],
+    "meaningTr": "Kumlu plaj; kumdan oluşan, çakıl veya kayalık olmayan kumsal."
   },
   {
     "id": "col_u15_0145",
@@ -7182,7 +7325,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir virajı dönmek; yolun kıvrımını geçmek (genellikle 'go/come round a bend' şeklinde).",
+    "meaning": "To pass the curved part of a road where it changes direction.",
     "collocates": [],
     "commonMistakes": [
       "round a curve (kabul edilebilir ama 'bend' yol için daha yaygın)",
@@ -7224,7 +7367,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "round a corner",
       "past a turn",
       "around a bend in the road"
-    ]
+    ],
+    "meaningTr": "Bir virajı dönmek; yolun kıvrımını geçmek (genellikle 'go/come round a bend' şeklinde)."
   },
   {
     "id": "col_u15_0146",
@@ -7232,7 +7376,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kasvetli, çorak ve umut kırıcı görünümlü arazi/peyzaj; genellikle çıplak, renksiz ve yaşam belirtisi az olan doğal görünüm.",
+    "meaning": "A bare, empty and depressing area of land with little life or colour.",
     "collocates": [],
     "commonMistakes": [
       "black landscape (renk anlamı karıştırılır; 'bleak' kasvet/çoraklık anlatır)",
@@ -7274,7 +7418,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "barren landscape",
       "stark landscape",
       "dreary landscape"
-    ]
+    ],
+    "meaningTr": "Kasvetli, çorak ve umut kırıcı görünümlü arazi/peyzaj; genellikle çıplak, renksiz ve yaşam belirtisi az olan doğal görünüm."
   },
   {
     "id": "col_u15_0147",
@@ -7282,7 +7427,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Manzarayı/görüşü kapatmak, engellemek; bir şeyin önüne geçerek görülmesini engellemek.",
+    "meaning": "To prevent someone from seeing something by standing or being in front of it.",
     "collocates": [],
     "commonMistakes": [
       "close the view (manzarayı kapatmak için 'block' kullanılır, 'close' değil)",
@@ -7324,7 +7469,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "obscure the view",
       "block the sightline",
       "spoil the view"
-    ]
+    ],
+    "meaningTr": "Manzarayı/görüşü kapatmak, engellemek; bir şeyin önüne geçerek görülmesini engellemek."
   },
   {
     "id": "col_u15_044",
@@ -7332,7 +7478,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Nefes kesen, hayranlık uyandıran doğal manzara/görünüm; çok etkileyici ve güzel doğal çevre.",
+    "meaning": "Extremely beautiful natural surroundings that make you feel amazed.",
     "collocates": [],
     "commonMistakes": [
       "breathless scenery (kişi için 'breathless' kullanılır; manzara 'breathtaking' olur)",
@@ -7374,7 +7520,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "spectacular scenery",
       "magnificent scenery",
       "dramatic scenery"
-    ]
+    ],
+    "meaningTr": "Nefes kesen, hayranlık uyandıran doğal manzara/görünüm; çok etkileyici ve güzel doğal çevre."
   },
   {
     "id": "col_u15_0149",
@@ -7382,7 +7529,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir şeyi kısa süreliğine, anlık olarak görmek; tam görmeden sadece bir an için fark etmek.",
+    "meaning": "To see someone or something for a very short moment.",
     "collocates": [],
     "commonMistakes": [
       "catch a glimpse on (doğru edat 'of'; 'on' yanlış)",
@@ -7424,7 +7571,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "glimpse",
       "catch sight of",
       "see briefly"
-    ]
+    ],
+    "meaningTr": "Bir şeyi kısa süreliğine, anlık olarak görmek; tam görmeden sadece bir an için fark etmek."
   },
   {
     "id": "col_u15_0150",
@@ -7432,7 +7580,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Aniden görmek, gözüne ilişmek; beklenmedik bir anda bir şeyi fark etmek.",
+    "meaning": "To suddenly notice someone or something, often unexpectedly.",
     "collocates": [],
     "commonMistakes": [
       "catch a sight of (gereksiz 'a'; doğru kullanım 'catch sight of')",
@@ -7474,7 +7622,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "catch a glimpse of",
       "lay eyes on",
       "set eyes on"
-    ]
+    ],
+    "meaningTr": "Aniden görmek, gözüne ilişmek; beklenmedik bir anda bir şeyi fark etmek."
   },
   {
     "id": "col_u16_0151",
@@ -7482,7 +7631,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Koruma altına alınmış, tarihi veya mimari değeri nedeniyle yasal olarak korunan bölge; sit alanı. Genellikle tarihi yapıların, geleneksel dokunun bozulmadan korunduğu şehir bölgesi.",
+    "meaning": "An area legally protected because of its historical or architectural importance.",
     "collocates": [],
     "commonMistakes": [
       "protection area (yanlış; doğrusu 'conservation area')",
@@ -7524,7 +7673,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "heritage zone",
       "preservation district",
       "listed area"
-    ]
+    ],
+    "meaningTr": "Koruma altına alınmış, tarihi veya mimari değeri nedeniyle yasal olarak korunan bölge; sit alanı. Genellikle tarihi yapıların, geleneksel dokunun bozulmadan korunduğu şehir bölgesi."
   },
   {
     "id": "col_u16_0152",
@@ -7532,7 +7682,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yoksun bölge; ekonomik ve sosyal açıdan geri kalmış, yoksulluk, işsizlik ve kötü yaşam koşullarının görüldüğü mahalle veya bölge.",
+    "meaning": "A poor neighbourhood where people lack jobs, money and good living conditions.",
     "collocates": [],
     "commonMistakes": [
       "deprived zone (daha az doğal; 'area' veya 'neighbourhood' tercih edilir)",
@@ -7574,7 +7724,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "impoverished neighbourhood",
       "run-down area",
       "underprivileged district"
-    ]
+    ],
+    "meaningTr": "Yoksun bölge; ekonomik ve sosyal açıdan geri kalmış, yoksulluk, işsizlik ve kötü yaşam koşullarının görüldüğü mahalle veya bölge."
   },
   {
     "id": "col_u16_0153",
@@ -7582,7 +7733,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Şehir merkezine yakın, genellikle eski ve yoğun yerleşim bölgesi; kent içi bölge. Çoğu zaman sosyal sorunların yoğunlaştığı, yoksulluk ve suç oranının yüksek olduğu merkezi mahalleler için kullanılır.",
+    "meaning": "A part of a city near the centre, often old and with social problems.",
     "collocates": [],
     "commonMistakes": [
       "inner city area (bitişik yazılmalı: 'inner-city area')",
@@ -7624,7 +7775,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "city-centre district",
       "urban core area",
       "central urban area"
-    ]
+    ],
+    "meaningTr": "Şehir merkezine yakın, genellikle eski ve yoğun yerleşim bölgesi; kent içi bölge. Çoğu zaman sosyal sorunların yoğunlaştığı, yoksulluk ve suç oranının yüksek olduğu merkezi mahalleler için kullanılır."
   },
   {
     "id": "col_u16_0154",
@@ -7632,7 +7784,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Girilmesi tehlikeli veya yasak olan bölge; suç oranının çok yüksek olduğu, güvenlik nedeniyle girilmemesi gereken mahalle. Mecazi olarak da kullanılır: 'no-go area' bir konunun tartışılamaz olduğu durumlar için de geçerlidir.",
+    "meaning": "A place that is dangerous or forbidden to enter, often because of crime.",
     "collocates": [],
     "commonMistakes": [
       "no-go zone (daha az yaygın; 'no-go area' standart ifadedir)",
@@ -7674,7 +7826,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "restricted area",
       "off-limits area",
       "unsafe neighbourhood"
-    ]
+    ],
+    "meaningTr": "Girilmesi tehlikeli veya yasak olan bölge; suç oranının çok yüksek olduğu, güvenlik nedeniyle girilmemesi gereken mahalle. Mecazi olarak da kullanılır: 'no-go area' bir konunun tartışılamaz olduğu durumlar için de geçerlidir."
   },
   {
     "id": "col_u16_0155",
@@ -7682,7 +7835,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yerleşim bölgesi; konutların, evlerin bulunduğu, genellikle iş yerlerinin ve sanayinin sınırlı olduğu yaşam alanı.",
+    "meaning": "An area of a town where people live, with houses rather than businesses.",
     "collocates": [],
     "commonMistakes": [
       "resident area (yanlış; doğrusu 'residential area')",
@@ -7724,7 +7877,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "residential neighbourhood",
       "residential district",
       "dormitory suburb"
-    ]
+    ],
+    "meaningTr": "Yerleşim bölgesi; konutların, evlerin bulunduğu, genellikle iş yerlerinin ve sanayinin sınırlı olduğu yaşam alanı."
   },
   {
     "id": "col_u16_0156",
@@ -7732,7 +7886,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Rahat, huzurlu, gerginlikten uzak bir ortam; insanların kendini baskı altında hissetmediği samimi bir hava.",
+    "meaning": "A calm, comfortable mood in which people feel free from pressure.",
     "collocates": [],
     "commonMistakes": [
       "relaxing atmosphere (bir mekânın kendisi 'relaxing' olabilir ama ortamın havası genelde 'relaxed' olur; 'relaxing atmosphere' yanlış değil ama farklı anlam taşır)",
@@ -7774,7 +7928,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "easy-going mood",
       "calm ambience",
       "informal setting"
-    ]
+    ],
+    "meaningTr": "Rahat, huzurlu, gerginlikten uzak bir ortam; insanların kendini baskı altında hissetmediği samimi bir hava."
   },
   {
     "id": "col_u16_0157",
@@ -7782,7 +7937,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir caddenin belirli bir yönde uzanması, bir noktadan diğerine doğru devam etmesi; genellikle şehir planlaması ve tarif bağlamında kullanılır.",
+    "meaning": "To go in a particular direction from one place to another.",
     "collocates": [],
     "commonMistakes": [
       "avenue goes (günlük konuşmada kabul edilebilir ama resmi tariflerde 'runs' daha doğal)",
@@ -7819,7 +7974,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "road extends",
       "boulevard goes",
       "avenue leads"
-    ]
+    ],
+    "meaningTr": "Bir caddenin belirli bir yönde uzanması, bir noktadan diğerine doğru devam etmesi; genellikle şehir planlaması ve tarif bağlamında kullanılır."
   },
   {
     "id": "col_u16_0158",
@@ -7827,7 +7983,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Her iki tarafı ağaçlarla kaplı, gölgeli ve genellikle prestijli bir cadde; şehirlerin estetik ve huzurlu bölgelerini tanımlar.",
+    "meaning": "A wide street with trees planted along both sides of it.",
     "collocates": [],
     "commonMistakes": [
       "tree-lined street (kabul edilebilir ama 'avenue' genelde daha geniş ve görkemli caddeler için kullanılır)",
@@ -7869,7 +8025,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "tree-shaded street",
       "green avenue",
       "wooded promenade"
-    ]
+    ],
+    "meaningTr": "Her iki tarafı ağaçlarla kaplı, gölgeli ve genellikle prestijli bir cadde; şehirlerin estetik ve huzurlu bölgelerini tanımlar."
   },
   {
     "id": "col_u16_0159",
@@ -7877,7 +8034,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Canlı, hareketli, enerjik bir bar; müzik, kalabalık ve sosyal etkileşimin yoğun olduğu eğlence mekânı.",
+    "meaning": "A bar that is full of energy, with music and many people enjoying themselves.",
     "collocates": [],
     "commonMistakes": [
       "lively pub (İngiliz İngilizcesinde kabul edilebilir ama 'bar' daha genel ve modern bir kullanımdır)",
@@ -7914,7 +8071,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "vibrant pub",
       "hopping bar",
       "animated tavern"
-    ]
+    ],
+    "meaningTr": "Canlı, hareketli, enerjik bir bar; müzik, kalabalık ve sosyal etkileşimin yoğun olduğu eğlence mekânı."
   },
   {
     "id": "col_u16_0160",
@@ -7922,7 +8080,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Görkemli, heybetli, büyüklüğü ve mimarisiyle insanı etkileyen bina; genellikle resmi veya tarihi yapılar için kullanılır.",
+    "meaning": "A large building that looks important and impressive because of its size and design.",
     "collocates": [],
     "commonMistakes": [
       "imposing structure (kabul edilebilir ama 'building' daha yaygın ve doğaldır)",
@@ -7964,7 +8122,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "stately edifice",
       "magnificent structure",
       "impressive building"
-    ]
+    ],
+    "meaningTr": "Görkemli, heybetli, büyüklüğü ve mimarisiyle insanı etkileyen bina; genellikle resmi veya tarihi yapılar için kullanılır."
   },
   {
     "id": "col_u17_0161",
@@ -7972,7 +8131,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birine karşı geçmişte yaşanan bir olaydan dolayı kızgınlık veya kırgınlık beslemek, kin tutmak; genellikle uzun süre devam eden ve affedilmeyen bir kızgınlık anlamı taşır.",
+    "meaning": "To continue feeling angry at someone about something that happened in the past.",
     "collocates": [],
     "commonMistakes": [
       "make a grudge (doğrusu: bear/hold a grudge)",
@@ -8014,7 +8173,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "harbour resentment",
       "nurse a grievance",
       "keep a chip on your shoulder"
-    ]
+    ],
+    "meaningTr": "Birine karşı geçmişte yaşanan bir olaydan dolayı kızgınlık veya kırgınlık beslemek, kin tutmak; genellikle uzun süre devam eden ve affedilmeyen bir kızgınlık anlamı taşır."
   },
   {
     "id": "col_u17_0162",
@@ -8022,7 +8182,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Gerçekleri hiç yumuşatmadan, acımasızca ve doğrudan söyleyen; karşısındakinin duygularını incitme pahasına da olsa dürüst olan kişi veya ifade.",
+    "meaning": "Saying exactly what you think in a direct way, even if it hurts.",
     "collocates": [],
     "commonMistakes": [
       "brutal honest (doğrusu: brutally honest — zarf -ly almalı)",
@@ -8064,7 +8224,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "bluntly honest",
       "candid to a fault",
       "uncompromisingly frank"
-    ]
+    ],
+    "meaningTr": "Gerçekleri hiç yumuşatmadan, acımasızca ve doğrudan söyleyen; karşısındakinin duygularını incitme pahasına da olsa dürüst olan kişi veya ifade."
   },
   {
     "id": "col_u17_055",
@@ -8072,7 +8233,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir kişinin gerçek kişiliğini, ahlaki yapısını veya iç yüzünü ortaya koymak; genellikle zor durumlarda veya baskı altında sergilenen davranışlarla ilgilidir.",
+    "meaning": "To show what kind of person someone really is through their behaviour.",
     "collocates": [],
     "commonMistakes": [
       "reveal your true personality (doğal ama 'character' daha derin ahlaki yapıyı vurgular)",
@@ -8114,7 +8275,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "reveal your true nature",
       "expose your real self",
       "lay bare your character"
-    ]
+    ],
+    "meaningTr": "Bir kişinin gerçek kişiliğini, ahlaki yapısını veya iç yüzünü ortaya koymak; genellikle zor durumlarda veya baskı altında sergilenen davranışlarla ilgilidir."
   },
   {
     "id": "col_u17_0164",
@@ -8122,7 +8284,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Karakter gücü; bir kişinin zorluklar karşısında gösterdiği ahlaki dayanıklılık, irade ve dürüstlük gibi içsel niteliklerin bütünü.",
+    "meaning": "The inner qualities, such as courage and honesty, that help someone face difficulty.",
     "collocates": [],
     "commonMistakes": [
       "strong of character (doğrusu: strength of character — isim tamlaması)",
@@ -8164,7 +8326,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "moral fibre",
       "strength of will",
       "inner strength"
-    ]
+    ],
+    "meaningTr": "Karakter gücü; bir kişinin zorluklar karşısında gösterdiği ahlaki dayanıklılık, irade ve dürüstlük gibi içsel niteliklerin bütünü."
   },
   {
     "id": "col_u17_054",
@@ -8172,7 +8335,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Zor veya üzücü bir durumu kabullenmek, onunla yüzleşip alışmak; genellikle kayıp, hastalık, başarısızlık gibi olumsuz durumlarla barışmak anlamında kullanılır.",
+    "meaning": "To gradually accept and deal with a difficult or unhappy situation.",
     "collocates": [],
     "commonMistakes": [
       "come to term with (doğrusu: come to terms with — çoğul 'terms')",
@@ -8214,7 +8377,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "make peace with",
       "reconcile yourself to",
       "get to grips with"
-    ]
+    ],
+    "meaningTr": "Zor veya üzücü bir durumu kabullenmek, onunla yüzleşip alışmak; genellikle kayıp, hastalık, başarısızlık gibi olumsuz durumlarla barışmak anlamında kullanılır."
   },
   {
     "id": "col_u17_0166",
@@ -8222,7 +8386,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İyi arkadaşlık eden, yanında olmaktan keyif alınan, hoşsohbet ve eğlenceli kimse; birlikte vakit geçirmesi keyifli kişi. Genellikle 'be good company' veya 'make good company' kalıbıyla kullanılır.",
+    "meaning": "Someone who is enjoyable and interesting to spend time with.",
     "collocates": [],
     "commonMistakes": [
       "good friend (yakın arkadaş anlamına gelir; 'good company' ise birlikte vakit geçirmesi keyifli kişi demektir, anlam farklıdır)",
@@ -8264,7 +8428,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "pleasant companion",
       "fun to be around",
       "great to spend time with"
-    ]
+    ],
+    "meaningTr": "İyi arkadaşlık eden, yanında olmaktan keyif alınan, hoşsohbet ve eğlenceli kimse; birlikte vakit geçirmesi keyifli kişi. Genellikle 'be good company' veya 'make good company' kalıbıyla kullanılır."
   },
   {
     "id": "col_u17_0167",
@@ -8272,7 +8437,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Son derece kendinden emin, aşırı özgüvenli; bir konuda hiç şüphe duymayacak kadar emin olma durumu. 'Supremely' zarfı 'confident' sıfatını güçlendirir ve genellikle olumlu ya da etkileyici bir ton taşır.",
+    "meaning": "Extremely sure of yourself and your abilities, with no doubt at all.",
     "collocates": [],
     "commonMistakes": [
       "very supremely confident (gereksiz pekiştirme; 'supremely' zaten 'çok' anlamı taşır)",
@@ -8314,7 +8479,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "utterly self-confident",
       "highly poised",
       "remarkably sure of oneself"
-    ]
+    ],
+    "meaningTr": "Son derece kendinden emin, aşırı özgüvenli; bir konuda hiç şüphe duymayacak kadar emin olma durumu. 'Supremely' zarfı 'confident' sıfatını güçlendirir ve genellikle olumlu ya da etkileyici bir ton taşır."
   },
   {
     "id": "col_u17_0168",
@@ -8322,7 +8488,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Ani, düşünmeden çabucak verilen kararlar; genellikle aceleyle ve fazla düşünmeden alınan kararlar. 'Make snap decisions' veya 'take snap decisions' kalıbıyla kullanılır.",
+    "meaning": "Decisions made very quickly, without thinking carefully about them first.",
     "collocates": [],
     "commonMistakes": [
       "do snap decisions (karar için 'do' değil 'make' kullanılır)",
@@ -8364,7 +8530,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "make impulsive decisions",
       "make quick judgements",
       "act on the spur of the moment"
-    ]
+    ],
+    "meaningTr": "Ani, düşünmeden çabucak verilen kararlar; genellikle aceleyle ve fazla düşünmeden alınan kararlar. 'Make snap decisions' veya 'take snap decisions' kalıbıyla kullanılır."
   },
   {
     "id": "col_u17_0169",
@@ -8372,7 +8539,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Son derece sadık, tutkuyla bağlı; bir kişiye, gruba ya da davaya koşulsuz ve güçlü bir şekilde bağlı olma. 'Fiercely' zarfı sadakatin yoğunluğunu ve kararlılığını vurgular.",
+    "meaning": "Extremely and strongly faithful to a person, group or belief.",
     "collocates": [],
     "commonMistakes": [
       "very fiercely loyal (gereksiz pekiştirme; 'fiercely' zaten güçlü bir zarftır)",
@@ -8414,7 +8581,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "deeply committed",
       "unwaveringly faithful",
       "staunchly supportive"
-    ]
+    ],
+    "meaningTr": "Son derece sadık, tutkuyla bağlı; bir kişiye, gruba ya da davaya koşulsuz ve güçlü bir şekilde bağlı olma. 'Fiercely' zarfı sadakatin yoğunluğunu ve kararlılığını vurgular."
   },
   {
     "id": "col_u17_0170",
@@ -8422,7 +8590,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Başkalarını kendinden önce düşünmek, öncelik vermek; bencil olmayıp diğer insanların ihtiyaç ve isteklerini kendi ihtiyaçlarının önüne koymak. Özgecilik ve fedakârlık anlamı taşır.",
+    "meaning": "To care about other people's needs before your own.",
     "collocates": [],
     "commonMistakes": [
       "put others the first (gereksiz 'the' kullanımı; 'put others first' doğrudur)",
@@ -8464,7 +8632,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "prioritise other people",
       "be selfless",
       "put other people's needs first"
-    ]
+    ],
+    "meaningTr": "Başkalarını kendinden önce düşünmek, öncelik vermek; bencil olmayıp diğer insanların ihtiyaç ve isteklerini kendi ihtiyaçlarının önüne koymak. Özgecilik ve fedakârlık anlamı taşır."
   },
   {
     "id": "col_u18_0171",
@@ -8472,7 +8641,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çarpıcı, dikkat çekici bir görünüşe/dış görünüme sahip olmak; hemen fark edilen, etkileyici bir fiziksel görünüşü olmak.",
+    "meaning": "To have a look that is very noticeable and immediately attracts attention.",
     "collocates": [],
     "commonMistakes": [
       "make a striking appearance (yanlış fiil; doğrusu 'have' veya 'cut')",
@@ -8514,7 +8683,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have a memorable appearance",
       "have a head-turning look",
       "cut a striking figure"
-    ]
+    ],
+    "meaningTr": "Çarpıcı, dikkat çekici bir görünüşe/dış görünüme sahip olmak; hemen fark edilen, etkileyici bir fiziksel görünüşü olmak."
   },
   {
     "id": "col_u18_0172",
@@ -8522,7 +8692,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Genç görünüm; kişinin yaşından daha genç görünmesini sağlayan dış görünüş.",
+    "meaning": "A look that makes someone seem younger than their real age.",
     "collocates": [],
     "commonMistakes": [
       "young appearance (doğal değil; 'youthful' tercih edilir)",
@@ -8564,7 +8734,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "fresh-faced look",
       "baby-faced look",
       "age-defying appearance"
-    ]
+    ],
+    "meaningTr": "Genç görünüm; kişinin yaşından daha genç görünmesini sağlayan dış görünüş."
   },
   {
     "id": "col_u18_0173",
@@ -8572,7 +8743,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kızıl-kahverengi saç; kestane rengi ile kızıl arasında, genellikle kırmızımsı kahverengi tonlarda olan saç rengi.",
+    "meaning": "Hair that is a reddish-brown colour, between chestnut and red.",
     "collocates": [],
     "commonMistakes": [
       "auburn hairs (saç teli sayılabilir gibi kullanmak yanlış; 'hair' tekil kalır)",
@@ -8614,7 +8785,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "chestnut hair",
       "ginger-brown hair",
       "copper-coloured hair"
-    ]
+    ],
+    "meaningTr": "Kızıl-kahverengi saç; kestane rengi ile kızıl arasında, genellikle kırmızımsı kahverengi tonlarda olan saç rengi."
   },
   {
     "id": "col_u18_0174",
@@ -8622,7 +8794,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Geniş kalçalar; vücudun kalça bölgesinin belirgin şekilde geniş olması.",
+    "meaning": "Hips that are noticeably wide in relation to the rest of the body.",
     "collocates": [],
     "commonMistakes": [
       "big hips (doğal ama 'broad' daha nötr ve yaygın; 'big' bazen kaba algılanır)",
@@ -8664,7 +8836,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "curvy hips",
       "full hips",
       "womanly hips"
-    ]
+    ],
+    "meaningTr": "Geniş kalçalar; vücudun kalça bölgesinin belirgin şekilde geniş olması."
   },
   {
     "id": "col_u18_0175",
@@ -8672,7 +8845,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Geniş omuzlar; özellikle güçlü, atletik veya heybetli bir görünüm veren geniş omuz yapısı.",
+    "meaning": "Shoulders that are wide, often giving a strong or athletic appearance.",
     "collocates": [],
     "commonMistakes": [
       "big shoulders (doğal ama 'broad' daha yaygın ve olumlu)",
@@ -8714,7 +8887,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "strong shoulders",
       "powerful shoulders",
       "square shoulders"
-    ]
+    ],
+    "meaningTr": "Geniş omuzlar; özellikle güçlü, atletik veya heybetli bir görünüm veren geniş omuz yapısı."
   },
   {
     "id": "col_u18_0176",
@@ -8722,7 +8896,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Gür kaşlar; sık, kalın ve yoğun tüylü kaşlar. Genellikle doğal ve belirgin bir yüz özelliği olarak tanımlanır.",
+    "meaning": "Thick, strong hair growing above the eyes that is noticeably full and prominent.",
     "collocates": [],
     "commonMistakes": [
       "'strong eyebrows' (doğal değil; 'bushy' veya 'thick' kullanılmalı)",
@@ -8763,7 +8937,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "heavy eyebrows",
       "full eyebrows",
       "prominent eyebrows"
-    ]
+    ],
+    "meaningTr": "Gür kaşlar; sık, kalın ve yoğun tüylü kaşlar. Genellikle doğal ve belirgin bir yüz özelliği olarak tanımlanır."
   },
   {
     "id": "col_u18_0177",
@@ -8771,7 +8946,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Tombul yanaklar; genellikle bebeklerde, çocuklarda veya sevimli, dolgun yüzlü kişilerde görülen yuvarlak, dolgun yanaklar.",
+    "meaning": "Round, full cheeks that look plump, often seen on babies or cute faces.",
     "collocates": [],
     "commonMistakes": [
       "'fat cheeks' (kaba ve olumsuz; 'chubby' daha sevimli ve nötr)",
@@ -8807,7 +8982,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "round cheeks",
       "full cheeks",
       "rosy cheeks"
-    ]
+    ],
+    "meaningTr": "Tombul yanaklar; genellikle bebeklerde, çocuklarda veya sevimli, dolgun yüzlü kişilerde görülen yuvarlak, dolgun yanaklar."
   },
   {
     "id": "col_u18_0178",
@@ -8815,7 +8991,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kaba/sert saç; dokusu kalın, pürüzlü ve genellikle kıvırcık veya dalgalı olan saç tipi. İnce ve yumuşak saçın zıttı.",
+    "meaning": "Hair with a thick, rough texture, often curly or wavy rather than soft and fine.",
     "collocates": [],
     "commonMistakes": [
       "'strong hair' (saç dokusu için 'strong' kullanılmaz)",
@@ -8856,7 +9032,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "rough hair",
       "wiry hair",
       "stiff hair"
-    ]
+    ],
+    "meaningTr": "Kaba/sert saç; dokusu kalın, pürüzlü ve genellikle kıvırcık veya dalgalı olan saç tipi. İnce ve yumuşak saçın zıttı."
   },
   {
     "id": "col_u18_0179",
@@ -8864,7 +9041,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Güzel bir cilt; pürüzsüz, sağlıklı ve genellikle berrak görünümlü yüz cildi. Genellikle iltifat olarak kullanılır.",
+    "meaning": "Smooth, healthy and clear-looking skin on the face, often used as a compliment.",
     "collocates": [],
     "commonMistakes": [
       "'nice complexion' (doğal ama 'lovely' daha güçlü ve yaygın bir eşdizim)",
@@ -8900,7 +9077,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "clear complexion",
       "smooth complexion",
       "radiant complexion"
-    ]
+    ],
+    "meaningTr": "Güzel bir cilt; pürüzsüz, sağlıklı ve genellikle berrak görünümlü yüz cildi. Genellikle iltifat olarak kullanılır."
   },
   {
     "id": "col_u18_0180",
@@ -8908,7 +9086,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Koyu renkli saç; siyah, koyu kahverengi veya koyu tonlarda saç rengi. Sarı veya açık renkli saçın zıttı.",
+    "meaning": "Hair that is black or deep brown in colour, rather than light or fair.",
     "collocates": [],
     "commonMistakes": [
       "'black hair' (doğal ama 'dark hair' daha genel ve kapsayıcı)",
@@ -8949,7 +9127,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "brown hair",
       "jet-black hair",
       "raven hair"
-    ]
+    ],
+    "meaningTr": "Koyu renkli saç; siyah, koyu kahverengi veya koyu tonlarda saç rengi. Sarı veya açık renkli saçın zıttı."
   },
   {
     "id": "col_u19_0181",
@@ -8957,7 +9136,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Karşılıklı suçlamalar, öfke ve düşmanlık içeren, çekişmeli ve sert geçen boşanma; tarafların birbirine düşmanca davrandığı hukuki ayrılık süreci.",
+    "meaning": "A divorce full of anger, hostility and bitter arguments between the two people involved.",
     "collocates": [],
     "commonMistakes": [
       "aggressive divorce (acrimonious, öfke ve düşmanlık vurgusu yapar; aggressive fiziksel saldırganlığı çağrıştırır)",
@@ -8999,7 +9178,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "hostile divorce",
       "contentious divorce",
       "nasty divorce"
-    ]
+    ],
+    "meaningTr": "Karşılıklı suçlamalar, öfke ve düşmanlık içeren, çekişmeli ve sert geçen boşanma; tarafların birbirine düşmanca davrandığı hukuki ayrılık süreci."
   },
   {
     "id": "col_u19_0182",
@@ -9007,7 +9187,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir çocuğun velayetini/yasal bakımını almak için resmi başvuruda bulunmak; mahkemeye veya yetkili mercie velayet talebi sunmak.",
+    "meaning": "To make a formal legal request to be the person who cares for a child.",
     "collocates": [],
     "commonMistakes": [
       "apply custody of (for edatı atlanır; doğrusu apply FOR custody)",
@@ -9049,7 +9229,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "petition for custody of",
       "file for custody of",
       "request custody of"
-    ]
+    ],
+    "meaningTr": "Bir çocuğun velayetini/yasal bakımını almak için resmi başvuruda bulunmak; mahkemeye veya yetkili mercie velayet talebi sunmak."
   },
   {
     "id": "col_u19_0183",
@@ -9057,7 +9238,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bebeğin doğum zamanının yaklaştığını, tahmini doğum tarihinin geldiğini ifade eder; 'bebeğin doğumu bekleniyor' anlamında kullanılır.",
+    "meaning": "Used to say that a baby is expected to be born soon, on a particular date.",
     "collocates": [],
     "commonMistakes": [
       "baby will due (due bir sıfattır; 'is due' şeklinde kullanılır, 'will due' yanlıştır)",
@@ -9099,7 +9280,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "baby is on the way",
       "due date is approaching",
       "baby is imminent"
-    ]
+    ],
+    "meaningTr": "Bebeğin doğum zamanının yaklaştığını, tahmini doğum tarihinin geldiğini ifade eder; 'bebeğin doğumu bekleniyor' anlamında kullanılır."
   },
   {
     "id": "col_u19_0184",
@@ -9107,7 +9289,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hamile olmak, bebek beklemek; bir bebeğin doğumunu bekliyor olma durumu.",
+    "meaning": "To be pregnant; to be waiting for a baby to be born.",
     "collocates": [],
     "commonMistakes": [
       "waiting a baby (beklemek için 'expecting' veya 'waiting for' kullanılır; 'waiting a baby' yanlıştır)",
@@ -9149,7 +9331,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "having a baby",
       "with child",
       "awaiting a baby"
-    ]
+    ],
+    "meaningTr": "Hamile olmak, bebek beklemek; bir bebeğin doğumunu bekliyor olma durumu."
   },
   {
     "id": "col_u19_0185",
@@ -9157,7 +9340,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Evlenmeye hiç niyeti olmayan, bekâr kalmayı tercih eden ve bu kararı kesinleşmiş olgun erkek; 'ölünceye kadar bekâr kalacak erkek' anlamında hafif esprili/alaycı bir ifade.",
+    "meaning": "A man who has decided never to marry and seems unlikely ever to do so.",
     "collocates": [],
     "commonMistakes": [
       "confirmed single (kalıplaşmış kullanım 'confirmed bachelor'dır; 'confirmed single' doğal değildir)",
@@ -9199,7 +9382,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "unmarried man",
       "single by choice",
       "perpetual bachelor"
-    ]
+    ],
+    "meaningTr": "Evlenmeye hiç niyeti olmayan, bekâr kalmayı tercih eden ve bu kararı kesinleşmiş olgun erkek; 'ölünceye kadar bekâr kalacak erkek' anlamında hafif esprili/alaycı bir ifade."
   },
   {
     "id": "col_u19_0186",
@@ -9207,7 +9391,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çok çekişmeli, düşmanca ve acı verici şekilde sonuçlanan boşanma; tarafların birbirine karşı öfke ve kırgınlık duyduğu, genellikle uzun süren hukuki mücadelelerle geçen boşanma süreci.",
+    "meaning": "A divorce marked by strong anger, resentment and painful conflict between the couple.",
     "collocates": [],
     "commonMistakes": [
       "angry divorce (bitter divorce daha doğal ve yaygındır)",
@@ -9249,7 +9433,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "hostile divorce",
       "messy divorce",
       "contentious divorce"
-    ]
+    ],
+    "meaningTr": "Çok çekişmeli, düşmanca ve acı verici şekilde sonuçlanan boşanma; tarafların birbirine karşı öfke ve kırgınlık duyduğu, genellikle uzun süren hukuki mücadelelerle geçen boşanma süreci."
   },
   {
     "id": "col_u19_0187",
@@ -9257,7 +9442,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kan bağı olan akraba; evlat edinme veya evlilik yoluyla değil, biyolojik/genetik bağla bağlı olan aile üyesi.",
+    "meaning": "A family member related by birth or genetics, not by marriage or adoption.",
     "collocates": [],
     "commonMistakes": [
       "blood family (akraba için 'blood relative' kullanılır, 'blood family' yaygın değildir)",
@@ -9294,7 +9479,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "blood relation",
       "genetic relative",
       "consanguineous relative"
-    ]
+    ],
+    "meaningTr": "Kan bağı olan akraba; evlat edinme veya evlilik yoluyla değil, biyolojik/genetik bağla bağlı olan aile üyesi."
   },
   {
     "id": "col_u19_0188",
@@ -9302,7 +9488,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çocukları büyütmek, yetiştirmek; onların bakımını üstlenip eğitim, terbiye ve gelişimlerini sağlamak.",
+    "meaning": "To care for children as they grow up, providing for their needs and education.",
     "collocates": [],
     "commonMistakes": [
       "grow up children (yanlış; 'grow up' öznesiz kullanılır, çocuklar büyür; ebeveynler 'bring up' yapar)",
@@ -9344,7 +9530,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "rear children",
       "care for children",
       "nurture children"
-    ]
+    ],
+    "meaningTr": "Çocukları büyütmek, yetiştirmek; onların bakımını üstlenip eğitim, terbiye ve gelişimlerini sağlamak."
   },
   {
     "id": "col_u19_0189",
@@ -9352,7 +9539,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Parçalanmış aile; ebeveynlerin boşandığı, ayrıldığı veya ölüm nedeniyle dağıldığı, çocuğun tek ebeveynle veya istikrarsız bir ortamda büyüdüğü aile yapısı.",
+    "meaning": "A family that has split up because the parents have separated, divorced or died.",
     "collocates": [],
     "commonMistakes": [
       "broken family (mümkün ama 'broken home' daha yaygın ve kalıplaşmıştır)",
@@ -9389,7 +9576,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "split family",
       "fractured family",
       "single-parent household"
-    ]
+    ],
+    "meaningTr": "Parçalanmış aile; ebeveynlerin boşandığı, ayrıldığı veya ölüm nedeniyle dağıldığı, çocuğun tek ebeveynle veya istikrarsız bir ortamda büyüdüğü aile yapısı."
   },
   {
     "id": "col_u19_0190",
@@ -9397,7 +9585,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çocuk sahibi olmak; biyolojik veya evlat edinme yoluyla çocuk yetiştirmeye başlamak.",
+    "meaning": "To have a baby or babies and raise them as a parent.",
     "collocates": [],
     "commonMistakes": [
       "make children (yanlış; 'make' yerine 'have' kullanılır)",
@@ -9439,7 +9627,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "raise a family",
       "become parents",
       "have kids"
-    ]
+    ],
+    "meaningTr": "Çocuk sahibi olmak; biyolojik veya evlat edinme yoluyla çocuk yetiştirmeye başlamak."
   },
   {
     "id": "col_u20_01",
@@ -9447,7 +9636,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yüzeysel tanıdık; derin bir bağ kurulmamış, sadece ara sıra görüşülen veya tanışılan kişi.",
+    "meaning": "Someone you know slightly but not well, without a deep or close relationship.",
     "collocates": [
       "love at first sight",
       "accept someone's proposal",
@@ -9492,7 +9681,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "nodding acquaintance",
       "distant acquaintance",
       "slight acquaintance"
-    ]
+    ],
+    "meaningTr": "Yüzeysel tanıdık; derin bir bağ kurulmamış, sadece ara sıra görüşülen veya tanışılan kişi."
   },
   {
     "id": "col_u20_0192",
@@ -9500,7 +9690,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Gizli bir ilişki yaşamak; genellikle evli veya partnerli birinin başka biriyle romantik/cinsel bir ilişki kurması.",
+    "meaning": "To have a secret romantic or sexual relationship with someone other than your partner.",
     "collocates": [],
     "commonMistakes": [
       "make an affair (yanlış; doğrusu 'have an affair')",
@@ -9542,7 +9732,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "carry on an affair",
       "have a fling",
       "be involved in an affair"
-    ]
+    ],
+    "meaningTr": "Gizli bir ilişki yaşamak; genellikle evli veya partnerli birinin başka biriyle romantik/cinsel bir ilişki kurması."
   },
   {
     "id": "col_u20_0193",
@@ -9550,7 +9741,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir dostluğu güçlendirmek, sağlamlaştırmak; paylaşılan deneyimlerle bağı pekiştirmek.",
+    "meaning": "To make a friendship stronger and more secure, often through shared experiences.",
     "collocates": [],
     "commonMistakes": [
       "make a friendship (dostluk kurmak için 'make' değil 'form' veya 'cement' kullanılır)",
@@ -9592,7 +9783,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "solidify a friendship",
       "forge a friendship",
       "build a friendship"
-    ]
+    ],
+    "meaningTr": "Bir dostluğu güçlendirmek, sağlamlaştırmak; paylaşılan deneyimlerle bağı pekiştirmek."
   },
   {
     "id": "col_u20_0194",
@@ -9600,7 +9792,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yakın arkadaş; güvenilen, sırların paylaşıldığı, duygusal olarak yakın olunan kişi.",
+    "meaning": "A person you trust deeply and feel emotionally close to, sharing private things with.",
     "collocates": [],
     "commonMistakes": [
       "near friend (yanlış; 'close friend' kullanılır)",
@@ -9642,7 +9834,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "best friend",
       "trusted friend",
       "confidant"
-    ]
+    ],
+    "meaningTr": "Yakın arkadaş; güvenilen, sırların paylaşıldığı, duygusal olarak yakın olunan kişi."
   },
   {
     "id": "col_u20_0195",
@@ -9650,7 +9843,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Taahhütte bulunmak; bir ilişkiye, işe veya sorumluluğa bağlılık göstermek, söz vermek.",
+    "meaning": "To promise to give your time, loyalty or effort to a relationship, job or duty.",
     "collocates": [],
     "commonMistakes": [
       "do a commitment (yanlış; 'make a commitment' kullanılır)",
@@ -9692,7 +9885,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "make a pledge",
       "commit oneself",
       "take on a commitment"
-    ]
+    ],
+    "meaningTr": "Taahhütte bulunmak; bir ilişkiye, işe veya sorumluluğa bağlılık göstermek, söz vermek."
   },
   {
     "id": "col_u20_067",
@@ -9700,7 +9894,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İletişim halinde kalmak; bir kişiyle düzenli olarak haberleşmeye, görüşmeye devam etmek. Genellikle uzakta yaşayan arkadaşlar, aile üyeleri veya iş çevreleri için kullanılır.",
+    "meaning": "To continue communicating regularly with someone, especially when living far apart.",
     "collocates": [],
     "commonMistakes": [
       "keep contact (edat eksikliği: 'keep in contact' olmalı)",
@@ -9742,7 +9936,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "keep in touch",
       "remain in contact",
       "stay connected"
-    ]
+    ],
+    "meaningTr": "İletişim halinde kalmak; bir kişiyle düzenli olarak haberleşmeye, görüşmeye devam etmek. Genellikle uzakta yaşayan arkadaşlar, aile üyeleri veya iş çevreleri için kullanılır."
   },
   {
     "id": "col_u20_0197",
@@ -9750,7 +9945,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İletişimi kaybetmek; bir kişiyle olan bağlantının, haberleşmenin zamanla kesilmesi veya sona ermesi. Genellikle taşınma, hayat şartlarının değişmesi gibi nedenlerle olur.",
+    "meaning": "To stop communicating with someone, often because of moving or changing circumstances.",
     "collocates": [],
     "commonMistakes": [
       "lose the contact (gereksiz 'the' kullanımı: 'lose contact' olmalı)",
@@ -9792,7 +9987,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "drift apart",
       "fall out of touch",
       "become disconnected"
-    ]
+    ],
+    "meaningTr": "İletişimi kaybetmek; bir kişiyle olan bağlantının, haberleşmenin zamanla kesilmesi veya sona ermesi. Genellikle taşınma, hayat şartlarının değişmesi gibi nedenlerle olur."
   },
   {
     "id": "col_u20_0198",
@@ -9800,7 +9996,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Delicesine aşık; birine karşı çok yoğun, tutkulu ve kontrol edilemez bir aşk duymak. 'Desperately' burada aşkın şiddetini ve kişinin duygularına ne kadar kapıldığını vurgular.",
+    "meaning": "Having extremely strong, passionate and overwhelming romantic feelings for someone.",
     "collocates": [],
     "commonMistakes": [
       "desperate in love ('desperately' zarf olmalı, 'desperate' sıfat)",
@@ -9842,7 +10038,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "deeply in love",
       "hopelessly in love",
       "head over heels in love"
-    ]
+    ],
+    "meaningTr": "Delicesine aşık; birine karşı çok yoğun, tutkulu ve kontrol edilemez bir aşk duymak. 'Desperately' burada aşkın şiddetini ve kişinin duygularına ne kadar kapıldığını vurgular."
   },
   {
     "id": "col_u20_0199",
@@ -9850,7 +10047,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Arkadaşlık geliştirmek; iki kişi arasında zamanla güven, paylaşım ve yakınlık temelinde bir dostluk ilişkisinin oluşması. Genellikle kademeli bir süreci ifade eder.",
+    "meaning": "To gradually build a friendship based on trust, closeness and shared time together.",
     "collocates": [],
     "commonMistakes": [
       "make a friendship (yanlış fiil: 'develop/build a friendship' olmalı)",
@@ -9892,7 +10089,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "form a friendship",
       "strike up a friendship",
       "cultivate a friendship"
-    ]
+    ],
+    "meaningTr": "Arkadaşlık geliştirmek; iki kişi arasında zamanla güven, paylaşım ve yakınlık temelinde bir dostluk ilişkisinin oluşması. Genellikle kademeli bir süreci ifade eder."
   },
   {
     "id": "col_u20_0200",
@@ -9900,7 +10098,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Aşık olmak; birine karşı ani veya güçlü romantik duygular beslemeye başlamak. Genellikle kontrol dışı, kendiliğinden gelişen bir duygu olarak ifade edilir.",
+    "meaning": "To start to have strong romantic feelings for someone, often suddenly.",
     "collocates": [],
     "commonMistakes": [
       "fall in love to someone ('with someone' olmalı)",
@@ -9942,7 +10140,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "become infatuated",
       "lose one's heart to someone",
       "be smitten with someone"
-    ]
+    ],
+    "meaningTr": "Aşık olmak; birine karşı ani veya güçlü romantik duygular beslemeye başlamak. Genellikle kontrol dışı, kendiliğinden gelişen bir duygu olarak ifade edilir."
   },
   {
     "id": "col_u21_0201",
@@ -9950,7 +10149,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kısa süreli kiralık konaklama; genellikle Airbnb, Booking.com gibi platformlar üzerinden günlük veya haftalık kiralanan, otel dışı konut türü.",
+    "meaning": "Housing rented for a short period, often through online platforms rather than hotels.",
     "collocates": [],
     "commonMistakes": [
       "short-let accommodation yerine 'short accommodation' demek (süre değil, mekân kısalığı anlaşılır)",
@@ -9992,7 +10191,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "holiday let",
       "vacation rental",
       "temporary lodging"
-    ]
+    ],
+    "meaningTr": "Kısa süreli kiralık konaklama; genellikle Airbnb, Booking.com gibi platformlar üzerinden günlük veya haftalık kiralanan, otel dışı konut türü."
   },
   {
     "id": "col_u21_0202",
@@ -10000,7 +10200,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Uygun/ihtiyaca cevap veren konaklama; belirli bir kişi, aile veya durum için elverişli olan barınma yeri.",
+    "meaning": "A place to stay that is appropriate and convenient for a particular person or situation.",
     "collocates": [],
     "commonMistakes": [
       "'suitable accommodation' yerine 'convenient accommodation' demek (convenient = elverişli/kolay, suitable = uygun)",
@@ -10042,7 +10242,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "adequate lodging",
       "fitting accommodation",
       "proper housing"
-    ]
+    ],
+    "meaningTr": "Uygun/ihtiyaca cevap veren konaklama; belirli bir kişi, aile veya durum için elverişli olan barınma yeri."
   },
   {
     "id": "col_u21_0203",
@@ -10050,7 +10251,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Binaya ek bölüm/ilave yapmak; mevcut bir eve yeni oda, kat veya bölüm eklemek.",
+    "meaning": "To build an extra room or section onto an existing house or building.",
     "collocates": [],
     "commonMistakes": [
       "'add an extension' yerine 'make an extension' demek (doğrusu: add/build an extension)",
@@ -10092,7 +10293,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "put on an extension",
       "construct an addition",
       "extend the property"
-    ]
+    ],
+    "meaningTr": "Binaya ek bölüm/ilave yapmak; mevcut bir eve yeni oda, kat veya bölüm eklemek."
   },
   {
     "id": "col_u21_0204",
@@ -10100,7 +10302,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Uygun fiyatlı/erişilebilir konut; dar gelirli kişilerin karşılayabileceği fiyatta olan konut.",
+    "meaning": "Housing that is cheap enough for people with low or average incomes to pay for.",
     "collocates": [],
     "commonMistakes": [
       "'affordable housing' yerine 'cheap housing' demek (cheap = kalitesiz çağrışımı yapar, affordable = karşılanabilir)",
@@ -10142,7 +10344,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "budget housing",
       "social housing",
       "reasonably priced homes"
-    ]
+    ],
+    "meaningTr": "Uygun fiyatlı/erişilebilir konut; dar gelirli kişilerin karşılayabileceği fiyatta olan konut."
   },
   {
     "id": "col_u21_0205",
@@ -10150,7 +10353,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Giderek artan öfke; zamanla biriken, giderek yoğunlaşan kızgınlık duygusu.",
+    "meaning": "Anger that is steadily growing stronger over time among a person or group.",
     "collocates": [],
     "commonMistakes": [
       "'mounting anger' yerine 'increasing anger' demek (doğal ama daha az yaygın; mounting daha güçlü)",
@@ -10192,7 +10395,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "rising anger",
       "escalating frustration",
       "increasing resentment"
-    ]
+    ],
+    "meaningTr": "Giderek artan öfke; zamanla biriken, giderek yoğunlaşan kızgınlık duygusu."
   },
   {
     "id": "col_u21_0206",
@@ -10200,7 +10404,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Öfkeden kudurmak, içi öfke dolu olmak; kişinin öfkesini kontrol edemeyecek kadar yoğun bir kızgınlık içinde olması.",
+    "meaning": "Extremely angry and unable to control your feelings of rage.",
     "collocates": [],
     "commonMistakes": [
       "seething in anger (doğrusu: seething with anger)",
@@ -10242,7 +10446,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "furious",
       "incandescent with anger",
       "beside oneself with rage"
-    ]
+    ],
+    "meaningTr": "Öfkeden kudurmak, içi öfke dolu olmak; kişinin öfkesini kontrol edemeyecek kadar yoğun bir kızgınlık içinde olması."
   },
   {
     "id": "col_u21_0207",
@@ -10250,7 +10455,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Giderek daha kaygılı, gittikçe artan bir endişe içinde olmak; zamanla kaygı düzeyi yükselen.",
+    "meaning": "Becoming more and more worried or nervous as time passes.",
     "collocates": [],
     "commonMistakes": [
       "increasing anxious (doğrusu: increasingly anxious)",
@@ -10292,7 +10497,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "growing anxious",
       "progressively more nervous",
       "ever more uneasy"
-    ]
+    ],
+    "meaningTr": "Giderek daha kaygılı, gittikçe artan bir endişe içinde olmak; zamanla kaygı düzeyi yükselen."
   },
   {
     "id": "col_u21_0208",
@@ -10300,7 +10506,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yeni inşa edilmiş daire; henüz tamamlanmış, yeni yapılmış konut.",
+    "meaning": "A flat that has recently been built and is new to live in.",
     "collocates": [],
     "commonMistakes": [
       "new-built apartment (doğrusu: newly-built apartment)",
@@ -10342,7 +10548,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "recently constructed apartment",
       "newly constructed flat",
       "freshly built apartment"
-    ]
+    ],
+    "meaningTr": "Yeni inşa edilmiş daire; henüz tamamlanmış, yeni yapılmış konut."
   },
   {
     "id": "col_u21_0209",
@@ -10350,7 +10557,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Duyguları harekete geçirmek, belli duygular uyandırmak; bir kimsede belirli bir his yaratmak.",
+    "meaning": "To cause someone to experience particular emotions or reactions.",
     "collocates": [],
     "commonMistakes": [
       "arouse feelings in someone (bazı bağlamlarda doğru olsa da, 'arouse someone's feelings' yaygın hata)",
@@ -10392,7 +10599,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "stir feelings",
       "provoke emotions",
       "awaken sentiments"
-    ]
+    ],
+    "meaningTr": "Duyguları harekete geçirmek, belli duygular uyandırmak; bir kimsede belirli bir his yaratmak."
   },
   {
     "id": "col_u21_0210",
@@ -10400,7 +10608,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kiralık olarak mevcut; kiralanmaya hazır, kiraya verilebilir durumda.",
+    "meaning": "Available to be rented by someone; ready for a tenant to move in.",
     "collocates": [],
     "commonMistakes": [
       "available for renting (doğrusu: available to rent)",
@@ -10442,7 +10650,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "up for rent",
       "available for rent",
       "to let"
-    ]
+    ],
+    "meaningTr": "Kiralık olarak mevcut; kiralanmaya hazır, kiraya verilebilir durumda."
   },
   {
     "id": "col_u22_0211",
@@ -10450,7 +10659,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Gıda katkı maddeleri; raf ömrünü uzatmak, tat, renk veya kıvam vermek için işlenmiş gıdalara eklenen kimyasal maddeler.",
+    "meaning": "Substances added to processed food to improve taste, colour or texture, or to make it last longer.",
     "collocates": [],
     "commonMistakes": [
       "food additions (yanlış; 'additions' eklemeler demektir, katkı maddeleri değil)",
@@ -10492,7 +10701,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "food preservatives",
       "chemical additives",
       "processed food ingredients"
-    ]
+    ],
+    "meaningTr": "Gıda katkı maddeleri; raf ömrünü uzatmak, tat, renk veya kıvam vermek için işlenmiş gıdalara eklenen kimyasal maddeler."
   },
   {
     "id": "col_u22_0212",
@@ -10500,7 +10710,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sağlıklı bir iştah; kişinin normal ve dengeli biçimde yemek yeme isteğinin olması, genellikle iyi sağlığın göstergesi.",
+    "meaning": "A normal, strong desire to eat, often seen as a sign of good health.",
     "collocates": [],
     "commonMistakes": [
       "healthful appetite (yanlış; 'healthful' sağlığa yararlı şeyler için kullanılır, iştah için 'healthy' denir)",
@@ -10542,7 +10752,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "hearty appetite",
       "strong appetite",
       "robust appetite"
-    ]
+    ],
+    "meaningTr": "Sağlıklı bir iştah; kişinin normal ve dengeli biçimde yemek yeme isteğinin olması, genellikle iyi sağlığın göstergesi."
   },
   {
     "id": "col_u22_02",
@@ -10550,7 +10761,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İştahını kaçırmak; genellikle yemekten önce bir şeyler yiyip içerek ana yemeği yiyemeyecek hale gelmek.",
+    "meaning": "To eat or drink something before a meal so that you no longer feel hungry for it.",
     "collocates": [
       "have a hearty breakfast",
       "dying of hunger",
@@ -10596,7 +10807,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "kill your appetite",
       "take away your appetite",
       "destroy your appetite"
-    ]
+    ],
+    "meaningTr": "İştahını kaçırmak; genellikle yemekten önce bir şeyler yiyip içerek ana yemeği yiyemeyecek hale gelmek."
   },
   {
     "id": "col_u22_0214",
@@ -10604,7 +10816,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Doyurucu, bol ve besleyici kahvaltı; genellikle yumurta, et, ekmek gibi ağır yiyeceklerden oluşan zengin sabah yemeği.",
+    "meaning": "A large, filling breakfast, usually including cooked food such as eggs or meat.",
     "collocates": [],
     "commonMistakes": [
       "hardy breakfast (yanlış; 'hardy' dayanıklı anlamına gelir, doyurucu değil)",
@@ -10646,7 +10858,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "big breakfast",
       "full breakfast",
       "generous breakfast"
-    ]
+    ],
+    "meaningTr": "Doyurucu, bol ve besleyici kahvaltı; genellikle yumurta, et, ekmek gibi ağır yiyeceklerden oluşan zengin sabah yemeği."
   },
   {
     "id": "col_u22_0215",
@@ -10654,7 +10867,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İlk kez ev (veya başka bir mülk) satın alan kişi; genellikle ipotek ve emlak bağlamında kullanılan bir terim.",
+    "meaning": "A person buying a house or flat for the first time, especially with a mortgage.",
     "collocates": [],
     "commonMistakes": [
       "first-time buying (yanlış; kişi için 'buyer' kullanılır)",
@@ -10696,7 +10909,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "new buyer",
       "first-home buyer",
       "novice buyer"
-    ]
+    ],
+    "meaningTr": "İlk kez ev (veya başka bir mülk) satın alan kişi; genellikle ipotek ve emlak bağlamında kullanılan bir terim."
   },
   {
     "id": "col_u22_0216",
@@ -10704,7 +10918,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çin, Meksika ve Fransız mutfaklarına özgü yemek pişirme tarzları; bu üç ülkenin yemek yapma gelenekleri (genellikle 'cooking' ile birlikte kullanılan sıfat-noun öbeği).",
+    "meaning": "The cooking styles and food traditions of China, Mexico and France.",
     "collocates": [],
     "commonMistakes": [
       "Chinese Mexican French cook (isim yerine fiil kullanmak)",
@@ -10745,7 +10959,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "Chinese, Mexican and French food",
       "Chinese, Mexican and French dishes",
       "Chinese, Mexican and French gastronomy"
-    ]
+    ],
+    "meaningTr": "Çin, Meksika ve Fransız mutfaklarına özgü yemek pişirme tarzları; bu üç ülkenin yemek yapma gelenekleri (genellikle 'cooking' ile birlikte kullanılan sıfat-noun öbeği)."
   },
   {
     "id": "col_u22_0217",
@@ -10753,7 +10968,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çin, Meksika ve Fransız mutfakları; bu ülkelerin yemek kültürü ve yemek pişirme stilleri (genellikle 'cuisine' ile kullanılan sıfat-noun öbeği).",
+    "meaning": "The food cultures and cooking traditions of China, Mexico and France.",
     "collocates": [],
     "commonMistakes": [
       "Chinese Mexican French kitchen (cuisine yerine kitchen demek)",
@@ -10794,7 +11009,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "Chinese, Mexican and French food culture",
       "Chinese, Mexican and French culinary traditions",
       "Chinese, Mexican and French gastronomy"
-    ]
+    ],
+    "meaningTr": "Çin, Meksika ve Fransız mutfakları; bu ülkelerin yemek kültürü ve yemek pişirme stilleri (genellikle 'cuisine' ile kullanılan sıfat-noun öbeği)."
   },
   {
     "id": "col_u22_0218",
@@ -10802,7 +11018,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Uluslararası mutfak; dünyanın farklı ülkelerinden yemekleri bir arada sunan yemek kültürü veya restoran tarzı.",
+    "meaning": "A style of food or restaurant offering dishes from many different countries.",
     "collocates": [],
     "commonMistakes": [
       "international kitchen (cuisine yerine kitchen demek)",
@@ -10844,7 +11060,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "world cuisine",
       "multicultural food",
       "cosmopolitan dining"
-    ]
+    ],
+    "meaningTr": "Uluslararası mutfak; dünyanın farklı ülkelerinden yemekleri bir arada sunan yemek kültürü veya restoran tarzı."
   },
   {
     "id": "col_u22_0219",
@@ -10852,7 +11069,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Doyurucu ve kaliteli, iyi bir yemek; genellikle uygun fiyata sunulan tatmin edici bir öğün.",
+    "meaning": "A satisfying, good-quality meal, often at a reasonable price.",
     "collocates": [],
     "commonMistakes": [
       "decent food (meal yerine food demek, porsiyon vurgusu kaybolur)",
@@ -10894,7 +11111,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "good meal",
       "square meal",
       "satisfying meal"
-    ]
+    ],
+    "meaningTr": "Doyurucu ve kaliteli, iyi bir yemek; genellikle uygun fiyata sunulan tatmin edici bir öğün."
   },
   {
     "id": "col_u22_0220",
@@ -10902,7 +11120,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Serinletici içecek; özellikle sıcak havada ferahlık veren, canlandırıcı bir içecek.",
+    "meaning": "A drink that makes you feel cool and fresh, especially in hot weather.",
     "collocates": [],
     "commonMistakes": [
       "refreshed drink (refreshing yerine refreshed demek)",
@@ -10944,7 +11162,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "invigorating drink",
       "thirst-quenching drink",
       "crisp drink"
-    ]
+    ],
+    "meaningTr": "Serinletici içecek; özellikle sıcak havada ferahlık veren, canlandırıcı bir içecek."
   },
   {
     "id": "col_u23_01",
@@ -10952,7 +11171,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "literature",
-    "meaning": "Bir kitaba tamamen dalmış, kendini kaptırmış olmak; dikkati tamamen kitapta olmak.",
+    "meaning": "So interested in a book that you give it all your attention and notice nothing else.",
     "collocates": [
       "film critic",
       "go on the stage",
@@ -10998,7 +11217,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "buried in a book",
       "lost in a book",
       "immersed in a book"
-    ]
+    ],
+    "meaningTr": "Bir kitaba tamamen dalmış, kendini kaptırmış olmak; dikkati tamamen kitapta olmak."
   },
   {
     "id": "col_u23_0222",
@@ -11006,7 +11226,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir sesli kitabı internetten cihaza indirmek; dijital ortamda sesli kitap edinmek.",
+    "meaning": "To copy a spoken recording of a book from the internet onto your device.",
     "collocates": [],
     "commonMistakes": [
       "download an audio book (doğrusu genellikle: audiobook - tek kelime)",
@@ -11043,7 +11263,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "stream an audiobook",
       "access an audiobook",
       "obtain an audiobook"
-    ]
+    ],
+    "meaningTr": "Bir sesli kitabı internetten cihaza indirmek; dijital ortamda sesli kitap edinmek."
   },
   {
     "id": "col_u23_0223",
@@ -11051,7 +11272,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir hikâyeye dayanmak, bir hikâyeden uyarlanmış olmak; konusunu bir hikâyeden almak.",
+    "meaning": "To take its subject or plot from a particular story.",
     "collocates": [],
     "commonMistakes": [
       "based in a story (doğrusu: based on a story)",
@@ -11093,7 +11314,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "inspired by a story",
       "derived from a story",
       "drawn from a story"
-    ]
+    ],
+    "meaningTr": "Bir hikâyeye dayanmak, bir hikâyeden uyarlanmış olmak; konusunu bir hikâyeden almak."
   },
   {
     "id": "col_u23_074",
@@ -11101,7 +11323,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Güzel bir şekilde yazılmış; üslubu, dili ve anlatımı etkileyici ve zarif olan (kitap, metin vb.).",
+    "meaning": "Written in an elegant, expressive and impressive style.",
     "collocates": [],
     "commonMistakes": [
       "beautiful written (doğrusu: beautifully written - zarf gerekir)",
@@ -11138,7 +11360,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "exquisitely written",
       "skilfully written",
       "finely written"
-    ]
+    ],
+    "meaningTr": "Güzel bir şekilde yazılmış; üslubu, dili ve anlatımı etkileyici ve zarif olan (kitap, metin vb.)."
   },
   {
     "id": "col_u23_072",
@@ -11146,7 +11369,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yatmadan önce okunan kitap veya okuma; uyku öncesi yapılan okuma etkinliği.",
+    "meaning": "A book or piece of writing read just before going to sleep.",
     "collocates": [],
     "commonMistakes": [
       "bed time reading (doğrusu: bedtime reading - tek kelime)",
@@ -11188,7 +11411,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "reading before bed",
       "a bedtime book",
       "evening reading"
-    ]
+    ],
+    "meaningTr": "Yatmadan önce okunan kitap veya okuma; uyku öncesi yapılan okuma etkinliği."
   },
   {
     "id": "col_u23_0226",
@@ -11196,7 +11420,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir kitabın başlangıcı; kitabın ilk bölümleri veya açılış kısmı. Genellikle okuyucunun hikâyeye ısındığı, karakterlerin ve ortamın tanıtıldığı bölüm.",
+    "meaning": "The opening part of a book, where the story and characters are introduced.",
     "collocates": [],
     "commonMistakes": [
       "beginning of the book (belirli bir kitaptan bahsedilmiyorsa 'a book' daha doğaldır)",
@@ -11238,7 +11462,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "start of a book",
       "first part of a book",
       "opening chapters"
-    ]
+    ],
+    "meaningTr": "Bir kitabın başlangıcı; kitabın ilk bölümleri veya açılış kısmı. Genellikle okuyucunun hikâyeye ısındığı, karakterlerin ve ortamın tanıtıldığı bölüm."
   },
   {
     "id": "col_u23_0227",
@@ -11246,7 +11471,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir filmin başlangıcı; filmin açılış sahnesi veya ilk dakikaları. Seyircinin filme bağlandığı giriş bölümü.",
+    "meaning": "The opening scene or first minutes of a film, which set up the story.",
     "collocates": [],
     "commonMistakes": [
       "beginning of the film (belirli bir filmden bahsedilmiyorsa 'a film' tercih edilir)",
@@ -11288,7 +11513,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "start of a film",
       "opening scene",
       "first few minutes of a film"
-    ]
+    ],
+    "meaningTr": "Bir filmin başlangıcı; filmin açılış sahnesi veya ilk dakikaları. Seyircinin filme bağlandığı giriş bölümü."
   },
   {
     "id": "col_u23_0228",
@@ -11296,7 +11522,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir kitabın yayımlanması, piyasaya çıkması. Genellikle yeni bir kitabın satışa sunulduğu veya halka açıldığı anlamında kullanılır.",
+    "meaning": "To be published and made available to the public for the first time.",
     "collocates": [],
     "commonMistakes": [
       "book goes out (yanlış fiil; 'comes out' kullanılmalı)",
@@ -11338,7 +11564,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "book is released",
       "book hits the shelves",
       "book is launched"
-    ]
+    ],
+    "meaningTr": "Bir kitabın yayımlanması, piyasaya çıkması. Genellikle yeni bir kitabın satışa sunulduğu veya halka açıldığı anlamında kullanılır."
   },
   {
     "id": "col_u23_0229",
@@ -11346,7 +11573,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir kitabın belirli bir konuyu ele alması, işlemesi. Genellikle akademik veya ciddi konulardan bahsederken kullanılır.",
+    "meaning": "To have a particular subject as its main topic or theme.",
     "collocates": [],
     "commonMistakes": [
       "book deals about (yanlış edat; 'deals with' kullanılmalı)",
@@ -11388,7 +11615,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "book covers",
       "book tackles",
       "book is about"
-    ]
+    ],
+    "meaningTr": "Bir kitabın belirli bir konuyu ele alması, işlemesi. Genellikle akademik veya ciddi konulardan bahsederken kullanılır."
   },
   {
     "id": "col_u23_0230",
@@ -11396,7 +11624,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kitap eleştirisi; bir kitabın içeriği, kalitesi ve değeri hakkında yazılan değerlendirme yazısı. Gazete, dergi veya bloglarda yayımlanır.",
+    "meaning": "An article giving an opinion on a book's content, quality and value.",
     "collocates": [],
     "commonMistakes": [
       "book critic (kişi anlamına gelir; yazı için 'book review' kullanılmalı)",
@@ -11438,7 +11666,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "book appraisal",
       "literary review",
       "book evaluation"
-    ]
+    ],
+    "meaningTr": "Kitap eleştirisi; bir kitabın içeriği, kalitesi ve değeri hakkında yazılan değerlendirme yazısı. Gazete, dergi veya bloglarda yayımlanır."
   },
   {
     "id": "col_u24_0231",
@@ -11446,7 +11675,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir sanatçıya, gruba veya ünlüye hayranlık duyan, onu tutkuyla seven ve destekleyen kişi; 'hayran/âşık hayran' anlamında. Genellikle bir müzisyenin sadık ve coşkulu dinleyici kitlesini tanımlamak için kullanılır.",
+    "meaning": "A person who loves and strongly supports a performer or famous person.",
     "collocates": [],
     "commonMistakes": [
       "adoring fans yerine 'fanatic fan' kullanmak (fanatic daha çok aşırı/agresif anlam taşır)",
@@ -11488,7 +11717,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "loyal fan",
       "passionate admirer",
       "ardent supporter"
-    ]
+    ],
+    "meaningTr": "Bir sanatçıya, gruba veya ünlüye hayranlık duyan, onu tutkuyla seven ve destekleyen kişi; 'hayran/âşık hayran' anlamında. Genellikle bir müzisyenin sadık ve coşkulu dinleyici kitlesini tanımlamak için kullanılır."
   },
   {
     "id": "col_u24_0232",
@@ -11496,7 +11726,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir albümün içerdiği parçalar, sanatçılar veya müzikal öğeler; 'albüm ... içeriyor/barındırıyor' anlamında. Genellikle bir albümdeki belirli şarkıları, konuk sanatçıları veya müzikal özellikleri tanımlamak için kullanılır.",
+    "meaning": "To include particular songs, guest artists or musical elements.",
     "collocates": [],
     "commonMistakes": [
       "album features yerine 'album has features' demek (yanlış yapı)",
@@ -11538,7 +11768,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "album contains",
       "album showcases",
       "album presents"
-    ]
+    ],
+    "meaningTr": "Bir albümün içerdiği parçalar, sanatçılar veya müzikal öğeler; 'albüm ... içeriyor/barındırıyor' anlamında. Genellikle bir albümdeki belirli şarkıları, konuk sanatçıları veya müzikal özellikleri tanımlamak için kullanılır."
   },
   {
     "id": "col_u24_0233",
@@ -11546,7 +11777,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir sanatçının veya grubun çıkardığı ilk albüm; 'ilk albüm/çıkış albümü' anlamında. Bir müzisyenin kariyerinin başlangıcını tanımlayan önemli bir kavramdır.",
+    "meaning": "The first album released by a musician or band.",
     "collocates": [],
     "commonMistakes": [
       "debut album yerine 'first debut album' demek (gereksiz tekrar)",
@@ -11588,7 +11819,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "inaugural album",
       "introductory album",
       "maiden album"
-    ]
+    ],
+    "meaningTr": "Bir sanatçının veya grubun çıkardığı ilk albüm; 'ilk albüm/çıkış albümü' anlamında. Bir müzisyenin kariyerinin başlangıcını tanımlayan önemli bir kavramdır."
   },
   {
     "id": "col_u24_0234",
@@ -11596,7 +11828,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir albümü halka sunmak, piyasaya çıkarmak; 'albüm çıkarmak/yayınlamak' anlamında. Bir müzisyenin yeni bir albümü dinleyicilere ulaştırması eylemidir.",
+    "meaning": "To make a new album available to the public.",
     "collocates": [],
     "commonMistakes": [
       "release an album yerine 'make an album' demek (yapmak ile yayınlamak farklıdır)",
@@ -11638,7 +11870,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "drop an album",
       "publish an album",
       "launch an album"
-    ]
+    ],
+    "meaningTr": "Bir albümü halka sunmak, piyasaya çıkarmak; 'albüm çıkarmak/yayınlamak' anlamında. Bir müzisyenin yeni bir albümü dinleyicilere ulaştırması eylemidir."
   },
   {
     "id": "col_u24_0235",
@@ -11646,7 +11879,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Rap müziği yapan, söyleyen sanatçı; 'rap sanatçısı/rapçi' anlamında. Hip-hop kültürünün bir parçası olarak rap müziği icra eden kişiyi tanımlar.",
+    "meaning": "A performer who writes and sings rap music.",
     "collocates": [],
     "commonMistakes": [
       "rap artist yerine 'rap singer' demek (rap söylenmez, yapılır; singer yanlış)",
@@ -11688,7 +11921,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "hip-hop artist",
       "MC",
       "rap musician"
-    ]
+    ],
+    "meaningTr": "Rap müziği yapan, söyleyen sanatçı; 'rap sanatçısı/rapçi' anlamında. Hip-hop kültürünün bir parçası olarak rap müziği icra eden kişiyi tanımlar."
   },
   {
     "id": "col_u24_0236",
@@ -11696,7 +11930,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Daha geniş bir kitleyi/izleyici kitlesini etkilemek, kazanmak veya onlara ulaşmak; genellikle bir sanatçının, ürünün veya içeriğin popülaritesini artırarak daha fazla insana hitap etmesi anlamında kullanılır.",
+    "meaning": "To attract or reach a larger group of people, increasing popularity.",
     "collocates": [],
     "commonMistakes": [
       "catch a wider audience (yanlış fiil; 'capture' veya 'reach' kullanılmalı)",
@@ -11738,7 +11972,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "appeal to a wider public",
       "attract a larger fanbase",
       "expand one's listenership"
-    ]
+    ],
+    "meaningTr": "Daha geniş bir kitleyi/izleyici kitlesini etkilemek, kazanmak veya onlara ulaşmak; genellikle bir sanatçının, ürünün veya içeriğin popülaritesini artırarak daha fazla insana hitap etmesi anlamında kullanılır."
   },
   {
     "id": "col_u24_0237",
@@ -11746,7 +11981,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Arka plan müziği; bir ortamda, filmde, restoranda veya etkinlikte dikkat dağıtmadan çalan, atmosfer yaratan hafif müzik.",
+    "meaning": "Quiet music played in a place to create atmosphere without demanding attention.",
     "collocates": [],
     "commonMistakes": [
       "back music (eksik kelime; 'background music' olmalı)",
@@ -11788,7 +12023,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "incidental music",
       "muzak",
       "elevator music"
-    ]
+    ],
+    "meaningTr": "Arka plan müziği; bir ortamda, filmde, restoranda veya etkinlikte dikkat dağıtmadan çalan, atmosfer yaratan hafif müzik."
   },
   {
     "id": "col_u24_0238",
@@ -11796,7 +12032,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Büyük hit; bir şarkının, filmin, ürünün veya gösterinin çok popüler olması, büyük başarı kazanması.",
+    "meaning": "A song, film or show that becomes very popular and successful.",
     "collocates": [],
     "commonMistakes": [
       "big success (müzik bağlamında 'big hit' daha doğal)",
@@ -11838,7 +12074,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "smash hit",
       "chart-topper",
       "blockbuster"
-    ]
+    ],
+    "meaningTr": "Büyük hit; bir şarkının, filmin, ürünün veya gösterinin çok popüler olması, büyük başarı kazanması."
   },
   {
     "id": "col_u24_0239",
@@ -11846,7 +12083,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Müziğin bir yerden çok yüksek sesle yayılması, patlaması; genellikle kulüp, araba veya konser gibi ortamlarda yüksek volümlü müzik için kullanılır.",
+    "meaning": "To play very loudly from a place, filling the surrounding area with sound.",
     "collocates": [],
     "commonMistakes": [
       "music blasts from out (yanlış kelime sırası; 'blasts out from' olmalı)",
@@ -11888,7 +12125,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "music blares out from",
       "music pumps out from",
       "music thunders out from"
-    ]
+    ],
+    "meaningTr": "Müziğin bir yerden çok yüksek sesle yayılması, patlaması; genellikle kulüp, araba veya konser gibi ortamlarda yüksek volümlü müzik için kullanılır."
   },
   {
     "id": "col_u24_0240",
@@ -11896,7 +12134,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Akılda kalıcı melodi; kolayca hatırlanan, insanın aklına takılan ve sık sık mırıldanılan hoş bir şarkı veya melodi.",
+    "meaning": "A tune that is easy to remember and stays in your head.",
     "collocates": [],
     "commonMistakes": [
       "catchy song (kabul edilebilir ama 'catchy tune' daha spesifik ve yaygın)",
@@ -11938,7 +12176,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "infectious tune",
       "sticky melody",
       "hum-worthy song"
-    ]
+    ],
+    "meaningTr": "Akılda kalıcı melodi; kolayca hatırlanan, insanın aklına takılan ve sık sık mırıldanılan hoş bir şarkı veya melodi."
   },
   {
     "id": "col_u25_0241",
@@ -11946,7 +12185,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kişisel en iyi dereceyi elde etmek; bir sporcunun kendi rekorunu kırması veya en iyi performansını göstermesi.",
+    "meaning": "To perform better than you ever have before in a sport or activity.",
     "collocates": [],
     "commonMistakes": [
       "do a personal best (yanlış fiil; 'achieve' veya 'set' kullanılmalı)",
@@ -11988,7 +12227,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "record a personal best",
       "hit a personal best",
       "break your own record"
-    ]
+    ],
+    "meaningTr": "Kişisel en iyi dereceyi elde etmek; bir sporcunun kendi rekorunu kırması veya en iyi performansını göstermesi."
   },
   {
     "id": "col_u25_0242",
@@ -11996,7 +12236,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hedefine ulaşmak, hayalini gerçekleştirmek; uzun süredir arzu edilen bir amacı başarmak.",
+    "meaning": "To succeed in doing something you have long wanted very much to do.",
     "collocates": [],
     "commonMistakes": [
       "do your ambition (yanlış fiil; 'achieve' veya 'fulfil' kullanılmalı)",
@@ -12038,7 +12278,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "realise your ambition",
       "accomplish your goal",
       "reach your goal"
-    ]
+    ],
+    "meaningTr": "Hedefine ulaşmak, hayalini gerçekleştirmek; uzun süredir arzu edilen bir amacı başarmak."
   },
   {
     "id": "col_u25_0243",
@@ -12046,7 +12287,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Etkinlikler yapmak, faaliyetlerde bulunmak; belirli aktiviteleri gerçekleştirmek.",
+    "meaning": "To take part in organised things that you do for interest or exercise.",
     "collocates": [],
     "commonMistakes": [
       "make activities (yanlış fiil; 'do' veya 'take part in' kullanılmalı)",
@@ -12088,7 +12329,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "engage in activities",
       "participate in activities",
       "carry out activities"
-    ]
+    ],
+    "meaningTr": "Etkinlikler yapmak, faaliyetlerde bulunmak; belirli aktiviteleri gerçekleştirmek."
   },
   {
     "id": "col_u25_0244",
@@ -12096,7 +12338,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Aerobik yapmak; kalp atışını hızlandıran, ritmik müzik eşliğinde yapılan egzersiz türünü gerçekleştirmek.",
+    "meaning": "To do energetic physical exercises, often to music, to improve fitness.",
     "collocates": [],
     "commonMistakes": [
       "make aerobics (yanlış fiil; 'do' kullanılmalı)",
@@ -12138,7 +12380,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "practise aerobics",
       "do aerobic exercise",
       "attend aerobics sessions"
-    ]
+    ],
+    "meaningTr": "Aerobik yapmak; kalp atışını hızlandıran, ritmik müzik eşliğinde yapılan egzersiz türünü gerçekleştirmek."
   },
   {
     "id": "col_u25_0245",
@@ -12146,7 +12389,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Aerobik dersine/kursuna gitmek; düzenli olarak aerobik seanslarına katılmak.",
+    "meaning": "To attend a regular aerobics class or session.",
     "collocates": [],
     "commonMistakes": [
       "go aerobics (edat eksik; 'go to aerobics' olmalı)",
@@ -12188,7 +12431,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "go to aerobics classes",
       "take part in aerobics",
       "join an aerobics session"
-    ]
+    ],
+    "meaningTr": "Aerobik dersine/kursuna gitmek; düzenli olarak aerobik seanslarına katılmak."
   },
   {
     "id": "col_u25_0246",
@@ -12196,7 +12440,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Okçuluk yapmak; yay ve ok kullanarak hedefe atış yapılan spor dalıyla ilgilenmek. 'Do' fiili, bireysel olarak yapılan ve genellikle bir kulüpte veya tesiste gerçekleştirilen sporlar için kullanılır.",
+    "meaning": "To take part in the sport of shooting arrows with a bow at a target.",
     "collocates": [],
     "commonMistakes": [
       "play archery (yanlış; okçuluk 'play' ile kullanılmaz, çünkü top veya rakip gerektiren bir oyun değildir)",
@@ -12237,7 +12481,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "practise archery",
       "take up archery",
       "compete in archery"
-    ]
+    ],
+    "meaningTr": "Okçuluk yapmak; yay ve ok kullanarak hedefe atış yapılan spor dalıyla ilgilenmek. 'Do' fiili, bireysel olarak yapılan ve genellikle bir kulüpte veya tesiste gerçekleştirilen sporlar için kullanılır."
   },
   {
     "id": "col_u25_0247",
@@ -12245,7 +12490,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Atletizm yapmak; koşu, atlama ve atma gibi branşları içeren atletizm sporuyla uğraşmak. 'Do' fiili, bireysel olarak yapılan ve genellikle bir kulüpte veya okulda gerçekleştirilen sporlar için kullanılır.",
+    "meaning": "To take part in track and field sports such as running, jumping and throwing.",
     "collocates": [],
     "commonMistakes": [
       "play athletics (yanlış; atletizm 'play' ile kullanılmaz, çünkü top veya rakip gerektiren bir oyun değildir)",
@@ -12286,7 +12531,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "practise athletics",
       "take part in athletics",
       "compete in athletics"
-    ]
+    ],
+    "meaningTr": "Atletizm yapmak; koşu, atlama ve atma gibi branşları içeren atletizm sporuyla uğraşmak. 'Do' fiili, bireysel olarak yapılan ve genellikle bir kulüpte veya okulda gerçekleştirilen sporlar için kullanılır."
   },
   {
     "id": "col_u25_0248",
@@ -12294,7 +12540,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Deplasman maçı; bir takımın kendi sahası dışında, rakip takımın sahasında oynadığı maç.",
+    "meaning": "A sports game played at the opponent's ground rather than at your own.",
     "collocates": [],
     "commonMistakes": [
       "outside match (yanlış; 'away match' kalıbı kullanılmalıdır)",
@@ -12335,7 +12581,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "away game",
       "road game",
       "fixture on the road"
-    ]
+    ],
+    "meaningTr": "Deplasman maçı; bir takımın kendi sahası dışında, rakip takımın sahasında oynadığı maç."
   },
   {
     "id": "col_u25_0249",
@@ -12343,7 +12590,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Badminton oynamak; raket ve tüylü top kullanılarak iki veya dört kişi arasında oynanan bir spor dalıyla ilgilenmek. 'Play' fiili, top veya rakip gerektiren oyunlar için kullanılır.",
+    "meaning": "To take part in a game in which players hit a shuttlecock over a net with rackets.",
     "collocates": [],
     "commonMistakes": [
       "do badminton (yanlış; badminton 'play' ile kullanılır, çünkü rakip gerektiren bir oyundur)",
@@ -12384,7 +12631,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have a game of badminton",
       "do badminton",
       "compete in badminton"
-    ]
+    ],
+    "meaningTr": "Badminton oynamak; raket ve tüylü top kullanılarak iki veya dört kişi arasında oynanan bir spor dalıyla ilgilenmek. 'Play' fiili, top veya rakip gerektiren oyunlar için kullanılır."
   },
   {
     "id": "col_u25_0250",
@@ -12392,7 +12640,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Beyzbol oynamak; sopa ve top kullanılarak iki takım arasında oynanan bir spor dalıyla ilgilenmek. 'Play' fiili, top veya rakip gerektiren oyunlar için kullanılır.",
+    "meaning": "To take part in a game in which two teams hit a ball with a bat and run round bases.",
     "collocates": [],
     "commonMistakes": [
       "do baseball (yanlış; beyzbol 'play' ile kullanılır, çünkü rakip gerektiren bir oyundur)",
@@ -12433,7 +12681,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have a game of baseball",
       "do baseball",
       "compete in baseball"
-    ]
+    ],
+    "meaningTr": "Beyzbol oynamak; sopa ve top kullanılarak iki takım arasında oynanan bir spor dalıyla ilgilenmek. 'Play' fiili, top veya rakip gerektiren oyunlar için kullanılır."
   },
   {
     "id": "col_u26_0251",
@@ -12441,7 +12690,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sürekli, hafif ama rahatsız edici, keskin olmayan ağrı; genellikle zonklamayan, donuk bir ağrı türü.",
+    "meaning": "A continuous pain that is not sharp but is uncomfortable and does not go away.",
     "collocates": [],
     "commonMistakes": [
       "dull pain yerine dull ache tercih edilir; 'dull hurt' yanlıştır",
@@ -12482,7 +12731,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "throbbing ache",
       "nagging pain",
       "constant soreness"
-    ]
+    ],
+    "meaningTr": "Sürekli, hafif ama rahatsız edici, keskin olmayan ağrı; genellikle zonklamayan, donuk bir ağrı türü."
   },
   {
     "id": "col_u26_0252",
@@ -12490,7 +12740,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çok şiddetli, keskin ve yoğun biçimde acı veren; ağrının derecesini vurgulayan güçlü bir ifade.",
+    "meaning": "Extremely and intensely sore, used to emphasize how severe the pain is.",
     "collocates": [],
     "commonMistakes": [
       "'very painful' yerine 'acutely painful' daha akademik ve güçlüdür; 'acutely pain' yanlıştır",
@@ -12531,7 +12781,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "intensely painful",
       "severely painful",
       "agonizingly painful"
-    ]
+    ],
+    "meaningTr": "Çok şiddetli, keskin ve yoğun biçimde acı veren; ağrının derecesini vurgulayan güçlü bir ifade."
   },
   {
     "id": "col_u26_0253",
@@ -12539,7 +12790,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "AIDS (Edinilmiş Bağışıklık Yetmezliği Sendromu) teşhisi konulmak; tıbbi testler sonucunda AIDS hastalığının tespit edilmesi.",
+    "meaning": "To be told by a doctor, after tests, that you have AIDS.",
     "collocates": [],
     "commonMistakes": [
       "'be diagnosed AIDS' yanlıştır; 'be diagnosed with AIDS' doğrudur",
@@ -12581,7 +12832,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be confirmed as having AIDS",
       "receive an AIDS diagnosis",
       "test positive for AIDS"
-    ]
+    ],
+    "meaningTr": "AIDS (Edinilmiş Bağışıklık Yetmezliği Sendromu) teşhisi konulmak; tıbbi testler sonucunda AIDS hastalığının tespit edilmesi."
   },
   {
     "id": "col_u26_0254",
@@ -12589,7 +12841,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "AIDS hastalığına yakalanmak; HIV enfeksiyonunun ilerleyerek AIDS aşamasına gelmesi.",
+    "meaning": "For an HIV infection to progress until the person becomes ill with AIDS.",
     "collocates": [],
     "commonMistakes": [
       "'catch AIDS' günlük dilde kullanılsa da tıbben 'develop AIDS' veya 'contract AIDS' daha doğrudur",
@@ -12631,7 +12883,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "progress to AIDS",
       "go on to develop AIDS",
       "become ill with AIDS"
-    ]
+    ],
+    "meaningTr": "AIDS hastalığına yakalanmak; HIV enfeksiyonunun ilerleyerek AIDS aşamasına gelmesi."
   },
   {
     "id": "col_u26_0255",
@@ -12639,7 +12892,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hafif rahatsızlık; ciddi olmayan, genellikle kısa sürede geçen küçük sağlık sorunu.",
+    "meaning": "A small, not serious illness that usually gets better quickly without special treatment.",
     "collocates": [],
     "commonMistakes": [
       "'small ailment' yaygın ama 'minor ailment' daha doğal eşdizimdir",
@@ -12681,7 +12934,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "slight complaint",
       "trivial condition",
       "small health problem"
-    ]
+    ],
+    "meaningTr": "Hafif rahatsızlık; ciddi olmayan, genellikle kısa sürede geçen küçük sağlık sorunu."
   },
   {
     "id": "col_u26_0256",
@@ -12689,7 +12943,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Önemsiz, hafif rahatsızlık; ciddi olmayan, genellikle kısa sürede geçen küçük sağlık sorunu (ör. soğuk algınlığı, hafif baş ağrısı).",
+    "meaning": "A very slight, unimportant illness that does not need serious medical attention.",
     "collocates": [],
     "commonMistakes": [
       "trivial disease (ağır hastalıklar için 'disease' kullanılır; hafif rahatsızlıklar için 'ailment' tercih edilir)",
@@ -12731,7 +12985,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "minor complaint",
       "slight illness",
       "petty ailment"
-    ]
+    ],
+    "meaningTr": "Önemsiz, hafif rahatsızlık; ciddi olmayan, genellikle kısa sürede geçen küçük sağlık sorunu (ör. soğuk algınlığı, hafif baş ağrısı)."
   },
   {
     "id": "col_u26_0257",
@@ -12739,7 +12994,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Acıyı hafifletmek, dindirmek; ağrıyı tamamen yok etmeden azaltmak.",
+    "meaning": "To make pain less severe or easier to bear without removing it completely.",
     "collocates": [],
     "commonMistakes": [
       "delete the pain (acıyı 'silmek' anlamı yanlış; 'alleviate' veya 'relieve' kullanılmalı)",
@@ -12781,7 +13036,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "relieve the pain",
       "soothe the pain",
       "reduce the pain"
-    ]
+    ],
+    "meaningTr": "Acıyı hafifletmek, dindirmek; ağrıyı tamamen yok etmeden azaltmak."
   },
   {
     "id": "col_u26_0258",
@@ -12789,7 +13045,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Artrit (eklem iltihabı) geliştirmek; zamanla artrit hastalığına yakalanmak.",
+    "meaning": "To begin to have the joint disease arthritis, often gradually over time.",
     "collocates": [],
     "commonMistakes": [
       "catch arthritis (bulaşıcı hastalıklar için 'catch' kullanılır; artrit için 'develop' veya 'get' uygun)",
@@ -12830,7 +13086,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "get arthritis",
       "contract arthritis",
       "come down with arthritis"
-    ]
+    ],
+    "meaningTr": "Artrit (eklem iltihabı) geliştirmek; zamanla artrit hastalığına yakalanmak."
   },
   {
     "id": "col_u26_0259",
@@ -12838,7 +13095,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Astım hastalığından muzdarip olmak; astımı olmak ve bunun olumsuz etkilerini yaşamak.",
+    "meaning": "To have the chest condition asthma and experience its unpleasant effects.",
     "collocates": [],
     "commonMistakes": [
       "suffer asthma (edat eksik; 'suffer from' kullanılmalı)",
@@ -12879,7 +13136,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have asthma",
       "be afflicted with asthma",
       "be a sufferer of asthma"
-    ]
+    ],
+    "meaningTr": "Astım hastalığından muzdarip olmak; astımı olmak ve bunun olumsuz etkilerini yaşamak."
   },
   {
     "id": "col_u26_0260",
@@ -12887,7 +13145,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Otizm teşhisi konulmak; otizm spektrum bozukluğu olduğu tıbben tespit edilmek.",
+    "meaning": "To be told by a doctor that you have the developmental condition autism.",
     "collocates": [],
     "commonMistakes": [
       "be diagnosed autism (edat eksik; 'diagnosed with' kullanılmalı)",
@@ -12928,7 +13186,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be identified as having autism",
       "receive an autism diagnosis",
       "be found to have autism"
-    ]
+    ],
+    "meaningTr": "Otizm teşhisi konulmak; otizm spektrum bozukluğu olduğu tıbben tespit edilmek."
   },
   {
     "id": "col_u27_0261",
@@ -12936,7 +13195,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bilgisayarı virüslerden, kötü amaçlı yazılımlardan ve diğer siber tehditlerden korumak için kullanılan yazılım; antivirüs programı.",
+    "meaning": "A program designed to protect a computer from viruses and other harmful software.",
     "collocates": [],
     "commonMistakes": [
       "anti-virus program yerine 'virus software' demek (virüsün kendisiymiş gibi anlaşılır)",
@@ -12978,7 +13237,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "malware protection",
       "antivirus program",
       "internet security suite"
-    ]
+    ],
+    "meaningTr": "Bilgisayarı virüslerden, kötü amaçlı yazılımlardan ve diğer siber tehditlerden korumak için kullanılan yazılım; antivirüs programı."
   },
   {
     "id": "col_u27_0262",
@@ -12986,7 +13246,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir e-postaya eklenmiş dosyayı açmak; e-posta ekindeki dosyayı görüntülemek veya çalıştırmak.",
+    "meaning": "To view or run a file that has been sent with an email.",
     "collocates": [],
     "commonMistakes": [
       "open an attachment yerine 'open an attach' demek (attachment isimdir, attach fiildir)",
@@ -13028,7 +13288,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "view an attachment",
       "download an attachment",
       "click on an attachment"
-    ]
+    ],
+    "meaningTr": "Bir e-postaya eklenmiş dosyayı açmak; e-posta ekindeki dosyayı görüntülemek veya çalıştırmak."
   },
   {
     "id": "col_u27_0263",
@@ -13036,7 +13297,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir dergi, gazete veya süreli yayının önceki sayıları; eski sayılar. (Ayrıca 'back issue' sırt/bel ağrısı anlamına da gelebilir, ancak bu ünitede yayın bağlamındadır.)",
+    "meaning": "Earlier editions of a magazine, newspaper or other periodical publication.",
     "collocates": [],
     "commonMistakes": [
       "back issues yerine 'old numbers' demek (Türkçe'den birebir çeviri; İngilizcede dergi sayıları için 'issues' kullanılır)",
@@ -13073,7 +13334,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "past issues",
       "archived issues",
       "earlier editions"
-    ]
+    ],
+    "meaningTr": "Bir dergi, gazete veya süreli yayının önceki sayıları; eski sayılar. (Ayrıca 'back issue' sırt/bel ağrısı anlamına da gelebilir, ancak bu ünitede yayın bağlamındadır.)"
   },
   {
     "id": "col_u27_0264",
@@ -13081,7 +13343,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Dosyaların bir kopyasını başka bir yerde (harici disk, bulut vb.) saklayarak veri kaybına karşı güvence altına almak; dosyaları yedeklemek.",
+    "meaning": "To make a copy of your files in another place to protect against data loss.",
     "collocates": [],
     "commonMistakes": [
       "back up your files yerine 'back your files up' demek (phrasal verb ayrılabilir olsa da 'back up your files' daha yaygın ve doğaldır; ancak 'back your files up' da kabul edilebilir — asıl hata 'backup your files' fiil olarak kullanmaktır)",
@@ -13123,7 +13385,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "save a copy of your files",
       "create a backup",
       "archive your files"
-    ]
+    ],
+    "meaningTr": "Dosyaların bir kopyasını başka bir yerde (harici disk, bulut vb.) saklayarak veri kaybına karşı güvence altına almak; dosyaları yedeklemek."
   },
   {
     "id": "col_u27_0265",
@@ -13131,7 +13394,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Verilerin internet üzerinden erişilebilen uzak sunucularda saklanması; bulut depolama.",
+    "meaning": "The storing of data on remote internet servers that you can access from any device.",
     "collocates": [],
     "commonMistakes": [
       "cloud storage yerine 'cloud memory' demek (memory, RAM/bellek anlamına gelir; depolama için storage kullanılır)",
@@ -13173,7 +13436,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "cloud-based storage",
       "remote storage",
       "cloud computing storage"
-    ]
+    ],
+    "meaningTr": "Verilerin internet üzerinden erişilebilen uzak sunucularda saklanması; bulut depolama."
   },
   {
     "id": "col_u27_0266",
@@ -13181,7 +13445,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bilgisayarın çökmesi; bilgisayarın aniden çalışmayı durdurması, donması veya kapanması. Genellikle yazılım hatası, aşırı yüklenme veya donanım sorunu nedeniyle meydana gelir.",
+    "meaning": "For a computer to suddenly stop working, freeze or shut down, often because of a fault.",
     "collocates": [],
     "commonMistakes": [
       "make a computer crash (doğal değil) -> cause a computer crash / the computer crashes",
@@ -13223,7 +13487,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "computer freezes",
       "computer goes down",
       "system failure"
-    ]
+    ],
+    "meaningTr": "Bilgisayarın çökmesi; bilgisayarın aniden çalışmayı durdurması, donması veya kapanması. Genellikle yazılım hatası, aşırı yüklenme veya donanım sorunu nedeniyle meydana gelir."
   },
   {
     "id": "col_u27_0267",
@@ -13231,7 +13496,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kopyala-yapıştır yapmak; bir metni, görseli veya veriyi seçip kopyalayarak başka bir yere yapıştırmak. Dijital içerik aktarımında kullanılan temel bir bilgisayar işlemidir.",
+    "meaning": "To select text, images or data and place a copy of it somewhere else.",
     "collocates": [],
     "commonMistakes": [
       "copy paste (fiil olarak yanlış) -> copy and paste",
@@ -13273,7 +13538,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "duplicate text",
       "transfer text",
       "copy over"
-    ]
+    ],
+    "meaningTr": "Kopyala-yapıştır yapmak; bir metni, görseli veya veriyi seçip kopyalayarak başka bir yere yapıştırmak. Dijital içerik aktarımında kullanılan temel bir bilgisayar işlemidir."
   },
   {
     "id": "col_u27_0268",
@@ -13281,7 +13547,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Uygulama indirmek; bir yazılımı, programı veya mobil uygulamayı internet üzerinden cihaza yüklemek.",
+    "meaning": "To transfer software or mobile apps from the internet onto a device.",
     "collocates": [],
     "commonMistakes": [
       "make a download of applications (doğal değil) -> download applications",
@@ -13323,7 +13589,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "get applications",
       "download software",
       "obtain apps"
-    ]
+    ],
+    "meaningTr": "Uygulama indirmek; bir yazılımı, programı veya mobil uygulamayı internet üzerinden cihaza yüklemek."
   },
   {
     "id": "col_u27_0269",
@@ -13331,7 +13598,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Eleştirel bir şekilde değerlendirmek; bir bilgiyi, kaynağı veya durumu sorgulayarak, önyargılardan arınmış biçimde analiz etmek ve değerlendirmek.",
+    "meaning": "To examine information or a situation carefully and questioningly, without bias.",
     "collocates": [],
     "commonMistakes": [
       "critically evaluate (doğru ama kelime sırası farklı) -> evaluate critically",
@@ -13373,7 +13640,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "analyze critically",
       "review critically",
       "examine critically"
-    ]
+    ],
+    "meaningTr": "Eleştirel bir şekilde değerlendirmek; bir bilgiyi, kaynağı veya durumu sorgulayarak, önyargılardan arınmış biçimde analiz etmek ve değerlendirmek."
   },
   {
     "id": "col_u27_0270",
@@ -13381,7 +13649,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İpuçları ve püf noktaları; bir konuda yardımcı olacak küçük öneriler, pratik bilgiler ve faydalı tavsiyeler.",
+    "meaning": "Small pieces of practical advice and useful suggestions to help with something.",
     "collocates": [],
     "commonMistakes": [
       "hints and advices (advice sayılamaz) -> hints and tips / hints and advice",
@@ -13423,7 +13691,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "advice and suggestions",
       "pointers and guidelines",
       "helpful hints"
-    ]
+    ],
+    "meaningTr": "İpuçları ve püf noktaları; bir konuda yardımcı olacak küçük öneriler, pratik bilgiler ve faydalı tavsiyeler."
   },
   {
     "id": "col_u28_0271",
@@ -13431,7 +13700,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir eğitim veya sınav sonucunda resmi bir yeterlilik, diploma veya sertifika kazanmak. 'Acquire' fiili burada emek ve süreç sonucunda edinmeyi vurgular; 'qualification' ise resmi olarak tanınan bir yeterlilik belgesidir.",
+    "meaning": "To gain an official certificate or diploma after study, training or an exam.",
     "collocates": [],
     "commonMistakes": [
       "take a qualification (yanlış; 'take an exam' denir, yeterlilik 'acquire/obtain' ile edinilir)",
@@ -13473,7 +13742,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "gain a qualification",
       "earn a qualification",
       "get a qualification"
-    ]
+    ],
+    "meaningTr": "Bir eğitim veya sınav sonucunda resmi bir yeterlilik, diploma veya sertifika kazanmak. 'Acquire' fiili burada emek ve süreç sonucunda edinmeyi vurgular; 'qualification' ise resmi olarak tanınan bir yeterlilik belgesidir."
   },
   {
     "id": "col_u28_0272",
@@ -13481,7 +13751,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir iş, okul veya program için başvuru formunu/belgelerini resmi olarak göndermek. 'Send in' deyimsel fiili, başvurunun posta veya çevrimiçi yolla iletildiğini ifade eder; 'application' ise başvuru dosyasıdır.",
+    "meaning": "To officially send a form and documents requesting a job, place or programme.",
     "collocates": [],
     "commonMistakes": [
       "send an application (eksik; 'send in' deyimsel fiili tercih edilir, 'send' tek başına daha genel kalır)",
@@ -13523,7 +13793,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "file an application",
       "put in an application",
       "hand in an application"
-    ]
+    ],
+    "meaningTr": "Bir iş, okul veya program için başvuru formunu/belgelerini resmi olarak göndermek. 'Send in' deyimsel fiili, başvurunun posta veya çevrimiçi yolla iletildiğini ifade eder; 'application' ise başvuru dosyasıdır."
   },
   {
     "id": "col_u28_0273",
@@ -13531,7 +13802,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir başvuruyu resmi olarak sunmak, teslim etmek. 'Submit' fiili 'send in'den daha resmi ve akademik/iş dünyasına uygun bir tondadır; genellikle çevrimiçi sistemler veya resmi kurumlar bağlamında kullanılır.",
+    "meaning": "To formally hand in an application, especially online or to an official body.",
     "collocates": [],
     "commonMistakes": [
       "submit an apply (yanlış; 'apply' fiildir, isim olarak 'application' kullanılmalı)",
@@ -13573,7 +13844,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "file an application",
       "lodge an application",
       "put forward an application"
-    ]
+    ],
+    "meaningTr": "Bir başvuruyu resmi olarak sunmak, teslim etmek. 'Submit' fiili 'send in'den daha resmi ve akademik/iş dünyasına uygun bir tondadır; genellikle çevrimiçi sistemler veya resmi kurumlar bağlamında kullanılır."
   },
   {
     "id": "col_u28_0274",
@@ -13581,7 +13853,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Sürekli değerlendirme; öğrencinin performansının tek bir final sınavı yerine dönem boyunca ödevler, projeler ve testlerle düzenli olarak değerlendirilmesi sistemi.",
+    "meaning": "A system of judging a student's work regularly through the course rather than by one final exam.",
     "collocates": [],
     "commonMistakes": [
       "continuous exam (yanlış; 'exam' tek bir sınavı ifade eder, 'assessment' süreci kapsar)",
@@ -13623,7 +13895,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "continuous evaluation",
       "formative assessment",
       "coursework assessment"
-    ]
+    ],
+    "meaningTr": "Sürekli değerlendirme; öğrencinin performansının tek bir final sınavı yerine dönem boyunca ödevler, projeler ve testlerle düzenli olarak değerlendirilmesi sistemi."
   },
   {
     "id": "col_u28_0275",
@@ -13631,7 +13904,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir ödev veya görevi yapmak, tamamlamak. 'Do' fiili burada genel bir eylem olarak kullanılır; 'assignment' ise öğrenciye verilen yazılı veya araştırma görevidir.",
+    "meaning": "To carry out a piece of written or research work given to a student.",
     "collocates": [],
     "commonMistakes": [
       "make an assignment (yanlış; 'make' genellikle 'make a decision' gibi kalıplarda kullanılır, ödev için 'do' tercih edilir)",
@@ -13673,7 +13946,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "work on an assignment",
       "finish an assignment",
       "carry out an assignment"
-    ]
+    ],
+    "meaningTr": "Bir ödev veya görevi yapmak, tamamlamak. 'Do' fiili burada genel bir eylem olarak kullanılır; 'assignment' ise öğrenciye verilen yazılı veya araştırma görevidir."
   },
   {
     "id": "col_u28_0276",
@@ -13681,7 +13955,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir ödev yazmak; genellikle okul veya üniversite bağlamında verilen yazılı görevi hazırlamak.",
+    "meaning": "To produce a piece of written work set by a teacher or lecturer.",
     "collocates": [],
     "commonMistakes": [
       "make an assignment (ödev yapmak anlamında 'make' kullanılmaz; 'write' veya 'do' kullanılır)",
@@ -13722,7 +13996,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "do an assignment",
       "prepare an assignment",
       "work on an assignment"
-    ]
+    ],
+    "meaningTr": "Bir ödev yazmak; genellikle okul veya üniversite bağlamında verilen yazılı görevi hazırlamak."
   },
   {
     "id": "col_u28_0277",
@@ -13730,7 +14005,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir derse veya konferansa katılmak; genellikle üniversitede verilen bir dersi dinlemek üzere hazır bulunmak.",
+    "meaning": "To be present at a formal talk given to students, usually at a university.",
     "collocates": [],
     "commonMistakes": [
       "join a lecture (bir derse 'join' denmez; 'attend' veya 'go to' kullanılır)",
@@ -13770,7 +14045,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "go to a lecture",
       "sit in on a lecture",
       "be present at a lecture"
-    ]
+    ],
+    "meaningTr": "Bir derse veya konferansa katılmak; genellikle üniversitede verilen bir dersi dinlemek üzere hazır bulunmak."
   },
   {
     "id": "col_u28_0278",
@@ -13778,7 +14054,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Dersin yapılması, dersin gerçekleştirilmesi; bir dersin belirli bir yerde ve zamanda düzenlenmesi.",
+    "meaning": "A lesson or course takes place at a particular time and place.",
     "collocates": [],
     "commonMistakes": [
       "class is done (dersin yapılması anlamında 'done' kullanılmaz; 'held' veya 'conducted' kullanılır)",
@@ -13818,7 +14094,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "class takes place",
       "class is conducted",
       "class is scheduled"
-    ]
+    ],
+    "meaningTr": "Dersin yapılması, dersin gerçekleştirilmesi; bir dersin belirli bir yerde ve zamanda düzenlenmesi."
   },
   {
     "id": "col_u28_0279",
@@ -13826,7 +14103,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir kursu tamamlamak; bir eğitim programını başarıyla bitirmek.",
+    "meaning": "To finish a series of lessons or a programme of study successfully.",
     "collocates": [],
     "commonMistakes": [
       "make a course (kurs tamamlamak anlamında 'make' kullanılmaz; 'complete' veya 'do' kullanılır)",
@@ -13867,7 +14144,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "do a course",
       "take a course",
       "get through a course"
-    ]
+    ],
+    "meaningTr": "Bir kursu tamamlamak; bir eğitim programını başarıyla bitirmek."
   },
   {
     "id": "col_u28_0280",
@@ -13875,7 +14153,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir araştırma projesi yürütmek; bilimsel veya akademik bir araştırmayı planlayıp gerçekleştirmek.",
+    "meaning": "To plan and carry out a piece of academic or scientific research.",
     "collocates": [],
     "commonMistakes": [
       "make a research project (araştırma projesi yürütmek anlamında 'make' kullanılmaz; 'conduct' veya 'carry out' kullanılır)",
@@ -13916,7 +14194,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "undertake a research project",
       "run a research project",
       "do a research project"
-    ]
+    ],
+    "meaningTr": "Bir araştırma projesi yürütmek; bilimsel veya akademik bir araştırmayı planlayıp gerçekleştirmek."
   },
   {
     "id": "col_u29_0281",
@@ -13924,7 +14203,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Sunumda/konuşmada anlattığınız mantık zincirini, gerekçeleri ve sonuçları dinleyicinin takip edebilmesi; 'argümanınızı/savınızı takip etmek, anlatılan mantığı izleyebilmek'.",
+    "meaning": "to understand and follow the logical steps and reasoning that someone presents in a speech or piece of writing",
     "collocates": [],
     "commonMistakes": [
       "follow your argue (yanlış fiil-isim eşleşmesi; 'argue' fiildir, 'argument' isim olmalı)",
@@ -13966,7 +14245,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "track your logic",
       "keep up with your point",
       "follow your line of thought"
-    ]
+    ],
+    "meaningTr": "Sunumda/konuşmada anlattığınız mantık zincirini, gerekçeleri ve sonuçları dinleyicinin takip edebilmesi; 'argümanınızı/savınızı takip etmek, anlatılan mantığı izleyebilmek'."
   },
   {
     "id": "col_u29_0282",
@@ -13974,7 +14254,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Dinleyicilerin dikkatini belirli bir süre boyunca canlı tutmak, ilgilerini sürdürmek; 'dikkatlerini tutmak/ayakta tutmak, ilgilerini canlı tutmak'.",
+    "meaning": "to keep an audience interested and paying attention for a period of time",
     "collocates": [],
     "commonMistakes": [
       "hold their attentions (attention bu anlamda sayılamaz isimdir, çoğul kullanılmaz)",
@@ -14016,7 +14296,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "grab their attention",
       "maintain their interest",
       "keep them engaged"
-    ]
+    ],
+    "meaningTr": "Dinleyicilerin dikkatini belirli bir süre boyunca canlı tutmak, ilgilerini sürdürmek; 'dikkatlerini tutmak/ayakta tutmak, ilgilerini canlı tutmak'."
   },
   {
     "id": "col_u29_0283",
@@ -14024,7 +14305,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Dinleyicilerin dikkatini sürekli kılmak, kopmadan ilgili kalmalarını sağlamak; 'dikkatlerini korumak/sürdürmek, ilgilerini canlı tutmak'.",
+    "meaning": "to make sure an audience stays interested and continues to pay attention throughout",
     "collocates": [],
     "commonMistakes": [
       "keep their attentions (attention sayılamaz isim; çoğul kullanılmaz)",
@@ -14066,7 +14347,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "retain their attention",
       "sustain their attention",
       "keep them focused"
-    ]
+    ],
+    "meaningTr": "Dinleyicilerin dikkatini sürekli kılmak, kopmadan ilgili kalmalarını sağlamak; 'dikkatlerini korumak/sürdürmek, ilgilerini canlı tutmak'."
   },
   {
     "id": "col_u29_0284",
@@ -14074,7 +14356,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Dinleyicilerle duygusal/kişisel bir bağ kurmak, onlarla iletişim kurup etkileşime geçmek; 'izleyicinizle/dinleyicinizle bağ kurmak, onlarla iletişim kurmak'.",
+    "meaning": "to establish a personal or emotional bond with the people listening to you",
     "collocates": [],
     "commonMistakes": [
       "connect to your audience (İngilizcede 'connect with' daha doğal ve yaygındır)",
@@ -14116,7 +14398,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "build rapport with your audience",
       "relate to your audience",
       "bond with your audience"
-    ]
+    ],
+    "meaningTr": "Dinleyicilerle duygusal/kişisel bir bağ kurmak, onlarla iletişim kurup etkileşime geçmek; 'izleyicinizle/dinleyicinizle bağ kurmak, onlarla iletişim kurmak'."
   },
   {
     "id": "col_u29_0285",
@@ -14124,7 +14407,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Beden dili; jestler, duruş, yüz ifadeleri ve göz teması gibi sözsüz iletişim yollarıyla aktarılan mesajlar.",
+    "meaning": "the movements, postures and facial expressions people use to communicate without words",
     "collocates": [],
     "commonMistakes": [
       "body's language (gereksiz iyelik eki; 'body language' kalıplaşmış ifadedir)",
@@ -14166,7 +14449,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "gestures and posture",
       "physical signals",
       "non-verbal cues"
-    ]
+    ],
+    "meaningTr": "Beden dili; jestler, duruş, yüz ifadeleri ve göz teması gibi sözsüz iletişim yollarıyla aktarılan mesajlar."
   },
   {
     "id": "col_u29_0286",
@@ -14174,7 +14458,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Derin derin nefes almak; sunum öncesi veya stresli anlarda sakinleşmek için yavaş ve derin nefes alıp vermek.",
+    "meaning": "to take slow, deep breaths in order to relax or calm yourself",
     "collocates": [],
     "commonMistakes": [
       "breathe deep (zarf yerine sıfat kullanımı; doğrusu 'breathe deeply')",
@@ -14216,7 +14500,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "inhale deeply",
       "breathe slowly and deeply",
       "do deep breathing"
-    ]
+    ],
+    "meaningTr": "Derin derin nefes almak; sunum öncesi veya stresli anlarda sakinleşmek için yavaş ve derin nefes alıp vermek."
   },
   {
     "id": "col_u29_0287",
@@ -14224,7 +14509,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Madde işaretleri; sunum slaytlarında bilgiyi kısa, sıralı ve okunması kolay maddeler halinde göstermek için kullanılan nokta veya kare simgeleri.",
+    "meaning": "small dots or symbols used to mark items in a list, especially on presentation slides",
     "collocates": [],
     "commonMistakes": [
       "bullet point list (gereksiz tekrar; doğrusu 'a list of bullet points' veya 'bullet points')",
@@ -14266,7 +14551,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "key points",
       "numbered points",
       "list items"
-    ]
+    ],
+    "meaningTr": "Madde işaretleri; sunum slaytlarında bilgiyi kısa, sıralı ve okunması kolay maddeler halinde göstermek için kullanılan nokta veya kare simgeleri."
   },
   {
     "id": "col_u29_0288",
@@ -14274,7 +14560,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Çubuk grafik; verileri yatay veya dikey çubukların uzunluğuyla karşılaştırmalı olarak gösteren grafik türü.",
+    "meaning": "a graph that uses rectangular bars of different lengths to compare amounts or values",
     "collocates": [],
     "commonMistakes": [
       "bar graphic (yanlış isim; doğrusu 'bar chart' veya 'bar graph')",
@@ -14316,7 +14602,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "column chart",
       "histogram",
       "comparison chart"
-    ]
+    ],
+    "meaningTr": "Çubuk grafik; verileri yatay veya dikey çubukların uzunluğuyla karşılaştırmalı olarak gösteren grafik türü."
   },
   {
     "id": "col_u29_0289",
@@ -14324,7 +14611,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Daire grafiği / pasta grafiği; bir bütünün parçalarını dilimler halinde göstererek oranları ve yüzdeleri görselleştiren grafik türü.",
+    "meaning": "a circular graph divided into slices that shows how a whole is split into parts",
     "collocates": [],
     "commonMistakes": [
       "pie graphic (yanlış isim; doğrusu 'pie chart')",
@@ -14366,7 +14653,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "circle chart",
       "proportional chart",
       "percentage chart"
-    ]
+    ],
+    "meaningTr": "Daire grafiği / pasta grafiği; bir bütünün parçalarını dilimler halinde göstererek oranları ve yüzdeleri görselleştiren grafik türü."
   },
   {
     "id": "col_u29_0290",
@@ -14374,7 +14662,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Ana mesaj / temel mesaj; bir sunumun, konuşmanın veya metnin dinleyiciye iletmek istediği en önemli ve merkezi fikir.",
+    "meaning": "the single most important idea that a talk, text or presentation aims to convey",
     "collocates": [],
     "commonMistakes": [
       "core massage (yanlış kelime; 'massage' masaj anlamına gelir, doğrusu 'message')",
@@ -14416,7 +14704,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "main message",
       "central message",
       "takeaway message"
-    ]
+    ],
+    "meaningTr": "Ana mesaj / temel mesaj; bir sunumun, konuşmanın veya metnin dinleyiciye iletmek istediği en önemli ve merkezi fikir."
   },
   {
     "id": "col_u30_0291",
@@ -14424,7 +14713,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Telefonu açmak, telefona cevap vermek; çalan bir telefon çağrısını yanıtlamak. İş yerinde sık kullanılan bir ifadedir ve genellikle bir görev veya sorumluluk olarak algılanır.",
+    "meaning": "to pick up the receiver and respond when the telephone rings",
     "collocates": [],
     "commonMistakes": [
       "open the phone (yanlış; telefonu açmak için 'answer the phone' kullanılır)",
@@ -14466,7 +14755,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "take a call",
       "respond to a call",
       "get the phone"
-    ]
+    ],
+    "meaningTr": "Telefonu açmak, telefona cevap vermek; çalan bir telefon çağrısını yanıtlamak. İş yerinde sık kullanılan bir ifadedir ve genellikle bir görev veya sorumluluk olarak algılanır."
   },
   {
     "id": "col_u30_0292",
@@ -14474,7 +14764,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Bir işe başvurmak; resmi olarak bir iş pozisyonu için başvuru yapmak. Genellikle özgeçmiş ve ön yazı göndermeyi içerir.",
+    "meaning": "to formally request a particular job, usually by sending a CV and covering letter",
     "collocates": [],
     "commonMistakes": [
       "apply a job (yanlış; 'apply for a job' olmalı, 'for' edatı gereklidir)",
@@ -14516,7 +14806,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "submit an application for a job",
       "put in for a job",
       "seek employment"
-    ]
+    ],
+    "meaningTr": "Bir işe başvurmak; resmi olarak bir iş pozisyonu için başvuru yapmak. Genellikle özgeçmiş ve ön yazı göndermeyi içerir."
   },
   {
     "id": "col_u30_0293",
@@ -14524,7 +14815,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Randevuya gitmek, randevuyu kaçırmamak; planlanan bir buluşmaya zamanında katılmak. Genellikle doktor, iş görüşmesi veya resmi bir toplantı için kullanılır.",
+    "meaning": "to attend a meeting or appointment that has been arranged, at the agreed time",
     "collocates": [],
     "commonMistakes": [
       "keep an appointment with someone (doğru; ancak 'keep an appointment to someone' yanlış)",
@@ -14566,7 +14857,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "make it to an appointment",
       "show up for an appointment",
       "honor an appointment"
-    ]
+    ],
+    "meaningTr": "Randevuya gitmek, randevuyu kaçırmamak; planlanan bir buluşmaya zamanında katılmak. Genellikle doktor, iş görüşmesi veya resmi bir toplantı için kullanılır."
   },
   {
     "id": "col_u30_0294",
@@ -14574,7 +14866,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Randevu almak, randevu oluşturmak; birisiyle belirli bir zamanda görüşmek için önceden düzenleme yapmak. Genellikle doktor, kuaför, danışman gibi hizmetler için kullanılır.",
+    "meaning": "to arrange a fixed time and date to meet or see someone",
     "collocates": [],
     "commonMistakes": [
       "take an appointment (yanlış; 'take' yerine 'make' kullanılır)",
@@ -14616,7 +14908,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "set up an appointment",
       "book an appointment",
       "arrange an appointment"
-    ]
+    ],
+    "meaningTr": "Randevu almak, randevu oluşturmak; birisiyle belirli bir zamanda görüşmek için önceden düzenleme yapmak. Genellikle doktor, kuaför, danışman gibi hizmetler için kullanılır."
   },
   {
     "id": "col_u30_0295",
@@ -14624,7 +14917,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Toplantı düzenlemek, toplantı ayarlamak; bir toplantının zamanını, yerini ve katılımcılarını organize etmek.",
+    "meaning": "to organise the time, place and people for a meeting to take place",
     "collocates": [],
     "commonMistakes": [
       "make a meeting (yanlış; 'make' yerine 'arrange' veya 'set up' kullanılır)",
@@ -14666,7 +14959,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "schedule a meeting",
       "organize a meeting",
       "convene a meeting"
-    ]
+    ],
+    "meaningTr": "Toplantı düzenlemek, toplantı ayarlamak; bir toplantının zamanını, yerini ve katılımcılarını organize etmek."
   },
   {
     "id": "col_u30_0296",
@@ -14674,7 +14968,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "İşe başlamaya hazır/müsait olmak; genellikle iş görüşmelerinde veya işe alım süreçlerinde adayın ne zaman işe başlayabileceğini belirtmek için kullanılır.",
+    "meaning": "ready and able to begin a new job, often stated in interviews or applications",
     "collocates": [],
     "commonMistakes": [
       "available for start work (yanlış edat kullanımı; doğrusu 'available to start work')",
@@ -14716,7 +15010,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "able to begin work",
       "free to commence employment",
       "available to begin working"
-    ]
+    ],
+    "meaningTr": "İşe başlamaya hazır/müsait olmak; genellikle iş görüşmelerinde veya işe alım süreçlerinde adayın ne zaman işe başlayabileceğini belirtmek için kullanılır."
   },
   {
     "id": "col_u30_0297",
@@ -14724,7 +15019,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Cömert/bol yan haklar; bir işin maaşın yanı sıra sunduğu sağlık sigortası, ikramiye, izin gibi ek avantajların oldukça iyi olduğunu ifade eder.",
+    "meaning": "good extra advantages offered with a job, such as health insurance or bonuses",
     "collocates": [],
     "commonMistakes": [
       "generous benefit (tekil kullanım; genellikle çoğul 'benefits' tercih edilir)",
@@ -14766,7 +15061,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "excellent benefits",
       "substantial benefits",
       "competitive benefits"
-    ]
+    ],
+    "meaningTr": "Cömert/bol yan haklar; bir işin maaşın yanı sıra sunduğu sağlık sigortası, ikramiye, izin gibi ek avantajların oldukça iyi olduğunu ifade eder."
   },
   {
     "id": "col_u30_0298",
@@ -14774,7 +15070,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Parlak/muhteşem bir kariyer; bir kişinin iş hayatında çok başarılı, göz kamaştırıcı bir yola sahip olduğunu veya olacağını ifade eder.",
+    "meaning": "a very successful and impressive working life, often with notable achievements",
     "collocates": [],
     "commonMistakes": [
       "brilliant job career (gereksiz 'job' eklenmesi; doğrusu 'brilliant career')",
@@ -14816,7 +15112,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "distinguished career",
       "outstanding career",
       "stellar career"
-    ]
+    ],
+    "meaningTr": "Parlak/muhteşem bir kariyer; bir kişinin iş hayatında çok başarılı, göz kamaştırıcı bir yola sahip olduğunu veya olacağını ifade eder."
   },
   {
     "id": "col_u30_0299",
@@ -14824,7 +15121,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Telefon çağrılarını karşılamak/yanıtlamak; genellikle bir iş yerinde gelen aramaları ele almak, cevaplamak anlamında kullanılır.",
+    "meaning": "to deal with and respond to incoming phone calls, especially in a workplace",
     "collocates": [],
     "commonMistakes": [
       "field phone calls (gayri resmi kısaltma; resmi bağlamda 'telephone calls' tercih edilir)",
@@ -14866,7 +15163,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "answer telephone calls",
       "take telephone calls",
       "deal with telephone calls"
-    ]
+    ],
+    "meaningTr": "Telefon çağrılarını karşılamak/yanıtlamak; genellikle bir iş yerinde gelen aramaları ele almak, cevaplamak anlamında kullanılır."
   },
   {
     "id": "col_u30_0300",
@@ -14874,7 +15172,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Kariyer fuarı; öğrencilerin veya iş arayanların şirketlerle tanışıp iş fırsatları hakkında bilgi edindiği etkinlik.",
+    "meaning": "an event where employers meet students or job seekers to discuss job opportunities",
     "collocates": [],
     "commonMistakes": [
       "career fare (yanlış kelime; 'fare' ücret anlamına gelir, doğrusu 'fair')",
@@ -14916,7 +15214,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "recruitment fair",
       "employment fair",
       "careers fair"
-    ]
+    ],
+    "meaningTr": "Kariyer fuarı; öğrencilerin veya iş arayanların şirketlerle tanışıp iş fırsatları hakkında bilgi edindiği etkinlik."
   },
   {
     "id": "col_u31_0301",
@@ -14924,7 +15223,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Satış sonrası hizmet; bir ürün satıldıktan sonra müşteriye sunulan bakım, onarım, garanti ve destek hizmetleri.",
+    "meaning": "the help, repairs and support a company gives customers after they buy a product",
     "collocates": [],
     "commonMistakes": [
       "after-sale service (tekil kullanım yanlıştır; doğrusu 'after-sales service')",
@@ -14966,7 +15265,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "post-sale support",
       "customer care",
       "technical support"
-    ]
+    ],
+    "meaningTr": "Satış sonrası hizmet; bir ürün satıldıktan sonra müşteriye sunulan bakım, onarım, garanti ve destek hizmetleri."
   },
   {
     "id": "col_u31_0302",
@@ -14974,7 +15274,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "İflas etmek; bir kişinin veya şirketin borçlarını ödeyemez duruma gelerek yasal olarak iflasını açıklaması.",
+    "meaning": "to be unable to pay your debts and be officially declared unable to continue trading",
     "collocates": [],
     "commonMistakes": [
       "make bankrupt (doğrusu 'go bankrupt')",
@@ -15016,7 +15316,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "go out of business",
       "become insolvent",
       "collapse financially"
-    ]
+    ],
+    "meaningTr": "İflas etmek; bir kişinin veya şirketin borçlarını ödeyemez duruma gelerek yasal olarak iflasını açıklaması."
   },
   {
     "id": "col_u31_0303",
@@ -15024,7 +15325,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Teklif vermek; bir ihale, satın alma veya rekabet ortamında belirli bir fiyat veya koşulla resmi teklif sunmak.",
+    "meaning": "to formally offer a particular price or terms in order to win a contract or buy something",
     "collocates": [],
     "commonMistakes": [
       "give a bid (doğrusu 'put in a bid' veya 'submit a bid')",
@@ -15066,7 +15367,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "make an offer",
       "tender a bid",
       "place a bid"
-    ]
+    ],
+    "meaningTr": "Teklif vermek; bir ihale, satın alma veya rekabet ortamında belirli bir fiyat veya koşulla resmi teklif sunmak."
   },
   {
     "id": "col_u31_0304",
@@ -15074,7 +15376,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Bütçeyi dengelemek; gelir ve giderleri eşitleyerek açık vermeyen bir bütçe oluşturmak.",
+    "meaning": "to make income and spending equal so that there is no deficit",
     "collocates": [],
     "commonMistakes": [
       "balance the money (doğrusu 'balance the budget')",
@@ -15116,7 +15418,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "break even",
       "achieve a balanced budget",
       "make ends meet"
-    ]
+    ],
+    "meaningTr": "Bütçeyi dengelemek; gelir ve giderleri eşitleyerek açık vermeyen bir bütçe oluşturmak."
   },
   {
     "id": "col_u31_0305",
@@ -15124,7 +15427,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "İşler çok iyi gidiyor; bir işletmenin satışlarının, kârının veya müşteri talebinin hızla arttığı anlamına gelen deyimsel ifade.",
+    "meaning": "used to say that a company is doing very well, with rapidly increasing sales or demand",
     "collocates": [],
     "commonMistakes": [
       "business is booming up (gereksiz 'up' eki)",
@@ -15166,7 +15469,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "business is flourishing",
       "trade is brisk",
       "business is going from strength to strength"
-    ]
+    ],
+    "meaningTr": "İşler çok iyi gidiyor; bir işletmenin satışlarının, kârının veya müşteri talebinin hızla arttığı anlamına gelen deyimsel ifade."
   },
   {
     "id": "col_u31_0306",
@@ -15174,7 +15478,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "İş kurmak, ticarete atılmak; genellikle bir başkasıyla ortak olarak veya kendi işini kurarak ticari faaliyete başlamak.",
+    "meaning": "to start a company or begin trading, often alone or with a partner",
     "collocates": [],
     "commonMistakes": [
       "go to business (yanlış)",
@@ -15216,7 +15520,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "set up shop",
       "enter the business world",
       "launch a venture"
-    ]
+    ],
+    "meaningTr": "İş kurmak, ticarete atılmak; genellikle bir başkasıyla ortak olarak veya kendi işini kurarak ticari faaliyete başlamak."
   },
   {
     "id": "col_u31_0307",
@@ -15224,7 +15529,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "İflas etmek, işi bozulmak, ticari faaliyetini durdurmak; bir şirketin artık kâr edemediği için kapanması.",
+    "meaning": "to stop trading and close down because a company is no longer making a profit",
     "collocates": [],
     "commonMistakes": [
       "go out of the business (gereksiz 'the')",
@@ -15266,7 +15571,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "fold",
       "cease trading",
       "go bankrupt"
-    ]
+    ],
+    "meaningTr": "İflas etmek, işi bozulmak, ticari faaliyetini durdurmak; bir şirketin artık kâr edemediği için kapanması."
   },
   {
     "id": "col_u31_0308",
@@ -15274,7 +15580,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Bir işletmeyi yönetmek, işi idare etmek; bir şirketin günlük operasyonlarını yürütmek ve yönetmek.",
+    "meaning": "to manage and control the daily operations of a company or commercial organisation",
     "collocates": [],
     "commonMistakes": [
       "make a business (yanlış fiil)",
@@ -15316,7 +15622,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "operate a business",
       "oversee a company",
       "be in charge of a firm"
-    ]
+    ],
+    "meaningTr": "Bir işletmeyi yönetmek, işi idare etmek; bir şirketin günlük operasyonlarını yürütmek ve yönetmek."
   },
   {
     "id": "col_u31_0309",
@@ -15324,7 +15631,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "İş kurmak, bir işletme oluşturmak; yeni bir şirket veya ticari girişim başlatmak ve gerekli düzenlemeleri yapmak.",
+    "meaning": "to start a new company or commercial venture and make the necessary arrangements",
     "collocates": [],
     "commonMistakes": [
       "set a business up (kelime sırası yanlış)",
@@ -15366,7 +15673,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "start a business",
       "found a company",
       "launch a business"
-    ]
+    ],
+    "meaningTr": "İş kurmak, bir işletme oluşturmak; yeni bir şirket veya ticari girişim başlatmak ve gerekli düzenlemeleri yapmak."
   },
   {
     "id": "col_u31_0310",
@@ -15374,7 +15682,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "İşin batacağı, işletmenin kapanacağı anlamında; 'fold' fiili burada bir işletmenin iflas edip kapanması anlamında kullanılır. Genellikle koşul veya varsayım cümlelerinde görülür.",
+    "meaning": "used to say that a company would be forced to close down, especially without financial help",
     "collocates": [],
     "commonMistakes": [
       "business would fold up (gereksiz 'up')",
@@ -15416,7 +15724,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "business would go under",
       "business would close down",
       "business would fail"
-    ]
+    ],
+    "meaningTr": "İşin batacağı, işletmenin kapanacağı anlamında; 'fold' fiili burada bir işletmenin iflas edip kapanması anlamında kullanılır. Genellikle koşul veya varsayım cümlelerinde görülür."
   },
   {
     "id": "col_u32_0311",
@@ -15424,7 +15733,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir olayı, durumu veya süreci ayrıntılı biçimde anlatmak, betimlemek; akademik yazıda bir konuyu sistematik olarak açıklamak.",
+    "meaning": "to describe or explain an event, situation or process in detail, often in academic writing",
     "collocates": [],
     "commonMistakes": [
       "give an account for (bir şeyin hesabını vermek anlamına kayar; 'account of' tercih edilir)",
@@ -15466,7 +15775,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "present a description of",
       "describe in detail",
       "recount"
-    ]
+    ],
+    "meaningTr": "Bir olayı, durumu veya süreci ayrıntılı biçimde anlatmak, betimlemek; akademik yazıda bir konuyu sistematik olarak açıklamak."
   },
   {
     "id": "col_u32_0312",
@@ -15474,7 +15784,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Akademik yazıda kullandığınız kaynakları, alıntıları veya fikirleri açıkça belirtmek, kaynakça göstermek; intihalden kaçınmak için referans vermek.",
+    "meaning": "to clearly state the books, articles or ideas you have used, to avoid plagiarism",
     "collocates": [],
     "commonMistakes": [
       "recognize your sources (tanımak anlamına gelir; akademik bağlamda 'acknowledge' tercih edilir)",
@@ -15516,7 +15826,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "reference your sources",
       "credit your sources",
       "attribute information"
-    ]
+    ],
+    "meaningTr": "Akademik yazıda kullandığınız kaynakları, alıntıları veya fikirleri açıkça belirtmek, kaynakça göstermek; intihalden kaçınmak için referans vermek."
   },
   {
     "id": "col_u32_0313",
@@ -15524,7 +15835,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Güçlü, ikna edici ve sağlam temellere dayanan argüman; akademik yazıda etkili bir sav veya tez.",
+    "meaning": "a convincing and well-supported set of reasons that is likely to persuade others",
     "collocates": [],
     "commonMistakes": [
       "strongly argument (sıfat-isim yapısı bozulur; 'strong argument' veya 'powerful argument' kullanılır)",
@@ -15566,7 +15877,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "strong argument",
       "convincing argument",
       "persuasive argument"
-    ]
+    ],
+    "meaningTr": "Güçlü, ikna edici ve sağlam temellere dayanan argüman; akademik yazıda etkili bir sav veya tez."
   },
   {
     "id": "col_u32_0314",
@@ -15574,7 +15886,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir argümanı veya savı açık, düzenli ve sistematik bir şekilde ortaya koymak; akademik yazıda tezini net biçimde sunmak.",
+    "meaning": "to present a set of ideas or reasons in a clear, organised and logical way",
     "collocates": [],
     "commonMistakes": [
       "set up an argument (tartışma başlatmak anlamına kayar; 'set out' netleştirmek demektir)",
@@ -15616,7 +15928,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "lay out an argument",
       "put forward an argument",
       "articulate an argument"
-    ]
+    ],
+    "meaningTr": "Bir argümanı veya savı açık, düzenli ve sistematik bir şekilde ortaya koymak; akademik yazıda tezini net biçimde sunmak."
   },
   {
     "id": "col_u32_0315",
@@ -15624,7 +15937,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Eleştiriye maruz kalmak, saldırıya uğramak; bir fikir, kurum veya kişinin yoğun biçimde eleştirilmesi veya sorgulanması.",
+    "meaning": "to be strongly criticised or questioned by many people",
     "collocates": [],
     "commonMistakes": [
       "come under attacking (fiil formu yanlış; 'attack' isim olarak kullanılır)",
@@ -15666,7 +15979,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be challenged",
       "be called into question",
       "face criticism"
-    ]
+    ],
+    "meaningTr": "Eleştiriye maruz kalmak, saldırıya uğramak; bir fikir, kurum veya kişinin yoğun biçimde eleştirilmesi veya sorgulanması."
   },
   {
     "id": "col_u32_0316",
@@ -15674,7 +15988,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir görüşü, teoriyi veya politikayı genel hatlarıyla, büyük ölçüde desteklemek; tamamen değil ama ana noktalarda onaylamak.",
+    "meaning": "To agree with an idea, theory or policy in its main points, though not necessarily in every detail.",
     "collocates": [],
     "commonMistakes": [
       "widely support (bir kişi değil, çoğunluk desteklediğinde kullanılır; 'broadly' tek bir öznenin tutumunu anlatır)",
@@ -15716,7 +16030,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "largely back",
       "mostly agree with",
       "be broadly in favour of"
-    ]
+    ],
+    "meaningTr": "Bir görüşü, teoriyi veya politikayı genel hatlarıyla, büyük ölçüde desteklemek; tamamen değil ama ana noktalarda onaylamak."
   },
   {
     "id": "col_u32_0317",
@@ -15724,7 +16039,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir araştırma veya çalışma yürütmek, bilimsel bir incelemeyi baştan sona gerçekleştirmek.",
+    "meaning": "To conduct a piece of research or examination from beginning to end in order to gather information.",
     "collocates": [],
     "commonMistakes": [
       "make a study (akademik bağlamda 'carry out' veya 'conduct' tercih edilir)",
@@ -15766,7 +16081,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "undertake a study",
       "perform a study",
       "run a study"
-    ]
+    ],
+    "meaningTr": "Bir araştırma veya çalışma yürütmek, bilimsel bir incelemeyi baştan sona gerçekleştirmek."
   },
   {
     "id": "col_u32_01",
@@ -15774,7 +16090,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Bir teoriyi sorgulamak, geçerliliğine itiraz etmek veya yeni kanıtlarla çürütmeye çalışmak.",
+    "meaning": "To question whether a theory is correct, often by presenting new evidence against it.",
     "collocates": [
       "support a theory",
       "formulate a theory",
@@ -15821,7 +16137,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "dispute a theory",
       "cast doubt on a theory",
       "refute a theory"
-    ]
+    ],
+    "meaningTr": "Bir teoriyi sorgulamak, geçerliliğine itiraz etmek veya yeni kanıtlarla çürütmeye çalışmak."
   },
   {
     "id": "col_u32_0319",
@@ -15829,7 +16146,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir iddiayı kanıt veya gerekçeyle desteklemek, savunulan görüşe dayanak sağlamak.",
+    "meaning": "To provide evidence or reasons that show a statement or assertion is true or reasonable.",
     "collocates": [],
     "commonMistakes": [
       "prove a claim (kanıt sunmak ile kanıtlamak farklıdır; 'support' daha temkinli bir akademik ifadedir)",
@@ -15871,7 +16188,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "substantiate a claim",
       "provide evidence for a claim",
       "corroborate a claim"
-    ]
+    ],
+    "meaningTr": "Bir iddiayı kanıt veya gerekçeyle desteklemek, savunulan görüşe dayanak sağlamak."
   },
   {
     "id": "col_u32_0320",
@@ -15879,7 +16197,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir fikri veya durumu net biçimde gösteren örnek ya da açıklama; açık bir örnekleme.",
+    "meaning": "An example or explanation that shows an idea or situation in a way that is easy to understand.",
     "collocates": [],
     "commonMistakes": [
       "clear illustrate (sıfat + isim gerekir; 'illustrate' fiildir)",
@@ -15921,7 +16239,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "good illustration",
       "clear example",
       "striking illustration"
-    ]
+    ],
+    "meaningTr": "Bir fikri veya durumu net biçimde gösteren örnek ya da açıklama; açık bir örnekleme."
   },
   {
     "id": "col_u33_0321",
@@ -15929,7 +16248,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Belirli bir görüşü, tutumu veya bakış açısını benimsemek; bir tartışmada taraf tutmak ya da resmi olarak bir duruş sergilemek.",
+    "meaning": "To take up a particular opinion or attitude on an issue and defend it, often officially.",
     "collocates": [],
     "commonMistakes": [
       "make a position (yanlış eşdizim; doğrusu 'adopt/take a position')",
@@ -15971,7 +16290,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "assume a position",
       "take a position",
       "adopt a stance"
-    ]
+    ],
+    "meaningTr": "Belirli bir görüşü, tutumu veya bakış açısını benimsemek; bir tartışmada taraf tutmak ya da resmi olarak bir duruş sergilemek."
   },
   {
     "id": "col_u33_0322",
@@ -15979,7 +16299,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "İki farklı şey arasında benzerlik kurmak, kıyaslama yapmak; genellikle bir kavramı açıklamak için başka bir alandan örnek vermek.",
+    "meaning": "To point out a similarity between two different things, often to explain one of them.",
     "collocates": [],
     "commonMistakes": [
       "do an analogy (yanlış; doğrusu 'draw/make an analogy')",
@@ -16021,7 +16341,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "draw a comparison",
       "make a comparison",
       "draw a parallel"
-    ]
+    ],
+    "meaningTr": "İki farklı şey arasında benzerlik kurmak, kıyaslama yapmak; genellikle bir kavramı açıklamak için başka bir alandan örnek vermek."
   },
   {
     "id": "col_u33_01",
@@ -16029,7 +16350,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "İkna edici bir şekilde tartışmak, savunmak; bir görüşü güçlü delillerle ve etkili bir dille ortaya koymak.",
+    "meaning": "To present an opinion or case in a persuasive way, using strong evidence and effective language.",
     "collocates": [
       "research suggests",
       "make reference to",
@@ -16075,7 +16396,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "make a compelling case",
       "present a convincing argument",
       "argue effectively"
-    ]
+    ],
+    "meaningTr": "İkna edici bir şekilde tartışmak, savunmak; bir görüşü güçlü delillerle ve etkili bir dille ortaya koymak."
   },
   {
     "id": "col_u33_0324",
@@ -16083,7 +16405,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir argüman, görüş veya öneri sunmak; tartışmaya açmak üzere ileri sürmek.",
+    "meaning": "To offer a reason or set of reasons in support of an opinion, especially for others to discuss.",
     "collocates": [],
     "commonMistakes": [
       "put an argument (eksik; 'forward' gerekli)",
@@ -16125,7 +16447,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "advance an argument",
       "propose an argument",
       "set forth an argument"
-    ]
+    ],
+    "meaningTr": "Bir argüman, görüş veya öneri sunmak; tartışmaya açmak üzere ileri sürmek."
   },
   {
     "id": "col_u33_0325",
@@ -16133,7 +16456,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir şeyin önemini, değerini veya etkisini değerlendirmek; akademik bağlamda bir olgunun ne kadar önemli olduğunu analiz etmek.",
+    "meaning": "To judge how important, valuable or influential something is, especially in academic analysis.",
     "collocates": [],
     "commonMistakes": [
       "assess the importance of (doğru ama 'significance' daha akademik; ikisi de kullanılabilir)",
@@ -16175,7 +16498,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "judge the significance of",
       "appraise the significance of",
       "measure the significance of"
-    ]
+    ],
+    "meaningTr": "Bir şeyin önemini, değerini veya etkisini değerlendirmek; akademik bağlamda bir olgunun ne kadar önemli olduğunu analiz etmek."
   },
   {
     "id": "col_u33_0326",
@@ -16183,7 +16507,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Kısaca özetlemek; bir metnin, konuşmanın veya olayın ana noktalarını az sayıda kelimeyle, ayrıntıya girmeden aktarmak. Akademik yazıda genellikle bir makalenin, araştırmanın veya tartışmanın ana fikirlerini kısa biçimde sunmak anlamında kullanılır.",
+    "meaning": "To give the main points of something in a few words, without going into detail.",
     "collocates": [],
     "commonMistakes": [
       "briefly summarize etmek yerine 'shortly summarise' demek (yanlış; 'shortly' zaman anlamı taşır, 'kısaca' anlamı için 'briefly' kullanılır)",
@@ -16225,7 +16549,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "give a brief summary of",
       "outline concisely",
       "condense into a short overview"
-    ]
+    ],
+    "meaningTr": "Kısaca özetlemek; bir metnin, konuşmanın veya olayın ana noktalarını az sayıda kelimeyle, ayrıntıya girmeden aktarmak. Akademik yazıda genellikle bir makalenin, araştırmanın veya tartışmanın ana fikirlerini kısa biçimde sunmak anlamında kullanılır."
   },
   {
     "id": "col_u33_0327",
@@ -16233,7 +16558,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir kategoriye/sınıfa girmek; bir şeyin belirli bir grup, tür veya sınıflandırma içinde yer alması. Akademik yazıda sınıflandırma ve gruplandırma yaparken kullanılır.",
+    "meaning": "To belong to a particular group or class of things that share the same features.",
     "collocates": [],
     "commonMistakes": [
       "'fall in a category' demek (eksik edat; doğrusu 'fall into a category')",
@@ -16275,7 +16600,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be classified as",
       "fit into a category",
       "be grouped under a heading"
-    ]
+    ],
+    "meaningTr": "Bir kategoriye/sınıfa girmek; bir şeyin belirli bir grup, tür veya sınıflandırma içinde yer alması. Akademik yazıda sınıflandırma ve gruplandırma yaparken kullanılır."
   },
   {
     "id": "col_u33_0328",
@@ -16283,7 +16609,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Karşılaştırma yapmak; iki veya daha fazla şeyi benzerlik ve farklılıkları açısından incelemek. Akademik yazıda sık kullanılan bir kalıptır.",
+    "meaning": "To examine two or more things in order to show how they are similar and different.",
     "collocates": [],
     "commonMistakes": [
       "'do a comparison' demek (daha az yaygın; akademik bağlamda 'make a comparison' tercih edilir)",
@@ -16325,7 +16651,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "compare and contrast",
       "make a contrast",
       "conduct a comparison"
-    ]
+    ],
+    "meaningTr": "Karşılaştırma yapmak; iki veya daha fazla şeyi benzerlik ve farklılıkları açısından incelemek. Akademik yazıda sık kullanılan bir kalıptır."
   },
   {
     "id": "col_u33_0329",
@@ -16333,7 +16660,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir sonuca varmak; eldeki bilgi, kanıt veya tartışmadan yola çıkarak bir yargıya ulaşmak. Akademik yazıda araştırma sonuçlarını değerlendirirken kullanılır.",
+    "meaning": "To form a judgement or opinion after considering the available evidence or information.",
     "collocates": [],
     "commonMistakes": [
       "'make a conclusion' demek (yaygın hata; doğrusu 'draw a conclusion')",
@@ -16375,7 +16702,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "come to a conclusion",
       "arrive at a conclusion",
       "form a conclusion"
-    ]
+    ],
+    "meaningTr": "Bir sonuca varmak; eldeki bilgi, kanıt veya tartışmadan yola çıkarak bir yargıya ulaşmak. Akademik yazıda araştırma sonuçlarını değerlendirirken kullanılır."
   },
   {
     "id": "col_u33_0330",
@@ -16383,7 +16711,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Dikkate almak; bir karar verirken veya değerlendirme yaparken belirli bir faktörü hesaba katmak, göz önünde bulundurmak.",
+    "meaning": "To think about a particular fact or factor when making a decision or judgement.",
     "collocates": [],
     "commonMistakes": [
       "'take in consideration' demek (eksik edat; doğrusu 'take into consideration')",
@@ -16425,7 +16753,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "bear in mind",
       "factor in",
       "give consideration to"
-    ]
+    ],
+    "meaningTr": "Dikkate almak; bir karar verirken veya değerlendirme yaparken belirli bir faktörü hesaba katmak, göz önünde bulundurmak."
   },
   {
     "id": "col_u34_0331",
@@ -16433,7 +16762,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "caydırıcı işlevi görmek; bir davranışı engellemek veya önlemek için korkutucu/önleyici bir etki yaratmak (genellikle cezalar, yasalar veya önlemler hakkında)",
+    "meaning": "To have the effect of discouraging people from doing something, especially through fear of punishment.",
     "collocates": [],
     "commonMistakes": [
       "act like a deterrent (yaygın ama daha az doğal; 'act as a deterrent' tercih edilir)",
@@ -16475,7 +16804,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "function as a deterrent",
       "discourage people from doing something",
       "put people off"
-    ]
+    ],
+    "meaningTr": "caydırıcı işlevi görmek; bir davranışı engellemek veya önlemek için korkutucu/önleyici bir etki yaratmak (genellikle cezalar, yasalar veya önlemler hakkında)"
   },
   {
     "id": "col_u34_0332",
@@ -16483,7 +16813,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "yasalara uygun hareket etmek; kanunların izin verdiği sınırlar içinde davranmak",
+    "meaning": "To behave in a way that is permitted by the law and does not break any legal rules.",
     "collocates": [],
     "commonMistakes": [
       "act inside the law (yanlış edat; 'within' kullanılmalı)",
@@ -16525,7 +16855,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "stay within the law",
       "comply with the law",
       "keep to the law"
-    ]
+    ],
+    "meaningTr": "yasalara uygun hareket etmek; kanunların izin verdiği sınırlar içinde davranmak"
   },
   {
     "id": "col_u34_0333",
@@ -16533,7 +16864,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "kurallar izin vermek; yönetmelik veya kuralların bir şeye müsaade etmesi",
+    "meaning": "To permit something to be done, according to the official regulations of an activity or place.",
     "collocates": [],
     "commonMistakes": [
       "rules let (yanlış; 'allow' veya 'permit' olmalı)",
@@ -16575,7 +16906,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "the rules permit",
       "guidelines allow",
       "policy allows"
-    ]
+    ],
+    "meaningTr": "kurallar izin vermek; yönetmelik veya kuralların bir şeye müsaade etmesi"
   },
   {
     "id": "col_u34_078",
@@ -16583,7 +16915,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "mahkemeye çıkmak; bir davada sanık, tanık veya taraf olarak mahkemede hazır bulunmak",
+    "meaning": "To be present at a court hearing as a defendant, witness or party in a case.",
     "collocates": [],
     "commonMistakes": [
       "appear to court (yanlış edat; 'in court' olmalı)",
@@ -16625,7 +16957,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "go to court",
       "attend court",
       "be brought before a court"
-    ]
+    ],
+    "meaningTr": "mahkemeye çıkmak; bir davada sanık, tanık veya taraf olarak mahkemede hazır bulunmak"
   },
   {
     "id": "col_u34_0335",
@@ -16633,7 +16966,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "çetin bir hukuk mücadelesi; uzun, zorlu ve genellikle çekişmeli bir yasal süreç",
+    "meaning": "A long, difficult and often fiercely contested legal dispute between opposing parties.",
     "collocates": [],
     "commonMistakes": [
       "strong legal battle (yanlış sıfat; 'hard' veya 'tough' olmalı)",
@@ -16675,7 +17008,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "difficult legal struggle",
       "bitter legal dispute",
       "lengthy legal battle"
-    ]
+    ],
+    "meaningTr": "çetin bir hukuk mücadelesi; uzun, zorlu ve genellikle çekişmeli bir yasal süreç"
   },
   {
     "id": "col_u34_0336",
@@ -16683,7 +17017,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kuralları esnetmek; kurallara tam olarak uymamak, genellikle küçük ve hoş görülebilir bir şekilde kuralları çiğnemek veya yorumlamak.",
+    "meaning": "To not follow a rule exactly, usually in a minor way that is not considered serious.",
     "collocates": [],
     "commonMistakes": [
       "break the rules (daha ciddi ihlal anlamı taşır; 'bend' daha hafif ve esnek bir ihlaldir)",
@@ -16725,7 +17059,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "flex the rules",
       "make an exception",
       "cut corners"
-    ]
+    ],
+    "meaningTr": "Kuralları esnetmek; kurallara tam olarak uymamak, genellikle küçük ve hoş görülebilir bir şekilde kuralları çiğnemek veya yorumlamak."
   },
   {
     "id": "col_u34_0337",
@@ -16733,7 +17068,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yasayı çiğnemek; yasalara aykırı davranmak, suç işlemek.",
+    "meaning": "To do something that is illegal or forbidden by the legal system of a country.",
     "collocates": [],
     "commonMistakes": [
       "break the laws (genellikle tekil 'the law' kullanılır; 'laws' nadiren tercih edilir)",
@@ -16775,7 +17110,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "commit a crime",
       "infringe the law",
       "act illegally"
-    ]
+    ],
+    "meaningTr": "Yasayı çiğnemek; yasalara aykırı davranmak, suç işlemek."
   },
   {
     "id": "col_u34_077",
@@ -16783,7 +17119,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Soruşturma yürütmek; bir olayı araştırmak, inceleme yapmak, soruşturma başlatıp yürütmek.",
+    "meaning": "To examine an event or situation officially in order to find out the facts about it.",
     "collocates": [],
     "commonMistakes": [
       "make an investigation (İngilizcede 'carry out' veya 'conduct' tercih edilir; 'make an investigation' yaygın bir hatadır)",
@@ -16825,7 +17161,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "launch an investigation",
       "undertake an investigation",
       "perform an investigation"
-    ]
+    ],
+    "meaningTr": "Soruşturma yürütmek; bir olayı araştırmak, inceleme yapmak, soruşturma başlatıp yürütmek."
   },
   {
     "id": "col_u34_088",
@@ -16833,7 +17170,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir davayı kazanmak; mahkemede açılan bir davada haklı bulunmak veya lehine karar çıkmasını sağlamak.",
+    "meaning": "To be successful in a legal dispute, so that the court decides in your favour.",
     "collocates": [],
     "commonMistakes": [
       "win the case (belirli bir davadan bahsediliyorsa 'the' kullanılır; genel ifadede 'a case' tercih edilir)",
@@ -16875,7 +17212,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "win a trial",
       "prevail in a case",
       "secure a victory in court"
-    ]
+    ],
+    "meaningTr": "Bir davayı kazanmak; mahkemede açılan bir davada haklı bulunmak veya lehine karar çıkmasını sağlamak."
   },
   {
     "id": "col_u34_0340",
@@ -16883,7 +17221,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yönetmeliklere uymak; kurallara, düzenlemelere veya resmi talimatlara riayet etmek.",
+    "meaning": "To obey official rules or laws that control how an activity or business is carried out.",
     "collocates": [],
     "commonMistakes": [
       "comply to the regulations (doğru edat 'with'tir; 'comply to' yanlıştır)",
@@ -16925,7 +17263,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "obey the regulations",
       "follow the regulations",
       "meet the regulations"
-    ]
+    ],
+    "meaningTr": "Yönetmeliklere uymak; kurallara, düzenlemelere veya resmi talimatlara riayet etmek."
   },
   {
     "id": "col_u35_0341",
@@ -16933,7 +17272,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Uyuşturucu madde bağımlılığı veya kötüye kullanımı; yasa dışı uyuşturucuların zararlı ve kontrolsüz kullanımı.",
+    "meaning": "The harmful or illegal use of drugs, especially illegal substances taken for pleasure.",
     "collocates": [],
     "commonMistakes": [
       "drug using (isim tamlaması yanlış; 'drug use' veya 'drug abuse' olmalı)",
@@ -16975,7 +17314,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "drug misuse",
       "narcotics abuse",
       "illegal drug use"
-    ]
+    ],
+    "meaningTr": "Uyuşturucu madde bağımlılığı veya kötüye kullanımı; yasa dışı uyuşturucuların zararlı ve kontrolsüz kullanımı."
   },
   {
     "id": "col_u35_0342",
@@ -16983,7 +17323,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Terör eylemi; siyasi, dini veya ideolojik amaçlarla korku yaratmak için gerçekleştirilen şiddet içeren yasa dışı eylem.",
+    "meaning": "A violent and illegal act intended to create fear for political, religious or ideological aims.",
     "collocates": [],
     "commonMistakes": [
       "terrorism act (kelime sırası yanlış; 'act of terrorism' veya 'terrorist act' olmalı)",
@@ -17025,7 +17365,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "terror attack",
       "act of terror",
       "terrorist attack"
-    ]
+    ],
+    "meaningTr": "Terör eylemi; siyasi, dini veya ideolojik amaçlarla korku yaratmak için gerçekleştirilen şiddet içeren yasa dışı eylem."
   },
   {
     "id": "col_u35_0343",
@@ -17033,7 +17374,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir eve zorla girmek; genellikle hırsızlık amacıyla bir konuta izinsiz ve zorla girmek.",
+    "meaning": "To enter a house illegally and by force, usually in order to steal things.",
     "collocates": [],
     "commonMistakes": [
       "break a house (eksik edat; 'break into a house' olmalı)",
@@ -17075,7 +17416,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "break in",
       "force entry into a house",
       "commit a burglary"
-    ]
+    ],
+    "meaningTr": "Bir eve zorla girmek; genellikle hırsızlık amacıyla bir konuta izinsiz ve zorla girmek."
   },
   {
     "id": "col_u35_0344",
@@ -17083,7 +17425,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir dizi hırsızlık olayı; kısa bir süre içinde meydana gelen çok sayıda ev soygunu.",
+    "meaning": "A series of burglaries happening in a short period, often in the same area.",
     "collocates": [],
     "commonMistakes": [
       "spate of burglary (tekil yanlış; çoğul 'burglaries' olmalı)",
@@ -17125,7 +17467,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "series of burglaries",
       "string of burglaries",
       "rash of burglaries"
-    ]
+    ],
+    "meaningTr": "Bir dizi hırsızlık olayı; kısa bir süre içinde meydana gelen çok sayıda ev soygunu."
   },
   {
     "id": "col_u35_0345",
@@ -17133,7 +17476,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Araba çalmak; bir aracı izinsiz alıp götürmek, genellikle kalıcı olarak.",
+    "meaning": "To take a vehicle that belongs to someone else without permission, usually permanently.",
     "collocates": [],
     "commonMistakes": [
       "rob a car (soygun için 'rob' kullanılmaz; 'steal a car' olmalı)",
@@ -17175,7 +17518,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "hotwire a car",
       "carjack a vehicle",
       "commit car theft"
-    ]
+    ],
+    "meaningTr": "Araba çalmak; bir aracı izinsiz alıp götürmek, genellikle kalıcı olarak."
   },
   {
     "id": "col_u35_0346",
@@ -17183,7 +17527,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Suçla mücadele etmek; suç oranını azaltmak için polisiye, hukuki veya sosyal önlemler almak. Genellikle resmi, kurumsal ve politika bağlamlarında kullanılır.",
+    "meaning": "To take action, such as policing or legal measures, in order to reduce criminal activity.",
     "collocates": [],
     "commonMistakes": [
       "combat against crime (gereksiz 'against' eklenmesi; doğrusu: combat crime)",
@@ -17225,7 +17569,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "tackle crime",
       "crack down on crime",
       "reduce crime"
-    ]
+    ],
+    "meaningTr": "Suçla mücadele etmek; suç oranını azaltmak için polisiye, hukuki veya sosyal önlemler almak. Genellikle resmi, kurumsal ve politika bağlamlarında kullanılır."
   },
   {
     "id": "col_u35_0347",
@@ -17233,7 +17578,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Suç işlemek; yasalara aykırı bir eylemde bulunmak. Hukuki ve resmi bağlamlarda kullanılan bir ifadedir; günlük dilde 'commit a crime' daha yaygındır.",
+    "meaning": "To do something that is against the law, especially in formal or legal contexts.",
     "collocates": [],
     "commonMistakes": [
       "do an offence (yanlış fiil; doğrusu: commit an offence)",
@@ -17275,7 +17620,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "break the law",
       "carry out an offence",
       "perpetrate an offence"
-    ]
+    ],
+    "meaningTr": "Suç işlemek; yasalara aykırı bir eylemde bulunmak. Hukuki ve resmi bağlamlarda kullanılan bir ifadedir; günlük dilde 'commit a crime' daha yaygındır."
   },
   {
     "id": "col_u35_0348",
@@ -17283,7 +17629,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sıradan suçlu; genellikle ciddi bir şiddet suçu işlememiş, sıradan hırsızlık veya ufak tefek suçlardan hüküm giymiş kişi. Bazen küçümseyici bir ton taşır.",
+    "meaning": "An ordinary lawbreaker, typically involved in minor crimes rather than serious violence.",
     "collocates": [],
     "commonMistakes": [
       "usual criminal (yanlış sıfat; doğrusu: common criminal)",
@@ -17320,7 +17666,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "ordinary criminal",
       "small-time criminal",
       "low-level offender"
-    ]
+    ],
+    "meaningTr": "Sıradan suçlu; genellikle ciddi bir şiddet suçu işlememiş, sıradan hırsızlık veya ufak tefek suçlardan hüküm giymiş kişi. Bazen küçümseyici bir ton taşır."
   },
   {
     "id": "col_u35_0349",
@@ -17328,7 +17675,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hüküm giymiş suçlu; mahkeme tarafından suçlu bulunmuş ve cezaya çarptırılmış kişi. Resmi ve hukuki bağlamlarda kullanılır.",
+    "meaning": "A person who has been found guilty of a crime by a court and given a punishment.",
     "collocates": [],
     "commonMistakes": [
       "convict criminal (yanlış sıfat; doğrusu: convicted criminal)",
@@ -17370,7 +17717,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "convicted felon",
       "person with a criminal conviction",
       "guilty criminal"
-    ]
+    ],
+    "meaningTr": "Hüküm giymiş suçlu; mahkeme tarafından suçlu bulunmuş ve cezaya çarptırılmış kişi. Resmi ve hukuki bağlamlarda kullanılır."
   },
   {
     "id": "col_u35_0350",
@@ -17378,7 +17726,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Soygun suçundan mahkumiyet; bir kişinin soygun suçundan dolayı mahkeme tarafından suçlu bulunması ve ceza alması.",
+    "meaning": "A formal court decision that someone is guilty of the crime of stealing by force or threat.",
     "collocates": [],
     "commonMistakes": [
       "conviction of robbery (yanlış edat; doğrusu: conviction for robbery)",
@@ -17415,7 +17763,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "being found guilty of robbery",
       "robbery conviction",
       "sentence for robbery"
-    ]
+    ],
+    "meaningTr": "Soygun suçundan mahkumiyet; bir kişinin soygun suçundan dolayı mahkeme tarafından suçlu bulunması ve ceza alması."
   },
   {
     "id": "col_u36_0351",
@@ -17423,7 +17772,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "dikkat çekmek; ilgi uyandırmak, bir kişinin veya şeyin ilgisini üzerine toplamak",
+    "meaning": "to make people notice something or become interested in it",
     "collocates": [],
     "commonMistakes": [
       "make attention (yanlış fiil eşleşmesi)",
@@ -17465,7 +17814,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "grab attention",
       "capture attention",
       "get attention"
-    ]
+    ],
+    "meaningTr": "dikkat çekmek; ilgi uyandırmak, bir kişinin veya şeyin ilgisini üzerine toplamak"
   },
   {
     "id": "col_u36_0352",
@@ -17473,7 +17823,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "haber patlamak, haber ortaya çıkmak; bir haberin ilk kez kamuoyuna duyurulması",
+    "meaning": "for important information about an event to become known to the public for the first time",
     "collocates": [],
     "commonMistakes": [
       "news breaks out (yanlış: 'break out' savaş/yangın için kullanılır)",
@@ -17515,7 +17865,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "news emerges",
       "news is released",
       "news surfaces"
-    ]
+    ],
+    "meaningTr": "haber patlamak, haber ortaya çıkmak; bir haberin ilk kez kamuoyuna duyurulması"
   },
   {
     "id": "col_u36_0353",
@@ -17523,7 +17874,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "haber patlamak, bir haberin/olayın kamuoyuna ilk kez yayılması; bir haber öyküsünün ortaya çıkması",
+    "meaning": "for a news report about an event to become public for the first time",
     "collocates": [],
     "commonMistakes": [
       "story breaks out (yanlış: 'break out' savaş veya hastalık için kullanılır)",
@@ -17565,7 +17916,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "story emerges",
       "story is published",
       "story hits the headlines"
-    ]
+    ],
+    "meaningTr": "haber patlamak, bir haberin/olayın kamuoyuna ilk kez yayılması; bir haber öyküsünün ortaya çıkması"
   },
   {
     "id": "col_u36_0354",
@@ -17573,7 +17925,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "görüşmeler kesilmek, müzakereler çökmek; resmi görüşmelerin başarısız olup sona ermesi",
+    "meaning": "for formal discussions to fail and stop because the sides cannot agree",
     "collocates": [],
     "commonMistakes": [
       "talks break out (yanlış: 'break out' savaş için kullanılır)",
@@ -17615,7 +17967,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "talks fail",
       "talks fall apart",
       "negotiations break off"
-    ]
+    ],
+    "meaningTr": "görüşmeler kesilmek, müzakereler çökmek; resmi görüşmelerin başarısız olup sona ermesi"
   },
   {
     "id": "col_u36_0355",
@@ -17623,7 +17976,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "kampanya başlatmak; bir amaç doğrultusunda organize bir girişim başlatmak",
+    "meaning": "to start an organized series of actions intended to achieve a particular aim",
     "collocates": [],
     "commonMistakes": [
       "make a campaign (yanlış fiil eşleşmesi)",
@@ -17665,7 +18018,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "initiate a campaign",
       "kick off a campaign",
       "mount a campaign"
-    ]
+    ],
+    "meaningTr": "kampanya başlatmak; bir amaç doğrultusunda organize bir girişim başlatmak"
   },
   {
     "id": "col_u36_0356",
@@ -17673,7 +18027,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "esir almak; bir kişiyi veya grubu zorla yakalayıp gözaltında tutmak, özgürlüğünü elinden almak (genellikle savaş, çatışma veya kaçırma bağlamında)",
+    "meaning": "to capture and hold someone as a prisoner, especially in a war or conflict",
     "collocates": [],
     "commonMistakes": [
       "make captive (yanlış; doğrusu 'take captive')",
@@ -17715,7 +18069,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "capture",
       "hold hostage",
       "seize as a prisoner"
-    ]
+    ],
+    "meaningTr": "esir almak; bir kişiyi veya grubu zorla yakalayıp gözaltında tutmak, özgürlüğünü elinden almak (genellikle savaş, çatışma veya kaçırma bağlamında)"
   },
   {
     "id": "col_u36_0357",
@@ -17723,7 +18078,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "ateş almak; bir şeyin yanmaya başlaması, tutuşması (bina, araç, orman vb. için kullanılır)",
+    "meaning": "to start burning, especially suddenly or by accident",
     "collocates": [],
     "commonMistakes": [
       "take fire (yanlış; doğrusu 'catch fire')",
@@ -17765,7 +18120,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "ignite",
       "go up in flames",
       "be set alight"
-    ]
+    ],
+    "meaningTr": "ateş almak; bir şeyin yanmaya başlaması, tutuşması (bina, araç, orman vb. için kullanılır)"
   },
   {
     "id": "col_u36_0358",
@@ -17773,7 +18129,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "sıkı gözetim; birini veya bir şeyi dikkatle ve sürekli izleme, kontrol altında tutma (genellikle 'keep a close watch on' kalıbında kullanılır)",
+    "meaning": "careful and continuous watching of someone or something to check what they do",
     "collocates": [],
     "commonMistakes": [
       "close watching (yanlış; isim formu 'watch' olmalı, 'watching' değil)",
@@ -17815,7 +18171,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "careful surveillance",
       "constant observation",
       "tight watch"
-    ]
+    ],
+    "meaningTr": "sıkı gözetim; birini veya bir şeyi dikkatle ve sürekli izleme, kontrol altında tutma (genellikle 'keep a close watch on' kalıbında kullanılır)"
   },
   {
     "id": "col_u36_089",
@@ -17823,7 +18180,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "haber gelmek; yeni bilgilerin, raporların veya gelişmelerin ulaşması, iletilmesi (genellikle 'as news comes in' veya 'when news comes in' kalıplarında kullanılır)",
+    "meaning": "for new information or reports about an event to arrive or be received",
     "collocates": [],
     "commonMistakes": [
       "news come in (yanlış; 'news' tekil bir isimdir, 'comes' kullanılmalı)",
@@ -17865,7 +18222,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "information comes through",
       "news reaches us",
       "updates come in"
-    ]
+    ],
+    "meaningTr": "haber gelmek; yeni bilgilerin, raporların veya gelişmelerin ulaşması, iletilmesi (genellikle 'as news comes in' veya 'when news comes in' kalıplarında kullanılır)"
   },
   {
     "id": "col_u36_0360",
@@ -17873,7 +18231,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "kontrolü ele geçirmek; bir yerin, kurumun veya durumun yönetimini zorla veya ani bir şekilde almak",
+    "meaning": "to take power over a place or organization, often by force or suddenly",
     "collocates": [],
     "commonMistakes": [
       "seize the control (gereksiz artikel; 'seize control' kalıbı artikel almaz)",
@@ -17915,7 +18273,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "grab power",
       "assume control",
       "take over"
-    ]
+    ],
+    "meaningTr": "kontrolü ele geçirmek; bir yerin, kurumun veya durumun yönetimini zorla veya ani bir şekilde almak"
   },
   {
     "id": "col_u37_0361",
@@ -17923,7 +18282,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Para saçmak; gereksiz yere, gösteriş için veya düşüncesizce çok para harcamak. Genellikle olumsuz bir çağrışım taşır ve savurganlığı veya parayla hava atmayı ima eder.",
+    "meaning": "to spend large amounts of money in a careless or showy way",
     "collocates": [],
     "commonMistakes": [
       "throw money at (bir sorunu parayla çözmeye çalışmak anlamında farklı bir deyimdir)",
@@ -17965,7 +18324,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "spend money recklessly",
       "fling money about",
       "waste money"
-    ]
+    ],
+    "meaningTr": "Para saçmak; gereksiz yere, gösteriş için veya düşüncesizce çok para harcamak. Genellikle olumsuz bir çağrışım taşır ve savurganlığı veya parayla hava atmayı ima eder."
   },
   {
     "id": "col_u37_0362",
@@ -17973,7 +18333,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Büyük para; çok yüksek miktarda para, ciddi kazanç veya büyük finansal yatırım. Genellikle iş dünyası, spor veya yatırım bağlamlarında kullanılır.",
+    "meaning": "large amounts of money, especially as profit or investment in a business",
     "collocates": [],
     "commonMistakes": [
       "big moneys (sayılamaz isim olduğu için çoğul kullanılmaz)",
@@ -18015,7 +18375,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "huge amounts of money",
       "a fortune",
       "large sums"
-    ]
+    ],
+    "meaningTr": "Büyük para; çok yüksek miktarda para, ciddi kazanç veya büyük finansal yatırım. Genellikle iş dünyası, spor veya yatırım bağlamlarında kullanılır."
   },
   {
     "id": "col_u37_0363",
@@ -18023,7 +18384,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Para bozdurmak; bir para birimini başka bir para birimine çevirmek veya büyük banknotları küçük paralara dönüştürmek.",
+    "meaning": "to exchange one currency for another, or large notes for smaller ones",
     "collocates": [],
     "commonMistakes": [
       "change the money (belirli bir bağlam dışında gereksiz 'the' kullanımı)",
@@ -18065,7 +18426,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "convert currency",
       "swap currency",
       "get money changed"
-    ]
+    ],
+    "meaningTr": "Para bozdurmak; bir para birimini başka bir para birimine çevirmek veya büyük banknotları küçük paralara dönüştürmek."
   },
   {
     "id": "col_u37_0364",
@@ -18073,7 +18435,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Ucuza kaçmak; kaliteden ödün vererek en ucuz seçeneği tercih etmek. Genellikle olumsuz bir çağrışım taşır ve düşük kaliteli sonuçlara yol açabileceğini ima eder.",
+    "meaning": "to choose the cheapest option, often accepting lower quality as a result",
     "collocates": [],
     "commonMistakes": [
       "go cheaply (zarf kullanımı yanlış; 'go cheap' sıfat gibi davranır)",
@@ -18115,7 +18477,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "buy the cheapest option",
       "skimp on quality",
       "go for the cheap option"
-    ]
+    ],
+    "meaningTr": "Ucuza kaçmak; kaliteden ödün vererek en ucuz seçeneği tercih etmek. Genellikle olumsuz bir çağrışım taşır ve düşük kaliteli sonuçlara yol açabileceğini ima eder."
   },
   {
     "id": "col_u37_0365",
@@ -18123,7 +18486,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Bir kuruma, vakfa veya kişiye bağışta bulunmak; hayır amaçlı para vermek. Genellikle yardım kuruluşları, siyasi partiler veya hayır işleri bağlamında kullanılır.",
+    "meaning": "to give money to a charity, organization or person to help them",
     "collocates": [],
     "commonMistakes": [
       "donate money for (bazı bağlamlarda doğru olabilir ama 'to' daha yaygındır)",
@@ -18165,7 +18528,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "contribute money to",
       "make a donation to",
       "pledge money to"
-    ]
+    ],
+    "meaningTr": "Bir kuruma, vakfa veya kişiye bağışta bulunmak; hayır amaçlı para vermek. Genellikle yardım kuruluşları, siyasi partiler veya hayır işleri bağlamında kullanılır."
   },
   {
     "id": "col_u37_0366",
@@ -18173,7 +18537,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "İyi bir maaş kazanmak; düzenli bir işten tatmin edici düzeyde gelir elde etmek.",
+    "meaning": "to receive a satisfactory amount of money regularly from a job",
     "collocates": [],
     "commonMistakes": [
       "win a good salary (yanlış fiil; 'earn' veya 'make' kullanılmalı)",
@@ -18215,7 +18579,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be well paid",
       "command a high salary",
       "pull in a good salary"
-    ]
+    ],
+    "meaningTr": "İyi bir maaş kazanmak; düzenli bir işten tatmin edici düzeyde gelir elde etmek."
   },
   {
     "id": "col_u37_0367",
@@ -18223,7 +18588,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Para kazanmak; çalışarak veya bir faaliyet yürüterek gelir elde etmek.",
+    "meaning": "to get money by working or doing business",
     "collocates": [],
     "commonMistakes": [
       "win money (şans oyunları için; çalışıp kazanmak anlamında 'earn' kullanılmalı)",
@@ -18265,7 +18630,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "generate income",
       "bring in money",
       "earn a living"
-    ]
+    ],
+    "meaningTr": "Para kazanmak; çalışarak veya bir faaliyet yürüterek gelir elde etmek."
   },
   {
     "id": "col_u37_0368",
@@ -18273,7 +18639,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Küçük bir servet kazanmak; genellikle beklenmedik veya önemli miktarda para kazanmak.",
+    "meaning": "to earn a large amount of money, often unexpectedly or in a short time",
     "collocates": [],
     "commonMistakes": [
       "do a small fortune (yanlış fiil; 'make' kullanılmalı)",
@@ -18315,7 +18681,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "make a lot of money",
       "amass a small fortune",
       "make a packet"
-    ]
+    ],
+    "meaningTr": "Küçük bir servet kazanmak; genellikle beklenmedik veya önemli miktarda para kazanmak."
   },
   {
     "id": "col_u37_0369",
@@ -18323,7 +18690,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Fiyat düşmek; bir ürün veya hizmetin fiyatının azalması.",
+    "meaning": "for the cost of something to become lower",
     "collocates": [],
     "commonMistakes": [
       "price goes lower (doğal değil; 'price goes down' veya 'price falls' kullanılmalı)",
@@ -18365,7 +18732,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "price drops",
       "price decreases",
       "price comes down"
-    ]
+    ],
+    "meaningTr": "Fiyat düşmek; bir ürün veya hizmetin fiyatının azalması."
   },
   {
     "id": "col_u37_0370",
@@ -18373,7 +18741,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "business",
-    "meaning": "Fiyat yükselmek; bir ürün veya hizmetin fiyatının artması.",
+    "meaning": "for the cost of something to become higher",
     "collocates": [],
     "commonMistakes": [
       "price goes higher (doğal değil; 'price goes up' veya 'price rises' kullanılmalı)",
@@ -18415,7 +18783,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "price increases",
       "price goes up",
       "price climbs"
-    ]
+    ],
+    "meaningTr": "Fiyat yükselmek; bir ürün veya hizmetin fiyatının artması."
   },
   {
     "id": "col_u38_0371",
@@ -18423,7 +18792,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Ordunun harekete geçmesi; askeri birliğin savaşa veya operasyona başlaması. Genellikle habercilik ve askeri bağlamlarda kullanılır ve ordunun artık pasif durumdan aktif çatışmaya geçtiğini vurgular.",
+    "meaning": "for a military force to begin fighting or carrying out an operation",
     "collocates": [],
     "commonMistakes": [
       "army goes to action (doğrusu: goes into action)",
@@ -18465,7 +18834,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "forces are deployed",
       "army swings into action",
       "military operation begins"
-    ]
+    ],
+    "meaningTr": "Ordunun harekete geçmesi; askeri birliğin savaşa veya operasyona başlaması. Genellikle habercilik ve askeri bağlamlarda kullanılır ve ordunun artık pasif durumdan aktif çatışmaya geçtiğini vurgular."
   },
   {
     "id": "col_u38_101",
@@ -18473,7 +18843,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Barış aktivisti; savaşa, silahlanmaya veya şiddete karşı kampanya yürüten, barışı savunan kişi. Genellikle protesto, imza kampanyası ve sivil toplum çalışmalarıyla ilişkilendirilir.",
+    "meaning": "a person who campaigns against war and violence and works to promote peace",
     "collocates": [],
     "commonMistakes": [
       "peaceful activist (doğrusu: peace activist)",
@@ -18515,7 +18885,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "peace campaigner",
       "pacifist campaigner",
       "peace advocate"
-    ]
+    ],
+    "meaningTr": "Barış aktivisti; savaşa, silahlanmaya veya şiddete karşı kampanya yürüten, barışı savunan kişi. Genellikle protesto, imza kampanyası ve sivil toplum çalışmalarıyla ilişkilendirilir."
   },
   {
     "id": "col_u38_0373",
@@ -18523,7 +18894,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Barış anlaşması müzakere etmek; taraflar arasında resmi görüşmeler yaparak savaşı veya çatışmayı sona erdiren bir anlaşmaya varmak. Diplomatik ve resmi bir ifadedir.",
+    "meaning": "to hold formal discussions in order to reach an agreement that ends a war",
     "collocates": [],
     "commonMistakes": [
       "make a peace agreement (doğrusu: negotiate/reach a peace agreement)",
@@ -18565,7 +18936,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "negotiate a peace treaty",
       "reach a peace settlement",
       "hammer out a peace agreement"
-    ]
+    ],
+    "meaningTr": "Barış anlaşması müzakere etmek; taraflar arasında resmi görüşmeler yaparak savaşı veya çatışmayı sona erdiren bir anlaşmaya varmak. Diplomatik ve resmi bir ifadedir."
   },
   {
     "id": "col_u38_0374",
@@ -18573,7 +18945,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Topyekûn savaş; tarafların tüm kaynaklarını ve güçlerini kullandığı, sınırlamasız ve yoğun savaş. Mecazi olarak şiddetli bir mücadele veya tartışma için de kullanılır.",
+    "meaning": "a war in which all available forces and resources are used without limits",
     "collocates": [],
     "commonMistakes": [
       "all-out fight war (doğrusu: all-out war)",
@@ -18615,7 +18987,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "full-scale war",
       "unrestricted warfare",
       "full-blown war"
-    ]
+    ],
+    "meaningTr": "Topyekûn savaş; tarafların tüm kaynaklarını ve güçlerini kullandığı, sınırlamasız ve yoğun savaş. Mecazi olarak şiddetli bir mücadele veya tartışma için de kullanılır."
   },
   {
     "id": "col_u38_0375",
@@ -18623,7 +18996,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Orduya katılmak; asker olarak hizmet etmek üzere silahlı kuvvetlere girmek. Genellikle gönüllü katılma anlamında kullanılır.",
+    "meaning": "to become a soldier and serve in the armed forces, usually voluntarily",
     "collocates": [],
     "commonMistakes": [
       "join to the army (doğrusu: join the army)",
@@ -18665,7 +19038,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "sign up for the army",
       "join the military",
       "join up"
-    ]
+    ],
+    "meaningTr": "Orduya katılmak; asker olarak hizmet etmek üzere silahlı kuvvetlere girmek. Genellikle gönüllü katılma anlamında kullanılır."
   },
   {
     "id": "col_u38_0376",
@@ -18673,7 +19047,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Savaşı önlemek, savaşın çıkmasını engellemek; diplomatik veya barışçıl yollarla bir çatışmayı başlamadan durdurmak.",
+    "meaning": "to prevent a war from starting, especially through diplomacy or peaceful means",
     "collocates": [],
     "commonMistakes": [
       "stop war (genel bir durumu durdurmak anlamında kullanılır, 'avert' daha çok önleyici ve diplomatik bağlamda tercih edilir)",
@@ -18715,7 +19089,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "avoid war",
       "forestall war",
       "ward off war"
-    ]
+    ],
+    "meaningTr": "Savaşı önlemek, savaşın çıkmasını engellemek; diplomatik veya barışçıl yollarla bir çatışmayı başlamadan durdurmak."
   },
   {
     "id": "col_u38_0377",
@@ -18723,7 +19098,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Savaşın veya mücadelenin şiddetle devam etmesi; bir çatışmanın yoğun bir şekilde sürmesi.",
+    "meaning": "for a fight or conflict to continue with great force and violence",
     "collocates": [],
     "commonMistakes": [
       "battle is raging (sürekli zaman yerine şimdiki zaman kullanımı; 'rages' geniş zaman/edebi anlatımda tercih edilir)",
@@ -18765,7 +19140,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "battle intensifies",
       "fighting escalates",
       "conflict persists"
-    ]
+    ],
+    "meaningTr": "Savaşın veya mücadelenin şiddetle devam etmesi; bir çatışmanın yoğun bir şekilde sürmesi."
   },
   {
     "id": "col_u38_0378",
@@ -18773,7 +19149,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sonucu belirleyen, kesin sonuçlu savaş; bir çatışmanın gidişatını kesin olarak değiştiren muharebe.",
+    "meaning": "a battle that strongly influences the final result of a war or conflict",
     "collocates": [],
     "commonMistakes": [
       "deciding battle (yanlış sıfat; doğrusu 'decisive' olmalıdır)",
@@ -18815,7 +19191,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "pivotal battle",
       "crucial battle",
       "turning-point battle"
-    ]
+    ],
+    "meaningTr": "Sonucu belirleyen, kesin sonuçlu savaş; bir çatışmanın gidişatını kesin olarak değiştiren muharebe."
   },
   {
     "id": "col_u38_0379",
@@ -18823,7 +19200,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir savaşı veya mücadeleyi kaybetmek; belirli bir çatışmada yenilmek (ancak savaşın tamamını kaybetmek anlamına gelmez).",
+    "meaning": "to be defeated in a particular fight, though not necessarily in the whole war",
     "collocates": [],
     "commonMistakes": [
       "lose the battle (belirli bir savaştan bahsederken 'the' kullanılır; genel ifadelerde 'a' tercih edilir)",
@@ -18865,7 +19242,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "suffer a defeat",
       "be beaten in a battle",
       "come off worse in a battle"
-    ]
+    ],
+    "meaningTr": "Bir savaşı veya mücadeleyi kaybetmek; belirli bir çatışmada yenilmek (ancak savaşın tamamını kaybetmek anlamına gelmez)."
   },
   {
     "id": "col_u38_0380",
@@ -18873,7 +19251,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sürekli devam eden, aralıksız mücadele veya çatışma; genellikle uzun süreli bir anlaşmazlık veya rekabet için kullanılır.",
+    "meaning": "a long, continuous fight or argument that keeps starting again over time",
     "collocates": [],
     "commonMistakes": [
       "running war (savaş için kullanılmaz; 'running battle' daha çok mecazi veya sürekli çatışma anlamındadır)",
@@ -18915,7 +19293,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "continuous struggle",
       "protracted battle",
       "long-running battle"
-    ]
+    ],
+    "meaningTr": "Sürekli devam eden, aralıksız mücadele veya çatışma; genellikle uzun süreli bir anlaşmazlık veya rekabet için kullanılır."
   },
   {
     "id": "col_u39_0381",
@@ -18923,7 +19302,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yoksulluğu hafifletmek, yoksulluğun etkilerini azaltmak; yoksulluğu tamamen ortadan kaldırmak değil, acısını ve şiddetini düşürmek anlamında kullanılır.",
+    "meaning": "to make the suffering caused by poverty less severe, without removing it completely",
     "collocates": [],
     "commonMistakes": [
       "solve poverty (yoksulluğu tamamen çözmek anlamı yükler; 'alleviate' kısmi hafifletme içerir)",
@@ -18965,7 +19344,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "ease poverty",
       "combat poverty",
       "lessen poverty"
-    ]
+    ],
+    "meaningTr": "Yoksulluğu hafifletmek, yoksulluğun etkilerini azaltmak; yoksulluğu tamamen ortadan kaldırmak değil, acısını ve şiddetini düşürmek anlamında kullanılır."
   },
   {
     "id": "col_u39_0382",
@@ -18973,7 +19353,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sığınmacı; başka bir ülkeye sığınma talebinde bulunan ve henüz resmi sığınma statüsü onaylanmamış kişi.",
+    "meaning": "a person who has left their country and asks another country for protection",
     "collocates": [],
     "commonMistakes": [
       "asylum refugee (sığınmacı ile mülteci hukuki olarak farklıdır; 'asylum seeker' henüz statü almamıştır)",
@@ -19015,7 +19395,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "person seeking asylum",
       "displaced person",
       "asylum applicant"
-    ]
+    ],
+    "meaningTr": "Sığınmacı; başka bir ülkeye sığınma talebinde bulunan ve henüz resmi sığınma statüsü onaylanmamış kişi."
   },
   {
     "id": "col_u39_0383",
@@ -19023,7 +19404,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Siyasi sığınma; bir kişinin siyasi görüşleri, inançları veya faaliyetleri nedeniyle kendi ülkesinde zulüm görme riski taşıdığı için başka bir ülkeden koruma talep etmesi.",
+    "meaning": "protection given by a country to someone who has fled political persecution",
     "collocates": [],
     "commonMistakes": [
       "political refugee (bu bir kişiyi tanımlar; 'political asylum' ise verilen koruma statüsüdür)",
@@ -19065,7 +19446,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "protection from political persecution",
       "political sanctuary",
       "safe haven from political persecution"
-    ]
+    ],
+    "meaningTr": "Siyasi sığınma; bir kişinin siyasi görüşleri, inançları veya faaliyetleri nedeniyle kendi ülkesinde zulüm görme riski taşıdığı için başka bir ülkeden koruma talep etmesi."
   },
   {
     "id": "col_u39_0384",
@@ -19073,7 +19455,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Siyasi sığınma talep etmek; zulüm veya tehdit nedeniyle başka bir ülkeden resmi olarak koruma istemek.",
+    "meaning": "to formally ask another country for protection because of political persecution",
     "collocates": [],
     "commonMistakes": [
       "want political asylum (çok gayri resmi; hukuki bağlamda 'seek' veya 'apply for' tercih edilir)",
@@ -19115,7 +19497,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "request political asylum",
       "claim political asylum",
       "ask for political asylum"
-    ]
+    ],
+    "meaningTr": "Siyasi sığınma talep etmek; zulüm veya tehdit nedeniyle başka bir ülkeden resmi olarak koruma istemek."
   },
   {
     "id": "col_u39_0385",
@@ -19123,7 +19506,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Ekolojik dengeyi bozmak; doğadaki canlı ve cansız varlıklar arasındaki hassas dengeyi olumsuz yönde etkilemek.",
+    "meaning": "to harm the natural balance between living things and their environment",
     "collocates": [],
     "commonMistakes": [
       "break the ecological balance (İngilizcede doğal eşdizim 'disturb' veya 'upset' ile kurulur)",
@@ -19165,7 +19548,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "disrupt the ecological balance",
       "damage the ecological balance",
       "throw the ecosystem out of balance"
-    ]
+    ],
+    "meaningTr": "Ekolojik dengeyi bozmak; doğadaki canlı ve cansız varlıklar arasındaki hassas dengeyi olumsuz yönde etkilemek."
   },
   {
     "id": "col_u39_0386",
@@ -19173,7 +19557,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İklim değişikliği; dünya genelinde sıcaklık, yağış ve hava koşullarında uzun vadeli ve kalıcı değişimler.",
+    "meaning": "Long-term changes in the earth's temperatures and weather patterns, largely caused by human activity.",
     "collocates": [],
     "commonMistakes": [
       "climate changing (isim tamlaması yerine fiil kullanımı)",
@@ -19214,7 +19598,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "global warming",
       "climatic shift",
       "changing climate"
-    ]
+    ],
+    "meaningTr": "İklim değişikliği; dünya genelinde sıcaklık, yağış ve hava koşullarında uzun vadeli ve kalıcı değişimler."
   },
   {
     "id": "col_u39_0387",
@@ -19222,7 +19607,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çocuk işçiliği; çocukların yasal yaş sınırının altında, genellikle eğitimlerini engelleyecek veya sağlıklarını riske atacak işlerde çalıştırılması.",
+    "meaning": "The employment of children in work that is illegal or harmful to their health or education.",
     "collocates": [],
     "commonMistakes": [
       "children labour (çoğul kullanımı yanlış)",
@@ -19263,7 +19648,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "child labor (US spelling)",
       "exploitation of children",
       "underage employment"
-    ]
+    ],
+    "meaningTr": "Çocuk işçiliği; çocukların yasal yaş sınırının altında, genellikle eğitimlerini engelleyecek veya sağlıklarını riske atacak işlerde çalıştırılması."
   },
   {
     "id": "col_u39_0388",
@@ -19271,7 +19657,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sokak çocukları; evsiz kalan, sokakta yaşayan veya geçimini sokakta sağlayan, genellikle korunmasız çocuklar.",
+    "meaning": "Children who live or work on the streets, usually without a home or adult care.",
     "collocates": [],
     "commonMistakes": [
       "street childs (yanlış çoğul)",
@@ -19312,7 +19698,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "homeless children",
       "children living on the streets",
       "abandoned minors"
-    ]
+    ],
+    "meaningTr": "Sokak çocukları; evsiz kalan, sokakta yaşayan veya geçimini sokakta sağlayan, genellikle korunmasız çocuklar."
   },
   {
     "id": "col_u39_0389",
@@ -19320,7 +19707,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yoksullukla mücadele etmek; yoksulluğu azaltmak veya ortadan kaldırmak için aktif önlemler almak.",
+    "meaning": "To take active measures to reduce or end poverty.",
     "collocates": [],
     "commonMistakes": [
       "combat against poverty (gereksiz edat)",
@@ -19362,7 +19749,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "tackle poverty",
       "reduce poverty",
       "alleviate poverty"
-    ]
+    ],
+    "meaningTr": "Yoksullukla mücadele etmek; yoksulluğu azaltmak veya ortadan kaldırmak için aktif önlemler almak."
   },
   {
     "id": "col_u39_0390",
@@ -19370,7 +19758,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Gelişmekte olan ülke; ekonomik olarak büyüme sürecinde olan, sanayileşmesini tamamlamamış ülke.",
+    "meaning": "A country that is still growing economically and has not yet fully industrialised.",
     "collocates": [],
     "commonMistakes": [
       "developed country (anlam karışıklığı)",
@@ -19412,7 +19800,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "less developed country",
       "low-income country",
       "third-world country (dated)"
-    ]
+    ],
+    "meaningTr": "Gelişmekte olan ülke; ekonomik olarak büyüme sürecinde olan, sanayileşmesini tamamlamamış ülke."
   },
   {
     "id": "col_u40_0391",
@@ -19420,7 +19809,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birinin çok uzun zamanını almak; bir işin bir kişi için çok uzun sürmesi (genellikle beklenenden çok daha uzun).",
+    "meaning": "To take a very long time, often much longer than expected.",
     "collocates": [],
     "commonMistakes": [
       "take someone long time (yanlış) -> take someone ages / take a long time",
@@ -19462,7 +19851,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "take a long time",
       "take hours",
       "drag on"
-    ]
+    ],
+    "meaningTr": "Birinin çok uzun zamanını almak; bir işin bir kişi için çok uzun sürmesi (genellikle beklenenden çok daha uzun)."
   },
   {
     "id": "col_u40_0392",
@@ -19470,7 +19860,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Alarmın çalması; çalar saatin ya da bir uyarı alarmının aniden ötmeye başlaması.",
+    "meaning": "When an alarm clock or warning device suddenly starts making a noise.",
     "collocates": [],
     "commonMistakes": [
       "alarm goes on (yanlış) -> alarm goes off",
@@ -19512,7 +19902,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "alarm sounds",
       "alarm starts ringing",
       "alarm triggers"
-    ]
+    ],
+    "meaningTr": "Alarmın çalması; çalar saatin ya da bir uyarı alarmının aniden ötmeye başlaması."
   },
   {
     "id": "col_u40_0393",
@@ -19520,7 +19911,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Alarmı kurmak; çalar saati belirli bir saatte çalması için ayarlamak.",
+    "meaning": "To adjust an alarm clock so that it rings at a particular time.",
     "collocates": [],
     "commonMistakes": [
       "open your alarm (yanlış) -> set your alarm",
@@ -19562,7 +19953,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "programme your alarm",
       "put your alarm on",
       "schedule your alarm"
-    ]
+    ],
+    "meaningTr": "Alarmı kurmak; çalar saati belirli bir saatte çalması için ayarlamak."
   },
   {
     "id": "col_u40_0394",
@@ -19570,7 +19962,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Tam zamanında; ne erken ne geç, tam olması gereken saatte.",
+    "meaning": "Exactly at the expected or arranged time, neither early nor late.",
     "collocates": [],
     "commonMistakes": [
       "bang in time (yanlış) -> bang on time",
@@ -19612,7 +20004,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "dead on time",
       "exactly on time",
       "punctually"
-    ]
+    ],
+    "meaningTr": "Tam zamanında; ne erken ne geç, tam olması gereken saatte."
   },
   {
     "id": "col_u40_0395",
@@ -19620,7 +20013,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çok büyük ölçüde, fazlasıyla; genellikle 'to a great degree' anlamında vurgu için kullanılan gayri resmi bir ifade (ayrıca 'büyük başarı/şöhret' anlamında da kullanılır).",
+    "meaning": "To a very great degree; used informally for emphasis, also meaning great success or fame.",
     "collocates": [],
     "commonMistakes": [
       "big time olarak 'very time' (yanlış) -> big time",
@@ -19662,7 +20055,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "to a great extent",
       "hugely",
       "massively"
-    ]
+    ],
+    "meaningTr": "Çok büyük ölçüde, fazlasıyla; genellikle 'to a great degree' anlamında vurgu için kullanılan gayri resmi bir ifade (ayrıca 'büyük başarı/şöhret' anlamında da kullanılır)."
   },
   {
     "id": "col_u40_01",
@@ -19670,7 +20064,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "literature",
-    "meaning": "şafaktan akşam karanlığına kadar, sabahtan akşama kadar; gün boyunca durmaksızın, bütün gün",
+    "meaning": "From early morning until it gets dark; all day long without stopping.",
     "collocates": [
       "ungodly hours",
       "save time",
@@ -19716,7 +20110,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "all day long",
       "from sunrise to sunset",
       "around the clock"
-    ]
+    ],
+    "meaningTr": "şafaktan akşam karanlığına kadar, sabahtan akşama kadar; gün boyunca durmaksızın, bütün gün"
   },
   {
     "id": "col_u40_0397",
@@ -19724,7 +20119,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "tam zamanında, saniyesi saniyesine vaktinde; ne erken ne geç, tam olması gereken saatte",
+    "meaning": "Exactly at the expected time, to the minute; neither early nor late.",
     "collocates": [],
     "commonMistakes": [
       "'dead in time' demek (doğrusu 'dead on time')",
@@ -19761,7 +20156,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "punctually",
       "exactly on schedule",
       "spot on time"
-    ]
+    ],
+    "meaningTr": "tam zamanında, saniyesi saniyesine vaktinde; ne erken ne geç, tam olması gereken saatte"
   },
   {
     "id": "col_u40_0398",
@@ -19769,7 +20165,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "son birkaç hafta, geçtiğimiz birkaç hafta; yakın geçmişteki birkaç haftalık dönem",
+    "meaning": "The recent period of a few weeks just before now.",
     "collocates": [],
     "commonMistakes": [
       "'last few weeks' ile 'past few weeks' arasındaki farkı karıştırmak (ikisi de doğrudur ama 'the past few weeks' daha çok 'the' ile kullanılır)",
@@ -19811,7 +20207,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "recent weeks",
       "the past couple of weeks",
       "over the last few weeks"
-    ]
+    ],
+    "meaningTr": "son birkaç hafta, geçtiğimiz birkaç hafta; yakın geçmişteki birkaç haftalık dönem"
   },
   {
     "id": "col_u40_0399",
@@ -19819,7 +20216,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "boş zaman, serbest zaman; iş veya zorunluluklar dışında kalan, kişinin istediği gibi kullanabileceği zaman",
+    "meaning": "Time when you are not working or busy and can do what you want.",
     "collocates": [],
     "commonMistakes": [
       "'empty time' demek (doğrusu 'free time')",
@@ -19861,7 +20258,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "leisure time",
       "time off",
       "downtime"
-    ]
+    ],
+    "meaningTr": "boş zaman, serbest zaman; iş veya zorunluluklar dışında kalan, kişinin istediği gibi kullanabileceği zaman"
   },
   {
     "id": "col_u40_0400",
@@ -19869,7 +20267,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "geleceğin getireceği şeyler, gelecekte olacaklar; geleceğin ne getireceği (genellikle 'what the future holds' kalıbında kullanılır)",
+    "meaning": "The things that will happen in the time to come; often used in 'what the future holds'.",
     "collocates": [],
     "commonMistakes": [
       "'future holds' yerine 'future brings' demek (ikisi de olur ama 'holds' daha yaygındır)",
@@ -19906,7 +20304,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "what is in store",
       "the future brings",
       "what tomorrow brings"
-    ]
+    ],
+    "meaningTr": "geleceğin getireceği şeyler, gelecekte olacaklar; geleceğin ne getireceği (genellikle 'what the future holds' kalıbında kullanılır)"
   },
   {
     "id": "col_u41_0401",
@@ -19914,7 +20313,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Alarm çığlığı; ani korku, tehlike veya panik hissiyle atılan yüksek sesli uyarı çığlığı. Genellikle beklenmedik bir tehlike karşısında verilen tepkiyi anlatır.",
+    "meaning": "A sudden loud cry expressing fear, danger or panic.",
     "collocates": [],
     "commonMistakes": [
       "alarm cry (isim tamlaması olarak yanlış sıralama; doğrusu 'cry of alarm')",
@@ -19956,7 +20355,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "shout of alarm",
       "yell of panic",
       "scream of fright"
-    ]
+    ],
+    "meaningTr": "Alarm çığlığı; ani korku, tehlike veya panik hissiyle atılan yüksek sesli uyarı çığlığı. Genellikle beklenmedik bir tehlike karşısında verilen tepkiyi anlatır."
   },
   {
     "id": "col_u41_0402",
@@ -19964,7 +20364,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Müthiş bir patlama sesi; çok yüksek, sarsıcı ve ani bir gürültü. 'Almighty' burada 'çok büyük, dehşet verici' anlamında pekiştirici sıfat olarak kullanılır.",
+    "meaning": "A very loud, sudden and shocking noise, often like something hitting hard.",
     "collocates": [],
     "commonMistakes": [
       "big bang (zayıf; 'almighty' vurgu katar, ancak 'big bang' evren teorisiyle karışabilir)",
@@ -20001,7 +20401,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "deafening bang",
       "tremendous bang",
       "mighty crash"
-    ]
+    ],
+    "meaningTr": "Müthiş bir patlama sesi; çok yüksek, sarsıcı ve ani bir gürültü. 'Almighty' burada 'çok büyük, dehşet verici' anlamında pekiştirici sıfat olarak kullanılır."
   },
   {
     "id": "col_u41_0403",
@@ -20009,7 +20410,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Müthiş/dehşet verici bir patlama; çok büyük, yıkıcı ve güçlü bir patlama. 'Almighty' sıfatı patlamanın şiddetini ve etkisini vurgular.",
+    "meaning": "A very large, powerful and destructive explosion.",
     "collocates": [],
     "commonMistakes": [
       "big explosion (daha zayıf; 'almighty' dramatik vurgu katar)",
@@ -20046,7 +20447,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "massive explosion",
       "powerful explosion",
       "devastating blast"
-    ]
+    ],
+    "meaningTr": "Müthiş/dehşet verici bir patlama; çok büyük, yıkıcı ve güçlü bir patlama. 'Almighty' sıfatı patlamanın şiddetini ve etkisini vurgular."
   },
   {
     "id": "col_u41_0404",
@@ -20054,7 +20456,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Şırıldayan dere; suyun taşların arasından akarken çıkardığı yumuşak, sürekli ve hoş sesi tanımlar. Huzur verici, doğal bir ses imgesi taşır.",
+    "meaning": "A small stream that makes a soft, gentle, continuous sound as it flows.",
     "collocates": [],
     "commonMistakes": [
       "talking stream (yanlış; 'babbling' burada su sesi anlamında kullanılır, konuşma değil)",
@@ -20096,7 +20498,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "murmuring stream",
       "rippling brook",
       "gurgling stream"
-    ]
+    ],
+    "meaningTr": "Şırıldayan dere; suyun taşların arasından akarken çıkardığı yumuşak, sürekli ve hoş sesi tanımlar. Huzur verici, doğal bir ses imgesi taşır."
   },
   {
     "id": "col_u41_109",
@@ -20104,7 +20507,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Arka plan gürültüsü; ortamdaki sürekli, düşük seviyeli ve genellikle rahatsız edici olmayan ses. Konuşma, müzik veya çalışma sırasında duyulan ama odaklanılan sesin arkasında kalan gürültü.",
+    "meaning": "Continuous low-level sound in a place that is not the main sound you are listening to.",
     "collocates": [],
     "commonMistakes": [
       "back noise (yanlış; 'background' tam sıfattır)",
@@ -20146,7 +20549,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "background sound",
       "white noise",
       "surrounding noise"
-    ]
+    ],
+    "meaningTr": "Arka plan gürültüsü; ortamdaki sürekli, düşük seviyeli ve genellikle rahatsız edici olmayan ses. Konuşma, müzik veya çalışma sırasında duyulan ama odaklanılan sesin arkasında kalan gürültü."
   },
   {
     "id": "col_u41_0406",
@@ -20154,7 +20558,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yüksek sesli, ani ve patlama tarzında çıkan gürültü; genellikle kapı çarpması, silah sesi veya patlama gibi durumlarda duyulan keskin ve şiddetli ses.",
+    "meaning": "A sudden, sharp, loud noise like something hitting hard or exploding.",
     "collocates": [],
     "commonMistakes": [
       "big bang (anlam farklı: evrenin oluşumu veya büyük patlama)",
@@ -20196,7 +20600,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "loud explosion",
       "deafening bang",
       "sharp bang"
-    ]
+    ],
+    "meaningTr": "Yüksek sesli, ani ve patlama tarzında çıkan gürültü; genellikle kapı çarpması, silah sesi veya patlama gibi durumlarda duyulan keskin ve şiddetli ses."
   },
   {
     "id": "col_u41_0407",
@@ -20204,7 +20609,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kuşların ötmesi, şakıması; kuşların doğal olarak çıkardığı melodik ve hoş sesler. Genellikle sabahın erken saatlerinde veya doğada duyulan huzur verici bir sestir.",
+    "meaning": "When birds make their natural melodic sounds, especially in the early morning.",
     "collocates": [],
     "commonMistakes": [
       "birds say (kuşlar için 'say' değil 'sing' veya 'chirp' kullanılır)",
@@ -20246,7 +20651,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "birds twitter",
       "birds warble",
       "birds call"
-    ]
+    ],
+    "meaningTr": "Kuşların ötmesi, şakıması; kuşların doğal olarak çıkardığı melodik ve hoş sesler. Genellikle sabahın erken saatlerinde veya doğada duyulan huzur verici bir sestir."
   },
   {
     "id": "col_u41_0408",
@@ -20254,7 +20660,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sessizliği bozmak; bir ortamda uzun süren sessizliği sona erdirmek, konuşmaya başlamak veya bir ses çıkarmak. Genellikle gergin veya beklenmedik anlarda kullanılır.",
+    "meaning": "To end a period of silence by speaking or making a sound.",
     "collocates": [],
     "commonMistakes": [
       "break the silent (isim 'silence' olmalı, 'silent' sıfattır)",
@@ -20296,7 +20702,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "shatter the silence",
       "interrupt the silence",
       "end the silence"
-    ]
+    ],
+    "meaningTr": "Sessizliği bozmak; bir ortamda uzun süren sessizliği sona erdirmek, konuşmaya başlamak veya bir ses çıkarmak. Genellikle gergin veya beklenmedik anlarda kullanılır."
   },
   {
     "id": "col_u41_0409",
@@ -20304,7 +20711,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Tıkırtı sesi; kısa, keskin ve tekrarlayan 'tık tık' şeklinde çıkan ses. Genellikle mekanik aletler, klavye tuşları, saat mekanizmaları veya eklemlerden gelen sesler için kullanılır.",
+    "meaning": "A short, sharp, repeated sound like small mechanical parts touching.",
     "collocates": [],
     "commonMistakes": [
       "click sound (isim olarak 'clicking sound' daha doğal, 'click sound' daha az yaygın)",
@@ -20346,7 +20753,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "ticking sound",
       "clicking tone",
       "snapping sound"
-    ]
+    ],
+    "meaningTr": "Tıkırtı sesi; kısa, keskin ve tekrarlayan 'tık tık' şeklinde çıkan ses. Genellikle mekanik aletler, klavye tuşları, saat mekanizmaları veya eklemlerden gelen sesler için kullanılır."
   },
   {
     "id": "col_u41_0410",
@@ -20354,7 +20762,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çıtırtı sesi; ateşin yanması, kuru yaprakların ezilmesi, elektrik kıvılcımı veya ambalaj kağıdının buruşturulması gibi durumlarda duyulan kısa, kesik kesik ve hafif patlama sesi.",
+    "meaning": "A series of short, light popping sounds, like burning wood or crushed leaves.",
     "collocates": [],
     "commonMistakes": [
       "crackle sound (isim olarak 'crackling sound' daha doğal)",
@@ -20396,7 +20804,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "popping sound",
       "snapping sound",
       "crinkling sound"
-    ]
+    ],
+    "meaningTr": "Çıtırtı sesi; ateşin yanması, kuru yaprakların ezilmesi, elektrik kıvılcımı veya ambalaj kağıdının buruşturulması gibi durumlarda duyulan kısa, kesik kesik ve hafif patlama sesi."
   },
   {
     "id": "col_u42_0411",
@@ -20404,7 +20813,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Büyük miktar, çok sayıda/çok miktarda şey. Genellikle sayılamayan isimlerle veya topluluk isimleriyle kullanılır; 'a large amount of' yapısıyla bir şeyin hacimce veya sayıca fazlalığını ifade eder.",
+    "meaning": "A large quantity of something, especially with uncountable nouns.",
     "collocates": [],
     "commonMistakes": [
       "large number of people yerine large amount of people denmesi (sayılabilen çoğul isimlerle 'number' tercih edilir)",
@@ -20446,7 +20855,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "substantial amount",
       "great deal",
       "huge quantity"
-    ]
+    ],
+    "meaningTr": "Büyük miktar, çok sayıda/çok miktarda şey. Genellikle sayılamayan isimlerle veya topluluk isimleriyle kullanılır; 'a large amount of' yapısıyla bir şeyin hacimce veya sayıca fazlalığını ifade eder."
   },
   {
     "id": "col_u42_0412",
@@ -20454,7 +20864,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Az miktar, küçük miktar. Genellikle sayılamayan isimlerle kullanılır; 'a small amount of' yapısıyla bir şeyin hacimce veya sayıca azlığını ifade eder.",
+    "meaning": "A small quantity of something, especially with uncountable nouns.",
     "collocates": [],
     "commonMistakes": [
       "small number of people yerine small amount of people denmesi (sayılabilen çoğul isimlerle 'number' kullanılır)",
@@ -20496,7 +20906,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "minimal amount",
       "little bit",
       "modest quantity"
-    ]
+    ],
+    "meaningTr": "Az miktar, küçük miktar. Genellikle sayılamayan isimlerle kullanılır; 'a small amount of' yapısıyla bir şeyin hacimce veya sayıca azlığını ifade eder."
   },
   {
     "id": "col_u42_0413",
@@ -20504,7 +20915,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Komşu bölge, yakın çevredeki alan. Bir yerin hemen yanındaki veya çok yakınındaki coğrafi bölgeyi ifade eder.",
+    "meaning": "The area next to or very near a particular place.",
     "collocates": [],
     "commonMistakes": [
       "neighbour area demek (doğrusu 'neighbouring area'dır, sıfat formu -ing alır)",
@@ -20546,7 +20957,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "surrounding area",
       "nearby region",
       "neighbouring region"
-    ]
+    ],
+    "meaningTr": "Komşu bölge, yakın çevredeki alan. Bir yerin hemen yanındaki veya çok yakınındaki coğrafi bölgeyi ifade eder."
   },
   {
     "id": "col_u42_0414",
@@ -20554,7 +20966,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "1) Ağabey, büyük erkek kardeş. 2) (mecazi) Bir kişi veya kuruluş üzerinde otorite kuran, onu gözetleyen veya kontrol eden güçlü yapı (özellikle 'Big Brother' olarak George Orwell'in 1984 romanına gönderme yapar).",
+    "meaning": "An older brother; also a powerful body that watches and controls people.",
     "collocates": [],
     "commonMistakes": [
       "big brother yerine 'large brother' demek (aile üyeleri için 'big' kullanılır, 'large' fiziksel boyut içindir)",
@@ -20596,7 +21008,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "elder brother",
       "Big Brother (surveillance state)",
       "authority figure"
-    ]
+    ],
+    "meaningTr": "1) Ağabey, büyük erkek kardeş. 2) (mecazi) Bir kişi veya kuruluş üzerinde otorite kuran, onu gözetleyen veya kontrol eden güçlü yapı (özellikle 'Big Brother' olarak George Orwell'in 1984 romanına gönderme yapar)."
   },
   {
     "id": "col_u42_0415",
@@ -20604,7 +21017,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kalın kitap. Sayfa sayısı çok fazla olan, hacimli kitap anlamında kullanılır. 'Fat' burada fiziksel kalınlığı ifade eder.",
+    "meaning": "A book with a large number of pages and a thick physical shape.",
     "collocates": [],
     "commonMistakes": [
       "thick book yerine 'fat book' kullanımının her bağlamda uygun olduğunu sanmak (akademik yazıda 'thick' veya 'lengthy' daha resmidir)",
@@ -20646,7 +21059,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "lengthy book",
       "voluminous book",
       "heavy tome"
-    ]
+    ],
+    "meaningTr": "Kalın kitap. Sayfa sayısı çok fazla olan, hacimli kitap anlamında kullanılır. 'Fat' burada fiziksel kalınlığı ifade eder."
   },
   {
     "id": "col_u42_0416",
@@ -20654,7 +21068,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İnce kitap; sayfa sayısı az, hacmi küçük olan kitap. 'Slim' burada fiziksel incelik/kalınlık azlığı anlamındadır, zayıflık değil.",
+    "meaning": "A book with few pages and a thin physical shape.",
     "collocates": [],
     "commonMistakes": [
       "skinny book (kitap için 'skinny' doğal değildir; 'slim' veya 'thin' kullanılır)",
@@ -20696,7 +21110,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "slim volume",
       "short book",
       "slim paperback"
-    ]
+    ],
+    "meaningTr": "İnce kitap; sayfa sayısı az, hacmi küçük olan kitap. 'Slim' burada fiziksel incelik/kalınlık azlığı anlamındadır, zayıflık değil."
   },
   {
     "id": "col_u42_0417",
@@ -20704,7 +21119,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Küçük erkek kardeş; yaşça daha küçük olan erkek kardeş. 'Little' burada yaş/kıdem küçüklüğünü belirtir, fiziksel boyut değil.",
+    "meaning": "A younger brother; a male sibling who is younger than you.",
     "collocates": [],
     "commonMistakes": [
       "small brother (yaş için 'small' kullanılmaz; 'little' veya 'younger' tercih edilir)",
@@ -20745,7 +21160,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "younger brother",
       "kid brother",
       "baby brother"
-    ]
+    ],
+    "meaningTr": "Küçük erkek kardeş; yaşça daha küçük olan erkek kardeş. 'Little' burada yaş/kıdem küçüklüğünü belirtir, fiziksel boyut değil."
   },
   {
     "id": "col_u42_0418",
@@ -20753,7 +21169,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yüksek bina; dikey olarak uzun, çok katlı yapı. 'Tall' insanlar ve dikey yapılar için kullanılır.",
+    "meaning": "A structure that is very high and has many floors.",
     "collocates": [],
     "commonMistakes": [
       "high building (binalar için genellikle 'tall' tercih edilir; 'high' daha çok dağ, duvar, fiyat için)",
@@ -20795,7 +21211,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "skyscraper",
       "towering building",
       "high building"
-    ]
+    ],
+    "meaningTr": "Yüksek bina; dikey olarak uzun, çok katlı yapı. 'Tall' insanlar ve dikey yapılar için kullanılır."
   },
   {
     "id": "col_u42_0419",
@@ -20803,7 +21220,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Büyük/önemli değişiklik; kapsamlı ve ciddi etkisi olan değişim.",
+    "meaning": "A large and important change with a significant effect.",
     "collocates": [],
     "commonMistakes": [
       "big change (daha gündelik; 'major' daha resmi ve vurgulu)",
@@ -20845,7 +21262,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "major shift",
       "substantial change",
       "radical change"
-    ]
+    ],
+    "meaningTr": "Büyük/önemli değişiklik; kapsamlı ve ciddi etkisi olan değişim."
   },
   {
     "id": "col_u42_0420",
@@ -20853,7 +21271,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Küçük/önemsiz değişiklik; ayrıntı düzeyinde kalan, büyük etkisi olmayan değişim.",
+    "meaning": "A small change that is not very important or has little effect.",
     "collocates": [],
     "commonMistakes": [
       "little change (miktar azlığı için; 'minor' önem derecesi için)",
@@ -20895,7 +21313,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "slight change",
       "minor adjustment",
       "trivial change"
-    ]
+    ],
+    "meaningTr": "Küçük/önemsiz değişiklik; ayrıntı düzeyinde kalan, büyük etkisi olmayan değişim."
   },
   {
     "id": "col_u43_0421",
@@ -20903,7 +21322,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir şeye renk katmak, canlılık ve çeşitlilik kazandırmak; mecazen bir ortamı ya da durumu daha ilgi çekici, neşeli veya anlamlı hale getirmek.",
+    "meaning": "To make something more interesting, lively or attractive, especially by adding variety or vividness.",
     "collocates": [],
     "commonMistakes": [
       "give colour to (bir şeye renk katmak anlamında yanlış; 'add colour to' veya 'bring colour to' tercih edilir)",
@@ -20945,7 +21364,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "liven up",
       "brighten up",
       "enrich"
-    ]
+    ],
+    "meaningTr": "Bir şeye renk katmak, canlılık ve çeşitlilik kazandırmak; mecazen bir ortamı ya da durumu daha ilgi çekici, neşeli veya anlamlı hale getirmek."
   },
   {
     "id": "col_u43_0422",
@@ -20953,7 +21373,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Belirsiz, net olmayan, sınırları tam çizilemeyen konu veya durum; kuralların ya da ahlaki değerlerin net biçimde uygulanamadığı gri alan.",
+    "meaning": "A situation or subject where the rules are unclear and it is hard to say what is right or wrong.",
     "collocates": [],
     "commonMistakes": [
       "gray area (İngiliz İngilizcesinde 'grey' tercih edilir; Amerikan İngilizcesinde 'gray' kabul edilir ancak tutarlılık önemlidir)",
@@ -20995,7 +21415,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "unclear territory",
       "grey zone",
       "borderline case"
-    ]
+    ],
+    "meaningTr": "Belirsiz, net olmayan, sınırları tam çizilemeyen konu veya durum; kuralların ya da ahlaki değerlerin net biçimde uygulanamadığı gri alan."
   },
   {
     "id": "col_u43_0423",
@@ -21003,7 +21424,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Işık huzmesi; bir kaynaktan çıkan ince, yoğun ve genellikle düz bir ışık demeti.",
+    "meaning": "A narrow, directed line of light coming from a source such as a lamp or the sun.",
     "collocates": [],
     "commonMistakes": [
       "beam of the light (gereksiz 'the' kullanımı; 'beam of light' olmalı)",
@@ -21045,7 +21466,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "shaft of light",
       "light beam",
       "streak of light"
-    ]
+    ],
+    "meaningTr": "Işık huzmesi; bir kaynaktan çıkan ince, yoğun ve genellikle düz bir ışık demeti."
   },
   {
     "id": "col_u43_0424",
@@ -21053,7 +21475,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Soluk mavi, açık mavi; rengi canlı olmayan, hafif ve yumuşak bir mavi tonu.",
+    "meaning": "A light, soft shade of blue that is not strong or vivid.",
     "collocates": [],
     "commonMistakes": [
       "pale of blue (yanlış yapı; 'pale blue' olmalı)",
@@ -21095,7 +21517,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "soft blue",
       "pale azure",
       "pastel blue"
-    ]
+    ],
+    "meaningTr": "Soluk mavi, açık mavi; rengi canlı olmayan, hafif ve yumuşak bir mavi tonu."
   },
   {
     "id": "col_u43_0425",
@@ -21103,7 +21526,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Parlak sarı, canlı sarı; dikkat çeken, yoğun ve net bir sarı tonu.",
+    "meaning": "A strong, vivid shade of yellow that is very noticeable and easy to see.",
     "collocates": [],
     "commonMistakes": [
       "bright of yellow (yanlış yapı; 'bright yellow' olmalı)",
@@ -21145,7 +21568,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "vibrant yellow",
       "brilliant yellow",
       "luminous yellow"
-    ]
+    ],
+    "meaningTr": "Parlak sarı, canlı sarı; dikkat çeken, yoğun ve net bir sarı tonu."
   },
   {
     "id": "col_u43_0426",
@@ -21153,7 +21577,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Mum alevinin titremesi, dalgalanması; mum ışığının hafifçe kıpırdaması. Genellikle loş, romantik veya huzurlu bir atmosfer yaratmak için kullanılır.",
+    "meaning": "Of a candle flame, to move slightly and unsteadily, often creating a soft, warm atmosphere.",
     "collocates": [],
     "commonMistakes": [
       "candle blinks (yanlış; 'blink' gözler veya ışıklar için kullanılır, mum alevi için değil)",
@@ -21195,7 +21619,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "candle wavers",
       "light dances",
       "flame trembles"
-    ]
+    ],
+    "meaningTr": "Mum alevinin titremesi, dalgalanması; mum ışığının hafifçe kıpırdaması. Genellikle loş, romantik veya huzurlu bir atmosfer yaratmak için kullanılır."
   },
   {
     "id": "col_u43_0427",
@@ -21203,7 +21628,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir şeyin üzerine gölge düşürmek; mecazen bir olayın veya durumun bir şeyi olumsuz etkilemesi, gölge düşürmesi (örneğin bir kutlamayı, başarıyı veya ilişkiyi).",
+    "meaning": "To make a situation or event seem less happy or successful by causing worry or sadness.",
     "collocates": [],
     "commonMistakes": [
       "make a shadow over (yanlış; 'cast' fiili kullanılmalı, 'make' değil)",
@@ -21245,7 +21670,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "put a damper on",
       "overshadow",
       "cloud"
-    ]
+    ],
+    "meaningTr": "Bir şeyin üzerine gölge düşürmek; mecazen bir olayın veya durumun bir şeyi olumsuz etkilemesi, gölge düşürmesi (örneğin bir kutlamayı, başarıyı veya ilişkiyi)."
   },
   {
     "id": "col_u43_0428",
@@ -21253,7 +21679,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Renklerin iddia etmesi, renklerin bir şeyi talep etmesi veya gerektirmesi; genellikle 'claim' fiili ile renklerin dikkat çekmesi, öne çıkması veya bir etki yaratması anlamında kullanılır. (Not: Bu collocation oldukça nadirdir ve genellikle şiirsel veya edebi bağlamlarda görülür.)",
+    "meaning": "Of colours, to attract attention or demand notice, especially in a vivid or striking way.",
     "collocates": [],
     "commonMistakes": [
       "colours claim for (yanlış; 'claim' geçişli fiildir, 'for' edatı almaz)",
@@ -21295,7 +21721,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "colours stand out",
       "colours assert themselves",
       "colours draw the eye"
-    ]
+    ],
+    "meaningTr": "Renklerin iddia etmesi, renklerin bir şeyi talep etmesi veya gerektirmesi; genellikle 'claim' fiili ile renklerin dikkat çekmesi, öne çıkması veya bir etki yaratması anlamında kullanılır. (Not: Bu collocation oldukça nadirdir ve genellikle şiirsel veya edebi bağlamlarda görülür.)"
   },
   {
     "id": "col_u43_0429",
@@ -21303,7 +21730,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Rengin solması, rengin zamanla açılması veya kaybolması; genellikle kumaş, boya, fotoğraf veya doğal nesnelerin renklerinin solması anlamında kullanılır.",
+    "meaning": "Of a colour, to gradually become lighter or less strong over time, often due to sunlight.",
     "collocates": [],
     "commonMistakes": [
       "colour fades away (kabul edilebilir ama 'fade' tek başına yeterlidir; 'fade away' daha çok ses veya görüntü için kullanılır)",
@@ -21345,7 +21772,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "colour washes out",
       "colour loses its brightness",
       "colour pales"
-    ]
+    ],
+    "meaningTr": "Rengin solması, rengin zamanla açılması veya kaybolması; genellikle kumaş, boya, fotoğraf veya doğal nesnelerin renklerinin solması anlamında kullanılır."
   },
   {
     "id": "col_u43_0430",
@@ -21353,7 +21781,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir rengin başka bir renkle iyi uyum sağlaması, iyi gitmesi; renklerin birbiriyle estetik olarak uyumlu olması.",
+    "meaning": "Of a colour, to look attractive and harmonious when combined with another colour.",
     "collocates": [],
     "commonMistakes": [
       "colour goes good with (yanlış; 'well' zarfı kullanılmalı, 'good' değil)",
@@ -21395,7 +21823,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "colour complements",
       "colour coordinates with",
       "colour suits"
-    ]
+    ],
+    "meaningTr": "Bir rengin başka bir renkle iyi uyum sağlaması, iyi gitmesi; renklerin birbiriyle estetik olarak uyumlu olması."
   },
   {
     "id": "col_u44_0431",
@@ -21403,7 +21832,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir kişinin tutumunun katılaşması, sertleşmesi; bir konuda daha inatçı, uzlaşmaz veya duygusuz hale gelmesi.",
+    "meaning": "For someone's opinion or feelings about something to become more fixed, strict and unwilling to change.",
     "collocates": [],
     "commonMistakes": [
       "attitude becomes hard (yaygın ama daha az doğal; 'hardens' tercih edilir)",
@@ -21445,7 +21874,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "grow inflexible",
       "harden one's stance",
       "become uncompromising"
-    ]
+    ],
+    "meaningTr": "Bir kişinin tutumunun katılaşması, sertleşmesi; bir konuda daha inatçı, uzlaşmaz veya duygusuz hale gelmesi."
   },
   {
     "id": "col_u44_0432",
@@ -21453,7 +21883,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir kişinin tutumunun yumuşaması; daha esnek, anlayışlı veya uzlaşmaya açık hale gelmesi.",
+    "meaning": "For someone's opinion or feelings to become less strict and more sympathetic or willing to agree.",
     "collocates": [],
     "commonMistakes": [
       "attitude becomes soft (yaygın ama daha az doğal; 'softens' tercih edilir)",
@@ -21495,7 +21925,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "grow more flexible",
       "soften one's stance",
       "become more accommodating"
-    ]
+    ],
+    "meaningTr": "Bir kişinin tutumunun yumuşaması; daha esnek, anlayışlı veya uzlaşmaya açık hale gelmesi."
   },
   {
     "id": "col_u44_0433",
@@ -21503,7 +21934,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sert ama konforlu, destekleyici yatak; genellikle ortopedik açıdan sağlıklı kabul edilen, çok yumuşak olmayan yatak.",
+    "meaning": "A bed that is fairly hard and supportive rather than soft, often considered good for the back.",
     "collocates": [],
     "commonMistakes": [
       "strong bed (yanlış; 'firm' kullanılmalı, 'strong' fiziksel güç için kullanılır)",
@@ -21545,7 +21976,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "orthopedic bed",
       "hard mattress",
       "sturdy bed"
-    ]
+    ],
+    "meaningTr": "Sert ama konforlu, destekleyici yatak; genellikle ortopedik açıdan sağlıklı kabul edilen, çok yumuşak olmayan yatak."
   },
   {
     "id": "col_u44_0434",
@@ -21553,7 +21985,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sert yatak; genellikle rahatsız edici derecede sert olan, konfor sağlamayan yatak.",
+    "meaning": "A bed that is uncomfortably hard and does not provide a soft or relaxing surface.",
     "collocates": [],
     "commonMistakes": [
       "strong bed (yanlış; 'hard' kullanılmalı, 'strong' fiziksel güç için kullanılır)",
@@ -21595,7 +22027,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "uncomfortable mattress",
       "stiff bed",
       "unyielding bed"
-    ]
+    ],
+    "meaningTr": "Sert yatak; genellikle rahatsız edici derecede sert olan, konfor sağlamayan yatak."
   },
   {
     "id": "col_u44_0435",
@@ -21603,7 +22036,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yumuşak yatak; konforlu, vücudu saran, genellikle lüks veya rahatlatıcı olarak algılanan yatak.",
+    "meaning": "A bed that is comfortable and yielding, often giving a feeling of luxury and relaxation.",
     "collocates": [],
     "commonMistakes": [
       "weak bed (yanlış; 'soft' kullanılmalı, 'weak' zayıflık ifade eder)",
@@ -21645,7 +22078,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "cushiony mattress",
       "comfy bed",
       "pillowy bed"
-    ]
+    ],
+    "meaningTr": "Yumuşak yatak; konforlu, vücudu saran, genellikle lüks veya rahatlatıcı olarak algılanan yatak."
   },
   {
     "id": "col_u44_0436",
@@ -21653,7 +22087,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Keskinliğini yitirmiş, kör bıçak; kesmeyen, körelmiş bıçak. Kesme işlevini yerine getiremeyecek kadar aşınmış veya körelmiş bıçak anlamında kullanılır.",
+    "meaning": "A knife that has lost its sharp edge and can no longer cut things easily.",
     "collocates": [],
     "commonMistakes": [
       "sharp knife yerine yanlışlıkla 'blunt knife' kullanmak (anlam tam tersi olur)",
@@ -21695,7 +22129,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "blunt blade",
       "dull blade",
       "knife that has lost its edge"
-    ]
+    ],
+    "meaningTr": "Keskinliğini yitirmiş, kör bıçak; kesmeyen, körelmiş bıçak. Kesme işlevini yerine getiremeyecek kadar aşınmış veya körelmiş bıçak anlamında kullanılır."
   },
   {
     "id": "col_u44_0437",
@@ -21703,7 +22138,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Ucu körelmiş, sivri olmayan kurşun kalem; yazmayı veya çizmeyi zorlaştıracak kadar ucu aşınmış kalem.",
+    "meaning": "A pencil whose point has worn down so that it is no longer sharp enough to write clearly.",
     "collocates": [],
     "commonMistakes": [
       "'blunt pencil' yerine 'blunt pen' demek (kalem için pencil, tükenmez için pen kullanılır)",
@@ -21745,7 +22180,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "unsharpened pencil",
       "pencil with a worn tip",
       "pencil that needs sharpening"
-    ]
+    ],
+    "meaningTr": "Ucu körelmiş, sivri olmayan kurşun kalem; yazmayı veya çizmeyi zorlaştıracak kadar ucu aşınmış kalem."
   },
   {
     "id": "col_u44_0438",
@@ -21753,7 +22189,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Ekmeğin bayatlayıp sertleşmesi; tazeliğini yitirerek katılaşması. Genellikle birkaç gün bekleyen ekmeğin dokusunun değişmesini anlatır.",
+    "meaning": "Of bread, to become stale and firm after being left out, losing its soft freshness.",
     "collocates": [],
     "commonMistakes": [
       "'bread goes hard' yerine 'bread becomes hard' demek (doğru ama daha az doğal; 'goes' tercih edilir)",
@@ -21795,7 +22231,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "bread becomes hard",
       "bread dries out",
       "bread turns hard"
-    ]
+    ],
+    "meaningTr": "Ekmeğin bayatlayıp sertleşmesi; tazeliğini yitirerek katılaşması. Genellikle birkaç gün bekleyen ekmeğin dokusunun değişmesini anlatır."
   },
   {
     "id": "col_u44_0439",
@@ -21803,7 +22240,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Engebeli, tümsekli yol; düzgün olmayan, çukurları ve tümsekleri olan yol. Mecazi olarak zorlu, sıkıntılı bir süreci de anlatır.",
+    "meaning": "A road surface that is uneven, with many bumps and holes; also used figuratively for a difficult period.",
     "collocates": [],
     "commonMistakes": [
       "'bumpy road' yerine 'bumpy way' demek (yol için road, güzergâh için way kullanılır)",
@@ -21845,7 +22282,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "uneven road",
       "jolting road",
       "road full of potholes"
-    ]
+    ],
+    "meaningTr": "Engebeli, tümsekli yol; düzgün olmayan, çukurları ve tümsekleri olan yol. Mecazi olarak zorlu, sıkıntılı bir süreci de anlatır."
   },
   {
     "id": "col_u44_0440",
@@ -21853,7 +22291,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İri doğranmış; büyük parçalar halinde kesilmiş (genellikle sebze, meyve veya malzeme için kullanılır). İnce doğramaya (finely chopped) karşıt bir dokudur.",
+    "meaning": "Cut into fairly large, rough pieces rather than small, fine ones, especially of food.",
     "collocates": [],
     "commonMistakes": [
       "'coarsely chopped' yerine 'coarse chopped' demek (zarf -ly almalı)",
@@ -21895,7 +22333,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "chunkily chopped",
       "cut into large pieces",
       "coarsely cut"
-    ]
+    ],
+    "meaningTr": "İri doğranmış; büyük parçalar halinde kesilmiş (genellikle sebze, meyve veya malzeme için kullanılır). İnce doğramaya (finely chopped) karşıt bir dokudur."
   },
   {
     "id": "col_u45_0441",
@@ -21903,7 +22342,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Zamanla alışılan, ilk başta sevmeyip sonradan beğenilen tat veya şey; sonradan kazanılan zevk. Genellikle kahve, peynir, zeytin gibi ilk tatları keskin olan yiyecek-içecekler için kullanılır.",
+    "meaning": "Something that you may not like at first but gradually learn to enjoy as you get used to it.",
     "collocates": [],
     "commonMistakes": [
       "acquired taste for something yerine bazen 'acquired taste of something' denir (doğrusu: an acquired taste for sth)",
@@ -21943,7 +22382,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "an acquired liking",
       "something you grow to like",
       "a taste you develop over time"
-    ]
+    ],
+    "meaningTr": "Zamanla alışılan, ilk başta sevmeyip sonradan beğenilen tat veya şey; sonradan kazanılan zevk. Genellikle kahve, peynir, zeytin gibi ilk tatları keskin olan yiyecek-içecekler için kullanılır."
   },
   {
     "id": "col_u45_0442",
@@ -21951,7 +22391,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Keskin, yakıcı, geniz yakan duman; genellikle plastik, kauçuk veya kimyasal maddelerin yanmasıyla oluşan rahatsız edici koku.",
+    "meaning": "Smoke with a sharp, bitter smell that stings the nose and throat, often from burning chemicals.",
     "collocates": [],
     "commonMistakes": [
       "acrid smoke yerine 'acid smoke' denmesi (doğrusu: acrid smoke)",
@@ -21991,7 +22431,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "pungent smoke",
       "sharp-smelling smoke",
       "bitter smoke"
-    ]
+    ],
+    "meaningTr": "Keskin, yakıcı, geniz yakan duman; genellikle plastik, kauçuk veya kimyasal maddelerin yanmasıyla oluşan rahatsız edici koku."
   },
   {
     "id": "col_u45_0443",
@@ -21999,7 +22440,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kendine özgü, kolayca tanınabilen hoş koku; bir şeyi diğerlerinden ayıran karakteristik aroma.",
+    "meaning": "A pleasant smell that is easy to recognise and typical of a particular thing.",
     "collocates": [],
     "commonMistakes": [
       "distinctive aroma yerine 'distinct aroma' denmesi (anlam kayması; 'distinct' = belirgin, 'distinctive' = kendine özgü)",
@@ -22039,7 +22480,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "characteristic aroma",
       "unique aroma",
       "recognisable scent"
-    ]
+    ],
+    "meaningTr": "Kendine özgü, kolayca tanınabilen hoş koku; bir şeyi diğerlerinden ayıran karakteristik aroma."
   },
   {
     "id": "col_u45_0444",
@@ -22047,7 +22489,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Acı kahve; genellikle fazla kavrulmuş veya şekersiz/sütsüz içilen, dilde acılık bırakan kahve.",
+    "meaning": "Coffee with a sharp, unpleasant taste, often from over-roasting or being drunk without milk or sugar.",
     "collocates": [],
     "commonMistakes": [
       "bitter coffee yerine 'sour coffee' denmesi (farklı tat profili; sour = ekşi)",
@@ -22087,7 +22529,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "strong black coffee",
       "unsweetened coffee",
       "harsh coffee"
-    ]
+    ],
+    "meaningTr": "Acı kahve; genellikle fazla kavrulmuş veya şekersiz/sütsüz içilen, dilde acılık bırakan kahve."
   },
   {
     "id": "col_u45_0445",
@@ -22095,7 +22538,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Vücut kokusu; genellikle terleme sonucu oluşan, hoş olmayan kişisel koku. İngilizcede 'BO' kısaltmasıyla da bilinir.",
+    "meaning": "An unpleasant smell from a person's body, usually caused by sweat; often shortened to 'BO'.",
     "collocates": [],
     "commonMistakes": [
       "body odour yerine 'body smell' denmesi (anlam yakın ama 'body odour' daha yaygın ve resmi)",
@@ -22135,7 +22578,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "personal odour",
       "BO (informal)",
       "unpleasant body smell"
-    ]
+    ],
+    "meaningTr": "Vücut kokusu; genellikle terleme sonucu oluşan, hoş olmayan kişisel koku. İngilizcede 'BO' kısaltmasıyla da bilinir."
   },
   {
     "id": "col_u45_0446",
@@ -22143,7 +22587,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kötü kokan, iğrenç kokulu kimyasal maddeler; genellikle sanayi, temizlik veya laboratuvar bağlamında rahatsız edici koku yayan kimyasallar.",
+    "meaning": "Chemical substances that have a very unpleasant, disgusting smell, often found in industrial settings.",
     "collocates": [],
     "commonMistakes": [
       "foul-smell chemicals (sıfat tamlamasında 'smelling' yerine 'smell' kullanmak yanlıştır)",
@@ -22185,7 +22629,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "stinking chemicals",
       "pungent chemicals",
       "bad-smelling chemicals"
-    ]
+    ],
+    "meaningTr": "Kötü kokan, iğrenç kokulu kimyasal maddeler; genellikle sanayi, temizlik veya laboratuvar bağlamında rahatsız edici koku yayan kimyasallar."
   },
   {
     "id": "col_u45_0447",
@@ -22193,7 +22638,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Tehlikeyi sezmek, bir tehlike kokusu almak; mecazi olarak bir sorunun veya riskin yaklaştığını hissetmek.",
+    "meaning": "To sense that something dangerous or risky is about to happen, often through instinct or experience.",
     "collocates": [],
     "commonMistakes": [
       "smell the danger (belirli bir tehlike kastedilmediğinde 'the' kullanmak gereksizdir)",
@@ -22230,7 +22675,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "detect danger",
       "smell trouble",
       "sense trouble"
-    ]
+    ],
+    "meaningTr": "Tehlikeyi sezmek, bir tehlike kokusu almak; mecazi olarak bir sorunun veya riskin yaklaştığını hissetmek."
   },
   {
     "id": "col_u45_0448",
@@ -22238,7 +22684,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir şeye karşı zamanla beğeni veya ilgi geliştirmek; özellikle başlangıçta sevilmeyen bir yiyecek, içecek ya da etkinliğe alışıp sevmeye başlamak.",
+    "meaning": "To gradually begin to like something, especially food or drink, after experiencing it repeatedly.",
     "collocates": [],
     "commonMistakes": [
       "develop taste for (belirteç 'a' eksik bırakılırsa yanlış olur)",
@@ -22280,7 +22726,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "grow to like",
       "come to enjoy",
       "get a taste for"
-    ]
+    ],
+    "meaningTr": "Bir şeye karşı zamanla beğeni veya ilgi geliştirmek; özellikle başlangıçta sevilmeyen bir yiyecek, içecek ya da etkinliğe alışıp sevmeye başlamak."
   },
   {
     "id": "col_u45_0449",
@@ -22288,7 +22735,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kötü kokan fabrika; çevresine rahatsız edici koku yayan, genellikle sanayi atıkları nedeniyle iğrenç kokan bir üretim tesisi.",
+    "meaning": "A factory that gives off a very unpleasant smell, often because of industrial waste or chemicals.",
     "collocates": [],
     "commonMistakes": [
       "foul-smell factory (sıfat tamlamasında 'smelling' kullanılmalıdır)",
@@ -22325,7 +22772,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "noxious-smelling factory",
       "bad-smelling factory",
       "pungent-smelling factory"
-    ]
+    ],
+    "meaningTr": "Kötü kokan fabrika; çevresine rahatsız edici koku yayan, genellikle sanayi atıkları nedeniyle iğrenç kokan bir üretim tesisi."
   },
   {
     "id": "col_u45_0450",
@@ -22333,7 +22781,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hafif, ince, kolayca fark edilmeyen tat; genellikle yemek veya içeceklerdeki nazik ve rafine lezzet.",
+    "meaning": "A gentle, delicate taste that is not strong and may be hard to notice at first.",
     "collocates": [],
     "commonMistakes": [
       "subtle taste (yiyecek/içecek bağlamında 'flavour' daha doğal ve yaygındır)",
@@ -22375,7 +22823,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "mild flavour",
       "understated flavour",
       "gentle flavour"
-    ]
+    ],
+    "meaningTr": "Hafif, ince, kolayca fark edilmeyen tat; genellikle yemek veya içeceklerdeki nazik ve rafine lezzet."
   },
   {
     "id": "col_u46_0451",
@@ -22383,7 +22832,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Oldukça fazla miktar; kayda değer, hatırı sayılır ölçüde çok. 'Considerable' genellikle olumlu ya da nötr bağlamda, beklenenden fazla ama 'enormous' kadar abartılı olmayan bir çokluğu ifade eder.",
+    "meaning": "A fairly large quantity of something, more than average but not extreme.",
     "collocates": [],
     "commonMistakes": [
       "considerable number of amount (yanlış — 'amount' sayılamayan isimlerle, 'number' sayılabilir isimlerle kullanılır)",
@@ -22425,7 +22874,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "a fair amount",
       "a sizeable amount",
       "quite a lot"
-    ]
+    ],
+    "meaningTr": "Oldukça fazla miktar; kayda değer, hatırı sayılır ölçüde çok. 'Considerable' genellikle olumlu ya da nötr bağlamda, beklenenden fazla ama 'enormous' kadar abartılı olmayan bir çokluğu ifade eder."
   },
   {
     "id": "col_u46_0452",
@@ -22433,7 +22883,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çok büyük, devasa miktar; şaşırtıcı derecede fazla. 'Considerable'dan daha güçlü bir vurgu taşır ve genellikle hayret, abartı ya da etkileyici bir çokluğu anlatır.",
+    "meaning": "A very large quantity of something, often surprisingly or impressively great.",
     "collocates": [],
     "commonMistakes": [
       "enormous number of amount (karışıklık — 'amount' sayılamayan isimlerle kullanılır)",
@@ -22475,7 +22925,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "a massive amount",
       "a tremendous amount",
       "an immense amount"
-    ]
+    ],
+    "meaningTr": "Çok büyük, devasa miktar; şaşırtıcı derecede fazla. 'Considerable'dan daha güçlü bir vurgu taşır ve genellikle hayret, abartı ya da etkileyici bir çokluğu anlatır."
   },
   {
     "id": "col_u46_0453",
@@ -22483,7 +22934,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çok küçük, azıcık miktar; neredeyse fark edilemeyecek kadar az. 'Minute' burada 'mai-NYOOT' şeklinde telaffuz edilir ve 'küçücük' anlamına gelir, 'dakika' anlamındaki 'minit' ile karıştırılmamalıdır.",
+    "meaning": "An extremely small quantity of something, almost too little to notice.",
     "collocates": [],
     "commonMistakes": [
       "minute amount telaffuzu 'minit' şeklinde yapmak (doğrusu 'mai-NYOOT')",
@@ -22520,7 +22971,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "a very small amount",
       "a negligible amount",
       "a trace"
-    ]
+    ],
+    "meaningTr": "Çok küçük, azıcık miktar; neredeyse fark edilemeyecek kadar az. 'Minute' burada 'mai-NYOOT' şeklinde telaffuz edilir ve 'küçücük' anlamına gelir, 'dakika' anlamındaki 'minit' ile karıştırılmamalıdır."
   },
   {
     "id": "col_u46_0454",
@@ -22528,7 +22980,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Önemli, kayda değer miktar; dikkate alınması gereken ölçüde fazla. Genellikle resmi, akademik veya iş bağlamında kullanılır ve istatistiksel ya da stratejik önemi vurgular.",
+    "meaning": "A quantity large enough to be important or worth noticing, often in formal or statistical contexts.",
     "collocates": [],
     "commonMistakes": [
       "significant number of amount (karışıklık — 'amount' sayılamayan isimlerle kullanılır)",
@@ -22570,7 +23022,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "a meaningful amount",
       "an appreciable amount",
       "a considerable amount"
-    ]
+    ],
+    "meaningTr": "Önemli, kayda değer miktar; dikkate alınması gereken ölçüde fazla. Genellikle resmi, akademik veya iş bağlamında kullanılır ve istatistiksel ya da stratejik önemi vurgular."
   },
   {
     "id": "col_u46_0455",
@@ -22578,7 +23031,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Büyük, hatırı sayılır, ciddi miktar; genellikle maddi değer, kaynak veya somut ölçülebilir şeyler için kullanılır. 'Considerable' ile yakın anlamlıdır ancak daha çok resmi ve iş dünyası bağlamında tercih edilir.",
+    "meaning": "A large and important quantity, especially of money, resources or measurable things, used in formal contexts.",
     "collocates": [],
     "commonMistakes": [
       "substantial number of amount (karışıklık — 'amount' sayılamayan isimlerle kullanılır)",
@@ -22620,7 +23073,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "a considerable amount",
       "a hefty amount",
       "a large amount"
-    ]
+    ],
+    "meaningTr": "Büyük, hatırı sayılır, ciddi miktar; genellikle maddi değer, kaynak veya somut ölçülebilir şeyler için kullanılır. 'Considerable' ile yakın anlamlıdır ancak daha çok resmi ve iş dünyası bağlamında tercih edilir."
   },
   {
     "id": "col_u46_0456",
@@ -22628,7 +23082,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Beklenenden çok daha fazla ya da az olan, insanı şaşırtan miktar; genellikle 'a surprising amount of + isim' kalıbıyla kullanılır ve miktarın beklenmedikliğini vurgular.",
+    "meaning": "a quantity that is much larger or smaller than you expected",
     "collocates": [],
     "commonMistakes": [
       "surprising number of (sayılabilen çoğul isimlerle 'number' tercih edilir; 'amount' sayılamayan isimlerle kullanılır)",
@@ -22670,7 +23124,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "astonishing quantity",
       "remarkable amount",
       "shocking amount"
-    ]
+    ],
+    "meaningTr": "Beklenenden çok daha fazla ya da az olan, insanı şaşırtan miktar; genellikle 'a surprising amount of + isim' kalıbıyla kullanılır ve miktarın beklenmedikliğini vurgular."
   },
   {
     "id": "col_u46_0457",
@@ -22678,7 +23133,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çok küçük, neredeyse fark edilemeyecek kadar az miktar; 'a tiny amount of + isim' şeklinde kullanılır ve genellikle miktarın önemsizliğini ya da yetersizliğini vurgular.",
+    "meaning": "an extremely small quantity of something, often barely noticeable",
     "collocates": [],
     "commonMistakes": [
       "tiny number of (sayılamayan isimlerle 'amount', sayılabilenlerle 'number' kullanılır)",
@@ -22720,7 +23175,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "negligible amount",
       "very small quantity",
       "trace amount"
-    ]
+    ],
+    "meaningTr": "Çok küçük, neredeyse fark edilemeyecek kadar az miktar; 'a tiny amount of + isim' şeklinde kullanılır ve genellikle miktarın önemsizliğini ya da yetersizliğini vurgular."
   },
   {
     "id": "col_u46_0458",
@@ -22728,7 +23184,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Israrla sormaya devam etmek, tekrar tekrar sormak; birinden bir şeyi defalarca istemek ya da bir konuyu sürekli sorgulamak anlamında kullanılır.",
+    "meaning": "to continue asking for something repeatedly and persistently",
     "collocates": [],
     "commonMistakes": [
       "keep to ask (doğru yapı 'keep + -ing'dir: 'keep asking')",
@@ -22770,7 +23226,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "persist in asking",
       "repeatedly ask",
       "pester someone with questions"
-    ]
+    ],
+    "meaningTr": "Israrla sormaya devam etmek, tekrar tekrar sormak; birinden bir şeyi defalarca istemek ya da bir konuyu sürekli sorgulamak anlamında kullanılır."
   },
   {
     "id": "col_u46_0459",
@@ -22778,7 +23235,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Nadir görülen, alışılmadık kişi ya da şey; mecazi olarak 'ender rastlanan tip' anlamında kullanılır. Bazen gerçek anlamda nadir bir kuş türünü de ifade eder.",
+    "meaning": "an unusual person or thing that is rarely found; also a rare species of bird",
     "collocates": [],
     "commonMistakes": [
       "rare bird for (doğru edat 'a rare bird in' ya da yalın kullanımdır)",
@@ -22820,7 +23277,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "unusual character",
       "one of a kind",
       "scarce breed"
-    ]
+    ],
+    "meaningTr": "Nadir görülen, alışılmadık kişi ya da şey; mecazi olarak 'ender rastlanan tip' anlamında kullanılır. Bazen gerçek anlamda nadir bir kuş türünü de ifade eder."
   },
   {
     "id": "col_u46_0460",
@@ -22828,7 +23286,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Doğum oranı; belirli bir nüfus ya da ülkede belirli bir dönemde gerçekleşen doğum sayısının ölçüsü. Genellikle 'the birth rate' ya da 'a high/low/falling birth rate' şeklinde kullanılır.",
+    "meaning": "the number of births in a population measured over a particular period",
     "collocates": [],
     "commonMistakes": [
       "birth ratio (oran anlamında 'rate' kullanılır, 'ratio' iki değerin karşılaştırmasıdır)",
@@ -22870,7 +23328,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "natality rate",
       "rate of births",
       "reproduction rate"
-    ]
+    ],
+    "meaningTr": "Doğum oranı; belirli bir nüfus ya da ülkede belirli bir dönemde gerçekleşen doğum sayısının ölçüsü. Genellikle 'the birth rate' ya da 'a high/low/falling birth rate' şeklinde kullanılır."
   },
   {
     "id": "col_u47_0461",
@@ -22878,7 +23337,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hızlı erişim; bir bilgiye, hizmete veya yere çok kısa sürede ulaşabilme imkânı.",
+    "meaning": "the ability to reach information, a service or a place very quickly",
     "collocates": [],
     "commonMistakes": [
       "fast access (bazı bağlamlarda kabul edilse de 'speedy access' daha doğal ve yaygındır)",
@@ -22920,7 +23379,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "rapid access",
       "fast access",
       "instant access"
-    ]
+    ],
+    "meaningTr": "Hızlı erişim; bir bilgiye, hizmete veya yere çok kısa sürede ulaşabilme imkânı."
   },
   {
     "id": "col_u47_0462",
@@ -22928,7 +23388,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hızlı ve kararlı eylem; bir soruna veya duruma vakit kaybetmeden müdahale etme.",
+    "meaning": "fast and decisive steps taken to deal with a problem or situation",
     "collocates": [],
     "commonMistakes": [
       "fast action (daha çok fiziksel hız için kullanılır; resmi bağlamda 'swift action' tercih edilir)",
@@ -22970,7 +23430,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "immediate action",
       "decisive action",
       "rapid response"
-    ]
+    ],
+    "meaningTr": "Hızlı ve kararlı eylem; bir soruna veya duruma vakit kaybetmeden müdahale etme."
   },
   {
     "id": "col_u47_0463",
@@ -22978,7 +23439,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çabuk verilen yanıt; bir soruya kısa sürede verilen cevap.",
+    "meaning": "a reply given within a short time",
     "collocates": [],
     "commonMistakes": [
       "fast answer (kabul edilebilir ancak 'quick answer' daha doğal bir eşdizimdir)",
@@ -23020,7 +23481,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "immediate response",
       "rapid answer",
       "swift reply"
-    ]
+    ],
+    "meaningTr": "Çabuk verilen yanıt; bir soruya kısa sürede verilen cevap."
   },
   {
     "id": "col_u47_0464",
@@ -23028,7 +23490,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yoldan sapmak, doğru yoldan ayrılmak; mecazen hata yapmak veya kötü yola düşmek.",
+    "meaning": "to go in the wrong direction or lose the right path; also to make a mistake or behave badly",
     "collocates": [],
     "commonMistakes": [
       "go to astray (gereksiz 'to' kullanımı)",
@@ -23070,7 +23532,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "lose one's way",
       "go off course",
       "deviate"
-    ]
+    ],
+    "meaningTr": "Yoldan sapmak, doğru yoldan ayrılmak; mecazen hata yapmak veya kötü yola düşmek."
   },
   {
     "id": "col_u47_0465",
@@ -23078,7 +23541,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Dengesini kaybetmek, düşeyazmak; fiziksel veya mecazi olarak kontrolü yitirmek.",
+    "meaning": "to become unsteady and be in danger of falling; to lose control",
     "collocates": [],
     "commonMistakes": [
       "lose the balance (iyelik sıfatı 'your' veya 'his/her' kullanılmalıdır)",
@@ -23120,7 +23583,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "lose stability",
       "become unbalanced",
       "trip up"
-    ]
+    ],
+    "meaningTr": "Dengesini kaybetmek, düşeyazmak; fiziksel veya mecazi olarak kontrolü yitirmek."
   },
   {
     "id": "col_u47_0466",
@@ -23128,7 +23592,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Acele etmeden, keyifle ve yavaş tempoda yenilen kahvaltı; genellikle hafta sonu veya tatil sabahlarında uzun süre masada oturarak yapılan rahat kahvaltı.",
+    "meaning": "a relaxed breakfast eaten slowly without rushing, often at weekends",
     "collocates": [],
     "commonMistakes": [
       "slowly breakfast (zarf + isim yanlış eşleşme; 'leisurely breakfast' sıfat + isim olmalı)",
@@ -23170,7 +23634,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "unhurried breakfast",
       "slow breakfast",
       "long lazy breakfast"
-    ]
+    ],
+    "meaningTr": "Acele etmeden, keyifle ve yavaş tempoda yenilen kahvaltı; genellikle hafta sonu veya tatil sabahlarında uzun süre masada oturarak yapılan rahat kahvaltı."
   },
   {
     "id": "col_u47_0467",
@@ -23178,7 +23643,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çok yüksek ve tehlikeli sayılabilecek bir hızda; son derece hızlı bir şekilde. Genellikle kontrol edilmesi zor, baş döndürücü bir hızı anlatır.",
+    "meaning": "at an extremely fast and often dangerous speed",
     "collocates": [],
     "commonMistakes": [
       "at breakneck pace (doğal olsa da 'at breakneck speed' çok daha yaygın ve kalıplaşmıştır)",
@@ -23220,7 +23685,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "at full speed",
       "at a furious pace",
       "at top speed"
-    ]
+    ],
+    "meaningTr": "Çok yüksek ve tehlikeli sayılabilecek bir hızda; son derece hızlı bir şekilde. Genellikle kontrol edilmesi zor, baş döndürücü bir hızı anlatır."
   },
   {
     "id": "col_u47_0468",
@@ -23228,7 +23694,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Canlı, hareketli ve yoğun ticari faaliyet; müşteri akışının hızlı ve satışların iyi olduğu bir iş ortamı.",
+    "meaning": "lively and busy commercial activity with many customers and good sales",
     "collocates": [],
     "commonMistakes": [
       "fast business ('brisk business' kalıbı tercih edilir; 'fast business' doğal değildir)",
@@ -23270,7 +23736,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "lively trade",
       "healthy trade",
       "strong business"
-    ]
+    ],
+    "meaningTr": "Canlı, hareketli ve yoğun ticari faaliyet; müşteri akışının hızlı ve satışların iyi olduğu bir iş ortamı."
   },
   {
     "id": "col_u47_0469",
@@ -23278,7 +23745,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hızlı, canlı ve verimli bir çalışma tarzı; işlerin çabuk ve düzenli bir şekilde yapılması.",
+    "meaning": "a quick, energetic and well-organised way of working",
     "collocates": [],
     "commonMistakes": [
       "fast efficiency ('brisk efficiency' daha doğal ve kalıplaşmıştır)",
@@ -23320,7 +23787,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "swift efficiency",
       "prompt efficiency",
       "energetic efficiency"
-    ]
+    ],
+    "meaningTr": "Hızlı, canlı ve verimli bir çalışma tarzı; işlerin çabuk ve düzenli bir şekilde yapılması."
   },
   {
     "id": "col_u47_0470",
@@ -23328,7 +23796,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Canlı, tempolu ve hızlı bir yürüyüş veya ilerleme hızı; genellikle sağlıklı, enerjik ve kararlı bir hareketi ifade eder.",
+    "meaning": "a quick, energetic speed of walking or progressing",
     "collocates": [],
     "commonMistakes": [
       "briskly pace (zarf + isim yanlış; 'brisk' sıfat olmalı)",
@@ -23370,7 +23838,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "fast pace",
       "lively pace",
       "steady pace"
-    ]
+    ],
+    "meaningTr": "Canlı, tempolu ve hızlı bir yürüyüş veya ilerleme hızı; genellikle sağlıklı, enerjik ve kararlı bir hareketi ifade eder."
   },
   {
     "id": "col_u48_0471",
@@ -23378,7 +23847,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Adres alışverişinde bulunmak; iki veya daha fazla kişinin birbirine adres bilgilerini (ev, e-posta, iş adresi) vermesi. Genellikle yeni tanışan insanların iletişimde kalmak için yaptığı eylem.",
+    "meaning": "to give each other your contact details, such as home or email addresses",
     "collocates": [],
     "commonMistakes": [
       "change addresses (adres değiştirmek anlamına gelir, karıştırılmamalı)",
@@ -23420,7 +23889,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "share addresses",
       "give each other addresses",
       "trade contact details"
-    ]
+    ],
+    "meaningTr": "Adres alışverişinde bulunmak; iki veya daha fazla kişinin birbirine adres bilgilerini (ev, e-posta, iş adresi) vermesi. Genellikle yeni tanışan insanların iletişimde kalmak için yaptığı eylem."
   },
   {
     "id": "col_u48_01",
@@ -23428,7 +23898,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "Bir ayarlama yapmak; bir şeyi yeni koşullara, ihtiyaçlara veya duruma uygun hale getirmek için küçük bir değişiklik yapmak. Genellikle plan, sistem, tutum veya fiziksel bir düzenleme için kullanılır.",
+    "meaning": "to make a small change to something so it suits new conditions or needs",
     "collocates": [
       "break a habit",
       "change the subject",
@@ -23474,7 +23944,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "make a tweak",
       "make a change",
       "adjust something"
-    ]
+    ],
+    "meaningTr": "Bir ayarlama yapmak; bir şeyi yeni koşullara, ihtiyaçlara veya duruma uygun hale getirmek için küçük bir değişiklik yapmak. Genellikle plan, sistem, tutum veya fiziksel bir düzenleme için kullanılır."
   },
   {
     "id": "col_u48_0473",
@@ -23482,7 +23953,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir yaklaşım benimsemek; belirli bir yöntemi, stratejiyi veya bakış açısını seçip onu kullanmaya başlamak. Genellikle bilinçli bir tercih sonucu yeni bir yönteme geçmeyi ifade eder.",
+    "meaning": "to choose and start using a particular method, strategy or way of thinking",
     "collocates": [],
     "commonMistakes": [
       "make an approach (yanlış fiil; 'adopt' veya 'take' kullanılmalı)",
@@ -23524,7 +23995,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "use an approach",
       "embrace an approach",
       "follow an approach"
-    ]
+    ],
+    "meaningTr": "Bir yaklaşım benimsemek; belirli bir yöntemi, stratejiyi veya bakış açısını seçip onu kullanmaya başlamak. Genellikle bilinçli bir tercih sonucu yeni bir yönteme geçmeyi ifade eder."
   },
   {
     "id": "col_u48_0474",
@@ -23532,7 +24004,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Küçük bir değişiklik yapmak; bir şeyi büyük ölçüde değiştirmeden, sadece ufak bir düzeltme veya ayarlama yapmak. Genellikle metin, plan, tasarım veya düzenlemeler için kullanılır.",
+    "meaning": "to make a small change or correction to something without changing it greatly",
     "collocates": [],
     "commonMistakes": [
       "do a slight alteration (yanlış fiil; 'make' kullanılmalı)",
@@ -23574,7 +24046,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "make a small modification",
       "make a slight change",
       "make a minor adjustment"
-    ]
+    ],
+    "meaningTr": "Küçük bir değişiklik yapmak; bir şeyi büyük ölçüde değiştirmeden, sadece ufak bir düzeltme veya ayarlama yapmak. Genellikle metin, plan, tasarım veya düzenlemeler için kullanılır."
   },
   {
     "id": "col_u48_0475",
@@ -23582,7 +24055,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kıyafetlerini tadilat yaptırmak; giysilerin beden, boy veya stil olarak bir terzi tarafından kişiye uygun hale getirilmesini sağlamak. Genellikle hazır alınan kıyafetlerin vücuda tam oturması için yapılır.",
+    "meaning": "to have clothes adjusted by a tailor so they fit properly",
     "collocates": [],
     "commonMistakes": [
       "make clothes altered (yanlış fiil; 'have' veya 'get' kullanılmalı)",
@@ -23624,7 +24097,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have clothes adjusted",
       "have garments tailored",
       "get clothes taken in/let out"
-    ]
+    ],
+    "meaningTr": "Kıyafetlerini tadilat yaptırmak; giysilerin beden, boy veya stil olarak bir terzi tarafından kişiye uygun hale getirilmesini sağlamak. Genellikle hazır alınan kıyafetlerin vücuda tam oturması için yapılır."
   },
   {
     "id": "col_u48_0476",
@@ -23632,7 +24106,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "bir sorunun ortaya çıkması, belirmesi; genellikle beklenmedik bir anda bir problemin oluşması anlamında kullanılır. 'Problem' özne konumundadır ve 'arise' fiili ile birlikte kullanılır.",
+    "meaning": "a problem appears or starts to exist, often unexpectedly",
     "collocates": [],
     "commonMistakes": [
       "problem raises (yanlış; 'raise' geçişli fiildir, nesne gerektirir; 'problem arises' doğrudur)",
@@ -23674,7 +24148,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "problem emerges",
       "problem occurs",
       "issue arises"
-    ]
+    ],
+    "meaningTr": "bir sorunun ortaya çıkması, belirmesi; genellikle beklenmedik bir anda bir problemin oluşması anlamında kullanılır. 'Problem' özne konumundadır ve 'arise' fiili ile birlikte kullanılır."
   },
   {
     "id": "col_u48_0477",
@@ -23682,7 +24157,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "bir şeyin kullanılabilir, erişilebilir veya mevcut hale gelmesi; genellikle ürünler, bilgiler, kaynaklar veya fırsatlar için kullanılır.",
+    "meaning": "to become ready to be used, obtained or reached",
     "collocates": [],
     "commonMistakes": [
       "become available for (yanlış; 'become available to' veya 'become available' tek başına kullanılır)",
@@ -23724,7 +24199,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be made available",
       "become accessible",
       "be released"
-    ]
+    ],
+    "meaningTr": "bir şeyin kullanılabilir, erişilebilir veya mevcut hale gelmesi; genellikle ürünler, bilgiler, kaynaklar veya fırsatlar için kullanılır."
   },
   {
     "id": "col_u48_123",
@@ -23732,7 +24208,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "bebeğin bezini değiştirmek; bebeğin altını temizlemek ve yeni bez takmak anlamında kullanılan günlük bir ifade.",
+    "meaning": "to clean a baby and put a fresh nappy on",
     "collocates": [],
     "commonMistakes": [
       "change the baby's clothes (bez değiştirmek yerine kıyafet değiştirmek anlamına gelir; karıştırılmamalı)",
@@ -23768,7 +24244,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "change the baby's nappy",
       "change the baby's diaper",
       "change the nappy"
-    ]
+    ],
+    "meaningTr": "bebeğin bezini değiştirmek; bebeğin altını temizlemek ve yeni bez takmak anlamında kullanılan günlük bir ifade."
   },
   {
     "id": "col_u48_0479",
@@ -23776,7 +24253,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "başarılı olmak, başarıya ulaşmak; bir kişinin veya girişimin hedeflerine ulaşarak olumlu sonuçlar elde etmesi.",
+    "meaning": "to reach a position of success or achieve your goals",
     "collocates": [],
     "commonMistakes": [
       "become success (yanlış; 'successful' sıfatı kullanılmalı, 'success' isim değil)",
@@ -23818,7 +24295,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "become prosperous",
       "make it big",
       "prosper"
-    ]
+    ],
+    "meaningTr": "başarılı olmak, başarıya ulaşmak; bir kişinin veya girişimin hedeflerine ulaşarak olumlu sonuçlar elde etmesi."
   },
   {
     "id": "col_u48_122",
@@ -23826,7 +24304,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "yatakların çarşaflarını değiştirmek; yatak takımlarını yenilemek, temiz çarşaf ve nevresim takmak anlamında kullanılır.",
+    "meaning": "to put fresh sheets and covers on beds",
     "collocates": [],
     "commonMistakes": [
       "change the bed (tekil; genellikle birden fazla yatak için 'beds' çoğul kullanılır, ancak tek yatak için 'change the bed' de doğrudur)",
@@ -23862,7 +24340,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "change the bed linen",
       "change the sheets",
       "change the bedding"
-    ]
+    ],
+    "meaningTr": "yatakların çarşaflarını değiştirmek; yatak takımlarını yenilemek, temiz çarşaf ve nevresim takmak anlamında kullanılır."
   },
   {
     "id": "col_u49_0481",
@@ -23870,7 +24349,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birine kibar ve saygılı bir şekilde hitap etmek; resmi veya nazik bir dille seslenmek.",
+    "meaning": "to speak to someone in a respectful and courteous way",
     "collocates": [],
     "commonMistakes": [
       "address to someone politely (address fiili doğrudan nesne alır, 'to' almaz)",
@@ -23912,7 +24391,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "talk to someone courteously",
       "greet someone formally",
       "use a polite form of address"
-    ]
+    ],
+    "meaningTr": "Birine kibar ve saygılı bir şekilde hitap etmek; resmi veya nazik bir dille seslenmek."
   },
   {
     "id": "col_u49_0482",
@@ -23920,7 +24400,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Aşırı derecede, bol bol özür dilemek; bir hatadan dolayı yoğun ve tekrarlı biçimde özür dilemek.",
+    "meaning": "to say sorry many times in a very strong and sincere way",
     "collocates": [],
     "commonMistakes": [
       "apologise deeply profusely (iki zarf birlikte kullanılmaz)",
@@ -23962,7 +24442,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "offer profuse apologies",
       "apologise excessively",
       "beg someone's pardon"
-    ]
+    ],
+    "meaningTr": "Aşırı derecede, bol bol özür dilemek; bir hatadan dolayı yoğun ve tekrarlı biçimde özür dilemek."
   },
   {
     "id": "col_u49_0483",
@@ -23970,7 +24451,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birinden bir iyilik/rıca istemek; birinden yardım talep etmek.",
+    "meaning": "to ask someone to do something helpful for you",
     "collocates": [],
     "commonMistakes": [
       "ask a favour to someone (doğrusu: ask someone a favour veya ask a favour of someone)",
@@ -24012,7 +24493,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "ask someone for a favour",
       "turn to someone for a favour",
       "seek a favour from someone"
-    ]
+    ],
+    "meaningTr": "Birinden bir iyilik/rıca istemek; birinden yardım talep etmek."
   },
   {
     "id": "col_u49_0484",
@@ -24020,7 +24502,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Acı acı şikâyet etmek; büyük bir hayal kırıklığı ve öfkeyle yakınmak.",
+    "meaning": "to express dissatisfaction in an angry and disappointed way",
     "collocates": [],
     "commonMistakes": [
       "complain bitter (zarf gerekir: bitterly)",
@@ -24062,7 +24544,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "protest bitterly",
       "voice bitter complaints",
       "moan bitterly"
-    ]
+    ],
+    "meaningTr": "Acı acı şikâyet etmek; büyük bir hayal kırıklığı ve öfkeyle yakınmak."
   },
   {
     "id": "col_u49_0485",
@@ -24070,7 +24553,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birine doğrudan meydan okumak; birinin görüşüne veya davranışına açıkça karşı çıkmak.",
+    "meaning": "to openly question or oppose someone's views or behaviour",
     "collocates": [],
     "commonMistakes": [
       "challenge to someone directly (challenge doğrudan nesne alır)",
@@ -24112,7 +24595,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "question someone openly",
       "take someone on directly",
       "oppose someone face to face"
-    ]
+    ],
+    "meaningTr": "Birine doğrudan meydan okumak; birinin görüşüne veya davranışına açıkça karşı çıkmak."
   },
   {
     "id": "col_u49_0486",
@@ -24120,7 +24604,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Konuyu değiştirmek; sohbet sırasında konuşulan konuyu başka bir konuya yönlendirmek. Genellikle rahatsız edici veya hassas bir konudan kaçınmak için kullanılır.",
+    "meaning": "to start talking about something different, often to avoid an awkward topic",
     "collocates": [],
     "commonMistakes": [
       "change the topic yerine change the subject tercih edilir; 'change the theme' yanlıştır",
@@ -24162,7 +24646,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "move on to another topic",
       "turn to a different subject",
       "change tack"
-    ]
+    ],
+    "meaningTr": "Konuyu değiştirmek; sohbet sırasında konuşulan konuyu başka bir konuya yönlendirmek. Genellikle rahatsız edici veya hassas bir konudan kaçınmak için kullanılır."
   },
   {
     "id": "col_u49_0487",
@@ -24170,7 +24655,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Açıkça belirtmek, net bir şekilde ifade etmek; bir şeyin anlaşılmasını sağlamak, şüpheye yer bırakmayacak biçimde söylemek.",
+    "meaning": "to state something in a way that leaves no doubt about your meaning",
     "collocates": [],
     "commonMistakes": [
       "make clear it yerine make it clear denir; sözcük sırası önemlidir",
@@ -24212,7 +24697,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "spell it out",
       "state explicitly",
       "leave no doubt"
-    ]
+    ],
+    "meaningTr": "Açıkça belirtmek, net bir şekilde ifade etmek; bir şeyin anlaşılmasını sağlamak, şüpheye yer bırakmayacak biçimde söylemek."
   },
   {
     "id": "col_u49_0488",
@@ -24220,7 +24706,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sohbete başlamak, birisiyle konuşmaya başlamak; genellikle beklenmedik veya doğal bir şekilde bir konuşmanın içine girmek.",
+    "meaning": "to start talking with someone, often in a natural or unplanned way",
     "collocates": [],
     "commonMistakes": [
       "get in conversation (into yerine in) yanlıştır",
@@ -24257,7 +24743,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "start chatting",
       "fall into conversation",
       "engage in conversation"
-    ]
+    ],
+    "meaningTr": "Sohbete başlamak, birisiyle konuşmaya başlamak; genellikle beklenmedik veya doğal bir şekilde bir konuşmanın içine girmek."
   },
   {
     "id": "col_u49_0489",
@@ -24265,7 +24752,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir sohbete katılmak, konuşmaya dahil olmak; başkalarının konuşmasına katkıda bulunmak.",
+    "meaning": "to take part in a conversation that others are having",
     "collocates": [],
     "commonMistakes": [
       "join a conversation (in olmadan) bazen kullanılır ama join in a conversation daha doğaldır",
@@ -24307,7 +24794,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "enter a conversation",
       "chip in",
       "contribute to a discussion"
-    ]
+    ],
+    "meaningTr": "Bir sohbete katılmak, konuşmaya dahil olmak; başkalarının konuşmasına katkıda bulunmak."
   },
   {
     "id": "col_u49_0490",
@@ -24315,7 +24803,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sohbetteki duraklama, konuşmanın geçici olarak durması; insanların ne söyleyeceğini bilemediği kısa sessizlik anı.",
+    "meaning": "a short pause in a conversation when nobody speaks",
     "collocates": [],
     "commonMistakes": [
       "lull of the conversation yanlıştır; lull in the conversation doğrudur",
@@ -24357,7 +24845,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "break in the conversation",
       "awkward silence",
       "moment of silence"
-    ]
+    ],
+    "meaningTr": "Sohbetteki duraklama, konuşmanın geçici olarak durması; insanların ne söyleyeceğini bilemediği kısa sessizlik anı."
   },
   {
     "id": "col_u50_0491",
@@ -24365,7 +24854,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Amaçsızca, belirli bir hedefi olmadan ortalıkta dolaşmak; başıboş gezinmek. Genellikle bir yere yetişme kaygısı olmadan, sadece oyalanmak için yürümek anlamını taşır.",
+    "meaning": "to walk around without a clear purpose or direction, often just to pass the time",
     "collocates": [],
     "commonMistakes": [
       "wander aimless (sıfat zarf yerine yalın hâlde kullanılamaz; 'aimlessly' zarf olmalıdır)",
@@ -24407,7 +24896,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "drift about",
       "stroll without purpose",
       "meander"
-    ]
+    ],
+    "meaningTr": "Amaçsızca, belirli bir hedefi olmadan ortalıkta dolaşmak; başıboş gezinmek. Genellikle bir yere yetişme kaygısı olmadan, sadece oyalanmak için yürümek anlamını taşır."
   },
   {
     "id": "col_u50_0492",
@@ -24415,7 +24905,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Öfkeyle, uzun ve kararlı adımlarla yürümek; kızgın bir şekilde hızlı ve geniş adımlarla yürümek. Genellikle kişinin sinirli olduğunu beden diliyle belli etmesi anlamında kullanılır.",
+    "meaning": "to walk with long, firm steps in a way that clearly shows you are angry",
     "collocates": [],
     "commonMistakes": [
       "stride angry (zarf yerine sıfat kullanımı yanlıştır; 'angrily' olmalıdır)",
@@ -24457,7 +24947,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "storm off",
       "walk furiously",
       "stomp away"
-    ]
+    ],
+    "meaningTr": "Öfkeyle, uzun ve kararlı adımlarla yürümek; kızgın bir şekilde hızlı ve geniş adımlarla yürümek. Genellikle kişinin sinirli olduğunu beden diliyle belli etmesi anlamında kullanılır."
   },
   {
     "id": "col_u50_0493",
@@ -24465,7 +24956,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Tempolu, canlı ve hızlı bir yürüyüş; sağlık ve zindelik amacıyla yapılan, normalden daha hızlı adımlarla gerçekleştirilen yürüyüş.",
+    "meaning": "a quick, energetic walk, often taken for exercise or to stay healthy",
     "collocates": [],
     "commonMistakes": [
       "briskly walk (isim tamlaması yerine zarf-fiil karışıklığı; 'brisk walk' bir isim öbeğidir)",
@@ -24507,7 +24998,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "energetic walk",
       "fast-paced walk",
       "power walk"
-    ]
+    ],
+    "meaningTr": "Tempolu, canlı ve hızlı bir yürüyüş; sağlık ve zindelik amacıyla yapılan, normalden daha hızlı adımlarla gerçekleştirilen yürüyüş."
   },
   {
     "id": "col_u50_0494",
@@ -24515,7 +25007,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hızlı ve canlı adımlarla yürümek; tempolu bir şekilde, enerjik olarak yürümek. Genellikle bir yere zamanında yetişmek veya egzersiz yapmak amacıyla kullanılır.",
+    "meaning": "to walk quickly and energetically, often to reach somewhere on time or for exercise",
     "collocates": [],
     "commonMistakes": [
       "walk brisk (zarf yerine sıfat kullanımı yanlıştır; 'briskly' olmalıdır)",
@@ -24557,7 +25049,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "walk at a fast pace",
       "stride along",
       "step lively"
-    ]
+    ],
+    "meaningTr": "Hızlı ve canlı adımlarla yürümek; tempolu bir şekilde, enerjik olarak yürümek. Genellikle bir yere zamanında yetişmek veya egzersiz yapmak amacıyla kullanılır."
   },
   {
     "id": "col_u50_0495",
@@ -24565,7 +25058,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Dikkatlice, tehlikeli veya engebeli bir zeminde adım adım ilerlemek; düşmemek veya bir şeye basmamak için dikkatle yol seçerek yürümek.",
+    "meaning": "to move forward carefully step by step over rough or dangerous ground, choosing where to put your feet",
     "collocates": [],
     "commonMistakes": [
       "pick your way careful (zarf yerine sıfat kullanımı yanlıştır; 'cautiously' olmalıdır)",
@@ -24607,7 +25100,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "step carefully",
       "thread your way carefully",
       "move warily"
-    ]
+    ],
+    "meaningTr": "Dikkatlice, tehlikeli veya engebeli bir zeminde adım adım ilerlemek; düşmemek veya bir şeye basmamak için dikkatle yol seçerek yürümek."
   },
   {
     "id": "col_u50_0496",
@@ -24615,7 +25109,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kendinden emin, kararlı ve uzun adımlarla yürümek; özgüvenle ve amaçlı bir şekilde ilerlemek.",
+    "meaning": "to walk with long, firm steps in a way that shows you feel sure of yourself",
     "collocates": [],
     "commonMistakes": [
       "stride confident (sıfat yerine zarf kullanılmalı: stride confidently)",
@@ -24657,7 +25151,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "march purposefully",
       "step confidently",
       "walk with assurance"
-    ]
+    ],
+    "meaningTr": "Kendinden emin, kararlı ve uzun adımlarla yürümek; özgüvenle ve amaçlı bir şekilde ilerlemek."
   },
   {
     "id": "col_u50_0497",
@@ -24665,7 +25160,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Farklı yaşam tarzlarından, mesleklerden ve sosyal çevrelerden gelen insanlar; toplumun değişik kesimleri.",
+    "meaning": "people from many different types of jobs, social backgrounds and ways of living",
     "collocates": [],
     "commonMistakes": [
       "different walk of lifes (çoğul yanlış: walks of life)",
@@ -24707,7 +25202,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "various backgrounds",
       "diverse social backgrounds",
       "people from all sectors"
-    ]
+    ],
+    "meaningTr": "Farklı yaşam tarzlarından, mesleklerden ve sosyal çevrelerden gelen insanlar; toplumun değişik kesimleri."
   },
   {
     "id": "col_u50_0498",
@@ -24715,7 +25211,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kolay, zahmetsiz bir yürüyüş; genellikle kısa mesafeli ve çaba gerektirmeyen bir yürüyüş.",
+    "meaning": "a short walk that does not require much effort, often to a nearby place",
     "collocates": [],
     "commonMistakes": [
       "easy walking (isim yerine fiilimsi kullanımı; 'an easy walk' tercih edilir)",
@@ -24757,7 +25253,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "short walk",
       "leisurely stroll",
       "effortless walk"
-    ]
+    ],
+    "meaningTr": "Kolay, zahmetsiz bir yürüyüş; genellikle kısa mesafeli ve çaba gerektirmeyen bir yürüyüş."
   },
   {
     "id": "col_u50_0499",
@@ -24765,7 +25262,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Her konuda çok bilgili, ansiklopedi gibi her şeyi bilen kimse; yürüyen ansiklopedi.",
+    "meaning": "a person who knows a great deal about many subjects and is full of facts",
     "collocates": [],
     "commonMistakes": [
       "walking encyclopedia (Amerikan yazımı; İngiliz İngilizcesinde 'encyclopaedia' tercih edilir)",
@@ -24807,7 +25304,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "mine of information",
       "fountain of knowledge",
       "know-it-all"
-    ]
+    ],
+    "meaningTr": "Her konuda çok bilgili, ansiklopedi gibi her şeyi bilen kimse; yürüyen ansiklopedi."
   },
   {
     "id": "col_u50_0500",
@@ -24815,7 +25313,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir sınavı çok kolay geçmek; sınavın üstesinden zahmetsizce gelmek (genellikle gayri resmi kullanım).",
+    "meaning": "to pass an exam very easily without difficulty (informal)",
     "collocates": [],
     "commonMistakes": [
       "walk through an exam (anlam kayması; 'walk an exam' doğrudan nesne alır)",
@@ -24857,7 +25355,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "ace an exam",
       "pass an exam easily",
       "breeze through an exam"
-    ]
+    ],
+    "meaningTr": "Bir sınavı çok kolay geçmek; sınavın üstesinden zahmetsizce gelmek (genellikle gayri resmi kullanım)."
   },
   {
     "id": "col_u51_0501",
@@ -24865,7 +25364,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Ani/beklenmedik son; bir şeyin hazırlıksız, çoğu zaman olumsuz bir şekilde aniden bitmesi.",
+    "meaning": "a sudden and unexpected end to something, often unpleasant",
     "collocates": [],
     "commonMistakes": [
       "abrupt finish (doğal değil; 'abrupt end' tercih edilir)",
@@ -24907,7 +25406,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "unexpected end",
       "come to a sudden halt",
       "cut short"
-    ]
+    ],
+    "meaningTr": "Ani/beklenmedik son; bir şeyin hazırlıksız, çoğu zaman olumsuz bir şekilde aniden bitmesi."
   },
   {
     "id": "col_u51_0502",
@@ -24915,7 +25415,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hiçbir bilgisi veya deneyimi olmayan tam acemi/başlangıç seviyesindeki kişi.",
+    "meaning": "a person who has no knowledge or experience of an activity at all",
     "collocates": [],
     "commonMistakes": [
       "absolute beginning (kişi için kullanılmaz; 'absolute beginner' denir)",
@@ -24957,7 +25457,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "total beginner",
       "rank beginner",
       "greenhorn"
-    ]
+    ],
+    "meaningTr": "Hiçbir bilgisi veya deneyimi olmayan tam acemi/başlangıç seviyesindeki kişi."
   },
   {
     "id": "col_u51_0503",
@@ -24965,7 +25466,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yavaş yavaş sona ermek, bitişe yaklaşmak; bir olayın veya sürecin sonuna gelinmesi.",
+    "meaning": "to gradually come to an end; to be approaching the finish of something",
     "collocates": [],
     "commonMistakes": [
       "draw to close (edat eksik; 'draw to a close' olmalı)",
@@ -25007,7 +25508,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "wind down",
       "near its end",
       "be drawing to an end"
-    ]
+    ],
+    "meaningTr": "Yavaş yavaş sona ermek, bitişe yaklaşmak; bir olayın veya sürecin sonuna gelinmesi."
   },
   {
     "id": "col_u51_0504",
@@ -25015,7 +25517,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kıl payı biten yarışma/karşılaşma; sonucun çok az farkla belirlendiği yakın bitiş.",
+    "meaning": "a competition or race in which the winner is decided by only a very small difference",
     "collocates": [],
     "commonMistakes": [
       "close ending (yarışma bağlamında 'close finish' tercih edilir)",
@@ -25057,7 +25559,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "tight finish",
       "photo finish",
       "close-run finish"
-    ]
+    ],
+    "meaningTr": "Kıl payı biten yarışma/karşılaşma; sonucun çok az farkla belirlendiği yakın bitiş."
   },
   {
     "id": "col_u51_0505",
@@ -25065,7 +25568,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sona ermek, bitmek; bir şeyin artık devam etmemesi.",
+    "meaning": "to finish or stop happening; to no longer continue",
     "collocates": [],
     "commonMistakes": [
       "come to end (artikel eksik; 'come to an end' olmalı)",
@@ -25107,7 +25610,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "finish",
       "conclude",
       "draw to a close"
-    ]
+    ],
+    "meaningTr": "Sona ermek, bitmek; bir şeyin artık devam etmemesi."
   },
   {
     "id": "col_u51_0506",
@@ -25115,7 +25619,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Erken başlangıç; bir işe, yolculuğa veya güne normalden daha erken saatte başlama. Genellikle sabahın erken saatlerinde yapılan başlangıçları ifade eder ve çoğu zaman olumlu, verimli veya zorunlu bir durumu çağrıştırır.",
+    "meaning": "a start to a day, journey or activity at an earlier time than usual",
     "collocates": [],
     "commonMistakes": [
       "early beginning yerine her bağlamda early start tercih edilir; 'early beginning' daha çok kitaplarda/akademik metinlerde görülür.",
@@ -25157,7 +25661,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "head start",
       "early kick-off",
       "jump on the day"
-    ]
+    ],
+    "meaningTr": "Erken başlangıç; bir işe, yolculuğa veya güne normalden daha erken saatte başlama. Genellikle sabahın erken saatlerinde yapılan başlangıçları ifade eder ve çoğu zaman olumlu, verimli veya zorunlu bir durumu çağrıştırır."
   },
   {
     "id": "col_u51_0507",
@@ -25165,7 +25670,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "noun-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Nihai sonuç; bir sürecin, çalışmanın veya olaylar zincirinin en sonunda ortaya çıkan sonuç. Genellikle 'the end result' şeklinde kullanılır ve sürecin tamamını değerlendirirken vurgu yapmak için tercih edilir.",
+    "meaning": "the final result that comes after a process or series of events",
     "collocates": [],
     "commonMistakes": [
       "'end result' yerine 'last result' denmez; 'last result' genellikle bir serideki son sonuç anlamına gelir.",
@@ -25207,7 +25712,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "net result",
       "bottom line",
       "ultimate result"
-    ]
+    ],
+    "meaningTr": "Nihai sonuç; bir sürecin, çalışmanın veya olaylar zincirinin en sonunda ortaya çıkan sonuç. Genellikle 'the end result' şeklinde kullanılır ve sürecin tamamını değerlendirirken vurgu yapmak için tercih edilir."
   },
   {
     "id": "col_u51_0508",
@@ -25215,7 +25721,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Mükemmel son; bir olayın, günün, hikâyenin veya sürecin ideal, kusursuz biçimde sona ermesi. Genellikle olumlu ve tatmin edici bir kapanışı vurgular.",
+    "meaning": "an ideal and satisfying way for an event, day or story to finish",
     "collocates": [],
     "commonMistakes": [
       "'perfect end' yerine 'perfect finish' bazı bağlamlarda daha doğaldır; ancak 'perfect end' de yaygındır.",
@@ -25257,7 +25763,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "fitting conclusion",
       "perfect finish",
       "storybook ending"
-    ]
+    ],
+    "meaningTr": "Mükemmel son; bir olayın, günün, hikâyenin veya sürecin ideal, kusursuz biçimde sona ermesi. Genellikle olumlu ve tatmin edici bir kapanışı vurgular."
   },
   {
     "id": "col_u51_0509",
@@ -25265,7 +25772,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Tatilin sona ermesi; bir tatil döneminin bitmesi. Genellikle 'the holiday ended' veya 'when the holiday ended' şeklinde kullanılır ve dönüş, hüzün veya normale dönüş duygusunu taşır.",
+    "meaning": "the point at which a holiday finishes and normal life begins again",
     "collocates": [],
     "commonMistakes": [
       "'holiday ended' yerine 'holiday finished' da doğrudur; ancak 'holiday was ended' edilgen yapısı gereksizdir.",
@@ -25307,7 +25814,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "holiday was over",
       "vacation finished",
       "break ended"
-    ]
+    ],
+    "meaningTr": "Tatilin sona ermesi; bir tatil döneminin bitmesi. Genellikle 'the holiday ended' veya 'when the holiday ended' şeklinde kullanılır ve dönüş, hüzün veya normale dönüş duygusunu taşır."
   },
   {
     "id": "col_u51_0510",
@@ -25315,7 +25823,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yolculuğun sona ermesi; bir seyahatin, gezinin veya mecazi anlamda bir sürecin bitmesi. Hem gerçek yolculuklar hem de kişisel/gelişimsel süreçler için kullanılabilir.",
+    "meaning": "the point at which a trip or, figuratively, a process finishes",
     "collocates": [],
     "commonMistakes": [
       "'journey ended' yerine 'journey finished' da doğrudur; ancak 'journey was ended' gereksiz edilgendir.",
@@ -25357,7 +25865,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "trip ended",
       "voyage concluded",
       "travels finished"
-    ]
+    ],
+    "meaningTr": "Yolculuğun sona ermesi; bir seyahatin, gezinin veya mecazi anlamda bir sürecin bitmesi. Hem gerçek yolculuklar hem de kişisel/gelişimsel süreçler için kullanılabilir."
   },
   {
     "id": "col_u52_0511",
@@ -25365,7 +25874,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "bir şeyi yapabilme yeteneğine/kapasitesine sahip olmak; bir işi başarabilecek güçte olmak",
+    "meaning": "to be capable of doing something; to have the skill or power to do it",
     "collocates": [],
     "commonMistakes": [
       "have ability to (yanlış: 'the' artikeli atlanmamalı) -> have the ability to",
@@ -25407,7 +25916,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be able to",
       "possess the capacity to",
       "have the capacity to"
-    ]
+    ],
+    "meaningTr": "bir şeyi yapabilme yeteneğine/kapasitesine sahip olmak; bir işi başarabilecek güçte olmak"
   },
   {
     "id": "col_u52_0512",
@@ -25415,7 +25925,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "bir kişinin kariyerindeki veya hayatındaki en büyük, en önemli başarı; taçlandıran başarı",
+    "meaning": "the greatest and most important success of a person's career or life",
     "collocates": [],
     "commonMistakes": [
       "crown achievement (yanlış: sıfat 'crowning' olmalı, 'crown' değil) -> crowning achievement",
@@ -25452,7 +25962,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "finest accomplishment",
       "pinnacle of success",
       "lifetime achievement"
-    ]
+    ],
+    "meaningTr": "bir kişinin kariyerindeki veya hayatındaki en büyük, en önemli başarı; taçlandıran başarı"
   },
   {
     "id": "col_u52_0513",
@@ -25460,7 +25971,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "olağanüstü, dikkat çekici, kayda değer başarı; takdire değer bir başarı",
+    "meaning": "an impressive and notable success that deserves attention and admiration",
     "collocates": [],
     "commonMistakes": [
       "remarkable success (anlam daralması: 'achievement' daha geniş bir başarıyı ifade eder) -> remarkable achievement",
@@ -25502,7 +26013,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "outstanding accomplishment",
       "extraordinary feat",
       "notable success"
-    ]
+    ],
+    "meaningTr": "olağanüstü, dikkat çekici, kayda değer başarı; takdire değer bir başarı"
   },
   {
     "id": "col_u52_0514",
@@ -25510,7 +26022,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "birinin en iyi yönlerini ortaya çıkarmak; birini en iyi performansını göstermeye teşvik etmek",
+    "meaning": "to encourage someone to show their best qualities or perform at their highest level",
     "collocates": [],
     "commonMistakes": [
       "bring out the best of (edat hatası: 'of' değil 'in' kullanılır) -> bring out the best in",
@@ -25547,7 +26059,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "elicit the best from",
       "inspire someone to excel",
       "draw out someone's potential"
-    ]
+    ],
+    "meaningTr": "birinin en iyi yönlerini ortaya çıkarmak; birini en iyi performansını göstermeye teşvik etmek"
   },
   {
     "id": "col_u52_02",
@@ -25555,7 +26068,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "academic",
-    "meaning": "önemli bir atılım yapmak, çığır açan bir gelişme kaydetmek; engeli aşarak büyük bir ilerleme sağlamak",
+    "meaning": "to achieve an important discovery or advance that removes a barrier to progress",
     "collocates": [
       "remarkable breakthrough",
       "scientific breakthrough",
@@ -25601,7 +26114,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "make a major advance",
       "make significant progress",
       "score a breakthrough"
-    ]
+    ],
+    "meaningTr": "önemli bir atılım yapmak, çığır açan bir gelişme kaydetmek; engeli aşarak büyük bir ilerleme sağlamak"
   },
   {
     "id": "col_u52_0516",
@@ -25609,7 +26123,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Muhteşem/olağanüstü başarı; bir işin, projenin veya girişimin beklenenin çok üzerinde, göz kamaştırıcı biçimde başarılı olması.",
+    "meaning": "an extremely impressive and successful outcome, far beyond what was expected",
     "collocates": [],
     "commonMistakes": [
       "brilliant succeed (fiil ile karıştırma; 'brilliant success' isim öbeğidir)",
@@ -25651,7 +26165,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "roaring success",
       "huge success",
       "outstanding success"
-    ]
+    ],
+    "meaningTr": "Muhteşem/olağanüstü başarı; bir işin, projenin veya girişimin beklenenin çok üzerinde, göz kamaştırıcı biçimde başarılı olması."
   },
   {
     "id": "col_u52_0517",
@@ -25659,7 +26174,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İşe yaramak, faydalı olmak; genellikle ileride bir zamanda bir şeyin beklenmedik biçimde yararlı hale gelmesi.",
+    "meaning": "to become helpful or beneficial, often unexpectedly at a later time",
     "collocates": [],
     "commonMistakes": [
       "come useful (edat eksikliği; 'come in useful' olmalı)",
@@ -25701,7 +26216,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "come in handy",
       "be of use",
       "turn out to be helpful"
-    ]
+    ],
+    "meaningTr": "İşe yaramak, faydalı olmak; genellikle ileride bir zamanda bir şeyin beklenmedik biçimde yararlı hale gelmesi."
   },
   {
     "id": "col_adv_u08_0615",
@@ -25709,7 +26225,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "business",
-    "meaning": "Katkıda bulunmak, katkı sağlamak; bir işe, projeye, topluma veya tartışmaya olumlu bir şey eklemek.",
+    "meaning": "To give something useful or helpful to a project, group or discussion.",
     "collocates": [],
     "commonMistakes": [
       "do a contribution (yanlış fiil; 'make a contribution' olmalı)",
@@ -25751,7 +26267,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "contribute",
       "add value",
       "play a part"
-    ]
+    ],
+    "meaningTr": "Katkıda bulunmak, katkı sağlamak; bir işe, projeye, topluma veya tartışmaya olumlu bir şey eklemek."
   },
   {
     "id": "col_u52_0519",
@@ -25759,7 +26276,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Faydalı katkı; bir tartışmaya, projeye veya çalışmaya değer katan, işe yarar bir katkı.",
+    "meaning": "a helpful addition that adds value to a discussion, project or piece of work",
     "collocates": [],
     "commonMistakes": [
       "helpful contribution (kabul edilebilir ama 'useful contribution' daha yaygın ve doğaldır)",
@@ -25801,7 +26318,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "meaningful contribution",
       "worthwhile contribution",
       "positive contribution"
-    ]
+    ],
+    "meaningTr": "Faydalı katkı; bir tartışmaya, projeye veya çalışmaya değer katan, işe yarar bir katkı."
   },
   {
     "id": "col_u52_0520",
@@ -25809,7 +26327,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Tam bir başarısızlık, feci bir fiyasko; bir girişimin, planın veya olayın utanç verici derecede kötü sonuçlanması.",
+    "meaning": "a complete and embarrassing failure of a plan, attempt or event",
     "collocates": [],
     "commonMistakes": [
       "dismal fail (fiil-isim karışıklığı; 'dismal failure' isim öbeğidir)",
@@ -25851,7 +26369,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "total failure",
       "abject failure",
       "disastrous failure"
-    ]
+    ],
+    "meaningTr": "Tam bir başarısızlık, feci bir fiyasko; bir girişimin, planın veya olayın utanç verici derecede kötü sonuçlanması."
   },
   {
     "id": "col_u53_0521",
@@ -25859,7 +26378,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Olumsuz etki, zararlı sonuç; bir şeyin bir kişi, durum veya süreç üzerinde yarattığı kötü/istenmeyen etki.",
+    "meaning": "a harmful or negative influence that something has on a person, situation or process",
     "collocates": [],
     "commonMistakes": [
       "adverse affect (isim yerine fiil kullanmak)",
@@ -25901,7 +26420,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "harmful impact",
       "detrimental effect",
       "unfavorable impact"
-    ]
+    ],
+    "meaningTr": "Olumsuz etki, zararlı sonuç; bir şeyin bir kişi, durum veya süreç üzerinde yarattığı kötü/istenmeyen etki."
   },
   {
     "id": "col_u53_0522",
@@ -25909,7 +26429,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birini derinden etkilemek; bir kişinin duyguları, düşünceleri veya hayatı üzerinde güçlü ve kalıcı bir etki bırakmak.",
+    "meaning": "to have a strong and lasting emotional influence on someone",
     "collocates": [],
     "commonMistakes": [
       "effect someone deeply (affect fiilinin yerine effect ismini kullanmak)",
@@ -25951,7 +26471,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "touch someone deeply",
       "move someone deeply",
       "make a deep impression on someone"
-    ]
+    ],
+    "meaningTr": "Birini derinden etkilemek; bir kişinin duyguları, düşünceleri veya hayatı üzerinde güçlü ve kalıcı bir etki bırakmak."
   },
   {
     "id": "col_u53_0523",
@@ -25959,7 +26480,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Alarm yaratmak, endişe ve korku uyandırmak; genellikle beklenmedik bir durumun insanlarda tedirginlik yaratması.",
+    "meaning": "to make people feel worried, frightened or uneasy, often suddenly",
     "collocates": [],
     "commonMistakes": [
       "make alarm (cause yerine make kullanmak)",
@@ -26001,7 +26522,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "spark alarm",
       "give cause for alarm",
       "trigger concern"
-    ]
+    ],
+    "meaningTr": "Alarm yaratmak, endişe ve korku uyandırmak; genellikle beklenmedik bir durumun insanlarda tedirginlik yaratması."
   },
   {
     "id": "col_u53_0524",
@@ -26009,7 +26531,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kaygıya neden olmak, endişe yaratmak; bir durumun kişide huzursuzluk ve tedirginlik oluşturması.",
+    "meaning": "to make someone feel worried and nervous; to create a feeling of unease",
     "collocates": [],
     "commonMistakes": [
       "make anxiety (cause yerine make kullanmak)",
@@ -26051,7 +26573,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "provoke anxiety",
       "give rise to anxiety",
       "trigger anxiety"
-    ]
+    ],
+    "meaningTr": "Kaygıya neden olmak, endişe yaratmak; bir durumun kişide huzursuzluk ve tedirginlik oluşturması."
   },
   {
     "id": "col_u53_0525",
@@ -26059,7 +26582,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Eleştiri çekmek, eleştiriye maruz kalmak; bir davranış veya kararın başkaları tarafından olumsuz değerlendirilmesine yol açmak.",
+    "meaning": "to cause people to express disapproval of a decision, action or behaviour",
     "collocates": [],
     "commonMistakes": [
       "take criticism (attract yerine take kullanmak; anlam kayması olur)",
@@ -26101,7 +26624,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "come in for criticism",
       "provoke criticism",
       "invite criticism"
-    ]
+    ],
+    "meaningTr": "Eleştiri çekmek, eleştiriye maruz kalmak; bir davranış veya kararın başkaları tarafından olumsuz değerlendirilmesine yol açmak."
   },
   {
     "id": "col_u53_0526",
@@ -26109,7 +26633,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İlgi çekmek; bir konuya, ürüne veya kişiye başkalarının dikkatini ve merakını yöneltmek.",
+    "meaning": "To cause people to become interested in or curious about something.",
     "collocates": [],
     "commonMistakes": [
       "make interest (yanlış eşdizim; doğrusu attract/draw interest)",
@@ -26151,7 +26675,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "generate interest",
       "spark interest",
       "arouse interest"
-    ]
+    ],
+    "meaningTr": "İlgi çekmek; bir konuya, ürüne veya kişiye başkalarının dikkatini ve merakını yöneltmek."
   },
   {
     "id": "col_u53_0527",
@@ -26159,7 +26684,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Destek çekmek; bir fikre, projeye veya kişiye başkalarının onayını ve desteğini kazanmak.",
+    "meaning": "To gain the approval and backing of people for an idea or plan.",
     "collocates": [],
     "commonMistakes": [
       "take support (yanlış eşdizim; doğrusu attract/gain support)",
@@ -26201,7 +26726,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "win support",
       "garner support",
       "mobilize support"
-    ]
+    ],
+    "meaningTr": "Destek çekmek; bir fikre, projeye veya kişiye başkalarının onayını ve desteğini kazanmak."
   },
   {
     "id": "col_u53_0528",
@@ -26209,7 +26735,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Farkındalık yaratmak; bir sorun veya konu hakkında insanların bilinçlenmesini ve haberdar olmasını sağlamak.",
+    "meaning": "To make people more conscious and informed about an issue or problem.",
     "collocates": [],
     "commonMistakes": [
       "make awareness (yanlış eşdizim; doğrusu create/raise awareness)",
@@ -26251,7 +26777,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "build awareness",
       "promote awareness",
       "increase awareness"
-    ]
+    ],
+    "meaningTr": "Farkındalık yaratmak; bir sorun veya konu hakkında insanların bilinçlenmesini ve haberdar olmasını sağlamak."
   },
   {
     "id": "col_u53_0529",
@@ -26259,7 +26786,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Faydalı etki; bir şeyin olumlu, yararlı bir sonuç veya tesir yaratması.",
+    "meaning": "A positive or helpful result or influence that something has.",
     "collocates": [],
     "commonMistakes": [
       "beneficial affect (affect fiildir; isim olarak effect kullanılmalı)",
@@ -26301,7 +26828,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "favourable effect",
       "helpful effect",
       "constructive effect"
-    ]
+    ],
+    "meaningTr": "Faydalı etki; bir şeyin olumlu, yararlı bir sonuç veya tesir yaratması."
   },
   {
     "id": "col_u53_0530",
@@ -26309,7 +26837,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çöküşe yol açmak; bir sistemin, kurumun veya yapının çökmesine neden olmak.",
+    "meaning": "To cause a system, organization or structure to suddenly fail or fall apart.",
     "collocates": [],
     "commonMistakes": [
       "bring about the collaps (yanlış yazım; doğrusu collapse)",
@@ -26351,7 +26879,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "lead to the collapse",
       "trigger the collapse",
       "result in the collapse"
-    ]
+    ],
+    "meaningTr": "Çöküşe yol açmak; bir sistemin, kurumun veya yapının çökmesine neden olmak."
   },
   {
     "id": "col_u54_0531",
@@ -26359,7 +26888,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Keskin işitme; sesleri çok net ve ince ayrıntılarıyla algılama yeteneği. Genellikle hayvanlar veya olağanüstü duyma kabiliyeti olan insanlar için kullanılır.",
+    "meaning": "The ability to hear sounds very clearly and detect very slight differences.",
     "collocates": [],
     "commonMistakes": [
       "strong hearing (doğal değil; 'acute' veya 'keen' tercih edilir)",
@@ -26401,7 +26930,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "keen hearing",
       "heightened sense of hearing",
       "exceptional auditory perception"
-    ]
+    ],
+    "meaningTr": "Keskin işitme; sesleri çok net ve ince ayrıntılarıyla algılama yeteneği. Genellikle hayvanlar veya olağanüstü duyma kabiliyeti olan insanlar için kullanılır."
   },
   {
     "id": "col_u54_0532",
@@ -26409,7 +26939,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Keskin koku alma duyusu; kokuları çok hassas bir şekilde algılama yeteneği. Hayvanlar ve bazı insanlar için kullanılır.",
+    "meaning": "The ability to detect smells with great sensitivity and precision.",
     "collocates": [],
     "commonMistakes": [
       "strong sense of smell (kabul edilebilir ama 'acute' daha doğal ve yaygın)",
@@ -26451,7 +26981,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "sharp sense of smell",
       "heightened olfactory perception",
       "exceptional sense of smell"
-    ]
+    ],
+    "meaningTr": "Keskin koku alma duyusu; kokuları çok hassas bir şekilde algılama yeteneği. Hayvanlar ve bazı insanlar için kullanılır."
   },
   {
     "id": "col_u54_0533",
@@ -26459,7 +26990,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Zihni boşalmak; bir anda hiçbir şey hatırlayamamak veya düşünememek. Genellikle sınav, sunum veya stresli anlarda yaşanır.",
+    "meaning": "To suddenly be unable to remember or think of anything, often from stress.",
     "collocates": [],
     "commonMistakes": [
       "mind goes empty (doğal değil; 'blank' kullanılır)",
@@ -26501,7 +27032,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "memory fails",
       "brain freezes",
       "lose one's train of thought"
-    ]
+    ],
+    "meaningTr": "Zihni boşalmak; bir anda hiçbir şey hatırlayamamak veya düşünememek. Genellikle sınav, sunum veya stresli anlarda yaşanır."
   },
   {
     "id": "col_u54_0534",
@@ -26509,7 +27041,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir anıyı silmek, bastırmak veya unutmaya çalışmak; genellikle travmatik veya rahatsız edici bir anıyı bilinçli olarak bastırma anlamında kullanılır.",
+    "meaning": "To try to stop thinking about a painful or disturbing memory.",
     "collocates": [],
     "commonMistakes": [
       "delete a memory (dijital bağlamda kullanılır, insan anıları için 'blot out' tercih edilir)",
@@ -26551,7 +27083,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "suppress a memory",
       "block out a memory",
       "wipe out a memory"
-    ]
+    ],
+    "meaningTr": "Bir anıyı silmek, bastırmak veya unutmaya çalışmak; genellikle travmatik veya rahatsız edici bir anıyı bilinçli olarak bastırma anlamında kullanılır."
   },
   {
     "id": "col_u54_0535",
@@ -26559,7 +27092,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Tamamen unutmak, büsbütün hatırlamamak. Genellikle bir şeyi yapmayı tamamen unutmak anlamında günlük konuşmada kullanılır.",
+    "meaning": "To forget something completely, especially in informal everyday speech.",
     "collocates": [],
     "commonMistakes": [
       "cleanly forget (yanlış; 'clean' zarf olarak kullanılır burada)",
@@ -26601,7 +27134,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "totally forget",
       "clean forget (informal)",
       "draw a complete blank on"
-    ]
+    ],
+    "meaningTr": "Tamamen unutmak, büsbütün hatırlamamak. Genellikle bir şeyi yapmayı tamamen unutmak anlamında günlük konuşmada kullanılır."
   },
   {
     "id": "col_u54_0536",
@@ -26609,7 +27143,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birine bir ipucu vermek; bir kişiye bir konuyu anlamasına veya çözmesine yardımcı olacak küçük bir bilgi parçası sunmak. Genellikle bir bulmacayı, gizemi veya sorunu çözmeye yönelik hafif bir yönlendirme anlamı taşır.",
+    "meaning": "To give someone a small piece of information to help them solve or understand something.",
     "collocates": [],
     "commonMistakes": [
       "give a clue to someone (doğal sıralama: give someone a clue)",
@@ -26651,7 +27185,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "provide a hint",
       "offer a clue",
       "give a hint"
-    ]
+    ],
+    "meaningTr": "Birine bir ipucu vermek; bir kişiye bir konuyu anlamasına veya çözmesine yardımcı olacak küçük bir bilgi parçası sunmak. Genellikle bir bulmacayı, gizemi veya sorunu çözmeye yönelik hafif bir yönlendirme anlamı taşır."
   },
   {
     "id": "col_u54_0537",
@@ -26659,7 +27194,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Tamamen unutmak; bir şeyi hatırlamamak, akıldan tamamen çıkarmak. 'Completely' zarfı unutma eyleminin derecesini vurgular ve genellikle bir şeyi hatırlamak için hiçbir çaba gösterilmediğini veya hafızada hiç iz kalmadığını belirtir.",
+    "meaning": "To fail to remember something at all, with no memory of it remaining.",
     "collocates": [],
     "commonMistakes": [
       "forget completely (vurgu için doğal sıralama: completely forget)",
@@ -26701,7 +27236,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "entirely forget",
       "utterly forget",
       "clean forget"
-    ]
+    ],
+    "meaningTr": "Tamamen unutmak; bir şeyi hatırlamamak, akıldan tamamen çıkarmak. 'Completely' zarfı unutma eyleminin derecesini vurgular ve genellikle bir şeyi hatırlamak için hiçbir çaba gösterilmediğini veya hafızada hiç iz kalmadığını belirtir."
   },
   {
     "id": "col_u54_0538",
@@ -26709,7 +27245,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Net bir şekilde hatırlamak; bir olayı veya bilgiyi çok açık, belirgin ve ayrıntılı biçimde anımsamak. 'Distinctly' zarfı hatırlamanın bulanık değil, kesin ve canlı olduğunu vurgular.",
+    "meaning": "To recall something clearly and with confidence, in vivid detail.",
     "collocates": [],
     "commonMistakes": [
       "remember distinctly (vurgu için doğal sıralama: distinctly remember)",
@@ -26751,7 +27287,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "vividly remember",
       "perfectly remember",
       "well remember"
-    ]
+    ],
+    "meaningTr": "Net bir şekilde hatırlamak; bir olayı veya bilgiyi çok açık, belirgin ve ayrıntılı biçimde anımsamak. 'Distinctly' zarfı hatırlamanın bulanık değil, kesin ve canlı olduğunu vurgular."
   },
   {
     "id": "col_u54_0539",
@@ -26759,7 +27296,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "En erken hatıra; bir kişinin hayatında hatırlayabildiği en eski anı. Genellikle çocukluk dönemine ait ilk bilinçli anı ifade eder ve kişisel anlatılarda, psikoloji metinlerinde sık kullanılır.",
+    "meaning": "The first thing a person can remember from their childhood.",
     "collocates": [],
     "commonMistakes": [
       "most early memory (yanlış; doğrusu: earliest memory)",
@@ -26801,7 +27338,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "earliest recollection",
       "childhood memory",
       "first recollection"
-    ]
+    ],
+    "meaningTr": "En erken hatıra; bir kişinin hayatında hatırlayabildiği en eski anı. Genellikle çocukluk dönemine ait ilk bilinçli anı ifade eder ve kişisel anlatılarda, psikoloji metinlerinde sık kullanılır."
   },
   {
     "id": "col_u54_0540",
@@ -26809,7 +27347,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Unutulmaz bir deneyim; akıldan hiç çıkmayacak kadar etkileyici, özel veya yoğun bir yaşantı. Genellikle seyahat, etkinlik, duygusal an veya hayat değiştiren olaylar için kullanılır.",
+    "meaning": "An experience so special or powerful that it is never forgotten.",
     "collocates": [],
     "commonMistakes": [
       "unforgettable memory (deneyim yerine anı için daha uygun; experience tercih edilir)",
@@ -26851,7 +27389,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "once-in-a-lifetime experience",
       "life-changing experience",
       "indelible experience"
-    ]
+    ],
+    "meaningTr": "Unutulmaz bir deneyim; akıldan hiç çıkmayacak kadar etkileyici, özel veya yoğun bir yaşantı. Genellikle seyahat, etkinlik, duygusal an veya hayat değiştiren olaylar için kullanılır."
   },
   {
     "id": "col_u55_0541",
@@ -26859,7 +27398,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Görüş ayrılığını kabul etmek; tartışmayı uzatmadan farklı düşündüğünüzü kabul edip konuyu kapatmak. Genellikle dostane bir şekilde 'aynı fikirde olmadığımızı kabul edelim' anlamında kullanılır.",
+    "meaning": "To accept that you disagree and stop arguing, often in a friendly way.",
     "collocates": [],
     "commonMistakes": [
       "agree to different (yanlış kelime; doğrusu 'agree to differ')",
@@ -26901,7 +27440,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "let's leave it there",
       "accept our differences",
       "settle our differences"
-    ]
+    ],
+    "meaningTr": "Görüş ayrılığını kabul etmek; tartışmayı uzatmadan farklı düşündüğünüzü kabul edip konuyu kapatmak. Genellikle dostane bir şekilde 'aynı fikirde olmadığımızı kabul edelim' anlamında kullanılır."
   },
   {
     "id": "col_u55_0542",
@@ -26909,7 +27449,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Tamamen katılmak; bir görüşe istisnasız, bütünüyle hak vermek. 'Entirely' zarfı 'agree' fiilini güçlendirir ve %100 katılımı ifade eder.",
+    "meaning": "To agree with an opinion completely, without any doubt or exception.",
     "collocates": [],
     "commonMistakes": [
       "entire agree (zarf yerine sıfat kullanımı)",
@@ -26951,7 +27491,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "totally agree",
       "fully agree",
       "absolutely agree"
-    ]
+    ],
+    "meaningTr": "Tamamen katılmak; bir görüşe istisnasız, bütünüyle hak vermek. 'Entirely' zarfı 'agree' fiilini güçlendirir ve %100 katılımı ifade eder."
   },
   {
     "id": "col_u55_131",
@@ -26959,7 +27500,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Genellikle katılma eğiliminde olmak; tamamen emin olmamakla birlikte büyük ölçüde aynı fikirde olmak. 'Tend to' yapısı bir eğilim veya genel yatkınlık bildirir.",
+    "meaning": "To be likely to agree with something, though not completely certain.",
     "collocates": [],
     "commonMistakes": [
       "tend agreeing (yanlış yapı; 'tend to agree' olmalı)",
@@ -27001,7 +27542,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "mostly agree",
       "be inclined to agree",
       "lean towards agreeing"
-    ]
+    ],
+    "meaningTr": "Genellikle katılma eğiliminde olmak; tamamen emin olmamakla birlikte büyük ölçüde aynı fikirde olmak. 'Tend to' yapısı bir eğilim veya genel yatkınlık bildirir."
   },
   {
     "id": "col_u55_0544",
@@ -27009,7 +27551,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yürekten katılmak; bir görüşü coşkuyla, içtenlikle ve tam bir inançla desteklemek. 'Wholeheartedly' zarfı duygusal bir bağlılık ve güçlü onay ifade eder.",
+    "meaning": "To support an opinion with complete enthusiasm and sincere conviction.",
     "collocates": [],
     "commonMistakes": [
       "wholeheart agree (zarf eki eksik; 'wholeheartedly' olmalı)",
@@ -27051,7 +27593,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "strongly agree",
       "completely agree",
       "enthusiastically agree"
-    ]
+    ],
+    "meaningTr": "Yürekten katılmak; bir görüşü coşkuyla, içtenlikle ve tam bir inançla desteklemek. 'Wholeheartedly' zarfı duygusal bir bağlılık ve güçlü onay ifade eder."
   },
   {
     "id": "col_u55_0545",
@@ -27059,7 +27602,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hemfikir olmak; bir konuda aynı görüşü paylaşmak. Genellikle resmi veya iş bağlamında kullanılır ve tarafların ortak bir karara vardığını gösterir.",
+    "meaning": "To share the same opinion as someone, especially in formal contexts.",
     "collocates": [],
     "commonMistakes": [
       "be in agree (isim yerine fiil kullanımı; 'agreement' olmalı)",
@@ -27101,7 +27644,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "see eye to eye",
       "be in accord",
       "share the same view"
-    ]
+    ],
+    "meaningTr": "Hemfikir olmak; bir konuda aynı görüşü paylaşmak. Genellikle resmi veya iş bağlamında kullanılır ve tarafların ortak bir karara vardığını gösterir."
   },
   {
     "id": "col_u55_0546",
@@ -27109,7 +27653,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Tamamen hemfikir olma, her konuda aynı görüşte olma durumu. Bir konuda hiçbir anlaşmazlık olmadan tam uyum içinde olmayı ifade eder.",
+    "meaning": "To share exactly the same view with no disagreement at all.",
     "collocates": [],
     "commonMistakes": [
       "in completely agreement (zarf + isim yapısı yanlış; 'complete' sıfat olmalı)",
@@ -27151,7 +27695,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "in full agreement",
       "of the same mind",
       "in perfect accord"
-    ]
+    ],
+    "meaningTr": "Tamamen hemfikir olma, her konuda aynı görüşte olma durumu. Bir konuda hiçbir anlaşmazlık olmadan tam uyum içinde olmayı ifade eder."
   },
   {
     "id": "col_u55_0547",
@@ -27159,7 +27704,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Oybirliğiyle varılan anlaşma; bir grup içindeki herkesin istisnasız aynı fikirde olması. Genellikle resmi toplantı, kurul veya oylama bağlamlarında kullanılır.",
+    "meaning": "A decision or opinion that every member of a group supports.",
     "collocates": [],
     "commonMistakes": [
       "unanimous agree (isim yerine fiil kullanımı yanlış; 'agreement' olmalı)",
@@ -27201,7 +27746,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "full consensus",
       "unanimous consent",
       "complete consensus"
-    ]
+    ],
+    "meaningTr": "Oybirliğiyle varılan anlaşma; bir grup içindeki herkesin istisnasız aynı fikirde olması. Genellikle resmi toplantı, kurul veya oylama bağlamlarında kullanılır."
   },
   {
     "id": "col_u55_133",
@@ -27209,7 +27755,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir tartışmaya girmek, münakaşaya başlamak. Genellikle isteyerek veya farkında olarak bir tartışmanın içine dahil olmayı ifade eder; bazen kaçınılması gereken bir durumu belirtir.",
+    "meaning": "To become involved in a disagreement or quarrel with someone.",
     "collocates": [],
     "commonMistakes": [
       "enter an argument (edat eksik; 'enter into' kalıbı gerekir)",
@@ -27251,7 +27797,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "become involved in an argument",
       "engage in an argument",
       "start an argument"
-    ]
+    ],
+    "meaningTr": "Bir tartışmaya girmek, münakaşaya başlamak. Genellikle isteyerek veya farkında olarak bir tartışmanın içine dahil olmayı ifade eder; bazen kaçınılması gereken bir durumu belirtir."
   },
   {
     "id": "col_u55_0549",
@@ -27259,7 +27806,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hararetli tartışma, kızgın münakaşa. Tarafların yüksek sesle ve öfkeyle fikir ayrılığını dile getirdiği gergin bir tartışma anlamına gelir.",
+    "meaning": "An angry disagreement in which people speak loudly and emotionally.",
     "collocates": [],
     "commonMistakes": [
       "hot argument (Türkçe'den birebir çeviri; İngilizce'de 'heated argument' kullanılır)",
@@ -27301,7 +27848,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "bitter argument",
       "stormy argument",
       "acrimonious argument"
-    ]
+    ],
+    "meaningTr": "Hararetli tartışma, kızgın münakaşa. Tarafların yüksek sesle ve öfkeyle fikir ayrılığını dile getirdiği gergin bir tartışma anlamına gelir."
   },
   {
     "id": "col_u55_0550",
@@ -27309,7 +27857,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Görüş ayrılıkları ortaya çıkmak, anlaşmazlıklar baş göstermek. Genellikle bir süreç veya ilişki içinde beklenmedik şekilde farklı görüşlerin belirmesi anlamında kullanılır.",
+    "meaning": "Disagreements begin to appear between people, often unexpectedly.",
     "collocates": [],
     "commonMistakes": [
       "differences rise (yanlış fiil; 'arise' kullanılmalı, 'rise' değil)",
@@ -27351,7 +27899,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "disputes arise",
       "conflicts arise",
       "differences emerge"
-    ]
+    ],
+    "meaningTr": "Görüş ayrılıkları ortaya çıkmak, anlaşmazlıklar baş göstermek. Genellikle bir süreç veya ilişki içinde beklenmedik şekilde farklı görüşlerin belirmesi anlamında kullanılır."
   },
   {
     "id": "col_u56_0551",
@@ -27359,7 +27908,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birini rahat bırakmak, karışmamak, kendi haline bırakmak; bir kişiye müdahale etmeyi veya onu rahatsız etmeyi bırakmak.",
+    "meaning": "To stop disturbing or interfering with someone and let them be.",
     "collocates": [],
     "commonMistakes": [
       "leave someone lonely (yanlış; 'lonely bırakmak' değil, rahatsız etmemek anlamı)",
@@ -27401,7 +27950,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "stop bothering someone",
       "give someone space",
       "back off"
-    ]
+    ],
+    "meaningTr": "Birini rahat bırakmak, karışmamak, kendi haline bırakmak; bir kişiye müdahale etmeyi veya onu rahatsız etmeyi bırakmak."
   },
   {
     "id": "col_u56_0552",
@@ -27409,7 +27959,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Görüşleri tamamen zıt olmak, birbirinden çok uzak olmak; iki kişi veya fikrin arasında büyük bir fark bulunmak.",
+    "meaning": "To have completely opposite views or to be very different from each other.",
     "collocates": [],
     "commonMistakes": [
       "poles away (yanlış; doğrusu 'poles apart')",
@@ -27446,7 +27996,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "at opposite extremes",
       "diametrically opposed",
       "completely at odds"
-    ]
+    ],
+    "meaningTr": "Görüşleri tamamen zıt olmak, birbirinden çok uzak olmak; iki kişi veya fikrin arasında büyük bir fark bulunmak."
   },
   {
     "id": "col_u56_0553",
@@ -27454,7 +28005,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Varsayımda bulunmak, bir şeyi kanıt olmadan doğru kabul etmek; bir konuda tahmin yürütmek.",
+    "meaning": "To accept something as true without having proof or evidence.",
     "collocates": [],
     "commonMistakes": [
       "do an assumption (yanlış; doğrusu 'make an assumption')",
@@ -27491,7 +28042,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "take for granted",
       "jump to conclusions",
       "presuppose"
-    ]
+    ],
+    "meaningTr": "Varsayımda bulunmak, bir şeyi kanıt olmadan doğru kabul etmek; bir konuda tahmin yürütmek."
   },
   {
     "id": "col_u56_0554",
@@ -27499,7 +28051,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir şeye önem vermek, değer atfetmek; bir konuyu ciddiye almak veya ona ağırlık vermek.",
+    "meaning": "To treat something as important and give it serious attention.",
     "collocates": [],
     "commonMistakes": [
       "give importance to (kabul edilebilir ama 'attach importance to' daha doğal ve yaygın)",
@@ -27536,7 +28088,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "give weight to",
       "set store by",
       "value"
-    ]
+    ],
+    "meaningTr": "Bir şeye önem vermek, değer atfetmek; bir konuyu ciddiye almak veya ona ağırlık vermek."
   },
   {
     "id": "col_u56_0555",
@@ -27544,7 +28097,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Yaygın inanış, halk arasında kabul gören görüş; çoğu insanın doğru olduğuna inandığı şey.",
+    "meaning": "A view that is widely held by ordinary people, often not proven.",
     "collocates": [],
     "commonMistakes": [
       "popular believe (yanlış; isim hali 'belief' olmalı)",
@@ -27581,7 +28134,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "widespread belief",
       "general belief",
       "conventional wisdom"
-    ]
+    ],
+    "meaningTr": "Yaygın inanış, halk arasında kabul gören görüş; çoğu insanın doğru olduğuna inandığı şey."
   },
   {
     "id": "col_u56_0556",
@@ -27589,7 +28143,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Sarsılmaz inanç; hiçbir kanıt veya olayla değiştirilemeyecek kadar güçlü, köklü inanç.",
+    "meaning": "A belief so strong that nothing can weaken or change it.",
     "collocates": [],
     "commonMistakes": [
       "unshakable belief (yazım hatası; doğru yazım 'unshakeable' veya 'unshakable' olabilir ama bu ünitede 'unshakeable' tercih edilir)",
@@ -27631,7 +28185,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "deep-rooted conviction",
       "absolute certainty",
       "rock-solid faith"
-    ]
+    ],
+    "meaningTr": "Sarsılmaz inanç; hiçbir kanıt veya olayla değiştirilemeyecek kadar güçlü, köklü inanç."
   },
   {
     "id": "col_u56_0557",
@@ -27639,7 +28194,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İnançlar bütünü; bir kişinin veya grubun sahip olduğu birbiriyle ilişkili inançlar topluluğu.",
+    "meaning": "A group of connected beliefs held by a person or group.",
     "collocates": [],
     "commonMistakes": [
       "set of believes (yanlış kelime; 'beliefs' doğru çoğul halidir)",
@@ -27681,7 +28236,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "belief system",
       "value system",
       "set of values"
-    ]
+    ],
+    "meaningTr": "İnançlar bütünü; bir kişinin veya grubun sahip olduğu birbiriyle ilişkili inançlar topluluğu."
   },
   {
     "id": "col_u56_0558",
@@ -27689,7 +28245,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "İnanmak için bir sebebi olmak; bir şeyin doğru olduğuna dair mantıklı bir gerekçeye sahip olmak.",
+    "meaning": "To have a sensible basis for thinking that something is true.",
     "collocates": [],
     "commonMistakes": [
       "have reason to belief (yanlış kelime türü; 'believe' fiil olmalı)",
@@ -27731,7 +28287,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have cause to believe",
       "be justified in believing",
       "have good reason to think"
-    ]
+    ],
+    "meaningTr": "İnanmak için bir sebebi olmak; bir şeyin doğru olduğuna dair mantıklı bir gerekçeye sahip olmak."
   },
   {
     "id": "col_u56_0559",
@@ -27739,7 +28296,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kesin olarak inanmak; bir görüşe güçlü ve sarsılmaz bir şekilde bağlı olmak.",
+    "meaning": "To hold an opinion strongly and with complete confidence.",
     "collocates": [],
     "commonMistakes": [
       "hardly believe (anlam tamamen farklı; 'neredeyse inanamamak' demek)",
@@ -27781,7 +28338,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "truly believe",
       "deeply believe",
       "be convinced"
-    ]
+    ],
+    "meaningTr": "Kesin olarak inanmak; bir görüşe güçlü ve sarsılmaz bir şekilde bağlı olmak."
   },
   {
     "id": "col_u56_0560",
@@ -27789,7 +28347,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir şeye çok inanan kimse; bir şeyin yararına veya doğruluğuna güçlü şekilde inanan kişi.",
+    "meaning": "A person who strongly believes in the value or benefit of something.",
     "collocates": [],
     "commonMistakes": [
       "great believer of (yanlış edat; doğrusu 'believer in')",
@@ -27831,7 +28389,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "firm supporter of",
       "passionate believer in",
       "devoted follower of"
-    ]
+    ],
+    "meaningTr": "Bir şeye çok inanan kimse; bir şeyin yararına veya doğruluğuna güçlü şekilde inanan kişi."
   },
   {
     "id": "col_u57_0561",
@@ -27839,7 +28398,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birine bir konuda kesin ve güçlü bir tavsiyede bulunmak; 'şiddetle tavsiye etmek' veya 'kesinlikle önermek' anlamında kullanılır. Genellikle bir uzmanın, doktorun veya otoritenin ciddi önerisini ifade eder.",
+    "meaning": "To give someone firm and serious advice about what they should do.",
     "collocates": [],
     "commonMistakes": [
       "strongly advice (isim 'advice' fiil yerine kullanılamaz; doğrusu 'strongly advise')",
@@ -27881,7 +28440,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "urge someone to",
       "firmly suggest",
       "strongly recommend"
-    ]
+    ],
+    "meaningTr": "Birine bir konuda kesin ve güçlü bir tavsiyede bulunmak; 'şiddetle tavsiye etmek' veya 'kesinlikle önermek' anlamında kullanılır. Genellikle bir uzmanın, doktorun veya otoritenin ciddi önerisini ifade eder."
   },
   {
     "id": "col_u57_0562",
@@ -27889,7 +28449,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir konuyu tartışıp değerlendirdikten sonra sonunda bir karara varmak; 'bir karara varmak' veya 'bir sonuca ulaşmak' anlamındadır. Genellikle uzun bir düşünme veya müzakere sürecinin sonucunu ifade eder.",
+    "meaning": "To reach a conclusion after discussing and thinking about something carefully.",
     "collocates": [],
     "commonMistakes": [
       "arrive to a decision (doğrusu 'arrive at a decision')",
@@ -27931,7 +28491,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "come to a decision",
       "make a decision",
       "settle on something"
-    ]
+    ],
+    "meaningTr": "Bir konuyu tartışıp değerlendirdikten sonra sonunda bir karara varmak; 'bir karara varmak' veya 'bir sonuca ulaşmak' anlamındadır. Genellikle uzun bir düşünme veya müzakere sürecinin sonucunu ifade eder."
   },
   {
     "id": "col_u57_0563",
@@ -27939,7 +28500,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çok güçlü, yoğun ve karşı konulması zor bir istek veya arzu; 'yakıcı arzu', 'içten gelen güçlü istek' anlamına gelir. Genellikle bir hedefe ulaşma veya bir şeyi elde etme konusundaki derin tutkuyu ifade eder.",
+    "meaning": "A very strong and intense wish to have or achieve something.",
     "collocates": [],
     "commonMistakes": [
       "burning wish (doğal değil; 'burning desire' kullanılır)",
@@ -27981,7 +28542,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "overwhelming urge",
       "deep longing",
       "powerful yearning"
-    ]
+    ],
+    "meaningTr": "Çok güçlü, yoğun ve karşı konulması zor bir istek veya arzu; 'yakıcı arzu', 'içten gelen güçlü istek' anlamına gelir. Genellikle bir hedefe ulaşma veya bir şeyi elde etme konusundaki derin tutkuyu ifade eder."
   },
   {
     "id": "col_u57_0564",
@@ -27989,7 +28551,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir şeyi yapma fırsatına sahip olmak; 'şans verilmek', 'fırsat tanınmak' anlamına gelir. Genellikle birinin yeteneklerini göstermesi veya bir deneyim yaşaması için imkân sunulmasını ifade eder.",
+    "meaning": "To be offered the opportunity to do something or show what you can do.",
     "collocates": [],
     "commonMistakes": [
       "be given the possibility (doğal değil; 'be given the chance/opportunity' kullanılır)",
@@ -28031,7 +28593,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be offered the chance",
       "get the chance",
       "be allowed the opportunity"
-    ]
+    ],
+    "meaningTr": "Bir şeyi yapma fırsatına sahip olmak; 'şans verilmek', 'fırsat tanınmak' anlamına gelir. Genellikle birinin yeteneklerini göstermesi veya bir deneyim yaşaması için imkân sunulmasını ifade eder."
   },
   {
     "id": "col_u57_0565",
@@ -28039,7 +28602,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Zor bir karar vermek zorunda kalmak; iki veya daha fazla seçenek arasında sıkıntılı bir tercih yapmak durumunda olmak. 'Zor bir seçimle karşı karşıya kalmak' anlamına gelir.",
+    "meaning": "To be in a situation where you must choose between difficult alternatives.",
     "collocates": [],
     "commonMistakes": [
       "face a difficult selection (doğal değil; 'choice' veya 'decision' kullanılır)",
@@ -28081,7 +28644,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be faced with a hard choice",
       "confront a difficult decision",
       "have a difficult choice to make"
-    ]
+    ],
+    "meaningTr": "Zor bir karar vermek zorunda kalmak; iki veya daha fazla seçenek arasında sıkıntılı bir tercih yapmak durumunda olmak. 'Zor bir seçimle karşı karşıya kalmak' anlamına gelir."
   },
   {
     "id": "col_u57_0566",
@@ -28089,7 +28653,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Seçme hakkına/imkânına sahip olmak; birden fazla seçenek arasından istediğini seçebilmek. Genellikle 'have a choice between X and Y' veya 'have no choice' kalıplarıyla kullanılır.",
+    "meaning": "To have the opportunity or right to choose between different possibilities.",
     "collocates": [],
     "commonMistakes": [
       "have a choose (yanlış; 'choose' fiildir, isim olarak kullanılmaz)",
@@ -28131,7 +28695,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have options",
       "be able to choose",
       "have a say"
-    ]
+    ],
+    "meaningTr": "Seçme hakkına/imkânına sahip olmak; birden fazla seçenek arasından istediğini seçebilmek. Genellikle 'have a choice between X and Y' veya 'have no choice' kalıplarıyla kullanılır."
   },
   {
     "id": "col_u57_0567",
@@ -28139,7 +28704,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Zor/çetin bir seçim; her iki seçeneğin de olumlu ya da olumsuz yönleri olduğu için karar vermenin güç olduğu durum. 'Tough' burada 'difficult' anlamındadır.",
+    "meaning": "A decision that is hard to make because both options have advantages and disadvantages.",
     "collocates": [],
     "commonMistakes": [
       "strong choice (yanlış; 'strong' bu anlamda kullanılmaz)",
@@ -28176,7 +28741,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "hard decision",
       "tricky decision",
       "tough call"
-    ]
+    ],
+    "meaningTr": "Zor/çetin bir seçim; her iki seçeneğin de olumlu ya da olumsuz yönleri olduğu için karar vermenin güç olduğu durum. 'Tough' burada 'difficult' anlamındadır."
   },
   {
     "id": "col_u57_0568",
@@ -28184,7 +28750,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir konuda uzun düşünme veya tartışma sonrasında nihayet karar vermek; karara varmak. Süreç sonunda varılan sonucu vurgular.",
+    "meaning": "To finally decide something after thinking or discussing it for some time.",
     "collocates": [],
     "commonMistakes": [
       "come to a decide (yanlış; 'decide' fiildir, isim 'decision' gerekir)",
@@ -28226,7 +28792,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "arrive at a decision",
       "make a decision",
       "settle on something"
-    ]
+    ],
+    "meaningTr": "Bir konuda uzun düşünme veya tartışma sonrasında nihayet karar vermek; karara varmak. Süreç sonunda varılan sonucu vurgular."
   },
   {
     "id": "col_u57_0569",
@@ -28234,7 +28801,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Seçenekleri dikkatlice değerlendirmek, olasılıkları gözden geçirmek; karar vermeden önce tüm alternatifleri düşünmek.",
+    "meaning": "To think carefully about the different possibilities before making a choice.",
     "collocates": [],
     "commonMistakes": [
       "consider the choices (mümkün ama 'options' bu kalıpta daha doğal ve yaygındır)",
@@ -28271,7 +28838,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "look at the options",
       "evaluate the alternatives",
       "review the possibilities"
-    ]
+    ],
+    "meaningTr": "Seçenekleri dikkatlice değerlendirmek, olasılıkları gözden geçirmek; karar vermeden önce tüm alternatifleri düşünmek."
   },
   {
     "id": "col_u57_0570",
@@ -28279,7 +28847,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Verdiği kararı gerekçeler sunarak savunmak, başkalarının eleştirilerine karşı kararın arkasında durmak.",
+    "meaning": "To give reasons to show that a decision you made was right or reasonable.",
     "collocates": [],
     "commonMistakes": [
       "defend your decide (yanlış; 'decide' fiildir, isim 'decision' gerekir)",
@@ -28321,7 +28889,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "stand by your decision",
       "back up your decision",
       "support your decision"
-    ]
+    ],
+    "meaningTr": "Verdiği kararı gerekçeler sunarak savunmak, başkalarının eleştirilerine karşı kararın arkasında durmak."
   },
   {
     "id": "col_u58_0571",
@@ -28329,7 +28898,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir gerçeği, suçlamayı veya durumu tamamen ve koşulsuz olarak kabul etmek; hiçbir itirazda bulunmadan onaylamak.",
+    "meaning": "To completely agree that something is true and stop doubting or resisting it.",
     "collocates": [],
     "commonMistakes": [
       "fully agree with (bir suçlama veya gerçek için 'agree with' kullanmak yanlış olabilir; 'accept' daha uygun)",
@@ -28371,7 +28940,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "wholeheartedly accept",
       "acknowledge fully",
       "come to terms with"
-    ]
+    ],
+    "meaningTr": "Bir gerçeği, suçlamayı veya durumu tamamen ve koşulsuz olarak kabul etmek; hiçbir itirazda bulunmadan onaylamak."
   },
   {
     "id": "col_u58_0572",
@@ -28379,7 +28949,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir suçlamayı reddetmek, kabul etmemek; kendisine yöneltilen bir suç veya ithamı yalanlamak.",
+    "meaning": "To say that a claim that you have done something wrong is not true.",
     "collocates": [],
     "commonMistakes": [
       "refuse an accusation (yanlış eşdizim; 'refuse' bir teklifi reddetmek için kullanılır, suçlama için 'deny' veya 'reject' kullanılır)",
@@ -28421,7 +28991,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "refute an accusation",
       "dispute an accusation",
       "deny a charge"
-    ]
+    ],
+    "meaningTr": "Bir suçlamayı reddetmek, kabul etmemek; kendisine yöneltilen bir suç veya ithamı yalanlamak."
   },
   {
     "id": "col_u58_0573",
@@ -28429,7 +29000,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir suçlama veya ithamla karşı karşıya kalmak; suçlanma durumuyla yüzleşmek zorunda olmak.",
+    "meaning": "To be in a situation where someone claims you have done something wrong.",
     "collocates": [],
     "commonMistakes": [
       "face to an accusation (yanlış edat kullanımı; 'face' doğrudan nesne alır, 'to' almaz)",
@@ -28471,7 +29042,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be accused of something",
       "come under accusation",
       "be charged with something"
-    ]
+    ],
+    "meaningTr": "Bir suçlama veya ithamla karşı karşıya kalmak; suçlanma durumuyla yüzleşmek zorunda olmak."
   },
   {
     "id": "col_u58_0574",
@@ -28479,7 +29051,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birini alenen, açıkça suçlamak; gizlemeden, herkesin önünde itham etmek.",
+    "meaning": "To say publicly and without hiding it that someone has done something wrong.",
     "collocates": [],
     "commonMistakes": [
       "openly blame (anlamca yakın olsa da 'accuse' daha resmi ve güçlüdür; 'blame' genellikle 'for' ile kullanılır)",
@@ -28521,7 +29093,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "blatantly accuse",
       "point the finger at",
       "level accusations against"
-    ]
+    ],
+    "meaningTr": "Birini alenen, açıkça suçlamak; gizlemeden, herkesin önünde itham etmek."
   },
   {
     "id": "col_u58_0575",
@@ -28529,7 +29102,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birini haksız yere suçlamak; yanlış bir şekilde itham etmek, suçsuz olduğu halde suçlamak.",
+    "meaning": "To say someone has done something wrong when they are in fact innocent.",
     "collocates": [],
     "commonMistakes": [
       "wrong accuse (yanlış kelime türü; 'wrongly' zarf olmalı)",
@@ -28571,7 +29144,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "unjustly accuse",
       "mistakenly accuse",
       "wrongfully accuse"
-    ]
+    ],
+    "meaningTr": "Birini haksız yere suçlamak; yanlış bir şekilde itham etmek, suçsuz olduğu halde suçlamak."
   },
   {
     "id": "col_u58_0576",
@@ -28579,7 +29153,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Geniş çevrelerce kabul edilen, herkes tarafından bilinen ve doğruluğu tartışmasız sayılan (bir gerçek, başarı veya durum).",
+    "meaning": "Accepted as true by most people and generally not questioned.",
     "collocates": [],
     "commonMistakes": [
       "widely accepted as true olarak 'widely acknowledged as true' yerine kullanmak bazen gereksiz olur; 'acknowledged' zaten kabul anlamı taşır.",
@@ -28621,7 +29195,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "universally accepted",
       "broadly accepted",
       "commonly agreed"
-    ]
+    ],
+    "meaningTr": "Geniş çevrelerce kabul edilen, herkes tarafından bilinen ve doğruluğu tartışmasız sayılan (bir gerçek, başarı veya durum)."
   },
   {
     "id": "col_u58_0577",
@@ -28629,7 +29204,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birbiriyle çelişen, tutarsız öğütler veya tavsiyeler; aynı konuda birbirine zıt yönlendirmeler.",
+    "meaning": "Suggestions or guidance that conflict with each other and give opposite directions.",
     "collocates": [],
     "commonMistakes": [
       "'contradictive advice' demek yanlıştır; doğru sıfat 'contradictory'dir.",
@@ -28671,7 +29246,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "inconsistent advice",
       "mixed messages",
       "opposing recommendations"
-    ]
+    ],
+    "meaningTr": "Birbiriyle çelişen, tutarsız öğütler veya tavsiyeler; aynı konuda birbirine zıt yönlendirmeler."
   },
   {
     "id": "col_u58_0578",
@@ -28679,7 +29255,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir suçlama veya iddiayı reddetmek, kabul etmemek; kendisine yöneltilen bir suçlamanın doğru olmadığını söylemek.",
+    "meaning": "To state that a claim that you have done something wrong is untrue.",
     "collocates": [],
     "commonMistakes": [
       "'refuse an allegation' demek yanlıştır; 'refuse' bir teklifi reddetmek için kullanılır, suçlama için 'deny' kullanılır.",
@@ -28721,7 +29297,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "refute an allegation",
       "dismiss an allegation",
       "deny a claim"
-    ]
+    ],
+    "meaningTr": "Bir suçlama veya iddiayı reddetmek, kabul etmemek; kendisine yöneltilen bir suçlamanın doğru olmadığını söylemek."
   },
   {
     "id": "col_u58_0579",
@@ -28729,7 +29306,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir suçlama veya iddia ortaya atmak; birinin yanlış bir şey yaptığını resmi veya ciddi biçimde öne sürmek.",
+    "meaning": "To state formally or seriously that someone has done something wrong.",
     "collocates": [],
     "commonMistakes": [
       "'do an allegation' demek yanlıştır; doğru fiil 'make'tir.",
@@ -28771,7 +29348,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "bring an allegation",
       "make a claim",
       "file a complaint"
-    ]
+    ],
+    "meaningTr": "Bir suçlama veya iddia ortaya atmak; birinin yanlış bir şey yaptığını resmi veya ciddi biçimde öne sürmek."
   },
   {
     "id": "col_u58_0580",
@@ -28779,7 +29357,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Ciddi, ağır bir suçlama; önemli sonuçlar doğurabilecek, üzerinde durulması gereken iddia.",
+    "meaning": "A claim that someone has done something wrong which is important and may have serious results.",
     "collocates": [],
     "commonMistakes": [
       "'strong allegation' yaygın bir hatadır; kalıplaşmış kullanım 'serious allegation'dır.",
@@ -28821,7 +29399,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "weighty allegation",
       "severe accusation",
       "major allegation"
-    ]
+    ],
+    "meaningTr": "Ciddi, ağır bir suçlama; önemli sonuçlar doğurabilecek, üzerinde durulması gereken iddia."
   },
   {
     "id": "col_u59_0581",
@@ -28829,7 +29408,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "En çok sevilen, tartışmasız bir numaralı favori; 'absolute' burada 'tam anlamıyla, kesinlikle' vurgusu katar. Bir şeyin tüm seçenekler arasında en çok tercih edileni olduğunu belirtir.",
+    "meaning": "The thing you like more than any other, without any doubt.",
     "collocates": [],
     "commonMistakes": [
       "absolute favorite yerine 'very favourite' kullanmak (absolute veya firm gibi güçlü sıfatlar tercih edilir)",
@@ -28871,7 +29450,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "top favourite",
       "firm favourite",
       "out-and-out favourite"
-    ]
+    ],
+    "meaningTr": "En çok sevilen, tartışmasız bir numaralı favori; 'absolute' burada 'tam anlamıyla, kesinlikle' vurgusu katar. Bir şeyin tüm seçenekler arasında en çok tercih edileni olduğunu belirtir."
   },
   {
     "id": "col_u59_0582",
@@ -28879,7 +29459,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birini hayranlıkla doldurmak, birinde yoğun bir hayranlık ve takdir duygusu uyandırmak. Genellikle bir kişinin davranışı, cesareti veya başarısı karşısında hissedilen güçlü takdiri ifade eder.",
+    "meaning": "To make someone feel great respect and approval for someone or something.",
     "collocates": [],
     "commonMistakes": [
       "'fill someone admiration' demek (with edatı gerekir: fill someone with admiration)",
@@ -28921,7 +29501,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "arouse admiration",
       "command someone's admiration",
       "evoke admiration"
-    ]
+    ],
+    "meaningTr": "Birini hayranlıkla doldurmak, birinde yoğun bir hayranlık ve takdir duygusu uyandırmak. Genellikle bir kişinin davranışı, cesareti veya başarısı karşısında hissedilen güçlü takdiri ifade eder."
   },
   {
     "id": "col_u59_0583",
@@ -28929,7 +29510,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Hevesli/coşkulu bir hayran; bir kişiyi, sanatçıyı veya şeyi büyük bir ilgi ve istekle takdir eden kimse. 'Keen' burada güçlü ve istekli bir hayranlığı vurgular.",
+    "meaning": "A person who likes and respects someone or something with great interest and enthusiasm.",
     "collocates": [],
     "commonMistakes": [
       "'keen admirer of to' demek (doğrusu: keen admirer of + isim)",
@@ -28971,7 +29552,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "devoted admirer",
       "enthusiastic admirer",
       "passionate admirer"
-    ]
+    ],
+    "meaningTr": "Hevesli/coşkulu bir hayran; bir kişiyi, sanatçıyı veya şeyi büyük bir ilgi ve istekle takdir eden kimse. 'Keen' burada güçlü ve istekli bir hayranlığı vurgular."
   },
   {
     "id": "col_u59_0584",
@@ -28979,7 +29561,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Tüm zamanların favorisi; bir kişinin hayatı boyunca en çok sevdiği, tarih boyunca en beğenilen şey. 'Absolute favourite'ten farklı olarak zamansal bir vurgu taşır: şimdiye kadarki en iyi/en sevilen.",
+    "meaning": "The thing someone has liked best throughout their whole life or throughout history.",
     "collocates": [],
     "commonMistakes": [
       "'all times favourite' demek (doğrusu: all-time favourite, tire ile)",
@@ -29021,7 +29603,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "lifelong favourite",
       "greatest of all time",
       "evergreen favourite"
-    ]
+    ],
+    "meaningTr": "Tüm zamanların favorisi; bir kişinin hayatı boyunca en çok sevdiği, tarih boyunca en beğenilen şey. 'Absolute favourite'ten farklı olarak zamansal bir vurgu taşır: şimdiye kadarki en iyi/en sevilen."
   },
   {
     "id": "col_u59_0585",
@@ -29029,7 +29612,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Ateşli/coşkulu taraftar; bir takımı, sanatçıyı veya görüşü büyük bir tutkuyla destekleyen kişi. 'Ardent' güçlü, neredeyse tutkulu bir bağlılık anlamı taşır.",
+    "meaning": "A person who supports a team, artist or idea with strong passion and loyalty.",
     "collocates": [],
     "commonMistakes": [
       "'ardent fan of to' demek (doğrusu: ardent fan of + isim)",
@@ -29071,7 +29654,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "devoted fan",
       "fervent supporter",
       "staunch fan"
-    ]
+    ],
+    "meaningTr": "Ateşli/coşkulu taraftar; bir takımı, sanatçıyı veya görüşü büyük bir tutkuyla destekleyen kişi. 'Ardent' güçlü, neredeyse tutkulu bir bağlılık anlamı taşır."
   },
   {
     "id": "col_u59_0586",
@@ -29079,7 +29663,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir şeye karşı duyulan çok büyük, güçlü ve yoğun tiksinti veya isteksizlik; 'devasa bir nefret/kaçınma duygusu'.",
+    "meaning": "A very strong feeling of dislike for something that makes you want to avoid it.",
     "collocates": [],
     "commonMistakes": [
       "big aversion (doğal değil; 'huge' veya 'strong' kullanılmalı)",
@@ -29121,7 +29705,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "intense dislike",
       "deep distaste",
       "powerful repulsion"
-    ]
+    ],
+    "meaningTr": "Bir şeye karşı duyulan çok büyük, güçlü ve yoğun tiksinti veya isteksizlik; 'devasa bir nefret/kaçınma duygusu'."
   },
   {
     "id": "col_u59_0587",
@@ -29129,7 +29714,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir şeye karşı duyulan güçlü, belirgin bir hoşnutsuzluk veya kaçınma hissi; 'güçlü bir tiksinti/isteğe karşı olma durumu'.",
+    "meaning": "A firm feeling of dislike or unwillingness towards something you want to avoid.",
     "collocates": [],
     "commonMistakes": [
       "strong aversion of (doğru edat: 'to' veya 'towards')",
@@ -29171,7 +29756,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "deep dislike",
       "firm distaste",
       "marked antipathy"
-    ]
+    ],
+    "meaningTr": "Bir şeye karşı duyulan güçlü, belirgin bir hoşnutsuzluk veya kaçınma hissi; 'güçlü bir tiksinti/isteğe karşı olma durumu'."
   },
   {
     "id": "col_u59_0588",
@@ -29179,7 +29765,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Belirgin, açık ve net bir tercih; 'apaçık bir tercih, net bir üstün tutma durumu'.",
+    "meaning": "An obvious and definite liking for one thing over another.",
     "collocates": [],
     "commonMistakes": [
       "clear preference of (doğru edat: 'for')",
@@ -29221,7 +29807,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "definite preference",
       "marked preference",
       "obvious liking"
-    ]
+    ],
+    "meaningTr": "Belirgin, açık ve net bir tercih; 'apaçık bir tercih, net bir üstün tutma durumu'."
   },
   {
     "id": "col_u59_0589",
@@ -29229,7 +29816,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Kendini adamış, sadık ve tutkulu bir hayran; 'adanmış bir taraftar/hayran'.",
+    "meaning": "A loyal and enthusiastic supporter who gives a lot of time and attention to something.",
     "collocates": [],
     "commonMistakes": [
       "dedicated fun (yanlış kelime; 'fan' olmalı)",
@@ -29271,7 +29858,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "loyal fan",
       "passionate follower",
       "ardent admirer"
-    ]
+    ],
+    "meaningTr": "Kendini adamış, sadık ve tutkulu bir hayran; 'adanmış bir taraftar/hayran'."
   },
   {
     "id": "col_u59_0590",
@@ -29279,7 +29867,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Çok yoğun, köklü ve derin bir nefret duygusu; 'derin bir kin/nefret'.",
+    "meaning": "A very strong and long-lasting feeling of hate towards someone or something.",
     "collocates": [],
     "commonMistakes": [
       "deep hate (isim olarak 'hatred' tercih edilir)",
@@ -29321,7 +29909,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "profound hatred",
       "bitter hatred",
       "deep loathing"
-    ]
+    ],
+    "meaningTr": "Çok yoğun, köklü ve derin bir nefret duygusu; 'derin bir kin/nefret'."
   },
   {
     "id": "col_u60_0591",
@@ -29329,7 +29918,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Eleştirmenlerden büyük beğeni ve övgü almak; genellikle film, kitap, oyun gibi sanat eserlerinin uzmanlar tarafından çok olumlu değerlendirilmesi.",
+    "meaning": "To be praised and admired by critics, especially for a film, book or play.",
     "collocates": [],
     "commonMistakes": [
       "take critical acclaim (yanlış fiil; doğrusu 'receive' veya 'win')",
@@ -29371,7 +29960,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "earn rave reviews",
       "be critically acclaimed",
       "garner critical praise"
-    ]
+    ],
+    "meaningTr": "Eleştirmenlerden büyük beğeni ve övgü almak; genellikle film, kitap, oyun gibi sanat eserlerinin uzmanlar tarafından çok olumlu değerlendirilmesi."
   },
   {
     "id": "col_u60_0592",
@@ -29379,7 +29969,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir grup insanın birlikte el çırparak gösterdiği alkış turu; genellikle bir performans veya konuşma sonrasında verilen toplu alkış.",
+    "meaning": "An occasion when a group of people clap together to show praise or appreciation.",
     "collocates": [],
     "commonMistakes": [
       "circle of applause (yanlış kelime; 'round' kullanılır)",
@@ -29421,7 +30011,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "ovation",
       "clap",
       "standing ovation"
-    ]
+    ],
+    "meaningTr": "Bir grup insanın birlikte el çırparak gösterdiği alkış turu; genellikle bir performans veya konuşma sonrasında verilen toplu alkış."
   },
   {
     "id": "col_u60_0593",
@@ -29429,7 +30020,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Gök gürültüsünü andıracak kadar yüksek ve coşkulu alkış; çok güçlü, gürültülü ve genellikle ayakta yapılan alkış.",
+    "meaning": "Very loud and enthusiastic clapping that sounds like thunder.",
     "collocates": [],
     "commonMistakes": [
       "thunder applause (eksik sıfat; 'thunderous' olmalı)",
@@ -29471,7 +30062,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "rapturous applause",
       "resounding applause",
       "tumultuous applause"
-    ]
+    ],
+    "meaningTr": "Gök gürültüsünü andıracak kadar yüksek ve coşkulu alkış; çok güçlü, gürültülü ve genellikle ayakta yapılan alkış."
   },
   {
     "id": "col_u60_0594",
@@ -29479,7 +30071,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir şeyi içtenlikle, coşkuyla ve tam olarak onaylamak; güçlü bir şekilde desteklemek ve uygun bulmak.",
+    "meaning": "To approve of something in a strong, enthusiastic and sincere way.",
     "collocates": [],
     "commonMistakes": [
       "heartily approval (yanlış kelime türü; 'approve' fiil olmalı)",
@@ -29521,7 +30113,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "wholeheartedly approve",
       "fully endorse",
       "warmly welcome"
-    ]
+    ],
+    "meaningTr": "Bir şeyi içtenlikle, coşkuyla ve tam olarak onaylamak; güçlü bir şekilde desteklemek ve uygun bulmak."
   },
   {
     "id": "col_u60_0595",
@@ -29529,7 +30122,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir şeyi sıcak bir şekilde, olumlu duygularla onaylamak; desteklemek ve beğenmek, ancak 'heartily approve' kadar güçlü ve coşkulu olmayabilir.",
+    "meaning": "To approve of something in a friendly and positive way, showing support.",
     "collocates": [],
     "commonMistakes": [
       "warm approve (yanlış zarf; 'warmly' kullanılır)",
@@ -29571,7 +30164,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "fully support",
       "favourably approve",
       "gladly endorse"
-    ]
+    ],
+    "meaningTr": "Bir şeyi sıcak bir şekilde, olumlu duygularla onaylamak; desteklemek ve beğenmek, ancak 'heartily approve' kadar güçlü ve coşkulu olmayabilir."
   },
   {
     "id": "col_u60_0596",
@@ -29579,7 +30173,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birine yaptığı iyi işten dolayı teşekkür etmek, takdir etmek, sırtını sıvazlamak; genellikle sözlü övgü veya küçük bir ödül anlamında kullanılır.",
+    "meaning": "An act of praise or approval given to someone for doing something well.",
     "collocates": [],
     "commonMistakes": [
       "give a pat in the back (yanlış edat: 'on' kullanılmalı)",
@@ -29620,7 +30214,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "compliment",
       "congratulate someone",
       "give credit"
-    ]
+    ],
+    "meaningTr": "Birine yaptığı iyi işten dolayı teşekkür etmek, takdir etmek, sırtını sıvazlamak; genellikle sözlü övgü veya küçük bir ödül anlamında kullanılır."
   },
   {
     "id": "col_u60_0597",
@@ -29628,7 +30223,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Birini veya bir şeyi çok sert, acımasız ve öfkeli bir şekilde eleştirmek; genellikle kişisel kırgınlık veya hayal kırıklığı içerir.",
+    "meaning": "To criticise someone or something in an extremely angry and harsh way.",
     "collocates": [],
     "commonMistakes": [
       "bitterly criticise on (yanlış edat: 'criticise' doğrudan nesne alır, 'on' gerekmez)",
@@ -29664,7 +30259,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "scathingly criticise",
       "attack fiercely",
       "condemn strongly"
-    ]
+    ],
+    "meaningTr": "Birini veya bir şeyi çok sert, acımasız ve öfkeli bir şekilde eleştirmek; genellikle kişisel kırgınlık veya hayal kırıklığı içerir."
   },
   {
     "id": "col_u60_0598",
@@ -29672,7 +30268,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir plana, karara veya ilişkiye resmi ya da gayri resmi onay vermek, desteklemek; genellikle ebeveynlerin evliliğe veya bir otoritenin projeye onay vermesi anlamında.",
+    "meaning": "To give official or informal approval and support to a plan, decision or relationship.",
     "collocates": [],
     "commonMistakes": [
       "give your bless (isim yerine fiil kullanımı: 'blessing' olmalı)",
@@ -29713,7 +30309,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "give the go-ahead",
       "sanction",
       "endorse"
-    ]
+    ],
+    "meaningTr": "Bir plana, karara veya ilişkiye resmi ya da gayri resmi onay vermek, desteklemek; genellikle ebeveynlerin evliliğe veya bir otoritenin projeye onay vermesi anlamında."
   },
   {
     "id": "col_u60_0599",
@@ -29721,7 +30318,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Eleştiriye maruz kalmak, eleştirilmek; genellikle bir kişi, kurum veya eserin olumsuz yorumlar alması anlamında.",
+    "meaning": "To be criticised by many people, often because of something you have done.",
     "collocates": [],
     "commonMistakes": [
       "come in for criticise (isim yerine fiil kullanımı: 'criticism' olmalı)",
@@ -29757,7 +30354,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "face criticism",
       "attract criticism",
       "be on the receiving end of criticism"
-    ]
+    ],
+    "meaningTr": "Eleştiriye maruz kalmak, eleştirilmek; genellikle bir kişi, kurum veya eserin olumsuz yorumlar alması anlamında."
   },
   {
     "id": "col_u60_0600",
@@ -29765,7 +30363,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "B2",
     "category": "everyday",
-    "meaning": "Bir eylemi veya davranışı çok sert bir şekilde kınamak, ahlaki açıdan yanlış olduğunu güçlü bir dille ifade etmek.",
+    "meaning": "To say very strongly and angrily that something is morally wrong and unacceptable.",
     "collocates": [],
     "commonMistakes": [
       "severely condemning (zaman/çekim hatası: 'condemn' fiil olarak çekimlenmeli)",
@@ -29806,7 +30404,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "harshly condemn",
       "roundly condemn",
       "vehemently denounce"
-    ]
+    ],
+    "meaningTr": "Bir eylemi veya davranışı çok sert bir şekilde kınamak, ahlaki açıdan yanlış olduğunu güçlü bir dille ifade etmek."
   },
   {
     "id": "col_adv_u06_0601",
@@ -29814,7 +30413,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Gerçeklerle yüzleşmek; hoş olmasa da durumun gerçekliğini kabul etmek, kaçınmayı bırakıp doğruyu kabullenmek.",
+    "meaning": "To accept the truth about a difficult situation, even though it is unpleasant.",
     "collocates": [],
     "commonMistakes": [
       "face to the facts (yanlış edat kullanımı)",
@@ -29856,7 +30455,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "come to terms with the truth",
       "confront the truth",
       "acknowledge the facts"
-    ]
+    ],
+    "meaningTr": "Gerçeklerle yüzleşmek; hoş olmasa da durumun gerçekliğini kabul etmek, kaçınmayı bırakıp doğruyu kabullenmek."
   },
   {
     "id": "col_adv_u06_0602",
@@ -29864,7 +30464,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Suçu üstlenmek; bir hatanın veya olumsuz sonucun sorumluluğunu kabul etmek, yükü omuzlamak.",
+    "meaning": "To accept responsibility for a mistake or failure, rather than blaming others.",
     "collocates": [],
     "commonMistakes": [
       "shoulder the fault (blame yerine fault kullanmak)",
@@ -29906,7 +30506,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "bear the responsibility",
       "accept liability",
       "carry the can"
-    ]
+    ],
+    "meaningTr": "Suçu üstlenmek; bir hatanın veya olumsuz sonucun sorumluluğunu kabul etmek, yükü omuzlamak."
   },
   {
     "id": "col_adv_u06_0603",
@@ -29914,7 +30515,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Hesabı ödemek; genellikle büyük bir masrafın veya faturanın sorumluluğunu üstlenmek, parayı ödemek.",
+    "meaning": "To pay for something expensive, often on behalf of other people.",
     "collocates": [],
     "commonMistakes": [
       "foot the cost (bill yerine cost kullanmak — bazı bağlamlarda olur ama kalıp 'foot the bill'dir)",
@@ -29956,7 +30557,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "cover the cost",
       "pick up the tab",
       "bear the expense"
-    ]
+    ],
+    "meaningTr": "Hesabı ödemek; genellikle büyük bir masrafın veya faturanın sorumluluğunu üstlenmek, parayı ödemek."
   },
   {
     "id": "col_adv_u06_0604",
@@ -29964,7 +30566,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Bir ekibi yönetmek; bir takımın başında olmak, liderlik etmek, ekibi yönlendirmek.",
+    "meaning": "To be the leader of a group of people who work together.",
     "collocates": [],
     "commonMistakes": [
       "head of a team (head fiil olarak kullanılmalı, 'head a team' şeklinde)",
@@ -30006,7 +30608,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "manage a team",
       "run a team",
       "be at the helm of a team"
-    ]
+    ],
+    "meaningTr": "Bir ekibi yönetmek; bir takımın başında olmak, liderlik etmek, ekibi yönlendirmek."
   },
   {
     "id": "col_adv_u06_0605",
@@ -30014,7 +30617,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Birini tetikte tutmak; birinin dikkatini ve hazırlıklı olma halini sürekli canlı tutmak, gevşemesine izin vermemek.",
+    "meaning": "To make someone stay alert and ready to deal with any situation.",
     "collocates": [],
     "commonMistakes": [
       "keep someone on their feet (toes yerine feet kullanmak — farklı anlam)",
@@ -30056,7 +30659,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "keep someone on the ball",
       "keep someone sharp",
       "keep someone on edge"
-    ]
+    ],
+    "meaningTr": "Birini tetikte tutmak; birinin dikkatini ve hazırlıklı olma halini sürekli canlı tutmak, gevşemesine izin vermemek."
   },
   {
     "id": "col_adv_u06_0606",
@@ -30064,7 +30668,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Bir şeyi görme, fark etme veya değerlendirme konusunda doğuştan gelen ya da gelişmiş bir yeteneğe/yatkınlığa sahip olmak; özellikle estetik, detay veya fırsatları sezme bağlamında 'gözü olmak, iyi anlamak, sezmek'.",
+    "meaning": "To have a natural ability to notice or judge something well, especially beauty or quality.",
     "collocates": [],
     "commonMistakes": [
       "have eye for (yanlış; 'an' artikeli gerekir: have an eye for)",
@@ -30106,7 +30710,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "have a good eye for",
       "be gifted at spotting",
       "have a knack for"
-    ]
+    ],
+    "meaningTr": "Bir şeyi görme, fark etme veya değerlendirme konusunda doğuştan gelen ya da gelişmiş bir yeteneğe/yatkınlığa sahip olmak; özellikle estetik, detay veya fırsatları sezme bağlamında 'gözü olmak, iyi anlamak, sezmek'."
   },
   {
     "id": "col_adv_u06_0607",
@@ -30114,7 +30719,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "İki şeyin birbiriyle yakından ilişkili olması, birlikte gerçekleşmesi veya birbirini desteklemesi; 'el ele gitmek, ayrılmaz bir bütün oluşturmak, beraberinde gelmek'.",
+    "meaning": "To be closely connected with something, so that one usually happens with the other.",
     "collocates": [],
     "commonMistakes": [
       "go hand by hand with (yanlış; doğrusu 'hand in hand')",
@@ -30156,7 +30761,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be inseparable from",
       "accompany",
       "be bound up with"
-    ]
+    ],
+    "meaningTr": "İki şeyin birbiriyle yakından ilişkili olması, birlikte gerçekleşmesi veya birbirini desteklemesi; 'el ele gitmek, ayrılmaz bir bütün oluşturmak, beraberinde gelmek'."
   },
   {
     "id": "col_adv_u07_0608",
@@ -30164,7 +30770,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Lekesiz, pırıl pırıl, kusursuz derecede temiz. 'Spotlessly' zarfı 'clean' sıfatını yoğunlaştırarak hiçbir leke, toz veya kir olmadığını vurgular; genellikle ev, mutfak, otel odası, hastane gibi yerlerin hijyeni için kullanılır.",
+    "meaning": "Extremely clean, with no dirt, marks or dust at all.",
     "collocates": [],
     "commonMistakes": [
       "spotless clean (zarf eki '-ly' unutulmuş; doğrusu 'spotlessly clean')",
@@ -30206,7 +30812,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "pristinely clean",
       "squeaky clean",
       "perfectly clean"
-    ]
+    ],
+    "meaningTr": "Lekesiz, pırıl pırıl, kusursuz derecede temiz. 'Spotlessly' zarfı 'clean' sıfatını yoğunlaştırarak hiçbir leke, toz veya kir olmadığını vurgular; genellikle ev, mutfak, otel odası, hastane gibi yerlerin hijyeni için kullanılır."
   },
   {
     "id": "col_adv_u07_0609",
@@ -30214,7 +30821,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Son derece kaba, açıkça ve kesinlikle terbiyesiz. 'Downright' zarfı olumsuz bir sıfatı güçlendirerek 'tam anlamıyla, düpedüz' anlamı katar; genellikle davranış, söz veya tutum eleştirilirken kullanılır.",
+    "meaning": "Extremely and clearly impolite, in a way that is shocking or unacceptable.",
     "collocates": [],
     "commonMistakes": [
       "downright rudeness (sıfat yerine isim kullanımı; 'rude' sıfat olmalı)",
@@ -30256,7 +30863,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "utterly rude",
       "plainly rude",
       "outright rude"
-    ]
+    ],
+    "meaningTr": "Son derece kaba, açıkça ve kesinlikle terbiyesiz. 'Downright' zarfı olumsuz bir sıfatı güçlendirerek 'tam anlamıyla, düpedüz' anlamı katar; genellikle davranış, söz veya tutum eleştirilirken kullanılır."
   },
   {
     "id": "col_adv_u07_0610",
@@ -30264,7 +30872,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Son derece utanmış, tamamen mahcup olmuş. 'Thoroughly' zarfı 'ashamed' sıfatını yoğunlaştırarak kişinin davranışından dolayı derin bir utanç duyduğunu ifade eder; genellikle ahlaki veya sosyal bir hata sonrası hissedilir.",
+    "meaning": "Feeling very guilty and embarrassed about something wrong that you have done.",
     "collocates": [],
     "commonMistakes": [
       "thoroughly shame (sıfat yerine isim/fiil kullanımı; 'ashamed' sıfat olmalı)",
@@ -30306,7 +30914,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "utterly ashamed",
       "extremely ashamed",
       "completely ashamed"
-    ]
+    ],
+    "meaningTr": "Son derece utanmış, tamamen mahcup olmuş. 'Thoroughly' zarfı 'ashamed' sıfatını yoğunlaştırarak kişinin davranışından dolayı derin bir utanç duyduğunu ifade eder; genellikle ahlaki veya sosyal bir hata sonrası hissedilir."
   },
   {
     "id": "col_adv_u07_0611",
@@ -30314,7 +30923,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Gayet açık, apaçık, bariz bir şekilde belli. 'Blatantly' zarfı 'obvious' sıfatını yoğunlaştırarak bir şeyin inkâr edilemeyecek kadar açık olduğunu, hatta çoğu zaman rahatsız edici veya utanç verici derecede belli olduğunu vurgular.",
+    "meaning": "Extremely clear and easy to notice, often in an embarrassing or annoying way.",
     "collocates": [],
     "commonMistakes": [
       "blatant obvious (zarf eki '-ly' unutulmuş; doğrusu 'blatantly obvious')",
@@ -30356,7 +30965,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "patently obvious",
       "painfully obvious",
       "perfectly obvious"
-    ]
+    ],
+    "meaningTr": "Gayet açık, apaçık, bariz bir şekilde belli. 'Blatantly' zarfı 'obvious' sıfatını yoğunlaştırarak bir şeyin inkâr edilemeyecek kadar açık olduğunu, hatta çoğu zaman rahatsız edici veya utanç verici derecede belli olduğunu vurgular."
   },
   {
     "id": "col_adv_u07_0612",
@@ -30364,7 +30974,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Son derece yanlış, tamamen hatalı, gerçeklikten çok uzak. 'Wildly' zarfı 'inaccurate' sıfatını yoğunlaştırarak bir bilginin, tahminin veya iddianın gerçeklerle hiç örtüşmediğini, abartılı derecede yanlış olduğunu ifade eder.",
+    "meaning": "Completely wrong and far from the truth, often in an exaggerated way.",
     "collocates": [],
     "commonMistakes": [
       "wild inaccurate (zarf eki '-ly' unutulmuş; doğrusu 'wildly inaccurate')",
@@ -30406,7 +31016,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "completely inaccurate",
       "highly inaccurate",
       "seriously inaccurate"
-    ]
+    ],
+    "meaningTr": "Son derece yanlış, tamamen hatalı, gerçeklikten çok uzak. 'Wildly' zarfı 'inaccurate' sıfatını yoğunlaştırarak bir bilginin, tahminin veya iddianın gerçeklerle hiç örtüşmediğini, abartılı derecede yanlış olduğunu ifade eder."
   },
   {
     "id": "col_adv_u07_0613",
@@ -30414,7 +31025,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Hafifçe şaşırmış, biraz hayret etmiş; güçlü olmayan, ölçülü bir şaşkınlık ifade eder. 'Mildly' zarfı 'surprised' sıfatını yumuşatır ve şaşkınlığın abartılı değil, ölçülü olduğunu gösterir.",
+    "meaning": "A little surprised, but not strongly or dramatically so.",
     "collocates": [],
     "commonMistakes": [
       "softly surprised (yanlış eşdizim; 'softly' ses tonu için kullanılır, şaşkınlık derecesi için 'mildly' tercih edilir)",
@@ -30456,7 +31067,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "a little surprised",
       "somewhat surprised",
       "a bit taken aback"
-    ]
+    ],
+    "meaningTr": "Hafifçe şaşırmış, biraz hayret etmiş; güçlü olmayan, ölçülü bir şaşkınlık ifade eder. 'Mildly' zarfı 'surprised' sıfatını yumuşatır ve şaşkınlığın abartılı değil, ölçülü olduğunu gösterir."
   },
   {
     "id": "col_adv_u07_0614",
@@ -30464,7 +31076,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adv-adj",
     "cefrLevel": "C1",
     "category": "academic",
-    "meaning": "Hafifçe gülünç, belli belirsiz saçma; 'faintly' zarfı 'ridiculous' sıfatını yumuşatarak gülünçlüğün çok belirgin değil, ince ve ölçülü olduğunu anlatır.",
+    "meaning": "Slightly silly or absurd, in a way that is hard to take seriously.",
     "collocates": [],
     "commonMistakes": [
       "faint ridiculous (zarf yerine sıfat kullanımı; doğrusu 'faintly ridiculous')",
@@ -30506,7 +31118,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "a bit absurd",
       "somewhat ludicrous",
       "mildly absurd"
-    ]
+    ],
+    "meaningTr": "Hafifçe gülünç, belli belirsiz saçma; 'faintly' zarfı 'ridiculous' sıfatını yumuşatarak gülünçlüğün çok belirgin değil, ince ve ölçülü olduğunu anlatır."
   },
   {
     "id": "col_adv_u08_0615",
@@ -30514,7 +31127,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "business",
-    "meaning": "Katkıda bulunmak, katkı sağlamak; bir işe, projeye, topluma veya tartışmaya olumlu bir şey eklemek.",
+    "meaning": "To give something useful or helpful to a project, group or discussion.",
     "collocates": [],
     "commonMistakes": [
       "do a contribution (yanlış fiil; 'make a contribution' olmalı)",
@@ -30556,7 +31169,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "contribute",
       "add value",
       "play a part"
-    ]
+    ],
+    "meaningTr": "Katkıda bulunmak, katkı sağlamak; bir işe, projeye, topluma veya tartışmaya olumlu bir şey eklemek."
   },
   {
     "id": "col_adv_u08_0616",
@@ -30564,7 +31178,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "business",
-    "meaning": "Bir şeyi düzenli olarak, alışkanlık haline getirerek yapmak; bir davranışı sürekli tekrarlayarak rutin haline getirmek. Genellikle olumlu ya da nötr alışkanlıklar için kullanılır ve ardından genellikle '-ing' fiil yapısı gelir.",
+    "meaning": "To start doing something regularly so that it becomes part of your routine.",
     "collocates": [],
     "commonMistakes": [
       "do a habit of (yanlış fiil; do değil make kullanılır)",
@@ -30606,7 +31220,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "form a habit of",
       "make it a rule to",
       "establish a routine of"
-    ]
+    ],
+    "meaningTr": "Bir şeyi düzenli olarak, alışkanlık haline getirerek yapmak; bir davranışı sürekli tekrarlayarak rutin haline getirmek. Genellikle olumlu ya da nötr alışkanlıklar için kullanılır ve ardından genellikle '-ing' fiil yapısı gelir."
   },
   {
     "id": "col_adv_u08_0617",
@@ -30614,7 +31229,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "business",
-    "meaning": "Kâr etmek, kâra geçmek; bir işletmenin veya girişimin gelirlerinin giderlerini aşarak kazanç sağlaması. Genellikle iş, ticaret ve finans bağlamında kullanılır ve 'make a profit' ifadesine göre daha çok 'kâra geçmek, kârlı hale gelmek' vurgusu taşır.",
+    "meaning": "To start making money after a period of losing it or just covering costs.",
     "collocates": [],
     "commonMistakes": [
       "do a profit (yanlış fiil; do değil make veya turn kullanılır)",
@@ -30656,7 +31271,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "be in the black",
       "generate a profit",
       "become profitable"
-    ]
+    ],
+    "meaningTr": "Kâr etmek, kâra geçmek; bir işletmenin veya girişimin gelirlerinin giderlerini aşarak kazanç sağlaması. Genellikle iş, ticaret ve finans bağlamında kullanılır ve 'make a profit' ifadesine göre daha çok 'kâra geçmek, kârlı hale gelmek' vurgusu taşır."
   },
   {
     "id": "col_adv_u09_0618",
@@ -30664,7 +31280,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "business",
-    "meaning": "İş hakkında konuşmak; ticari/işle ilgili konuları görüşmek. Genellikle resmi olmayan bir ortamda iş konularına geçmek anlamında kullanılır.",
+    "meaning": "To discuss work or commercial matters, often in an informal setting.",
     "collocates": [],
     "commonMistakes": [
       "make business (yanlış; 'do business' veya 'talk business' kullanılmalı)",
@@ -30706,7 +31322,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "talk shop",
       "get down to business",
       "discuss work matters"
-    ]
+    ],
+    "meaningTr": "İş hakkında konuşmak; ticari/işle ilgili konuları görüşmek. Genellikle resmi olmayan bir ortamda iş konularına geçmek anlamında kullanılır."
   },
   {
     "id": "col_adv_u09_0619",
@@ -30714,7 +31331,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "C1",
     "category": "business",
-    "meaning": "Lafı dolandırmadan doğrudan konuya girmek; sözü uzatmadan asıl meseleyi söylemek.",
+    "meaning": "To say what you want to say directly, without wasting time on unnecessary words.",
     "collocates": [],
     "commonMistakes": [
       "get straight to the topic (daha az doğal; 'get straight to the point' tercih edilir)",
@@ -30756,7 +31373,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "cut to the chase",
       "get to the heart of the matter",
       "not beat around the bush"
-    ]
+    ],
+    "meaningTr": "Lafı dolandırmadan doğrudan konuya girmek; sözü uzatmadan asıl meseleyi söylemek."
   },
   {
     "id": "col_adv_u09_0620",
@@ -30764,7 +31382,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C1",
     "category": "business",
-    "meaning": "Bir sohbet başlatmak; genellikle tanımadığın biriyle doğal bir şekilde konuşmaya başlamak.",
+    "meaning": "To start talking to someone, especially someone you do not know.",
     "collocates": [],
     "commonMistakes": [
       "make up a conversation (yanlış; 'strike up a conversation' kullanılmalı)",
@@ -30806,7 +31424,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "initiate a conversation",
       "engage someone in conversation",
       "break the ice"
-    ]
+    ],
+    "meaningTr": "Bir sohbet başlatmak; genellikle tanımadığın biriyle doğal bir şekilde konuşmaya başlamak."
   },
   {
     "id": "col_adv_u30_0621",
@@ -30814,7 +31433,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C2",
     "category": "everyday",
-    "meaning": "Tehlikeyi en aza indirmek, riski olabildiğince azaltmak; genellikle güvenlik önlemleri, düzenlemeler veya planlama bağlamında kullanılır.",
+    "meaning": "To reduce the risk of harm or damage as much as possible.",
     "collocates": [],
     "commonMistakes": [
       "make danger less (doğal değil; 'minimise danger' veya 'reduce danger' tercih edilir)",
@@ -30856,7 +31475,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "limit the threat",
       "lessen the hazard",
       "mitigate danger"
-    ]
+    ],
+    "meaningTr": "Tehlikeyi en aza indirmek, riski olabildiğince azaltmak; genellikle güvenlik önlemleri, düzenlemeler veya planlama bağlamında kullanılır."
   },
   {
     "id": "col_adv_u30_0622",
@@ -30864,7 +31484,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C2",
     "category": "everyday",
-    "meaning": "İzin vermek, resmi olarak onay vermek; genellikle kurumlar, yetkililer veya yöneticiler tarafından verilen resmi izin anlamında kullanılır.",
+    "meaning": "To officially allow someone to do something, especially through an authority.",
     "collocates": [],
     "commonMistakes": [
       "give a permission (yanlış; 'permission' sayılamaz, 'grant permission' veya 'give permission' kullanılır)",
@@ -30906,7 +31526,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "authorise",
       "approve a request",
       "allow officially"
-    ]
+    ],
+    "meaningTr": "İzin vermek, resmi olarak onay vermek; genellikle kurumlar, yetkililer veya yöneticiler tarafından verilen resmi izin anlamında kullanılır."
   },
   {
     "id": "col_adv_u30_0623",
@@ -30914,7 +31535,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "C2",
     "category": "everyday",
-    "meaning": "Kim olduğu bilinmeyen, kişiliksiz ve uzak görünen bürokratlar; genellikle hükümet veya büyük kurumların duyarsız, isimsiz yetkilileri için olumsuz bir ifade.",
+    "meaning": "Officials in large organisations who seem distant, impersonal and not accountable to the public.",
     "collocates": [],
     "commonMistakes": [
       "faceless bureaucracy (farklı anlam; kurumun kendisini ifade eder, kişileri değil)",
@@ -30956,7 +31577,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "nameless administrators",
       "unaccountable civil servants",
       "impersonal authorities"
-    ]
+    ],
+    "meaningTr": "Kim olduğu bilinmeyen, kişiliksiz ve uzak görünen bürokratlar; genellikle hükümet veya büyük kurumların duyarsız, isimsiz yetkilileri için olumsuz bir ifade."
   },
   {
     "id": "col_adv_u31_0624",
@@ -30964,7 +31586,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C2",
     "category": "everyday",
-    "meaning": "Atıkları (genellikle yasa dışı veya zararlı biçimde) bir yere boşaltmak, dökmek; çevreye zarar verecek şekilde atık bırakmak.",
+    "meaning": "To get rid of rubbish or unwanted material, often illegally or harmfully.",
     "collocates": [],
     "commonMistakes": [
       "make waste (yanlış; 'dump waste' veya 'produce waste' kullanılır)",
@@ -31006,7 +31628,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "discharge waste",
       "release waste",
       "discard waste"
-    ]
+    ],
+    "meaningTr": "Atıkları (genellikle yasa dışı veya zararlı biçimde) bir yere boşaltmak, dökmek; çevreye zarar verecek şekilde atık bırakmak."
   },
   {
     "id": "col_adv_u31_0625",
@@ -31014,7 +31637,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "C2",
     "category": "everyday",
-    "meaning": "Kavurucu sıcaklık; yakıcı, bunaltıcı ve çok yoğun sıcaklık (genellikle aşırı hava koşulları veya iklim değişikliği bağlamında).",
+    "meaning": "Extremely hot weather that feels as if it is burning you.",
     "collocates": [],
     "commonMistakes": [
       "burning heat (anlaşılır ama 'searing heat' kadar doğal ve yaygın değil)",
@@ -31056,7 +31679,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "scorching heat",
       "intense heat",
       "extreme heat"
-    ]
+    ],
+    "meaningTr": "Kavurucu sıcaklık; yakıcı, bunaltıcı ve çok yoğun sıcaklık (genellikle aşırı hava koşulları veya iklim değişikliği bağlamında)."
   },
   {
     "id": "col_adv_u31_0626",
@@ -31064,7 +31688,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C2",
     "category": "everyday",
-    "meaning": "Karbon salınımını dengelemek/telafi etmek; atmosfere salınan karbondioksiti azaltmak veya başka yollarla dengelemek (örneğin ağaç dikerek, yenilenebilir enerji projelerine yatırım yaparak).",
+    "meaning": "To balance the carbon dioxide you produce by funding projects that reduce it elsewhere.",
     "collocates": [],
     "commonMistakes": [
       "compensate carbon emissions ('compensate for' gerekir; 'offset' doğrudan nesne alır)",
@@ -31106,7 +31730,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "neutralise carbon emissions",
       "counterbalance carbon emissions",
       "reduce carbon footprint"
-    ]
+    ],
+    "meaningTr": "Karbon salınımını dengelemek/telafi etmek; atmosfere salınan karbondioksiti azaltmak veya başka yollarla dengelemek (örneğin ağaç dikerek, yenilenebilir enerji projelerine yatırım yaparak)."
   },
   {
     "id": "col_adv_u32_0627",
@@ -31114,7 +31739,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "C2",
     "category": "everyday",
-    "meaning": "Dünyanın ücra bir köşesi; medeniyetten uzak, ulaşılması zor ve ıssız yer. Genellikle şehirden çok uzakta, hizmetlerin ve insanların az olduğu kırsal bölgeler için kullanılır.",
+    "meaning": "A place that is very far from towns and difficult to reach; the middle of nowhere.",
     "collocates": [],
     "commonMistakes": [
       "in the back of beyond yerine 'at the back of beyond' kullanmak (doğrusu: in the back of beyond)",
@@ -31156,7 +31781,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "the sticks",
       "the backwoods",
       "a remote corner of the world"
-    ]
+    ],
+    "meaningTr": "Dünyanın ücra bir köşesi; medeniyetten uzak, ulaşılması zor ve ıssız yer. Genellikle şehirden çok uzakta, hizmetlerin ve insanların az olduğu kırsal bölgeler için kullanılır."
   },
   {
     "id": "col_adv_u32_0628",
@@ -31164,7 +31790,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "C2",
     "category": "everyday",
-    "meaning": "Kırsal cennet; köy hayatının huzurlu, romantik ve idealize edilmiş hali. Genellikle şehir hayatının karmaşasından kaçışı simgeleyen pastoral bir yaşamı ifade eder.",
+    "meaning": "An idealized, peaceful picture of country life, often seen as perfect and charming.",
     "collocates": [],
     "commonMistakes": [
       "rural idyll yerine 'rural ideal' demek (anlam kayması, doğal değil)",
@@ -31206,7 +31832,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "bucolic dream",
       "countryside haven",
       "idyllic country life"
-    ]
+    ],
+    "meaningTr": "Kırsal cennet; köy hayatının huzurlu, romantik ve idealize edilmiş hali. Genellikle şehir hayatının karmaşasından kaçışı simgeleyen pastoral bir yaşamı ifade eder."
   },
   {
     "id": "col_adv_u32_0629",
@@ -31214,7 +31841,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "C2",
     "category": "everyday",
-    "meaning": "Kentsel dönüşüm; çöküntü halindeki şehir bölgelerinin yenilenmesi, iyileştirilmesi ve canlandırılması süreci. Ekonomik, sosyal ve fiziksel açılardan kentin yeniden canlandırılmasını ifade eder.",
+    "meaning": "The process of improving and reviving poor or run-down areas of a city.",
     "collocates": [],
     "commonMistakes": [
       "urban regeneration yerine 'urban renovation' demek (renovation daha çok bina için kullanılır)",
@@ -31256,7 +31883,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "urban revitalization",
       "city regeneration",
       "urban redevelopment"
-    ]
+    ],
+    "meaningTr": "Kentsel dönüşüm; çöküntü halindeki şehir bölgelerinin yenilenmesi, iyileştirilmesi ve canlandırılması süreci. Ekonomik, sosyal ve fiziksel açılardan kentin yeniden canlandırılmasını ifade eder."
   },
   {
     "id": "col_adv_u33_0630",
@@ -31264,7 +31892,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C2",
     "category": "business",
-    "meaning": "Borçlarını kapatmak, tüm borçlarını ödemek; genellikle kredi kartı, kredi veya kişisel borçların tamamının ödenerek finansal yükümlülüklerden kurtulmak anlamında kullanılır.",
+    "meaning": "To pay back all the money you owe, so that you no longer have debts.",
     "collocates": [],
     "commonMistakes": [
       "delete one's debts (borç silinmez, ödenir; 'delete' yanlış eşdizimdir)",
@@ -31306,7 +31934,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "settle one's debts",
       "wipe out one's debts",
       "get out of debt"
-    ]
+    ],
+    "meaningTr": "Borçlarını kapatmak, tüm borçlarını ödemek; genellikle kredi kartı, kredi veya kişisel borçların tamamının ödenerek finansal yükümlülüklerden kurtulmak anlamında kullanılır."
   },
   {
     "id": "col_adv_u33_0631",
@@ -31314,7 +31943,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "C2",
     "category": "business",
-    "meaning": "Anlaşılmış/kararlaştırılmış kredi limiti; banka ile müşteri arasında önceden belirlenen ve müşterinin harcayabileceği maksimum kredi miktarı.",
+    "meaning": "The maximum amount of credit a customer and bank have previously agreed the customer may borrow.",
     "collocates": [],
     "commonMistakes": [
       "agreed credit boundary (limit için 'boundary' kullanılmaz)",
@@ -31356,7 +31985,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "approved credit limit",
       "set credit limit",
       "authorized credit limit"
-    ]
+    ],
+    "meaningTr": "Anlaşılmış/kararlaştırılmış kredi limiti; banka ile müşteri arasında önceden belirlenen ve müşterinin harcayabileceği maksimum kredi miktarı."
   },
   {
     "id": "col_adv_u33_0632",
@@ -31364,7 +31994,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "C2",
     "category": "business",
-    "meaning": "Kimlik hırsızlığı; bir kişinin kişisel bilgilerinin (ad, TC kimlik no, banka bilgileri vb.) izinsiz ele geçirilerek dolandırıcılık veya sahtekarlık amacıyla kullanılması.",
+    "meaning": "The illegal use of someone's personal details, such as name or bank information, to commit fraud.",
     "collocates": [],
     "commonMistakes": [
       "identity robbery (soygun anlamı taşır, kimlik hırsızlığı için kullanılmaz)",
@@ -31406,7 +32036,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "personal data theft",
       "ID theft",
       "impersonation fraud"
-    ]
+    ],
+    "meaningTr": "Kimlik hırsızlığı; bir kişinin kişisel bilgilerinin (ad, TC kimlik no, banka bilgileri vb.) izinsiz ele geçirilerek dolandırıcılık veya sahtekarlık amacıyla kullanılması."
   },
   {
     "id": "col_adv_u34_0633",
@@ -31414,7 +32045,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C2",
     "category": "business",
-    "meaning": "Enflasyonu dizginlemek, kontrol altına almak; fiyat artış hızını yavaşlatmak (genellikle faiz artırımı, sıkı para politikası gibi önlemlerle).",
+    "meaning": "To take action to slow down or control the rate at which prices are rising.",
     "collocates": [],
     "commonMistakes": [
       "stop inflation (enflasyonu tamamen durdurmak anlamına gelir; 'curb' sadece yavaşlatmak/dizginlemek demektir)",
@@ -31456,7 +32087,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "bring inflation under control",
       "rein in inflation",
       "keep inflation in check"
-    ]
+    ],
+    "meaningTr": "Enflasyonu dizginlemek, kontrol altına almak; fiyat artış hızını yavaşlatmak (genellikle faiz artırımı, sıkı para politikası gibi önlemlerle)."
   },
   {
     "id": "col_adv_u34_0634",
@@ -31464,7 +32096,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C2",
     "category": "business",
-    "meaning": "Çıkarları korumak, menfaatleri güvence altına almak; bir kişinin, grubun veya ülkenin ekonomik/siyasi çıkarlarını olası zararlardan korumak.",
+    "meaning": "To protect the economic or political advantages of a person, group or country from harm.",
     "collocates": [],
     "commonMistakes": [
       "save interests (yanlış eşdizim; 'save' kurtarmak anlamı taşır, 'safeguard' korumak)",
@@ -31506,7 +32138,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "defend interests",
       "look after one's interests",
       "preserve interests"
-    ]
+    ],
+    "meaningTr": "Çıkarları korumak, menfaatleri güvence altına almak; bir kişinin, grubun veya ülkenin ekonomik/siyasi çıkarlarını olası zararlardan korumak."
   },
   {
     "id": "col_adv_u34_0635",
@@ -31514,7 +32147,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "C2",
     "category": "business",
-    "meaning": "Hızla düşen kârlar, dibe vuran kazançlar; şirket kârlarının ani ve sert bir şekilde azalması.",
+    "meaning": "Company earnings that are falling very quickly and steeply over a period of time.",
     "collocates": [],
     "commonMistakes": [
       "falling profits (doğru ama 'plummeting' ani ve sert düşüşü vurgular; daha güçlü bir ifade)",
@@ -31556,7 +32189,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "tumbling profits",
       "nosediving profits",
       "sharply falling profits"
-    ]
+    ],
+    "meaningTr": "Hızla düşen kârlar, dibe vuran kazançlar; şirket kârlarının ani ve sert bir şekilde azalması."
   },
   {
     "id": "col_adv_u34_0636",
@@ -31564,7 +32198,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "C2",
     "category": "business",
-    "meaning": "Durgun ekonomi, ağır işleyen ekonomi; büyümenin yavaş olduğu, canlılığını yitirmiş ekonomik ortam.",
+    "meaning": "An economic situation in which growth is slow and business activity is weak.",
     "collocates": [],
     "commonMistakes": [
       "slow economy (kısmen doğru ama 'sluggish' daha resmi ve yaygın bir eşdizimdir)",
@@ -31606,7 +32240,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "ailing economy",
       "weak economy",
       "flagging economy"
-    ]
+    ],
+    "meaningTr": "Durgun ekonomi, ağır işleyen ekonomi; büyümenin yavaş olduğu, canlılığını yitirmiş ekonomik ortam."
   },
   {
     "id": "col_adv_u35_0637",
@@ -31614,7 +32249,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "C2",
     "category": "everyday",
-    "meaning": "Toplumun huzurunu bozan, başkalarına zarar veren veya toplumsal normlara aykırı davranış; genellikle gürültü, vandalizm, saldırganlık gibi eylemleri kapsar.",
+    "meaning": "Behaviour that causes annoyance or harm to others or goes against accepted social norms.",
     "collocates": [],
     "commonMistakes": [
       "anti-social behaviour (yanlış yazım; doğrusu 'antisocial' tek kelime)",
@@ -31656,7 +32291,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "aggressive behaviour",
       "nuisance behaviour",
       "rowdy behaviour"
-    ]
+    ],
+    "meaningTr": "Toplumun huzurunu bozan, başkalarına zarar veren veya toplumsal normlara aykırı davranış; genellikle gürültü, vandalizm, saldırganlık gibi eylemleri kapsar."
   },
   {
     "id": "col_adv_u35_0638",
@@ -31664,7 +32300,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "C2",
     "category": "everyday",
-    "meaning": "İşlevini sağlıklı bir şekilde yerine getiremeyen, çatışma, ihmal veya istismar gibi sorunlar yaşayan aile; bireyler arası ilişkilerin bozuk olduğu aile ortamı.",
+    "meaning": "A family in which relationships are unhealthy and marked by conflict, neglect or abuse.",
     "collocates": [],
     "commonMistakes": [
       "disrupted family (daha çok dış etkenlerle dağılmış aile anlamına gelir, işlev bozukluğu değil)",
@@ -31706,7 +32342,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "troubled family",
       "dysfunctional household",
       "unstable family"
-    ]
+    ],
+    "meaningTr": "İşlevini sağlıklı bir şekilde yerine getiremeyen, çatışma, ihmal veya istismar gibi sorunlar yaşayan aile; bireyler arası ilişkilerin bozuk olduğu aile ortamı."
   },
   {
     "id": "col_adv_u35_0639",
@@ -31714,7 +32351,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "C2",
     "category": "everyday",
-    "meaning": "İnsanların yaşaması için uygun olmayan, sağlıksız veya güvensiz koşullara sahip (genellikle konut veya bina için kullanılır).",
+    "meaning": "Not suitable or safe for people to live in, usually describing a building or home.",
     "collocates": [],
     "commonMistakes": [
       "unfit for human habitation (doğru yazım; 'habitation' yerine 'habitation' kullanılmalı, 'inhabitation' değil)",
@@ -31756,7 +32393,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "not fit to live in",
       "unsuitable for occupancy",
       "unlivable"
-    ]
+    ],
+    "meaningTr": "İnsanların yaşaması için uygun olmayan, sağlıksız veya güvensiz koşullara sahip (genellikle konut veya bina için kullanılır)."
   },
   {
     "id": "col_adv_u36_0640",
@@ -31764,7 +32402,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "verb-noun",
     "cefrLevel": "C2",
     "category": "academic",
-    "meaning": "teknolojiyi (bir amaç doğrultusunda) kullanmak, teknolojiden yararlanmak, teknolojiyi işe koşmak; genellikle bir gücü veya kaynağı kontrol altına alıp faydaya dönüştürmek anlamı taşır.",
+    "meaning": "To use technology effectively to achieve a goal or gain an advantage.",
     "collocates": [],
     "commonMistakes": [
       "use technology'ı 'harness technology' yerine kullanmak (anlam daralır; 'harness' kontrol ve fayda vurgusu taşır)",
@@ -31806,7 +32444,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "exploit technology",
       "put technology to use",
       "capitalise on technology"
-    ]
+    ],
+    "meaningTr": "teknolojiyi (bir amaç doğrultusunda) kullanmak, teknolojiden yararlanmak, teknolojiyi işe koşmak; genellikle bir gücü veya kaynağı kontrol altına alıp faydaya dönüştürmek anlamı taşır."
   },
   {
     "id": "col_adv_u36_0641",
@@ -31814,7 +32453,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "adj-noun",
     "cefrLevel": "C2",
     "category": "academic",
-    "meaning": "en son teknoloji, en ileri teknoloji, teknolojinin zirvesi; rakiplerin henüz ulaşamadığı, yenilikçi ve güncel teknoloji anlamında kullanılır.",
+    "meaning": "The most advanced and innovative technology currently available, ahead of competitors.",
     "collocates": [],
     "commonMistakes": [
       "cutting-edge technologies yerine her zaman çoğul kullanmak (tekil 'technology' genel anlamda daha doğaldır)",
@@ -31856,7 +32495,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "the latest technology",
       "advanced technology",
       "bleeding-edge technology"
-    ]
+    ],
+    "meaningTr": "en son teknoloji, en ileri teknoloji, teknolojinin zirvesi; rakiplerin henüz ulaşamadığı, yenilikçi ve güncel teknoloji anlamında kullanılır."
   },
   {
     "id": "col_adv_u36_0642",
@@ -31864,7 +32504,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "type": "phrase",
     "cefrLevel": "C2",
     "category": "academic",
-    "meaning": "sınırları zorlamak, bilinmeyenin sınırlarını genişletmek, yeni alanlar açmak; genellikle bilim, teknoloji veya keşif bağlamında kullanılan mecazi bir ifadedir.",
+    "meaning": "To extend the limits of what is known or achieved, especially in science or discovery.",
     "collocates": [],
     "commonMistakes": [
       "push back the frontier şeklinde tekil kullanmak (deyimde genellikle çoğul 'frontiers' tercih edilir)",
@@ -31906,6 +32546,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
       "expand the frontiers",
       "break new ground",
       "extend the limits"
-    ]
+    ],
+    "meaningTr": "sınırları zorlamak, bilinmeyenin sınırlarını genişletmek, yeni alanlar açmak; genellikle bilim, teknoloji veya keşif bağlamında kullanılan mecazi bir ifadedir."
   }
 ];

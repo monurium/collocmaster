@@ -61,7 +61,6 @@ export const StudySession: React.FC = () => {
     recordReview(current.id, grade, timeMs);
     setStats((s) => ({ grades: [...s.grades, grade], totalMs: s.totalMs + timeMs }));
 
-    // If we were studying a related card, go back to the queue
     if (relatedChunk) {
       setRelatedChunk(null);
       return;
@@ -100,7 +99,7 @@ export const StudySession: React.FC = () => {
           className="inline-flex items-center gap-1.5 text-sm font-semibold text-zinc-400 hover:text-white transition-colors px-3 py-1.5 rounded-xl hover:bg-[#131D2E]"
         >
           <ArrowLeft className="w-4 h-4" />
-          Çık
+          Exit
         </button>
 
         {!done && queue.length > 0 && (
@@ -137,16 +136,17 @@ export const StudySession: React.FC = () => {
               className="w-full py-2 rounded-xl text-xs text-zinc-400 hover:text-zinc-200 flex items-center justify-center gap-1.5 transition-colors"
             >
               <Link2 className="w-3.5 h-3.5" />
-              İlgili kart — tamamla ve sıradaki karta dön
+              Related card — finish and return to queue
             </button>
           )}
 
           {/* Keyboard hints */}
           <div className="hidden sm:flex items-center justify-center gap-6 text-[11px] text-zinc-600">
             {[
-              { key: 'Enter', desc: 'Kontrol et' },
-              { key: '1–4', desc: 'Puan ver' },
-              { key: 'R', desc: 'Sesli dinle' },
+              { key: 'Enter', desc: 'Check / Continue' },
+              { key: '1–4', desc: 'Grade memory' },
+              { key: 'R', desc: 'Listen' },
+              { key: 'T', desc: 'Toggle Turkish' },
             ].map(({ key, desc }) => (
               <div key={key} className="flex items-center gap-1.5">
                 <kbd className="px-2 py-0.5 bg-[#0F1829] border border-[#1E2D45] rounded font-mono text-zinc-400">{key}</kbd>
@@ -166,25 +166,25 @@ export const StudySession: React.FC = () => {
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
-            Seans Tamamlandı! 🎉
+            Session Completed! 🎉
           </h2>
           <p className="text-sm text-zinc-400 mb-8">
-            Harika iş! SM-2 algoritması bir sonraki tekrar tarihlerini güncelledi.
+            Superb practice! The SM-2 spaced repetition engine has scheduled your next reviews.
           </p>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-3 mb-8">
             <div className="p-4 rounded-2xl bg-[#131D2E] border border-[#1E2D45]">
               <div className="text-2xl font-black font-mono text-white">{stats.grades.length}</div>
-              <div className="text-[10px] uppercase font-bold text-zinc-500 mt-1">Kart</div>
+              <div className="text-[10px] uppercase font-bold text-zinc-500 mt-1">Cards</div>
             </div>
             <div className="p-4 rounded-2xl bg-[#131D2E] border border-[#1E2D45]">
               <div className="text-2xl font-black font-mono text-emerald-400">{accuracy}%</div>
-              <div className="text-[10px] uppercase font-bold text-zinc-500 mt-1">Doğruluk</div>
+              <div className="text-[10px] uppercase font-bold text-zinc-500 mt-1">Accuracy</div>
             </div>
             <div className="p-4 rounded-2xl bg-[#131D2E] border border-[#1E2D45]">
               <div className="text-2xl font-black font-mono text-cyan-400">{avgSec}s</div>
-              <div className="text-[10px] uppercase font-bold text-zinc-500 mt-1">Ort. Süre</div>
+              <div className="text-[10px] uppercase font-bold text-zinc-500 mt-1">Avg Time</div>
             </div>
           </div>
 
@@ -192,7 +192,7 @@ export const StudySession: React.FC = () => {
           {accuracy >= 80 && (
             <div className="mb-6 px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-sm text-emerald-200">
               <Zap className="w-4 h-4 inline mr-2 text-emerald-400" />
-              Mükemmel performans! Uzun vadeli bellek güçleniyor.
+              Outstanding recall! Long-term memory pathways are reinforcing.
             </div>
           )}
 
@@ -203,7 +203,7 @@ export const StudySession: React.FC = () => {
               onClick={() => navigate('/')}
               className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition-all shadow-md shadow-indigo-600/30"
             >
-              Ana Sayfaya Dön
+              Back to Dashboard
             </button>
             <button
               id="practice-again-btn"
@@ -211,7 +211,7 @@ export const StudySession: React.FC = () => {
               className="w-full sm:w-auto px-6 py-3.5 rounded-xl border border-[#1E2D45] bg-[#131D2E] hover:bg-[#1A2539] text-zinc-200 font-bold text-sm transition-all flex items-center justify-center gap-2"
             >
               <RotateCcw className="w-4 h-4" />
-              Tekrar Çalış
+              Practice Again
             </button>
           </div>
         </div>
@@ -219,3 +219,4 @@ export const StudySession: React.FC = () => {
     </div>
   );
 };
+export default StudySession;

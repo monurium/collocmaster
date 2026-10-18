@@ -17,13 +17,13 @@ export const Navbar: React.FC = () => {
   const metrics = getMetrics();
 
   const navItems = [
-    { to: '/', icon: <LayoutDashboard className="w-4 h-4" />, label: 'Panel', exact: true },
-    { to: '/units', icon: <BookOpen className="w-4 h-4" />, label: 'Üniteler' },
-    { to: '/study', icon: <GraduationCap className="w-4 h-4" />, label: 'Kartlar', badge: metrics.dueTodayCount },
-    { to: '/quiz', icon: <FileCheck2 className="w-4 h-4" />, label: 'Test' },
-    { to: '/match', icon: <Puzzle className="w-4 h-4" />, label: 'Eşleştir' },
-    { to: '/library', icon: <Sparkles className="w-4 h-4" />, label: 'Kütüphane' },
-    { to: '/settings', icon: <Settings className="w-4 h-4" />, label: 'Ayarlar' },
+    { to: '/', icon: <LayoutDashboard className="w-4 h-4" />, label: 'Dashboard', exact: true },
+    { to: '/units', icon: <BookOpen className="w-4 h-4" />, label: 'Units' },
+    { to: '/study', icon: <GraduationCap className="w-4 h-4" />, label: 'Cards', badge: metrics.dueTodayCount },
+    { to: '/quiz', icon: <FileCheck2 className="w-4 h-4" />, label: 'Quiz' },
+    { to: '/match', icon: <Puzzle className="w-4 h-4" />, label: 'Match' },
+    { to: '/library', icon: <Sparkles className="w-4 h-4" />, label: 'Library' },
+    { to: '/settings', icon: <Settings className="w-4 h-4" />, label: 'Settings' },
   ];
 
   return (
@@ -81,7 +81,7 @@ export const Navbar: React.FC = () => {
             <Flame
               className={`w-4 h-4 ${metrics.currentStreak > 0 ? 'text-amber-400' : 'text-zinc-600'}`}
             />
-            <span>{metrics.currentStreak} gün</span>
+            <span>{metrics.currentStreak} {metrics.currentStreak === 1 ? 'day' : 'days'}</span>
           </div>
         </div>
       </header>

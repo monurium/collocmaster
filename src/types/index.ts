@@ -4,7 +4,8 @@ export interface Collocation {
   type: 'verb-noun' | 'adj-noun' | 'adv-adj' | 'phrase' | string;
   cefrLevel: 'B1' | 'B2' | 'C1' | 'C2' | string;
   category: 'academic' | 'business' | 'everyday' | 'literature' | string;
-  meaning: string;
+  meaning: string; // English definition
+  meaningTr?: string; // Turkish translation (accessible via Show TR)
   synonyms?: string[]; // e.g. ["raise doubts about", "call into question"]
   collocates: string[]; 
   commonMistakes: string[]; // e.g., "make doubt on"

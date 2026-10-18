@@ -28,34 +28,34 @@ import {
 
 const BOOK_TIPS = [
   {
-    tip: 'İngilizcede "hata yapmak" için "make a mistake" denir. "Do a mistake" YANLIŞTIR!',
+    tip: 'Say "make a mistake" in English. "Do a mistake" is INCORRECT!',
     chunk: 'make a mistake',
-    category: 'Everyday verbs 1: make and do',
+    category: 'Everyday verbs: make and do',
   },
   {
-    tip: 'Hava durumunda yoğun yağmur için "heavy rain" veya "torrential rain" kullanılır, "strong rain" denmez.',
+    tip: 'For heavy precipitation, use "heavy rain" or "torrential rain", never "strong rain".',
     chunk: 'heavy rain',
     category: 'Weather Collocations',
   },
   {
-    tip: 'İş yapmak için "do business", anlaşma yapmak için ise "make a deal" kullanılır.',
+    tip: 'We say "do business" with companies, but "make a deal" when finalizing an agreement.',
     chunk: 'do business',
     category: 'Business Collocations',
   },
   {
-    tip: 'Kollokasyonları tek tek kelime ezberlemek yerine kalıp olarak hafızaya almak konuşmanızı akıcı ve doğal kılar.',
+    tip: 'Acquiring collocations as single multi-word chunks makes your English fluent and natural.',
     chunk: 'highly unlikely',
     category: 'Intensifying adverbs',
   },
   {
-    tip: 'Birine iltifat etmek için "give a compliment" değil, "pay a compliment" denir.',
+    tip: 'To praise someone, say "pay a compliment", not "give a compliment".',
     chunk: 'pay a compliment',
-    category: 'Everyday verbs 2',
+    category: 'Everyday verbs',
   },
   {
-    tip: 'Sır tutmak için "keep a secret", birinin dikkatini çekmek için "catch someone\'s eye" kullanılır.',
+    tip: 'To maintain confidentiality say "keep a secret", and to attract attention say "catch someone\'s eye".',
     chunk: 'keep a secret',
-    category: 'Everyday verbs 3',
+    category: 'Everyday verbs',
   },
 ];
 
@@ -92,16 +92,15 @@ export const Dashboard: React.FC = () => {
 
   const weeklyLearned = useMemo(() => {
     const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
-    // Find collocation IDs where repetitionCount >= 1 and first review was in last 7 days
     const recentlyStarted = Object.entries(srsItems).filter(([, item]) => {
-      if (item.repetitionCount === 0 || item.history.length === 0) return false;
+      if (!item || item.repetitionCount === 0 || !item.history || item.history.length === 0) return false;
       const firstReview = Math.min(...item.history.map((h) => h.timestamp));
       return firstReview >= sevenDaysAgo;
     }).map(([id]) => id);
 
     return collocations
       .filter((c) => recentlyStarted.includes(c.id))
-      .slice(0, 20); // cap at 20 for UI
+      .slice(0, 20);
   }, [collocations, srsItems, reviewLogs]);
 
   return (
@@ -120,25 +119,25 @@ export const Dashboard: React.FC = () => {
               </span>
               {goalReached && (
                 <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-bold">
-                  <CheckCircle2 className="w-3 h-3" /> Günlük Hedef Tamamlandı!
+                  <CheckCircle2 className="w-3 h-3" /> Daily Goal Completed!
                 </span>
               )}
             </div>
 
             <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-              Kollokasyonları Zahmetsizce Pekiştirin
+              Master Collocations Effortlessly
             </h1>
 
             <p className="text-sm text-zinc-300 leading-relaxed">
-              Cambridge kitabındaki ünitelerle uyumlu akıllı aralıklı tekrar, boşluk doldurma testleri ve eğlenceli eşleştirme egzersizleriyle doğal İngilizce konuşun.
+              Acquire natural English through Cambridge curriculum units, intelligent spaced repetition (SM-2), cloze quizzes, and engaging matching games.
             </p>
 
             {/* Daily Goal bar */}
             <div className="pt-2">
               <div className="flex items-center justify-between text-xs text-zinc-400 mb-1.5">
-                <span>Bugünkü Çalışma Hedefi</span>
+                <span>Daily Practice Goal</span>
                 <span className="font-mono font-bold text-white">
-                  {todayReviews} / {dailyGoal} kart ({todayPct}%)
+                  {todayReviews} / {dailyGoal} cards ({todayPct}%)
                 </span>
               </div>
               <div className="w-full h-2 bg-[#162235] rounded-full overflow-hidden border border-[#1E2D45]">
@@ -157,7 +156,7 @@ export const Dashboard: React.FC = () => {
               className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-extrabold text-sm shadow-xl shadow-indigo-600/30 transition-all flex items-center justify-center gap-2.5 active:scale-95 group"
             >
               <Zap className="w-4 h-4 text-amber-300 fill-amber-300" />
-              <span>{dueCards.length > 0 ? `${dueCards.length} Kart Tekrar Et` : 'Günün Akıllı Seansını Başlat'}</span>
+              <span>{dueCards.length > 0 ? `Review ${dueCards.length} Due Cards` : 'Start Smart Session'}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
 
@@ -166,7 +165,7 @@ export const Dashboard: React.FC = () => {
               className="px-5 py-3 rounded-2xl bg-[#162235] hover:bg-[#1F2E45] text-cyan-300 border border-cyan-500/30 font-bold text-xs transition-all flex items-center justify-center gap-2 active:scale-95"
             >
               <FileCheck2 className="w-4 h-4 text-cyan-400" />
-              <span>Hızlı 10 Soruluk Test Çöz</span>
+              <span>Take Quick 10-Question Quiz</span>
             </button>
 
             <button
@@ -174,7 +173,7 @@ export const Dashboard: React.FC = () => {
               className="px-5 py-2.5 rounded-2xl text-zinc-400 hover:text-white font-medium text-xs transition-all flex items-center justify-center gap-1.5"
             >
               <Plus className="w-3.5 h-3.5 text-zinc-400" />
-              <span>+ Yeni Kollokasyon Ekle</span>
+              <span>+ Add Custom Collocation</span>
             </button>
           </div>
         </div>
@@ -195,14 +194,14 @@ export const Dashboard: React.FC = () => {
               <BookOpen className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-white group-hover:text-indigo-300 transition-colors">
-              Kitap Üniteleri
+              Curriculum Units
             </h3>
             <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
-              Intermediate & Advanced tüm üniteleri keşfedin ve ünite bazlı pratik yapın.
+              Explore Intermediate & Advanced units and practice unit by unit.
             </p>
           </div>
           <div className="flex items-center justify-between text-xs font-bold text-indigo-400 pt-4 mt-2 border-t border-[#1E2D45]">
-            <span>Ünitelere Git</span>
+            <span>Explore Units</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
@@ -217,14 +216,14 @@ export const Dashboard: React.FC = () => {
               <GraduationCap className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">
-              Akıllı Kartlar (SRS)
+              Smart Cards (SRS)
             </h3>
             <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
-              SM-2 Leitner aralıklı tekrar algoritması ve sesli telaffuz ile kalıcı hafıza.
+              SM-2 Leitner spaced repetition with natural audio for permanent memory.
             </p>
           </div>
           <div className="flex items-center justify-between text-xs font-bold text-cyan-400 pt-4 mt-2 border-t border-[#1E2D45]">
-            <span>{dueCards.length} Kart Sırada</span>
+            <span>{dueCards.length} Cards in Queue</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
@@ -239,14 +238,14 @@ export const Dashboard: React.FC = () => {
               <FileCheck2 className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">
-              Cümle Testi
+              Sentence Quiz
             </h3>
             <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
-              Boşluk doldurma ve çoktan seçmeli testlerle doğru kalıbı seçin.
+              Cloze tests and multiple choice questions to reinforce natural chunks.
             </p>
           </div>
           <div className="flex items-center justify-between text-xs font-bold text-emerald-400 pt-4 mt-2 border-t border-[#1E2D45]">
-            <span>Testi Başlat</span>
+            <span>Start Quiz</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
@@ -261,14 +260,14 @@ export const Dashboard: React.FC = () => {
               <Puzzle className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors">
-              Eşleştirme Oyunu
+              Collocation Match
             </h3>
             <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
-              Fiil + İsim, Zarf + Sıfat parçalarını kombolar yaparak eşleştirin.
+              Match verb + noun, adverb + adjective halves with speed and combos.
             </p>
           </div>
           <div className="flex items-center justify-between text-xs font-bold text-amber-400 pt-4 mt-2 border-t border-[#1E2D45]">
-            <span>Oyunu Oyna</span>
+            <span>Play Match</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
@@ -283,7 +282,7 @@ export const Dashboard: React.FC = () => {
           <div>
             <div className="flex items-center gap-2">
               <span className="text-[11px] font-bold uppercase tracking-wider text-amber-400">
-                Günün Kitap İpucu
+                Book Tip of the Day
               </span>
               <span className="text-[10px] text-zinc-500">• {dailyTip.category}</span>
             </div>
@@ -296,7 +295,7 @@ export const Dashboard: React.FC = () => {
           className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#1E2D45] hover:bg-[#253754] text-xs font-bold text-cyan-300 transition-colors self-start sm:self-center shrink-0"
         >
           <Volume2 className="w-4 h-4" />
-          <span>"{dailyTip.chunk}" Dinle</span>
+          <span>Listen "{dailyTip.chunk}"</span>
         </button>
       </div>
 
@@ -306,9 +305,9 @@ export const Dashboard: React.FC = () => {
         <div className="bg-[#111927] border border-[#1E2D45] rounded-2xl p-4 sm:p-5">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-xs font-semibold text-zinc-400 mb-1">Seri</p>
+              <p className="text-xs font-semibold text-zinc-400 mb-1">Streak</p>
               <p className="text-3xl font-extrabold font-mono text-white">{metrics.currentStreak}</p>
-              <p className="text-xs text-zinc-500 mt-0.5">gün kesintisiz</p>
+              <p className="text-xs text-zinc-500 mt-0.5">days in a row</p>
             </div>
             <div className={`p-2.5 rounded-xl ${metrics.currentStreak > 0 ? 'bg-amber-500/15 border border-amber-500/25' : 'bg-zinc-800'}`}>
               <Flame className={`w-5 h-5 ${metrics.currentStreak > 0 ? 'text-amber-400' : 'text-zinc-600'}`} />
@@ -320,9 +319,9 @@ export const Dashboard: React.FC = () => {
         <div className="bg-[#111927] border border-[#1E2D45] rounded-2xl p-4 sm:p-5">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-xs font-semibold text-zinc-400 mb-1">Hatırlama Oranı</p>
+              <p className="text-xs font-semibold text-zinc-400 mb-1">Retention Rate</p>
               <p className="text-3xl font-extrabold font-mono text-emerald-400">{metrics.retentionRate}%</p>
-              <p className="text-xs text-zinc-500 mt-0.5">kalıcı hafıza</p>
+              <p className="text-xs text-zinc-500 mt-0.5">long-term memory</p>
             </div>
             <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
               <Target className="w-5 h-5 text-emerald-400" />
@@ -334,9 +333,9 @@ export const Dashboard: React.FC = () => {
         <div className="bg-[#111927] border border-[#1E2D45] rounded-2xl p-4 sm:p-5">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-xs font-semibold text-zinc-400 mb-1">Tam Öğrenilen</p>
+              <p className="text-xs font-semibold text-zinc-400 mb-1">Mastered Chunks</p>
               <p className="text-3xl font-extrabold font-mono text-cyan-400">{metrics.masteredChunks}</p>
-              <p className="text-xs text-zinc-500 mt-0.5">kollokasyon</p>
+              <p className="text-xs text-zinc-500 mt-0.5">collocations</p>
             </div>
             <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
               <Award className="w-5 h-5 text-cyan-400" />
@@ -348,9 +347,9 @@ export const Dashboard: React.FC = () => {
         <div className="bg-[#111927] border border-[#1E2D45] rounded-2xl p-4 sm:p-5">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-xs font-semibold text-zinc-400 mb-1">Toplam Havuz</p>
+              <p className="text-xs font-semibold text-zinc-400 mb-1">Total Pool</p>
               <p className="text-3xl font-extrabold font-mono text-indigo-400">{metrics.totalCards}</p>
-              <p className="text-xs text-zinc-500 mt-0.5">kollokasyon hazır</p>
+              <p className="text-xs text-zinc-500 mt-0.5">available cards</p>
             </div>
             <div className="p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/20">
               <TrendingUp className="w-5 h-5 text-indigo-400" />
@@ -359,7 +358,7 @@ export const Dashboard: React.FC = () => {
         </div>
       </div>
 
-      {/* ─── 3B: Bu Hafta Öğrendiklerin ─── */}
+      {/* ─── 3B: Learned This Week ─── */}
       {weeklyLearned.length > 0 && (
         <div className="bg-[#111927] border border-[#1E2D45] rounded-2xl overflow-hidden">
           <button
@@ -371,10 +370,10 @@ export const Dashboard: React.FC = () => {
                 <Calendar className="w-4 h-4 text-indigo-400" />
               </div>
               <div className="text-left">
-                <p className="text-sm font-bold text-white">Bu Hafta Öğrendiklerin</p>
+                <p className="text-sm font-bold text-white">Learned This Week</p>
                 <p className="text-[11px] text-zinc-400 mt-0.5">
                   <Sparkles className="w-3 h-3 inline mr-1 text-amber-400" />
-                  {weeklyLearned.length} kollokasyon — haftalık kazanım
+                  {weeklyLearned.length} collocations acquired
                 </p>
               </div>
             </div>
@@ -410,13 +409,13 @@ export const Dashboard: React.FC = () => {
                             <div key={i} className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
                           ))}
                           {repetitions === 0 && <div className="w-1.5 h-1.5 rounded-full bg-zinc-700" />}
-                          <span className="text-[10px] text-zinc-600">{repetitions}x tekrar</span>
+                          <span className="text-[10px] text-zinc-600">{repetitions}x reviewed</span>
                         </div>
                       </div>
                       <button
                         onClick={() => speakCollocation(col.chunk)}
                         className="shrink-0 p-2 rounded-xl text-zinc-500 hover:text-cyan-300 hover:bg-cyan-500/10 transition-all opacity-0 group-hover:opacity-100"
-                        title="Seslendir"
+                        title="Listen"
                       >
                         <Volume2 className="w-4 h-4" />
                       </button>
@@ -427,13 +426,13 @@ export const Dashboard: React.FC = () => {
 
               <div className="mt-4 flex items-center justify-between">
                 <p className="text-[11px] text-zinc-500">
-                  💡 Bu hafta başladığın kollokasyonlar. SM-2 algoritması optimum zamanda geri getirecek.
+                  💡 Collocations started this week. The SM-2 spaced repetition algorithm will resurface them at the ideal retention threshold.
                 </p>
                 <button
                   onClick={() => navigate('/study')}
                   className="shrink-0 flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition-colors"
                 >
-                  Tekrar Et <ChevronRight className="w-3.5 h-3.5" />
+                  Review Queue <ChevronRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>

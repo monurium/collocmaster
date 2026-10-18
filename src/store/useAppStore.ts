@@ -66,6 +66,8 @@ const buildInitialSRSMap = (items: Collocation[]): Record<string, SRSItem> => {
 
 const initialSRSMap = buildInitialSRSMap(SEED_COLLOCATIONS);
 
+import { debouncedLocalStorage } from './debouncedStorage';
+
 export const useAppStore = create<AppState>()(
   persist(
     (set, get) => ({
@@ -325,7 +327,7 @@ export const useAppStore = create<AppState>()(
     }),
     {
       name: 'collocmaster_storage_v6',
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => debouncedLocalStorage),
       partialize: (state) => ({
         customCollocations: state.customCollocations,
         srsItems: state.srsItems,

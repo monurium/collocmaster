@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Dashboard } from './views/Dashboard';
-import { UnitsView } from './views/Units';
-import { StudySession } from './views/StudySession';
-import { QuizView } from './views/QuizView';
-import { MatchGame } from './views/MatchGame';
-import { Library } from './views/Library';
-import { Settings } from './views/Settings';
+
+// Lazy load non-initial views to split heavy bundle chunks
+const UnitsView = lazy(() => import('./views/Units').then(m => ({ default: m.UnitsView })));
+const StudySession = lazy(() => import('./views/StudySession').then(m => ({ default: m.StudySession })));
+const QuizView = lazy(() => import('./views/QuizView').then(m => ({ default: m.QuizView })));
+const MatchGame = lazy(() => import('./views/MatchGame').then(m => ({ default: m.MatchGame })));
+const Library = lazy(() => import('./views/Library').then(m => ({ default: m.Library })));
+const Settings = lazy(() => import('./views/Settings').then(m => ({ default: m.Settings })));
+
+const RouteFallback: React.FC = () => (
+  <div className="max-w-4xl mx-auto py-16 px-4 animate-pulse space-y-6">
+    <div className="h-8 bg-slate-800/60 rounded-xl w-1/3" />
+    <div className="h-64 bg-slate-800/30 rounded-2xl border border-slate-800/60 w-full" />
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="h-32 bg-slate-800/30 rounded-xl border border-slate-800/60" />
+      <div className="h-32 bg-slate-800/30 rounded-xl border border-slate-800/60" />
+    </div>
+  </div>
+);
 
 export const App: React.FC = () => {
   return (
@@ -15,16 +28,18 @@ export const App: React.FC = () => {
       <div className="min-h-screen bg-[#0A0E1A] text-[#F1F5F9] flex flex-col font-sans selection:bg-indigo-500/40 selection:text-white">
         <Navbar />
         <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-4 sm:py-7 pb-24 md:pb-8">
-          <Routes>
-            <Route path="/"         element={<Dashboard />} />
-            <Route path="/units"    element={<UnitsView />} />
-            <Route path="/study"    element={<StudySession />} />
-            <Route path="/quiz"     element={<QuizView />} />
-            <Route path="/match"    element={<MatchGame />} />
-            <Route path="/library"  element={<Library />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="*"         element={<Navigate to="/" replace />} />
-          </Routes>
+          <Suspense fallback={<RouteFallback />}>
+            <Routes>
+              <Route path="/"         element={<Dashboard />} />
+              <Route path="/units"    element={<UnitsView />} />
+              <Route path="/study"    element={<StudySession />} />
+              <Route path="/quiz"     element={<QuizView />} />
+              <Route path="/match"    element={<MatchGame />} />
+              <Route path="/library"  element={<Library />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="*"         element={<Navigate to="/" replace />} />
+            </Routes>
+          </Suspense>
         </main>
 
         {/* Footer */}

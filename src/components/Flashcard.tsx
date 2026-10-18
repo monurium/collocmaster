@@ -475,14 +475,30 @@ export const Flashcard: React.FC<FlashcardProps> = ({
             {/* Input */}
             <div className="space-y-3">
               <div className="flex flex-col sm:relative gap-2">
+                <label htmlFor="flashcard-cloze-input" className="sr-only">
+                  Type the missing collocation to complete the sentence
+                </label>
                 <input
+                  id="flashcard-cloze-input"
                   ref={inputRef}
                   type="text"
+                  autoComplete="off"
+                  autoCorrect="off"
+                  spellCheck="false"
                   value={userInput}
+                  onFocus={() => {
+                    // Visual viewport adjustment for mobile virtual keyboards
+                    if (window.visualViewport) {
+                      setTimeout(() => {
+                        inputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                      }, 250);
+                    }
+                  }}
                   onChange={(e) => setUserInput(e.target.value)}
                   onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); if (userInput.trim()) handleCheck(); else handleReveal(); } }}
                   placeholder="Type the collocation here..."
-                  className="input-base sm:pr-28 text-sm sm:text-base py-3 sm:py-3.5"
+                  aria-describedby="flashcard-input-help"
+                  className="input-base sm:pr-28 text-sm sm:text-base py-3 sm:py-3.5 focus:border-indigo-400 placeholder-zinc-400"
                 />
                 <button
                   onClick={() => userInput.trim() ? handleCheck() : handleReveal()}
@@ -493,7 +509,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
                 </button>
               </div>
 
-              <div className="flex items-center justify-between text-xs text-zinc-500 pt-1">
+              <div id="flashcard-input-help" className="flex items-center justify-between text-xs text-slate-400 pt-1">
                 <button
                   onClick={handleReveal}
                   className="flex items-center gap-1.5 hover:text-zinc-200 text-zinc-400 transition-colors py-1.5 active:scale-95"

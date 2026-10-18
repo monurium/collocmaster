@@ -1,11 +1,11 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import { useAppStore } from '../store/useAppStore';
 import { Flashcard } from '../components/Flashcard';
 import { Collocation, Grade } from '../types';
 import { playChime } from '../utils/audio';
-import { ArrowLeft, Trophy, RotateCcw, Zap } from 'lucide-react';
+import { ArrowLeft, Trophy, RotateCcw, Zap, Link2 } from 'lucide-react';
 
 export const StudySession: React.FC = () => {
   const navigate   = useNavigate();
@@ -41,13 +41,31 @@ export const StudySession: React.FC = () => {
   const [index, setIndex] = useState(0);
   const [done, setDone]   = useState(false);
   const [stats, setStats] = useState<{ grades: Grade[]; totalMs: number }>({ grades: [], totalMs: 0 });
+  const [relatedChunk, setRelatedChunk] = useState<string | null>(null);
 
-  const current = queue[index];
+  const current = relatedChunk
+    ? collocations.find((c) => c.chunk.toLowerCase() === relatedChunk.toLowerCase()) || queue[index]
+    : queue[index];
+
+  // Navigate to a related collocate — study it right now
+  const handleStudyRelated = useCallback((chunk: string) => {
+    setRelatedChunk(chunk);
+  }, []);
+
+  const handleClearRelated = () => {
+    setRelatedChunk(null);
+  };
 
   const handleGrade = (grade: Grade, timeMs: number) => {
     if (!current) return;
     recordReview(current.id, grade, timeMs);
     setStats((s) => ({ grades: [...s.grades, grade], totalMs: s.totalMs + timeMs }));
+
+    // If we were studying a related card, go back to the queue
+    if (relatedChunk) {
+      setRelatedChunk(null);
+      return;
+    }
 
     if (index + 1 < queue.length) {
       setIndex((i) => i + 1);
@@ -104,13 +122,24 @@ export const StudySession: React.FC = () => {
       {!done && current ? (
         <div className="space-y-4">
           <Flashcard
-            key={current.id}
+            key={current.id + (relatedChunk || '')}
             collocation={current}
             srsItem={getSRSItem(current.id)}
             speechRate={settings.speechRate}
             autoAudio={settings.autoAudio}
+            recognitionFirst={true}
+            onStudyRelated={handleStudyRelated}
             onGrade={handleGrade}
           />
+          {relatedChunk && (
+            <button
+              onClick={handleClearRelated}
+              className="w-full py-2 rounded-xl text-xs text-zinc-400 hover:text-zinc-200 flex items-center justify-center gap-1.5 transition-colors"
+            >
+              <Link2 className="w-3.5 h-3.5" />
+              İlgili kart — tamamla ve sıradaki karta dön
+            </button>
+          )}
 
           {/* Keyboard hints */}
           <div className="hidden sm:flex items-center justify-center gap-6 text-[11px] text-zinc-600">

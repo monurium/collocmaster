@@ -21,6 +21,9 @@ import {
   GraduationCap,
   Plus,
   Volume2,
+  Calendar,
+  Sparkles,
+  ChevronDown,
 } from 'lucide-react';
 
 const BOOK_TIPS = [
@@ -81,6 +84,25 @@ export const Dashboard: React.FC = () => {
     const day = new Date().getDate();
     return BOOK_TIPS[day % BOOK_TIPS.length];
   }, []);
+
+  // 3B: Weekly learned collocations
+  const [showWeekly, setShowWeekly] = useState(true);
+  const collocations = useAppStore((s) => s.collocations);
+  const srsItems = useAppStore((s) => s.srsItems);
+
+  const weeklyLearned = useMemo(() => {
+    const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+    // Find collocation IDs where repetitionCount >= 1 and first review was in last 7 days
+    const recentlyStarted = Object.entries(srsItems).filter(([, item]) => {
+      if (item.repetitionCount === 0 || item.history.length === 0) return false;
+      const firstReview = Math.min(...item.history.map((h) => h.timestamp));
+      return firstReview >= sevenDaysAgo;
+    }).map(([id]) => id);
+
+    return collocations
+      .filter((c) => recentlyStarted.includes(c.id))
+      .slice(0, 20); // cap at 20 for UI
+  }, [collocations, srsItems, reviewLogs]);
 
   return (
     <div className="space-y-6 pb-24 md:pb-10 animate-fadeIn">
@@ -336,6 +358,88 @@ export const Dashboard: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* ─── 3B: Bu Hafta Öğrendiklerin ─── */}
+      {weeklyLearned.length > 0 && (
+        <div className="bg-[#111927] border border-[#1E2D45] rounded-2xl overflow-hidden">
+          <button
+            onClick={() => setShowWeekly(!showWeekly)}
+            className="w-full flex items-center justify-between p-5 hover:bg-[#131D2E] transition-colors"
+          >
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-xl bg-indigo-500/15 border border-indigo-500/25">
+                <Calendar className="w-4 h-4 text-indigo-400" />
+              </div>
+              <div className="text-left">
+                <p className="text-sm font-bold text-white">Bu Hafta Öğrendiklerin</p>
+                <p className="text-[11px] text-zinc-400 mt-0.5">
+                  <Sparkles className="w-3 h-3 inline mr-1 text-amber-400" />
+                  {weeklyLearned.length} kollokasyon — haftalık kazanım
+                </p>
+              </div>
+            </div>
+            <ChevronDown
+              className={`w-4 h-4 text-zinc-400 transition-transform duration-300 ${showWeekly ? 'rotate-180' : ''}`}
+            />
+          </button>
+
+          {showWeekly && (
+            <div className="px-5 pb-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {weeklyLearned.map((col) => {
+                  const item = srsItems[col.id];
+                  const repetitions = item?.repetitionCount || 0;
+                  return (
+                    <div
+                      key={col.id}
+                      className="flex items-center justify-between gap-2 p-3 rounded-xl bg-[#0D1525] border border-[#1E2D45] hover:border-indigo-500/30 transition-all group"
+                    >
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-1.5 mb-0.5 flex-wrap">
+                          <span className="text-sm font-bold text-white truncate">{col.chunk}</span>
+                          <span className={`px-1.5 py-0.5 text-[9px] font-bold rounded uppercase ${
+                            col.type === 'verb-noun' ? 'bg-violet-500/15 text-violet-300 border border-violet-500/20' :
+                            col.type === 'adj-noun'  ? 'bg-sky-500/15 text-sky-300 border border-sky-500/20' :
+                            col.type === 'adv-adj'   ? 'bg-teal-500/15 text-teal-300 border border-teal-500/20' :
+                            'bg-amber-500/15 text-amber-300 border border-amber-500/20'
+                          }`}>{col.type}</span>
+                        </div>
+                        <p className="text-[11px] text-zinc-400 truncate">{col.meaning}</p>
+                        <div className="flex items-center gap-1.5 mt-1">
+                          {[...Array(Math.min(repetitions, 5))].map((_, i) => (
+                            <div key={i} className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
+                          ))}
+                          {repetitions === 0 && <div className="w-1.5 h-1.5 rounded-full bg-zinc-700" />}
+                          <span className="text-[10px] text-zinc-600">{repetitions}x tekrar</span>
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => speakCollocation(col.chunk)}
+                        className="shrink-0 p-2 rounded-xl text-zinc-500 hover:text-cyan-300 hover:bg-cyan-500/10 transition-all opacity-0 group-hover:opacity-100"
+                        title="Seslendir"
+                      >
+                        <Volume2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="mt-4 flex items-center justify-between">
+                <p className="text-[11px] text-zinc-500">
+                  💡 Bu hafta başladığın kollokasyonlar. SM-2 algoritması optimum zamanda geri getirecek.
+                </p>
+                <button
+                  onClick={() => navigate('/study')}
+                  className="shrink-0 flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition-colors"
+                >
+                  Tekrar Et <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* ── Heatmap & Activity ── */}
       <div className="bg-[#111927] border border-[#1E2D45] rounded-2xl p-5">

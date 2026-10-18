@@ -17,6 +17,9 @@ import {
   ChevronRight,
   Filter,
   Brain,
+  AlertCircle,
+  Link2,
+  Lightbulb,
 } from 'lucide-react';
 
 export const QuizView: React.FC = () => {
@@ -29,6 +32,20 @@ export const QuizView: React.FC = () => {
 
   const navState = location.state as { unitNumber?: number; level?: string } | undefined;
   const initialUnit = navState?.unitNumber;
+
+  // Collocation type explanations for quiz teaching
+  const TYPE_LABELS: Record<string, string> = {
+    'verb-noun': 'Fiil + İsim',
+    'adj-noun': 'Sıfat + İsim',
+    'adv-adj': 'Zarf + Sıfat',
+    'phrase': 'Deyimsel İfade',
+  };
+
+  const parseCommonMistakes = (mistakes: string[]) =>
+    mistakes.map((m) => ({
+      core: m.split('(')[0].trim(),
+      explanation: (m.match(/\(([^)]+)\)/) || [])[1] || '',
+    }));
 
   const [selectedUnit, setSelectedUnit] = useState<number | 'all'>(initialUnit ?? 'all');
   const [quizMode, setQuizMode] = useState<'cloze' | 'recall'>('cloze');
@@ -407,43 +424,106 @@ export const QuizView: React.FC = () => {
               })}
             </div>
 
-            {/* Feedback & Explanation */}
-            {isAnswered && (
-              <div className="p-4 rounded-2xl bg-[#0F172A] border border-[#1E2D45] space-y-3 animate-fadeIn">
-                <div className="flex items-start gap-2.5">
-                  <Sparkles className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-                  <div className="text-xs text-zinc-300 leading-relaxed font-medium">
-                    {currentQ.explanation}
+            {/* Feedback & Pedagogical Teaching Panel */}
+            {isAnswered && (() => {
+              const isRight = selectedOption?.toLowerCase() === currentQ.correctAnswer.toLowerCase();
+              const col = currentQ.collocation;
+              const parsed = parseCommonMistakes(col.commonMistakes || []);
+              const typeLabel = TYPE_LABELS[col.type] || col.type;
+              return (
+                <div className="p-4 rounded-2xl bg-[#0F172A] border border-[#1E2D45] space-y-3 animate-fadeIn">
+                  {/* Result + meaning */}
+                  <div className="flex items-start gap-2.5">
+                    {isRight
+                      ? <Sparkles className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                      : <AlertCircle className="w-5 h-5 text-rose-400 shrink-0 mt-0.5" />}
+                    <div className="flex-1 min-w-0">
+                      <p className={`text-sm font-bold mb-0.5 ${isRight ? 'text-emerald-300' : 'text-rose-300'}`}>
+                        {isRight ? '✅ Doğru!' : '❌ Yanlış — öğretici açıklama:'}
+                      </p>
+                      <p className="text-xs text-zinc-300 leading-relaxed">
+                        <strong className="text-white">{col.chunk}</strong>{' '}
+                        <span className="text-zinc-400">—</span>{' '}
+                        {col.meaning}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Collocation type tip */}
+                  <div className="flex items-start gap-2 p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-xs">
+                    <Link2 className="w-3.5 h-3.5 text-indigo-400 shrink-0 mt-0.5" />
+                    <div className="text-indigo-200">
+                      <span className="font-bold text-indigo-300">{typeLabel}: </span>
+                      {col.type === 'verb-noun' && 'Fiil ve nesnesini bir bütün olarak ezberlemelisin; bunlar ayrılmaz bir çift.'}
+                      {col.type === 'adj-noun' && 'Sıfat her zaman isimden önce gelir; Türkçe eşdeğerinden farklı eşleşme olabilir.'}
+                      {col.type === 'adv-adj' && 'Zarf, sıfatın güçlendiricisidir. Birlikte "bir bütün" gibi öğren.'}
+                      {col.type === 'phrase' && 'Kelime kelime çevirme; bu ifadeyi deyimsel bir bütün olarak kullan.'}
+                      {!['verb-noun','adj-noun','adv-adj','phrase'].includes(col.type) && 'Bu kollokasyon tipini bir bütün olarak öğren.'}
+                    </div>
+                  </div>
+
+                  {/* Why wrong — only when incorrect AND there are common mistakes */}
+                  {!isRight && parsed.length > 0 && (
+                    <div className="p-2.5 rounded-xl bg-rose-500/10 border border-rose-500/20 space-y-2">
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-rose-400 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        Neden yanlış? — Sık yapılan hatalar
+                      </p>
+                      {parsed.map((m, i) => (
+                        <div key={i} className="flex items-start gap-2 text-xs">
+                          <span className="shrink-0 px-1.5 py-0.5 rounded bg-rose-950/50 border border-rose-800/30 text-rose-300 line-through decoration-rose-500 font-mono">
+                            {m.core}
+                          </span>
+                          {m.explanation && (
+                            <span className="text-zinc-400 italic pt-0.5">{m.explanation}</span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Full sentence context */}
+                  <div className="p-3 bg-[#0B101C] rounded-xl border border-[#1E2D45] text-xs text-zinc-200">
+                    <span className="text-[10px] font-bold text-zinc-500 uppercase block mb-1">Tam Cümle &amp; Kalıp:</span>
+                    "{renderSentenceWithHighlight(currentQ.sentence, currentQ.correctAnswer)}"
+                  </div>
+
+                  {/* Synonyms if any */}
+                  {col.synonyms && col.synonyms.length > 0 && (
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-1">
+                        <Lightbulb className="w-3 h-3" />
+                        Alternatifler:
+                      </span>
+                      {col.synonyms.slice(0, 3).map((s, i) => (
+                        <span key={i} className="px-2 py-0.5 rounded-md text-[11px] bg-cyan-500/10 text-cyan-300 border border-cyan-500/25">{s}</span>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2 border-t border-[#1E2D45]">
+                    <button
+                      onClick={() => speakCollocation(currentQ.correctAnswer)}
+                      className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-[#162235] sm:bg-transparent text-xs text-indigo-400 hover:text-indigo-300 font-bold active:scale-95"
+                    >
+                      <Volume2 className="w-4 h-4" />
+                      Kollokasyonu Dinle
+                    </button>
+
+                    <button
+                      onClick={handleNext}
+                      className="flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white shadow-md shadow-indigo-600/30 transition-all active:scale-95"
+                    >
+                      <span>{currentIndex + 1 < questions.length ? 'Sonraki Soru' : 'Sonuçları Gör'}</span>
+                      <kbd className="hidden sm:inline-block px-1.5 py-0.2 rounded bg-black/25 text-[10px] font-mono">
+                        Enter ↵
+                      </kbd>
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
                   </div>
                 </div>
-
-                <div className="p-3 bg-[#0B101C] rounded-xl border border-[#1E2D45] text-xs text-zinc-200">
-                  <span className="text-[10px] font-bold text-zinc-500 uppercase block mb-1">Tam Cümle & Kalıp:</span>
-                  "{renderSentenceWithHighlight(currentQ.sentence, currentQ.correctAnswer)}"
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2 border-t border-[#1E2D45]">
-                  <button
-                    onClick={() => speakCollocation(currentQ.correctAnswer)}
-                    className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-[#162235] sm:bg-transparent text-xs text-indigo-400 hover:text-indigo-300 font-bold active:scale-95"
-                  >
-                    <Volume2 className="w-4 h-4" />
-                    Kollokasyonu Dinle
-                  </button>
-
-                  <button
-                    onClick={handleNext}
-                    className="flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white shadow-md shadow-indigo-600/30 transition-all active:scale-95"
-                  >
-                    <span>{currentIndex + 1 < questions.length ? 'Sonraki Soru' : 'Sonuçları Gör'}</span>
-                    <kbd className="hidden sm:inline-block px-1.5 py-0.2 rounded bg-black/25 text-[10px] font-mono">
-                      Enter ↵
-                    </kbd>
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            )}
+              );
+            })()}
           </div>
         </div>
       ) : isComplete ? (

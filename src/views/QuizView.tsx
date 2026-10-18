@@ -23,6 +23,11 @@ import {
   Languages,
 } from 'lucide-react';
 import { MultiUnitModal } from '../components/MultiUnitModal';
+import {
+  extractMistakeCore,
+  extractMistakeExplanation,
+  isCleanEnglishDistractor,
+} from '../utils/mistakeParser';
 
 export const QuizView: React.FC = () => {
   const navigate = useNavigate();
@@ -42,10 +47,10 @@ export const QuizView: React.FC = () => {
     'phrase': 'Idiomatic Phrase',
   };
 
-  const parseCommonMistakes = (mistakes: string[]) =>
+  const parseCommonMistakes = (mistakes: string[], targetChunk?: string) =>
     mistakes.map((m) => ({
-      core: m.split('(')[0].trim(),
-      explanation: (m.match(/\(([^)]+)\)/) || [])[1] || '',
+      core: extractMistakeCore(m, targetChunk),
+      explanation: extractMistakeExplanation(m, targetChunk),
     }));
 
   const [selectedUnits, setSelectedUnits] = useState<number[]>(initialUnits);
@@ -92,8 +97,8 @@ export const QuizView: React.FC = () => {
 
       if (col.commonMistakes && col.commonMistakes.length > 0) {
         for (const mistake of col.commonMistakes) {
-          const clean = mistake.split('(')[0].trim();
-          if (clean && clean.toLowerCase() !== correct.toLowerCase()) {
+          const clean = extractMistakeCore(mistake, correct);
+          if (isCleanEnglishDistractor(clean, correct)) {
             distractors.add(clean);
           }
         }

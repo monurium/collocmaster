@@ -18,6 +18,10 @@ import {
   Link2,
   Languages,
 } from 'lucide-react';
+import {
+  extractMistakeCore,
+  extractMistakeExplanation,
+} from '../utils/mistakeParser';
 
 interface FlashcardProps {
   collocation: Collocation;
@@ -41,15 +45,6 @@ const TYPE_EXPLANATIONS: Record<string, { label: string; tip: string; color: str
 
 const getTypeInfo = (type: string) =>
   TYPE_EXPLANATIONS[type] ?? { label: type, tip: 'Learn this collocation pattern as a whole.', color: 'text-zinc-300 bg-zinc-500/10 border-zinc-500/25' };
-
-/** Extracts the core wrong usage from a commonMistake string like "make research (açıklama)" */
-const extractMistakeCore = (m: string): string => m.split('(')[0].trim();
-
-/** Parses the parenthetical explanation from a commonMistake string */
-const extractMistakeExplanation = (m: string): string => {
-  const match = m.match(/\(([^)]+)\)/);
-  return match ? match[1] : '';
-};
 
 // Grade button configs — international SRS labels
 const GRADE_CONFIG: {

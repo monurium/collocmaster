@@ -7,6 +7,7 @@ import { isMastered, isDue } from '../utils/srsEngine';
 import { AudioButton } from '../components/AudioButton';
 import { AddCollocationModal } from '../components/AddCollocationModal';
 import { renderSentenceWithHighlight, normalizeSearchText } from '../utils/textHighlight';
+import { extractMistakeCore, extractMistakeExplanation } from '../utils/mistakeParser';
 import {
   Search,
   BookOpen,
@@ -466,14 +467,19 @@ export const Library: React.FC = () => {
               <div className="mb-4 p-3.5 rounded-xl bg-rose-500/8 border border-rose-500/15">
                 <p className="text-xs font-bold text-rose-400 mb-2">❌ Common Mistakes to Avoid</p>
                 <div className="flex flex-wrap gap-1.5">
-                  {modal.commonMistakes.map((m, i) => (
-                    <span
-                      key={i}
-                      className="px-2.5 py-1 text-xs bg-rose-950/40 text-rose-200 rounded border border-rose-800/30 line-through"
-                    >
-                      {m}
-                    </span>
-                  ))}
+                  {modal.commonMistakes.map((m, i) => {
+                    const core = extractMistakeCore(m, modal.chunk);
+                    const expl = extractMistakeExplanation(m, modal.chunk);
+                    return (
+                      <span
+                        key={i}
+                        className="px-2.5 py-1 text-xs bg-rose-950/40 text-rose-200 rounded border border-rose-800/30"
+                      >
+                        <span className="line-through">{core}</span>
+                        {expl && <span className="text-[11px] text-zinc-400 ml-1.5 font-normal">({expl})</span>}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             )}

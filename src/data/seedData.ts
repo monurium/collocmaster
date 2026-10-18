@@ -1011,9 +1011,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "To formally agree to take a job, place, contract or opportunity that is offered.",
     "collocates": [],
     "commonMistakes": [
-      "make an offer kabul etmek anlamında kullanılmaz; 'make an offer' teklifte bulunmak demektir.",
-      "receive an offer kabul etmek değil, teklif almak anlamına gelir.",
-      "'accept to an offer' yanlıştır; doğrusu 'accept an offer' olmalıdır."
+      "make an offer (kabul etmek anlamında kullanılmaz; 'make an offer' teklifte bulunmak demektir.)",
+      "receive an offer (kabul etmek değil, teklif almak anlamına gelir.)",
+      "accept to an offer (yanlıştır; doğrusu 'accept an offer' olmalıdır.)"
     ],
     "examples": [
       {
@@ -1062,9 +1062,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "Minor but continuous pains in the body, often from age, illness or tiredness.",
     "collocates": [],
     "commonMistakes": [
-      "'pain and ache' şeklinde tekil kullanım yaygın değildir; kalıp genellikle çoğul halde 'aches and pains' olarak kullanılır.",
-      "'hurts and pains' yanlıştır; doğru kalıp 'aches and pains' şeklindedir.",
-      "Sıralama değiştirilerek 'pains and aches' denebilir ancak 'aches and pains' çok daha yaygın ve doğaldır."
+      "pain and ache (şeklinde tekil kullanım yaygın değildir; kalıp genellikle çoğul halde 'aches and pains' olarak kullanılır.)",
+      "hurts and pains (yanlıştır; doğru kalıp 'aches and pains' şeklindedir.)",
+      "pains and aches (Sıralama değiştirilerek  denebilir ancak 'aches and pains' çok daha yaygın ve doğaldır.)"
     ],
     "examples": [
       {
@@ -1113,9 +1113,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "To make pain less severe, usually with medicine, treatment or rest.",
     "collocates": [],
     "commonMistakes": [
-      "'solve pain' yanlıştır; ağrı için 'alleviate' veya 'relieve' kullanılır.",
-      "'delete pain' veya 'remove pain' tıbbi bağlamda doğal değildir.",
-      "'alleviate the pain' ile 'alleviate pain' arasındaki fark göz ardı edilmemelidir; belirli ağrıdan bahsederken 'the' kullanılır."
+      "solve pain (yanlıştır; ağrı için 'alleviate' veya 'relieve' kullanılır.)",
+      "delete pain (veya 'remove pain' tıbbi bağlamda doğal değildir.)",
+      "alleviate the pain (ile 'alleviate pain' arasındaki fark göz ardı edilmemelidir; belirli ağrıdan bahsederken 'the' kullanılır.)"
     ],
     "examples": [
       {
@@ -1164,9 +1164,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "To make someone feel physical pain or hurt.",
     "collocates": [],
     "commonMistakes": [
-      "'do pain' yanlıştır; doğrusu 'cause pain' olmalıdır.",
-      "'make pain' da yanlış bir eşdizimdir; İngilizcede 'make pain' kullanılmaz.",
-      "'give pain' bazı bağlamlarda kullanılabilse de 'cause pain' çok daha yaygın ve doğaldır."
+      "do pain (yanlıştır; doğrusu 'cause pain' olmalıdır.)",
+      "make pain (da yanlış bir eşdizimdir; İngilizcede 'make pain' kullanılmaz.)",
+      "give pain (bazı bağlamlarda kullanılabilse de 'cause pain' çok daha yaygın ve doğaldır.)"
     ],
     "examples": [
       {
@@ -1215,9 +1215,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "To tell a doctor or others that you have a particular pain.",
     "collocates": [],
     "commonMistakes": [
-      "'complain about pain' da kullanılabilir ancak tıbbi bağlamda 'complain of pain' daha yaygındır ve doğrudur.",
-      "'complain pain' yanlıştır; 'complain of' edatı gereklidir.",
-      "'complain from pain' yanlış bir kullanımdır; doğrusu 'complain of pain' olmalıdır."
+      "complain about pain (da kullanılabilir ancak tıbbi bağlamda 'complain of pain' daha yaygındır ve doğrudur.)",
+      "complain pain (yanlıştır; 'complain of' edatı gereklidir.)",
+      "complain from pain (yanlış bir kullanımdır; doğrusu 'complain of pain' olmalıdır.)"
     ],
     "examples": [
       {
@@ -10205,7 +10205,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "commonMistakes": [
       "'suitable accommodation' yerine 'convenient accommodation' demek (convenient = elverişli/kolay, suitable = uygun)",
       "'suit accommodation' şeklinde fiil türetmek (doğrusu: find/provide/look for suitable accommodation)",
-      "'suitable for accommodation' gibi yanlış edat kullanımı"
+      "suitable for accommodation (gibi yanlış edat kullanımı)"
     ],
     "examples": [
       {
@@ -10306,7 +10306,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "collocates": [],
     "commonMistakes": [
       "'affordable housing' yerine 'cheap housing' demek (cheap = kalitesiz çağrışımı yapar, affordable = karşılanabilir)",
-      "'affording housing' gibi yanlış sıfat formu kullanmak",
+      "affording housing (gibi yanlış sıfat formu kullanmak)",
       "'affordable house' ile karıştırmak (housing = genel konut sistemi, house = tek bina)"
     ],
     "examples": [
@@ -12693,8 +12693,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "A continuous pain that is not sharp but is uncomfortable and does not go away.",
     "collocates": [],
     "commonMistakes": [
-      "dull pain yerine dull ache tercih edilir; 'dull hurt' yanlıştır",
-      "'dull ache' yerine 'dull pain' denilebilir ama 'dull ache' daha doğal bir eşdizimdir"
+      "dull hurt (dull pain yerine dull ache tercih edilir;  yanlıştır)",
+      "dull ache (yerine 'dull pain' denilebilir ama 'dull ache' daha doğal bir eşdizimdir)"
     ],
     "examples": [
       {
@@ -12743,8 +12743,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "Extremely and intensely sore, used to emphasize how severe the pain is.",
     "collocates": [],
     "commonMistakes": [
-      "'very painful' yerine 'acutely painful' daha akademik ve güçlüdür; 'acutely pain' yanlıştır",
-      "'acute pain' ile karıştırılmamalıdır; 'acutely painful' sıfat tamlamasıdır"
+      "very painful (yerine 'acutely painful' daha akademik ve güçlüdür; 'acutely pain' yanlıştır)",
+      "acute pain (ile karıştırılmamalıdır; 'acutely painful' sıfat tamlamasıdır)"
     ],
     "examples": [
       {
@@ -12793,9 +12793,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "To be told by a doctor, after tests, that you have AIDS.",
     "collocates": [],
     "commonMistakes": [
-      "'be diagnosed AIDS' yanlıştır; 'be diagnosed with AIDS' doğrudur",
-      "'take AIDS diagnosis' yanlıştır; 'receive a diagnosis' kullanılır",
-      "AIDS yerine HIV ile karıştırılmamalıdır; HIV virüs, AIDS sendromdur"
+      "be diagnosed AIDS (yanlıştır; 'be diagnosed with AIDS' doğrudur)",
+      "take AIDS diagnosis (yanlıştır; 'receive a diagnosis' kullanılır)",
+      "AIDS (yerine HIV ile karıştırılmamalıdır; HIV virüs, AIDS sendromdur)"
     ],
     "examples": [
       {
@@ -12844,9 +12844,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "For an HIV infection to progress until the person becomes ill with AIDS.",
     "collocates": [],
     "commonMistakes": [
-      "'catch AIDS' günlük dilde kullanılsa da tıbben 'develop AIDS' veya 'contract AIDS' daha doğrudur",
-      "'get AIDS' çok gayri resmidir; akademik metinlerde 'develop AIDS' tercih edilir",
-      "HIV ile AIDS karıştırılmamalıdır; HIV pozitif olan herkes AIDS geliştirmez"
+      "catch AIDS (günlük dilde kullanılsa da tıbben 'develop AIDS' veya 'contract AIDS' daha doğrudur)",
+      "get AIDS (çok gayri resmidir; akademik metinlerde 'develop AIDS' tercih edilir)",
+      "HIV ile AIDS (karıştırılmamalıdır; HIV pozitif olan herkes AIDS geliştirmez)"
     ],
     "examples": [
       {
@@ -12895,9 +12895,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "A small, not serious illness that usually gets better quickly without special treatment.",
     "collocates": [],
     "commonMistakes": [
-      "'small ailment' yaygın ama 'minor ailment' daha doğal eşdizimdir",
-      "'little ailment' yanlıştır; 'minor ailment' kullanılır",
-      "'ailment' kelimesi genellikle hafif hastalıklar için kullanılır, ciddi hastalıklar için 'disease' tercih edilir"
+      "small ailment (yaygın ama 'minor ailment' daha doğal eşdizimdir)",
+      "little ailment (yanlıştır; 'minor ailment' kullanılır)",
+      "ailment (kelimesi genellikle hafif hastalıklar için kullanılır, ciddi hastalıklar için 'disease' tercih edilir)"
     ],
     "examples": [
       {
@@ -20072,7 +20072,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     ],
     "commonMistakes": [
       "from dawn to dusk yerine 'from dawn till dark' demek (kalıp 'dusk' ile kurulur)",
-      "'from the dawn till the dusk' şeklinde gereksiz 'the' eklemek",
+      "the ('from  dawn till the dusk' şeklinde gereksiz 'the' eklemek)",
       "'from down till dusk' yazım hatası (dawn olmalı)"
     ],
     "examples": [
@@ -20169,7 +20169,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "collocates": [],
     "commonMistakes": [
       "'last few weeks' ile 'past few weeks' arasındaki farkı karıştırmak (ikisi de doğrudur ama 'the past few weeks' daha çok 'the' ile kullanılır)",
-      "'past few week' şeklinde çoğul eki unutmak",
+      "past few week (şeklinde çoğul eki unutmak)",
       "'in past few weeks' demek ('in the past few weeks' olmalı)"
     ],
     "examples": [
@@ -20221,7 +20221,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "commonMistakes": [
       "'empty time' demek (doğrusu 'free time')",
       "'free times' şeklinde çoğul yapmak (genellikle sayılamaz)",
-      "'in my free time' yerine 'at my free time' demek"
+      "in my free time (yerine 'at my free time' demek)"
     ],
     "examples": [
       {
@@ -22194,7 +22194,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "commonMistakes": [
       "'bread goes hard' yerine 'bread becomes hard' demek (doğru ama daha az doğal; 'goes' tercih edilir)",
       "'bread gets hard' yerine 'bread goes hard' karıştırmak (ikisi de olur ama 'goes' daha yaygın)",
-      "Türkçeden çeviriyle 'bread gets stale hard' gibi gereksiz kelime eklemek"
+      "bread gets stale hard (Türkçeden çeviriyle  gibi gereksiz kelime eklemek)"
     ],
     "examples": [
       {
@@ -24405,7 +24405,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "commonMistakes": [
       "apologise deeply profusely (iki zarf birlikte kullanılmaz)",
       "make apologise profusely (apologise fiildir, 'make' ile kullanılmaz)",
-      "apologise profusely to someone for something yapısında 'for' unutulması"
+      "for (apologise profusely to someone  something yapısında 'for' unutulması)"
     ],
     "examples": [
       {
@@ -24607,9 +24607,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "to start talking about something different, often to avoid an awkward topic",
     "collocates": [],
     "commonMistakes": [
-      "change the topic yerine change the subject tercih edilir; 'change the theme' yanlıştır",
+      "change the theme (change the topic yerine change the subject tercih edilir;  yanlıştır)",
       "change subject (the olmadan) kullanımı yanlıştır",
-      "change the conversation denmez; change the subject denir"
+      "change the conversation denmez (change the subject denir)"
     ],
     "examples": [
       {
@@ -24658,9 +24658,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "to state something in a way that leaves no doubt about your meaning",
     "collocates": [],
     "commonMistakes": [
-      "make clear it yerine make it clear denir; sözcük sırası önemlidir",
-      "do it clear yanlıştır; make it clear doğrudur",
-      "make it clearly denmez; clear sıfat olarak kullanılır"
+      "make clear it (yerine make it clear denir; sözcük sırası önemlidir)",
+      "do it clear (yanlıştır; make it clear doğrudur)",
+      "make it clearly denmez (clear sıfat olarak kullanılır)"
     ],
     "examples": [
       {
@@ -24710,8 +24710,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "collocates": [],
     "commonMistakes": [
       "get in conversation (into yerine in) yanlıştır",
-      "make a conversation denmez; get into conversation veya have a conversation denir",
-      "get into talk yanlıştır; get into conversation doğrudur"
+      "make a conversation denmez (get into conversation veya have a conversation denir)",
+      "get into talk (yanlıştır; get into conversation doğrudur)"
     ],
     "examples": [
       {
@@ -24756,8 +24756,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "collocates": [],
     "commonMistakes": [
       "join a conversation (in olmadan) bazen kullanılır ama join in a conversation daha doğaldır",
-      "join to a conversation yanlıştır",
-      "attend a conversation denmez; join in a conversation denir"
+      "join to a conversation (yanlıştır)",
+      "attend a conversation denmez (join in a conversation denir)"
     ],
     "examples": [
       {
@@ -24806,9 +24806,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "a short pause in a conversation when nobody speaks",
     "collocates": [],
     "commonMistakes": [
-      "lull of the conversation yanlıştır; lull in the conversation doğrudur",
-      "silence in the conversation denebilir ama lull in the conversation daha spesifiktir",
-      "lull on the conversation yanlıştır"
+      "lull of the conversation (yanlıştır; lull in the conversation doğrudur)",
+      "silence in the conversation denebilir ama lull in the conversation daha spesifiktir (yanlış kullanım)",
+      "lull on the conversation (yanlıştır)"
     ],
     "examples": [
       {
@@ -25622,9 +25622,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "a start to a day, journey or activity at an earlier time than usual",
     "collocates": [],
     "commonMistakes": [
-      "early beginning yerine her bağlamda early start tercih edilir; 'early beginning' daha çok kitaplarda/akademik metinlerde görülür.",
-      "'make an early start' yerine 'do an early start' denmez; doğru fiil make veya get'dir.",
-      "'start early' ile karıştırılıp 'early start' isim öbeği olarak yanlış cümle kurulabilir: 'We early start' yanlıştır."
+      "early beginning (yerine her bağlamda early start tercih edilir; 'early beginning' daha çok kitaplarda/akademik metinlerde görülür.)",
+      "make an early start (yerine 'do an early start' denmez; doğru fiil make veya get'dir.)",
+      "start early (ile karıştırılıp 'early start' isim öbeği olarak yanlış cümle kurulabilir: 'We early start' yanlıştır.)"
     ],
     "examples": [
       {
@@ -25673,9 +25673,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "the final result that comes after a process or series of events",
     "collocates": [],
     "commonMistakes": [
-      "'end result' yerine 'last result' denmez; 'last result' genellikle bir serideki son sonuç anlamına gelir.",
-      "'result end' şeklinde ters çevrilmez.",
-      "Türkçe etkisiyle 'result of end' gibi ifadeler yanlıştır."
+      "end result (yerine 'last result' denmez; 'last result' genellikle bir serideki son sonuç anlamına gelir.)",
+      "result end (şeklinde ters çevrilmez.)",
+      "result of end (Türkçe etkisiyle  gibi ifadeler yanlıştır.)"
     ],
     "examples": [
       {
@@ -25724,9 +25724,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "an ideal and satisfying way for an event, day or story to finish",
     "collocates": [],
     "commonMistakes": [
-      "'perfect end' yerine 'perfect finish' bazı bağlamlarda daha doğaldır; ancak 'perfect end' de yaygındır.",
-      "'end perfect' şeklinde sıfat-isim sırası bozulmaz.",
-      "'make a perfect end' yerine 'come to a perfect end' veya 'be a perfect end' daha doğaldır."
+      "perfect end (yerine 'perfect finish' bazı bağlamlarda daha doğaldır; ancak 'perfect end' de yaygındır.)",
+      "end perfect (şeklinde sıfat-isim sırası bozulmaz.)",
+      "make a perfect end (yerine 'come to a perfect end' veya 'be a perfect end' daha doğaldır.)"
     ],
     "examples": [
       {
@@ -25775,9 +25775,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "the point at which a holiday finishes and normal life begins again",
     "collocates": [],
     "commonMistakes": [
-      "'holiday ended' yerine 'holiday finished' da doğrudur; ancak 'holiday was ended' edilgen yapısı gereksizdir.",
-      "'end the holiday' ile karıştırılmamalıdır; bu, tatili bitirmek anlamına gelir.",
-      "Türkçe etkisiyle 'holiday finished' yerine 'holiday done' denmez."
+      "holiday ended (yerine 'holiday finished' da doğrudur; ancak 'holiday was ended' edilgen yapısı gereksizdir.)",
+      "end the holiday (ile karıştırılmamalıdır; bu, tatili bitirmek anlamına gelir.)",
+      "holiday finished (Türkçe etkisiyle  yerine 'holiday done' denmez.)"
     ],
     "examples": [
       {
@@ -25826,9 +25826,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "the point at which a trip or, figuratively, a process finishes",
     "collocates": [],
     "commonMistakes": [
-      "'journey ended' yerine 'journey finished' da doğrudur; ancak 'journey was ended' gereksiz edilgendir.",
-      "'end the journey' ile karıştırılmamalıdır; bu, yolculuğu bitirmek anlamına gelir.",
-      "Mecazi anlamda 'journey ended' yerine 'journey over' gibi eksik yapılar kullanılmamalıdır."
+      "journey ended (yerine 'journey finished' da doğrudur; ancak 'journey was ended' gereksiz edilgendir.)",
+      "end the journey (ile karıştırılmamalıdır; bu, yolculuğu bitirmek anlamına gelir.)",
+      "journey ended (Mecazi anlamda  yerine 'journey over' gibi eksik yapılar kullanılmamalıdır.)"
     ],
     "examples": [
       {
@@ -29156,8 +29156,8 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "Accepted as true by most people and generally not questioned.",
     "collocates": [],
     "commonMistakes": [
-      "widely accepted as true olarak 'widely acknowledged as true' yerine kullanmak bazen gereksiz olur; 'acknowledged' zaten kabul anlamı taşır.",
-      "'wide acknowledged' demek yanlıştır; zarf 'widely' olmalıdır.",
+      "widely acknowledged as true (widely accepted as true olarak  yerine kullanmak bazen gereksiz olur; 'acknowledged' zaten kabul anlamı taşır.)",
+      "wide acknowledged (demek yanlıştır; zarf 'widely' olmalıdır.)",
       "'widely acknowledge' (sıfat yerine fiil) şeklinde kullanmak yanlıştır; sıfat tamlaması 'widely acknowledged' olarak kalıplaşmıştır."
     ],
     "examples": [
@@ -29207,9 +29207,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "Suggestions or guidance that conflict with each other and give opposite directions.",
     "collocates": [],
     "commonMistakes": [
-      "'contradictive advice' demek yanlıştır; doğru sıfat 'contradictory'dir.",
-      "'contradicting advice' yaygın bir hatadır; kalıplaşmış kullanım 'contradictory advice'tir.",
-      "'advices' şeklinde çoğul kullanmak yanlıştır; 'advice' sayılamaz bir isimdir."
+      "contradictive advice (demek yanlıştır; doğru sıfat 'contradictory'dir.)",
+      "contradicting advice (yaygın bir hatadır; kalıplaşmış kullanım 'contradictory advice'tir.)",
+      "advices (şeklinde çoğul kullanmak yanlıştır; 'advice' sayılamaz bir isimdir.)"
     ],
     "examples": [
       {
@@ -29258,9 +29258,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "To state that a claim that you have done something wrong is untrue.",
     "collocates": [],
     "commonMistakes": [
-      "'refuse an allegation' demek yanlıştır; 'refuse' bir teklifi reddetmek için kullanılır, suçlama için 'deny' kullanılır.",
-      "'deny about an allegation' şeklinde 'about' eklemek yanlıştır; 'deny' doğrudan nesne alır.",
-      "'deny to an allegation' yapısı yanlıştır; doğru kullanım 'deny an allegation'dır."
+      "refuse an allegation (demek yanlıştır; 'refuse' bir teklifi reddetmek için kullanılır, suçlama için 'deny' kullanılır.)",
+      "deny about an allegation (şeklinde 'about' eklemek yanlıştır; 'deny' doğrudan nesne alır.)",
+      "deny to an allegation (yapısı yanlıştır; doğru kullanım 'deny an allegation'dır.)"
     ],
     "examples": [
       {
@@ -29309,9 +29309,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "To state formally or seriously that someone has done something wrong.",
     "collocates": [],
     "commonMistakes": [
-      "'do an allegation' demek yanlıştır; doğru fiil 'make'tir.",
-      "'say an allegation' yaygın bir hatadır; suçlama 'make an allegation' ile ifade edilir.",
-      "'make allegation' şeklinde artikel olmadan kullanmak yanlıştır; 'make an allegation' olmalıdır."
+      "do an allegation (demek yanlıştır; doğru fiil 'make'tir.)",
+      "say an allegation (yaygın bir hatadır; suçlama 'make an allegation' ile ifade edilir.)",
+      "make allegation (şeklinde artikel olmadan kullanmak yanlıştır; 'make an allegation' olmalıdır.)"
     ],
     "examples": [
       {
@@ -29360,9 +29360,9 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "meaning": "A claim that someone has done something wrong which is important and may have serious results.",
     "collocates": [],
     "commonMistakes": [
-      "'strong allegation' yaygın bir hatadır; kalıplaşmış kullanım 'serious allegation'dır.",
-      "'heavy allegation' demek yanlıştır; doğal eşdizim 'serious allegation'dır.",
-      "'hard allegation' kullanımı yanlıştır; İngilizcede bu anlamda 'serious' tercih edilir."
+      "strong allegation (yaygın bir hatadır; kalıplaşmış kullanım 'serious allegation'dır.)",
+      "heavy allegation (demek yanlıştır; doğal eşdizim 'serious allegation'dır.)",
+      "hard allegation (kullanımı yanlıştır; İngilizcede bu anlamda 'serious' tercih edilir.)"
     ],
     "examples": [
       {
@@ -32508,7 +32508,7 @@ export const SEED_COLLOCATIONS: Collocation[] = [
     "collocates": [],
     "commonMistakes": [
       "push back the frontier şeklinde tekil kullanmak (deyimde genellikle çoğul 'frontiers' tercih edilir)",
-      "push the frontiers back yerine 'push back the frontiers' kelime sırasını karıştırmak",
+      "push back the frontiers (push the frontiers back yerine  kelime sırasını karıştırmak)",
       "push back the borders ile karıştırmak ('frontiers' bilimsel/keşif bağlamında, 'borders' siyasi sınırlar için kullanılır)"
     ],
     "examples": [

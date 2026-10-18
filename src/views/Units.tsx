@@ -5,6 +5,7 @@ import { useAppStore, StudyLevel } from '../store/useAppStore';
 import { UnitSummary } from '../types';
 import { speakCollocation } from '../utils/audio';
 import { renderSentenceWithHighlight, normalizeSearchText } from '../utils/textHighlight';
+import { extractMistakeCore } from '../utils/mistakeParser';
 import {
   BookOpen,
   GraduationCap,
@@ -569,7 +570,7 @@ export const UnitsView: React.FC = () => {
                     <div className="flex items-center gap-1.5 text-[11px] text-rose-300">
                       <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
                       <span>
-                        Avoid: <strong className="line-through">{col.commonMistakes.join(', ')}</strong>
+                        Avoid: <strong className="line-through">{col.commonMistakes.map((m) => extractMistakeCore(m, col.chunk)).join(', ')}</strong>
                       </span>
                     </div>
                   )}

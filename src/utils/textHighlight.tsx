@@ -65,7 +65,6 @@ export function renderSentenceWithHighlight(
   }
 
   // Fallback: match inflected verb forms in the sentence (e.g., "made an effort" for "make an effort")
-  const firstWord = words[0];
   const restWords = words.slice(1).map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+');
   const inflectedReg = new RegExp(`(\\b\\w+\\s+${restWords})`, 'gi');
 

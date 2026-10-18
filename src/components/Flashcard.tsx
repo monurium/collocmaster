@@ -33,7 +33,7 @@ interface FlashcardProps {
 // Maps grammatical type codes to human-readable explanations
 const TYPE_EXPLANATIONS: Record<string, { label: string; tip: string; color: string }> = {
   'verb-noun':  { label: 'Fiil + İsim',   tip: 'Fiil ve nesnesini birlikte ezberle — bunlar ayrılmaz ikilidir.',           color: 'text-violet-300 bg-violet-500/10 border-violet-500/25' },
-  'adj-noun':   { label: 'Sıfat + İsim',  tip: 'Sıfat her zaman isimden önce gelir; Türkçe'den farklı eşleşmeler olabilir.', color: 'text-sky-300 bg-sky-500/10 border-sky-500/25' },
+  'adj-noun':   { label: 'Sıfat + İsim',  tip: "Sıfat her zaman isimden önce gelir; Türkçe'den farklı eşleşmeler olabilir.", color: 'text-sky-300 bg-sky-500/10 border-sky-500/25' },
   'adv-adj':    { label: 'Zarf + Sıfat',  tip: 'Zarf, sıfatın derecesini güçlendirir. Örn: "deeply concerned".',             color: 'text-teal-300 bg-teal-500/10 border-teal-500/25' },
   'phrase':     { label: 'Deyimsel İfade', tip: 'Bu ifadeyi kelime kelime çevirme; bir bütün olarak anla ve kullan.',          color: 'text-amber-300 bg-amber-500/10 border-amber-500/25' },
 };

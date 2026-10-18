@@ -70,18 +70,37 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Streak pill */}
-          <div
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
-              metrics.currentStreak > 0
-                ? 'bg-amber-500/10 text-amber-300 border border-amber-500/25'
-                : 'bg-[#131D2E] text-zinc-500 border border-[#1E2D45]'
-            }`}
-          >
-            <Flame
-              className={`w-4 h-4 ${metrics.currentStreak > 0 ? 'text-amber-400' : 'text-zinc-600'}`}
-            />
-            <span>{metrics.currentStreak} {metrics.currentStreak === 1 ? 'day' : 'days'}</span>
+          {/* Right actions: Eye Comfort toggle + Streak pill */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                const current = useAppStore.getState().settings.eyeComfort;
+                useAppStore.getState().updateSettings({ eyeComfort: !current });
+              }}
+              title={useAppStore((s) => s.settings.eyeComfort) ? 'Eye-Comfort Mode Active (Click to switch to Standard Dark)' : 'Switch to Eye-Comfort Soft Mode'}
+              className={`p-2 rounded-xl text-xs font-bold transition-all border ${
+                useAppStore((s) => s.settings.eyeComfort)
+                  ? 'bg-amber-500/15 text-amber-300 border-amber-500/30'
+                  : 'bg-[#131D2E] text-zinc-400 hover:text-zinc-200 border-[#1E2D45]'
+              }`}
+              aria-label="Toggle Eye Comfort Study Mode"
+            >
+              <span className="text-sm leading-none">🌿</span>
+            </button>
+
+            {/* Streak pill */}
+            <div
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
+                metrics.currentStreak > 0
+                  ? 'bg-amber-500/10 text-amber-300 border border-amber-500/25'
+                  : 'bg-[#131D2E] text-zinc-500 border border-[#1E2D45]'
+              }`}
+            >
+              <Flame
+                className={`w-4 h-4 ${metrics.currentStreak > 0 ? 'text-amber-400' : 'text-zinc-600'}`}
+              />
+              <span>{metrics.currentStreak} {metrics.currentStreak === 1 ? 'day' : 'days'}</span>
+            </div>
           </div>
         </div>
       </header>

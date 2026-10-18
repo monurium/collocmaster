@@ -17,6 +17,7 @@ export interface UserSettings {
   autoAudio: boolean;
   haptics: boolean;
   soundEffects: boolean;
+  eyeComfort: boolean;
 }
 
 export type StudyLevel = 'All' | 'Intermediate' | 'Advanced';
@@ -53,6 +54,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   autoAudio: true,
   haptics: true,
   soundEffects: true,
+  eyeComfort: false,
 };
 
 // Initialize default SRS map for seed data

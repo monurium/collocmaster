@@ -199,6 +199,25 @@ export const Settings: React.FC = () => {
             className="toggle-switch"
           />
         </div>
+
+        <div className="h-px bg-[#1E2D45]" />
+
+        {/* Eye-Comfort (Soft Study) Mode */}
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-sm font-bold text-zinc-200 flex items-center gap-1.5">
+              <span>🌿</span> Eye-Comfort Study Mode
+            </p>
+            <p className="text-xs text-zinc-400">Soft warm tones, matte background, reduced glare & no eye strain</p>
+          </div>
+          <input
+            type="checkbox"
+            id="eye-comfort-toggle"
+            checked={settings.eyeComfort}
+            onChange={(e) => updateSettings({ eyeComfort: e.target.checked })}
+            className="toggle-switch"
+          />
+        </div>
       </div>
 
       {/* ── Data Backup ── */}

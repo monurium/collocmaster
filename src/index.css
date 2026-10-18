@@ -230,3 +230,39 @@
   }
 }
 
+/* ── Eye-Comfort (Soft Study / Low Fatigue) Mode ── */
+body.eye-comfort {
+  background-color: #12161A !important;
+  color: #E6EDF3 !important;
+}
+
+body.eye-comfort .bg-\[\#0A0E1A\] {
+  background-color: #12161A !important;
+}
+
+body.eye-comfort .bg-\[\#070B14\] {
+  background-color: #181E24 !important;
+}
+
+body.eye-comfort .card {
+  background: #181E24 !important;
+  border-color: #26313D !important;
+}
+
+body.eye-comfort header,
+body.eye-comfort .bottom-nav {
+  background: rgba(18, 22, 26, 0.96) !important;
+  border-color: #26313D !important;
+}
+
+body.eye-comfort .glow-indigo,
+body.eye-comfort .glow-cyan,
+body.eye-comfort .glow-amber {
+  box-shadow: none !important;
+}
+
+body.eye-comfort .border-\[\#1E2D45\] {
+  border-color: #26313D !important;
+}
+
+

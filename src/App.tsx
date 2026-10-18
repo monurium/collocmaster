@@ -22,10 +22,22 @@ const RouteFallback: React.FC = () => (
   </div>
 );
 
+import { useAppStore } from './store/useAppStore';
+
 export const App: React.FC = () => {
+  const eyeComfort = useAppStore((s) => s.settings.eyeComfort);
+
+  React.useEffect(() => {
+    if (eyeComfort) {
+      document.body.classList.add('eye-comfort');
+    } else {
+      document.body.classList.remove('eye-comfort');
+    }
+  }, [eyeComfort]);
+
   return (
     <HashRouter>
-      <div className="min-h-screen bg-[#0A0E1A] text-[#F1F5F9] flex flex-col font-sans selection:bg-indigo-500/40 selection:text-white">
+      <div className={`min-h-screen text-[#F1F5F9] flex flex-col font-sans selection:bg-amber-500/30 selection:text-white transition-colors duration-300 ${eyeComfort ? 'bg-[#12161A]' : 'bg-[#0A0E1A]'}`}>
         <Navbar />
         <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-4 sm:py-7 pb-24 md:pb-8">
           <Suspense fallback={<RouteFallback />}>

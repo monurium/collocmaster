@@ -188,10 +188,10 @@ export const Dashboard: React.FC = () => {
         {/* Mode 1: Units */}
         <div
           onClick={() => navigate('/units')}
-          className="bg-[#111927] border border-[#1E2D45] hover:border-indigo-500/50 rounded-2xl p-5 cursor-pointer transition-all hover:scale-[1.02] shadow-lg hover:shadow-indigo-500/10 group flex flex-col justify-between"
+          className="bg-[#111927] border border-[#1E2D45] hover:border-indigo-500/60 hover:bg-[#131D2E] rounded-2xl p-5 cursor-pointer transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-indigo-500/15 group flex flex-col justify-between"
         >
           <div>
-            <div className="w-10 h-10 rounded-xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-3 group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-3 group-hover:scale-110 transition-transform shadow-inner">
               <BookOpen className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-white group-hover:text-indigo-300 transition-colors">
@@ -201,7 +201,7 @@ export const Dashboard: React.FC = () => {
               Explore Intermediate & Advanced units and practice unit by unit.
             </p>
           </div>
-          <div className="flex items-center justify-between text-xs font-bold text-indigo-400 pt-4 mt-2 border-t border-[#1E2D45]">
+          <div className="flex items-center justify-between text-xs font-bold text-indigo-400 pt-4 mt-2 border-t border-[#1E2D45] group-hover:border-indigo-500/30">
             <span>Explore Units</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
@@ -210,10 +210,10 @@ export const Dashboard: React.FC = () => {
         {/* Mode 2: Flashcards */}
         <div
           onClick={() => navigate('/study')}
-          className="bg-[#111927] border border-[#1E2D45] hover:border-cyan-500/50 rounded-2xl p-5 cursor-pointer transition-all hover:scale-[1.02] shadow-lg hover:shadow-cyan-500/10 group flex flex-col justify-between"
+          className="bg-[#111927] border border-[#1E2D45] hover:border-cyan-500/60 hover:bg-[#112133] rounded-2xl p-5 cursor-pointer transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-cyan-500/15 group flex flex-col justify-between"
         >
           <div>
-            <div className="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-3 group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-3 group-hover:scale-110 transition-transform shadow-inner">
               <GraduationCap className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">
@@ -223,7 +223,7 @@ export const Dashboard: React.FC = () => {
               SM-2 Leitner spaced repetition with natural audio for permanent memory.
             </p>
           </div>
-          <div className="flex items-center justify-between text-xs font-bold text-cyan-400 pt-4 mt-2 border-t border-[#1E2D45]">
+          <div className="flex items-center justify-between text-xs font-bold text-cyan-400 pt-4 mt-2 border-t border-[#1E2D45] group-hover:border-cyan-500/30">
             <span>{dueCards.length} Cards in Queue</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
@@ -232,10 +232,10 @@ export const Dashboard: React.FC = () => {
         {/* Mode 3: Quiz */}
         <div
           onClick={() => navigate('/quiz')}
-          className="bg-[#111927] border border-[#1E2D45] hover:border-emerald-500/50 rounded-2xl p-5 cursor-pointer transition-all hover:scale-[1.02] shadow-lg hover:shadow-emerald-500/10 group flex flex-col justify-between"
+          className="bg-[#111927] border border-[#1E2D45] hover:border-emerald-500/60 hover:bg-[#0F2327] rounded-2xl p-5 cursor-pointer transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-emerald-500/15 group flex flex-col justify-between"
         >
           <div>
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3 group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3 group-hover:scale-110 transition-transform shadow-inner">
               <FileCheck2 className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">
@@ -245,7 +245,7 @@ export const Dashboard: React.FC = () => {
               Cloze tests and multiple choice questions to reinforce natural chunks.
             </p>
           </div>
-          <div className="flex items-center justify-between text-xs font-bold text-emerald-400 pt-4 mt-2 border-t border-[#1E2D45]">
+          <div className="flex items-center justify-between text-xs font-bold text-emerald-400 pt-4 mt-2 border-t border-[#1E2D45] group-hover:border-emerald-500/30">
             <span>Start Quiz</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
@@ -254,10 +254,10 @@ export const Dashboard: React.FC = () => {
         {/* Mode 4: Match Game */}
         <div
           onClick={() => navigate('/match')}
-          className="bg-[#111927] border border-[#1E2D45] hover:border-amber-500/50 rounded-2xl p-5 cursor-pointer transition-all hover:scale-[1.02] shadow-lg hover:shadow-amber-500/10 group flex flex-col justify-between"
+          className="bg-[#111927] border border-[#1E2D45] hover:border-amber-500/60 hover:bg-[#201E23] rounded-2xl p-5 cursor-pointer transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-amber-500/15 group flex flex-col justify-between"
         >
           <div>
-            <div className="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3 group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3 group-hover:scale-110 transition-transform shadow-inner">
               <Puzzle className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors">
@@ -267,7 +267,7 @@ export const Dashboard: React.FC = () => {
               Match verb + noun, adverb + adjective halves with speed and combos.
             </p>
           </div>
-          <div className="flex items-center justify-between text-xs font-bold text-amber-400 pt-4 mt-2 border-t border-[#1E2D45]">
+          <div className="flex items-center justify-between text-xs font-bold text-amber-400 pt-4 mt-2 border-t border-[#1E2D45] group-hover:border-amber-500/30">
             <span>Play Match</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
@@ -277,20 +277,20 @@ export const Dashboard: React.FC = () => {
       {/* ── AI Reading Lab Banner ── */}
       <div
         onClick={() => navigate('/reading')}
-        className="p-5 rounded-3xl bg-gradient-to-r from-indigo-950/60 via-[#131D2E] to-cyan-950/40 border border-indigo-500/30 hover:border-indigo-500/60 transition-all cursor-pointer shadow-xl hover:shadow-indigo-500/10 group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+        className="p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-indigo-950/70 via-[#131D2E] to-cyan-950/50 border border-indigo-500/30 hover:border-cyan-400/60 transition-all duration-300 cursor-pointer shadow-xl hover:shadow-2xl hover:shadow-indigo-500/15 group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
       >
         <div className="flex items-start sm:items-center gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 shrink-0 group-hover:scale-105 transition-transform">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-indigo-500/40 shrink-0 group-hover:scale-105 transition-transform">
             <BookMarked className="w-6 h-6" />
           </div>
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-[10px] font-black uppercase tracking-wider text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 px-2 py-0.5 rounded-md">
+              <span className="text-[10px] font-black uppercase tracking-wider text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 px-2 py-0.5 rounded-md shadow-sm">
                 NEW FEATURE • DEEPSEEK AI
               </span>
               <span className="text-xs text-zinc-400 hidden sm:inline">• Contextual Storyteller</span>
             </div>
-            <h3 className="text-base sm:text-lg font-black text-white group-hover:text-indigo-300 transition-colors">
+            <h3 className="text-base sm:text-lg font-black text-white group-hover:text-cyan-300 transition-colors">
               AI Reading Lab: Generate Stories from any Unit
             </h3>
             <p className="text-xs text-zinc-400 mt-0.5 leading-relaxed">
@@ -299,7 +299,7 @@ export const Dashboard: React.FC = () => {
           </div>
         </div>
 
-        <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 group-hover:bg-indigo-500 text-white font-bold text-xs transition-all shadow-md shadow-indigo-600/30 shrink-0 self-stretch sm:self-auto justify-center">
+        <button className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 group-hover:from-indigo-500 group-hover:to-cyan-400 text-white font-extrabold text-xs transition-all shadow-md shadow-indigo-600/30 group-hover:shadow-indigo-500/40 shrink-0 self-stretch sm:self-auto justify-center group-hover:scale-105">
           <span>Launch AI Reader</span>
           <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </button>

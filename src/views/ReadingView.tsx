@@ -584,15 +584,15 @@ export const ReadingView: React.FC = () => {
             <span>Genre</span>
           </div>
 
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none no-scrollbar">
             {GENRES.map((g) => (
               <button
                 key={g.id}
                 onClick={() => setSelectedGenre(g.id)}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 shrink-0 ${
                   selectedGenre === g.id
-                    ? 'bg-indigo-600 text-white shadow-sm ring-1 ring-indigo-400/50'
-                    : 'bg-[#131D2E] text-zinc-400 hover:text-zinc-200 border border-[#1E2D45]'
+                    ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-md shadow-indigo-600/30 ring-1 ring-indigo-400/60 scale-[1.02]'
+                    : 'bg-[#131D2E] text-zinc-400 hover:text-zinc-100 hover:bg-[#182438] border border-[#1E2D45]'
                 }`}
               >
                 <span>{g.icon}</span>
@@ -617,26 +617,33 @@ export const ReadingView: React.FC = () => {
 
       {/* ─── Ready Placeholder State (Shown until user generates) ─── */}
       {!passage && !loading && (
-        <div className="card p-8 sm:p-12 text-center space-y-3.5 bg-gradient-to-b from-[#111927] to-[#0D1522] border-[#1E2D45] rounded-3xl animate-fadeIn">
-          <div className="w-14 h-14 mx-auto rounded-2xl bg-indigo-600/15 border border-indigo-500/25 flex items-center justify-center text-indigo-400">
-            <BookMarked className="w-7 h-7" />
+        <div className="card relative overflow-hidden p-8 sm:p-14 text-center space-y-4 bg-gradient-to-b from-[#111927] to-[#0D1522] border-[#1E2D45] rounded-3xl animate-fadeIn shadow-2xl">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative z-10 w-16 h-16 mx-auto rounded-2xl bg-gradient-to-tr from-indigo-600/20 to-cyan-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shadow-xl shadow-indigo-500/10">
+            <BookMarked className="w-8 h-8" />
           </div>
-          <div>
-            <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+          <div className="relative z-10 space-y-1.5">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-[11px] font-bold text-indigo-300">
+              <Sparkles className="w-3 h-3 text-cyan-400" />
+              DeepSeek AI Contextual Storyteller
+            </div>
+            <h3 className="text-lg sm:text-xl font-black text-white tracking-tight pt-1">
               Ready to Generate AI Story
             </h3>
-            <p className="text-xs text-zinc-400 max-w-md mx-auto mt-1 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-400 max-w-md mx-auto leading-relaxed">
               Select your target units and preferred genre above, then click{' '}
-              <strong className="text-indigo-300">"Generate AI Story"</strong> to create a tailored reading passage.
+              <strong className="text-indigo-300 font-semibold">"Generate AI Story"</strong> to create a natural, leveled reading passage with instant cloze testing and quizzes.
             </p>
           </div>
-          <button
-            onClick={handleGenerate}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-bold text-xs shadow-lg shadow-indigo-600/25 hover:from-indigo-500 hover:to-cyan-400 transition-all hover:scale-105"
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Generate AI Story</span>
-          </button>
+          <div className="relative z-10 pt-1">
+            <button
+              onClick={handleGenerate}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-indigo-600/30 hover:shadow-indigo-500/50 hover:from-indigo-500 hover:to-cyan-400 transition-all hover:scale-105 active:scale-95"
+            >
+              <Sparkles className="w-4 h-4 text-cyan-300" />
+              <span>Generate AI Story</span>
+            </button>
+          </div>
         </div>
       )}
 

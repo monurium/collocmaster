@@ -63,7 +63,7 @@ export const Navbar: React.FC = () => {
   return (
     <>
       {/* ─── Top Bar ─── */}
-      <header className="sticky top-0 z-40 w-full border-b border-[#1E2D45] bg-[#0A0E1A]/95 backdrop-blur-lg">
+      <header className="sticky top-0 z-40 w-full border-b border-[#1E2D45] bg-[#0A0E1A]/90 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-[62px] flex items-center justify-between">
           {/* Brand */}
           <NavLink to="/" className="flex items-center gap-2.5 group shrink-0">
@@ -88,8 +88,8 @@ export const Navbar: React.FC = () => {
                 className={({ isActive }) =>
                   `relative flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                     isActive
-                      ? 'bg-indigo-600/20 text-indigo-300 border border-indigo-500/30 shadow-sm'
-                      : 'text-zinc-400 hover:text-zinc-100 hover:bg-[#131D2E]'
+                      ? 'bg-indigo-600/25 text-indigo-300 border border-indigo-500/40 shadow-sm shadow-indigo-500/10'
+                      : 'text-zinc-400 hover:text-zinc-100 hover:bg-[#131D2E] border border-transparent'
                   }`
                 }
               >
@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
                 onClick={() => setMoreOpen(!moreOpen)}
                 className={`flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all border ${
                   isSecondaryActive || moreOpen
-                    ? 'bg-indigo-600/20 text-indigo-300 border-indigo-500/30'
+                    ? 'bg-indigo-600/25 text-indigo-300 border-indigo-500/40 shadow-sm shadow-indigo-500/10'
                     : 'bg-transparent text-zinc-400 hover:text-zinc-100 hover:bg-[#131D2E] border-transparent'
                 }`}
               >

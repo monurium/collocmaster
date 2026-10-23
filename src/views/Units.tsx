@@ -238,7 +238,7 @@ export const UnitsView: React.FC = () => {
 
       {/* Thematic Chapter Filter Pills */}
       {activeLevel !== 'Advanced' && (
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none no-scrollbar">
           <span className="text-[11px] font-bold text-zinc-500 flex items-center gap-1 shrink-0 mr-1">
             <Layers className="w-3.5 h-3.5" /> Theme:
           </span>

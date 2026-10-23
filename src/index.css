@@ -29,6 +29,17 @@
 ::-webkit-scrollbar-thumb { background: #1E2D45; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #2D3F5A; }
 
+/* ── Hide scrollbar for clean horizontal chip carousels ── */
+.scrollbar-none::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none,
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* ── Animations ── */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
@@ -68,12 +79,19 @@
   40%, 80% { transform: translateX(6px); }
 }
 
+@keyframes indeterminate {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(50%); }
+  100% { transform: translateX(200%); }
+}
+
 .animate-fadeIn        { animation: fadeIn 0.3s ease-out forwards; }
 .animate-fadeInScale   { animation: fadeInScale 0.3s ease-out forwards; }
 .animate-slideUp       { animation: slideUp 0.35s ease-out forwards; }
 .animate-glowPulse     { animation: glowPulse 2s ease-in-out infinite; }
 .animate-heartbeat     { animation: heartbeat 1.5s ease-in-out infinite; }
 .animate-shake         { animation: shake 0.4s ease-in-out; }
+.animate-indeterminate { animation: indeterminate 1.6s ease-in-out infinite; }
 
 /* Staggered children */
 .stagger > *:nth-child(1) { animation-delay: 0ms; }

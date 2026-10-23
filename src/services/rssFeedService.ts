@@ -358,6 +358,31 @@ const CURATED_RECENT_STORIES: Record<ReadingGenre, NewsInspiration[]> = {
 };
 
 
+// In-memory feed cache to avoid redundant network requests (15-min TTL)
+interface CacheEntry {
+  items: NewsInspiration[];
+  expiresAt: number;
+}
+const feedCache = new Map<string, CacheEntry>();
+const CACHE_TTL_MS = 15 * 60 * 1000;
+
+/**
+ * Fast and safe HTML entity decoder for RSS titles and summaries
+ */
+function decodeHtmlEntities(str: string): string {
+  if (!str.includes('&')) return str;
+  return str
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&mdash;/g, '—')
+    .replace(/&ndash;/g, '–')
+    .replace(/&nbsp;/g, ' ');
+}
+
 /**
  * Parses RSS XML string into clean headlines & summaries
  */
@@ -373,11 +398,14 @@ function parseRssXml(xmlText: string, defaultSource: string): NewsInspiration[] 
       const descElem = item.querySelector('description, summary, content');
       const linkElem = item.querySelector('link');
 
-      const title = titleElem?.textContent?.trim().replace(/^<!\[CDATA\[|\]\]>$/g, '') || '';
+      let title = titleElem?.textContent?.trim().replace(/^<!\[CDATA\[|\]\]>$/g, '') || '';
       let desc = descElem?.textContent?.trim().replace(/^<!\[CDATA\[|\]\]>$/g, '') || '';
 
       // Strip HTML tags from description
       desc = desc.replace(/<[^>]*>?/gm, '').replace(/\s+/g, ' ').trim();
+
+      title = decodeHtmlEntities(title);
+      desc = decodeHtmlEntities(desc);
 
       // Get link
       let link = '';
@@ -402,21 +430,27 @@ function parseRssXml(xmlText: string, defaultSource: string): NewsInspiration[] 
 }
 
 /**
- * Attempts to fetch live RSS feed using public CORS proxy with strict timeout
+ * Attempts to fetch live RSS feed using public CORS proxy with caching and strict timeout
  */
 async function tryFetchLiveRss(feed: RssFeedConfig, timeoutMs = 2500): Promise<NewsInspiration | null> {
+  const now = Date.now();
+  const cached = feedCache.get(feed.url);
+
+  // Return from fresh cache if available
+  if (cached && cached.expiresAt > now && cached.items.length > 0) {
+    const items = cached.items;
+    return items[Math.floor(Math.random() * items.length)];
+  }
+
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
-    // We use allorigins.win JSON/raw endpoint as a reliable CORS proxy
     const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(feed.url)}`;
     const response = await fetch(proxyUrl, {
       signal: controller.signal,
       headers: { Accept: 'application/rss+xml, application/xml, text/xml, text/plain' },
     });
-
-    clearTimeout(timer);
 
     if (!response.ok) return null;
 
@@ -425,14 +459,19 @@ async function tryFetchLiveRss(feed: RssFeedConfig, timeoutMs = 2500): Promise<N
 
     const parsed = parseRssXml(text, feed.source);
     if (parsed.length > 0) {
-      // Pick a random fresh item from top 5
+      feedCache.set(feed.url, {
+        items: parsed,
+        expiresAt: now + CACHE_TTL_MS,
+      });
+
       const topItems = parsed.slice(0, 5);
       return topItems[Math.floor(Math.random() * topItems.length)];
     }
     return null;
   } catch {
-    clearTimeout(timer);
     return null;
+  } finally {
+    clearTimeout(timer);
   }
 }
 
@@ -443,7 +482,7 @@ export async function fetchCurrentNewsInspiration(genre: ReadingGenre): Promise<
   const feeds = GENRE_RSS_FEEDS[genre] || GENRE_RSS_FEEDS.news;
   const curatedPool = CURATED_RECENT_STORIES[genre] || CURATED_RECENT_STORIES.news;
 
-  // Pick a random feed from the 5-10 curated feeds
+  // Pick a random feed from the curated feeds
   const targetFeed = feeds[Math.floor(Math.random() * feeds.length)];
 
   try {
@@ -463,3 +502,4 @@ export async function fetchCurrentNewsInspiration(genre: ReadingGenre): Promise<
     source: targetFeed.source || randomCurated.source,
   };
 }
+

@@ -43,7 +43,7 @@ export default defineConfig(({ mode }) => {
           },
         },
       },
-      chunkSizeWarningLimit: 800,
+      chunkSizeWarningLimit: 1400,
     },
   };
 });

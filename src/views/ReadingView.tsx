@@ -241,6 +241,15 @@ export const ReadingView: React.FC = () => {
     setIsPlayingAudio(false);
   };
 
+  // Cleanup speech synthesis on component unmount
+  useEffect(() => {
+    return () => {
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
   // Toggle bookmark / saved
   const handleToggleSave = () => {
     if (!passage) return;
@@ -277,8 +286,8 @@ export const ReadingView: React.FC = () => {
     });
   };
 
-  // Filtered units for picker modal
-  const filteredUnitsForModal = useMemo(() => {
+  // Filtered units for picker dropdown
+  const filteredUnits = useMemo(() => {
     let list = summaries;
     if (unitFilterLevel !== 'All') {
       list = list.filter((u) => u.level === unitFilterLevel);
@@ -287,6 +296,21 @@ export const ReadingView: React.FC = () => {
     const q = unitSearch.toLowerCase().trim();
     return list.filter((u) => u.unitTitle.toLowerCase().includes(q) || `unit ${u.unitNumber}`.includes(q));
   }, [summaries, unitFilterLevel, unitSearch]);
+
+  // Memoized vocabulary map and target set for O(1) chunk lookups
+  const vocabMap = useMemo(() => {
+    if (!passage) return new Map<string, PassageVocabularyItem>();
+    const map = new Map<string, PassageVocabularyItem>();
+    passage.vocabularyList.forEach((v) => {
+      map.set(v.chunk.toLowerCase(), v);
+    });
+    return map;
+  }, [passage]);
+
+  const targetSet = useMemo(() => {
+    if (!passage) return new Set<string>();
+    return new Set(passage.targetCollocations.map((t) => t.toLowerCase()));
+  }, [passage]);
 
   // Render paragraph with clickable or cloze-blank collocations with elegant font
   const renderParagraphContent = (paragraph: string) => {
@@ -302,29 +326,27 @@ export const ReadingView: React.FC = () => {
     const parts = paragraph.split(regex);
 
     return parts.map((part, index) => {
-      const matchChunk = sortedTargets.find((t) => t.toLowerCase() === part.toLowerCase());
+      const lowerPart = part.toLowerCase();
 
-      if (matchChunk) {
-        const vocabItem = passage.vocabularyList.find(
-          (v) => v.chunk.toLowerCase() === matchChunk.toLowerCase()
-        ) || {
-          chunk: matchChunk,
+      if (targetSet.has(lowerPart)) {
+        const vocabItem = vocabMap.get(lowerPart) || {
+          chunk: part,
           meaning: 'Cambridge Collocation in Use',
-          meaningTr: 'Kollokasyon',
+          meaningTr: 'Collocation',
         };
 
         const isCloze = activeTab === 'cloze';
-        const isRevealed = revealedChunks[matchChunk.toLowerCase()];
+        const isRevealed = revealedChunks[lowerPart];
 
         if (isCloze && !isRevealed) {
           return (
             <button
               key={index}
               onClick={() => {
-                setRevealedChunks((prev) => ({ ...prev, [matchChunk.toLowerCase()]: true }));
+                setRevealedChunks((prev) => ({ ...prev, [lowerPart]: true }));
                 if (settings.soundEffects) playChime('flip');
               }}
-              title="Kollokasyonu görmek için tıkla"
+              title="Click to reveal collocation"
               className="inline-flex items-center px-2 py-0.5 mx-1 rounded-md text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30 transition-all cursor-pointer animate-pulse align-baseline"
             >
               [ ? ? ? ? ]
@@ -337,7 +359,7 @@ export const ReadingView: React.FC = () => {
             key={index}
             onClick={() => {
               setActiveVocabItem(vocabItem);
-              if (settings.autoAudio) speakCollocation(matchChunk, settings.speechRate);
+              if (settings.autoAudio) speakCollocation(part, settings.speechRate);
             }}
             className={`inline-flex items-center gap-1 px-1.5 py-0.5 mx-0.5 rounded-md font-serif font-semibold text-inherit transition-all align-baseline ${
               isCloze
@@ -476,12 +498,12 @@ export const ReadingView: React.FC = () => {
 
               {/* Quick Bulk Selection Buttons */}
               <div className="flex items-center justify-between text-[11px] text-zinc-400 px-0.5">
-                <span>{filteredUnitsForModal.length} units listed</span>
+                <span>{filteredUnits.length} units listed</span>
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
                     onClick={() => {
-                      const allFiltered = filteredUnitsForModal.map((u) => u.unitNumber);
+                      const allFiltered = filteredUnits.map((u) => u.unitNumber);
                       setSelectedUnitNumbers(Array.from(new Set([...selectedUnitNumbers, ...allFiltered])));
                     }}
                     className="text-indigo-400 hover:text-indigo-300 font-bold"
@@ -492,8 +514,8 @@ export const ReadingView: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => {
-                      if (filteredUnitsForModal.length > 0) {
-                        setSelectedUnitNumbers([filteredUnitsForModal[0].unitNumber]);
+                      if (filteredUnits.length > 0) {
+                        setSelectedUnitNumbers([filteredUnits[0].unitNumber]);
                       }
                     }}
                     className="text-zinc-500 hover:text-zinc-300"
@@ -505,7 +527,7 @@ export const ReadingView: React.FC = () => {
 
               {/* Scrollable Unit List with Checkboxes */}
               <div className="max-h-56 overflow-y-auto space-y-1 pr-1 scrollbar-thin">
-                {filteredUnitsForModal.map((u) => {
+                {filteredUnits.map((u) => {
                   const isSelected = selectedUnitNumbers.includes(u.unitNumber);
                   return (
                     <div

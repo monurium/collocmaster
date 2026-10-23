@@ -119,8 +119,16 @@ function cleanAndParseJSON(raw: string): any {
     cleaned = cleaned.replace(/\s*```$/, '');
   }
   cleaned = cleaned.trim();
+
+  const firstBrace = cleaned.indexOf('{');
+  const lastBrace = cleaned.lastIndexOf('}');
+  if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+    cleaned = cleaned.substring(firstBrace, lastBrace + 1);
+  }
+
   return JSON.parse(cleaned);
 }
+
 
 /**
  * Generates an authentic reading passage using DeepSeek Chat API.
@@ -248,8 +256,13 @@ ${JSON.stringify(collocationsPayload, null, 2)}
 
 Create an authentic, memorable ${genre} drawing thematic inspiration from this recent topic and incorporating the 5 collocations naturally and evenly across the paragraphs. Return strict JSON.`;
 
+  let timeoutId: ReturnType<typeof setTimeout> | undefined;
   try {
+    const controller = new AbortController();
+    timeoutId = setTimeout(() => controller.abort(), 26000);
+
     const response = await fetch('https://api.deepseek.com/chat/completions', {
+      signal: controller.signal,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -337,6 +350,10 @@ Create an authentic, memorable ${genre} drawing thematic inspiration from this r
     console.warn('DeepSeek generation failed, falling back to curated passage:', err);
     // If it was a network error or key error, provide curated offline passage but also inform user if needed
     return generateOfflinePassage(effectiveUnitNumber, unitTitle, level, selectedCols, genre, unitNumbers, newsInspiration);
+  } finally {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
   }
 }
 

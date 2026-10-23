@@ -1,5 +1,6 @@
 import { Collocation, GeneratedReadingPassage, ReadingGenre, ComprehensionQuestion, PassageVocabularyItem } from '../types';
 import { useAppStore } from '../store/useAppStore';
+import { fetchCurrentNewsInspiration, NewsInspiration } from './rssFeedService';
 
 /**
  * Resolves the DeepSeek API key from user settings, environment variables, or window fallback.
@@ -150,9 +151,12 @@ export async function generateReadingPassage(
     throw new Error('No collocations available in the selected units.');
   }
 
-  // If no API key is configured, fallback to offline generator
+  // Fetch real-world RSS news inspiration for this genre
+  const newsInspiration = await fetchCurrentNewsInspiration(genre);
+
+  // If no API key is configured, fallback to offline generator with RSS context
   if (!apiKey) {
-    return generateOfflinePassage(effectiveUnitNumber, unitTitle, level, selectedCols, genre, unitNumbers);
+    return generateOfflinePassage(effectiveUnitNumber, unitTitle, level, selectedCols, genre, unitNumbers, newsInspiration);
   }
 
   const collocationsPayload = selectedCols.map((c) => ({
@@ -167,17 +171,20 @@ export async function generateReadingPassage(
   const targetCefr = level === 'Advanced' ? 'C1/C2 (Advanced)' : 'B1/B2 (Upper Intermediate)';
 
   const systemPrompt = `You are a world-class Cambridge University Press lexicographer, author of English Collocations in Use, and master ELT curriculum designer.
-Your task is to write an authentic, high-quality English reading passage specifically crafted for language learners studying collocations.
+Your task is to write an authentic, high-quality English reading passage specifically crafted for language learners studying collocations, inspired by real contemporary developments.
 
 CRITICAL REQUIREMENTS:
 1. Genre & Style: Write ${genreDescription}.
 2. Target Level: ${targetCefr}. Ensure vocabulary, tone, and sentence structures naturally align with this CEFR level.
-3. Natural & Even Distribution:
+3. Grounded in Real News/Topic (RSS Inspiration):
+   - You will be given a current real-world headline and summary from a reputable journalistic source.
+   - Weave the narrative or discussion around the context, themes, and spirit of this real-world topic.
+4. Natural & Even Distribution:
    - The 5 target collocations MUST be naturally and evenly spaced across the entire passage (e.g., 1 to 2 collocations per paragraph across beginning, middle, and ending).
    - NEVER bunch, crowd, or list multiple collocations in the same sentence or consecutive clauses.
    - Each collocation must emerge organically and convincingly from the storyline or discussion, making the reading experience smooth, literary, and authentic.
-4. Length: 2 to 4 coherent, well-crafted paragraphs (total 180 to 280 words).
-5. Output Format: You MUST reply with STRICT, VALID JSON ONLY. Do NOT wrap in markdown code blocks if possible. Output pure JSON with the exact keys described.
+5. Length: 2 to 4 coherent, well-crafted paragraphs (total 180 to 280 words).
+6. Output Format: You MUST reply with STRICT, VALID JSON ONLY. Do NOT wrap in markdown code blocks if possible. Output pure JSON with the exact keys described.
 
 JSON Schema:
 {
@@ -226,10 +233,16 @@ JSON Schema:
 }`;
 
   const userPrompt = `Curriculum Focus: ${unitLabel} - "${unitTitle}" (${level} Level)
-Selected 5 Target Collocations to weave into the text:
+
+CURRENT REAL-WORLD INSPIRATION (from recent RSS news):
+Source: ${newsInspiration.source}
+Headline: "${newsInspiration.headline}"
+Summary/Context: ${newsInspiration.summary}
+
+Selected 5 Target Collocations to weave naturally into the text:
 ${JSON.stringify(collocationsPayload, null, 2)}
 
-Create an authentic, memorable ${genre} incorporating these 5 collocations naturally into the context. Return strict JSON.`;
+Create an authentic, memorable ${genre} drawing thematic inspiration from this recent topic and incorporating the 5 collocations naturally and evenly across the paragraphs. Return strict JSON.`;
 
   try {
     const response = await fetch('https://api.deepseek.com/chat/completions', {
@@ -306,6 +319,12 @@ Create an authentic, memorable ${genre} incorporating these 5 collocations natur
             explanation: q.explanation || 'Refer back to the passage for context.',
           }))
         : generateFallbackQuestions(selectedCols),
+      newsInspiration: {
+        source: newsInspiration.source,
+        headline: newsInspiration.headline,
+        summary: newsInspiration.summary,
+        url: newsInspiration.url,
+      },
       createdAt: Date.now(),
     };
 
@@ -313,7 +332,7 @@ Create an authentic, memorable ${genre} incorporating these 5 collocations natur
   } catch (err: unknown) {
     console.warn('DeepSeek generation failed, falling back to curated passage:', err);
     // If it was a network error or key error, provide curated offline passage but also inform user if needed
-    return generateOfflinePassage(effectiveUnitNumber, unitTitle, level, selectedCols, genre, unitNumbers);
+    return generateOfflinePassage(effectiveUnitNumber, unitTitle, level, selectedCols, genre, unitNumbers, newsInspiration);
   }
 }
 
@@ -326,26 +345,31 @@ function generateOfflinePassage(
   level: 'Intermediate' | 'Advanced',
   selectedCols: Collocation[],
   genre: ReadingGenre,
-  unitNumbers?: number[]
+  unitNumbers?: number[],
+  newsInspiration?: NewsInspiration
 ): GeneratedReadingPassage {
   const chunks = selectedCols.map((c) => c.chunk);
-  const title = `A Closer Look: ${unitTitle}`;
+  const title = newsInspiration?.headline ? `${newsInspiration.headline}` : `A Closer Look: ${unitTitle}`;
 
   // Build a coherent narrative weave from collocation examples and definitions
   const p1Sentences = selectedCols.slice(0, 3).map((c) => {
     return c.examples?.[0]?.sentence || `It is essential to understand how to ${c.chunk} in everyday situations.`;
   });
 
-  const p2Sentences = selectedCols.slice(3, 6).map((c) => {
+  const p2Sentences = selectedCols.slice(3, 5).map((c) => {
     return c.examples?.[1]?.sentence || c.examples?.[0]?.sentence || `Many learners try to ${c.chunk} when writing essays.`;
   });
 
-  const remainingSentences = selectedCols.slice(6).map((c) => {
+  const remainingSentences = selectedCols.slice(5).map((c) => {
     return c.examples?.[0]?.sentence || `Finally, remember to observe how native speakers ${c.chunk}.`;
   });
 
+  const introPrefix = newsInspiration
+    ? `In recent developments reported by ${newsInspiration.source}, discussions around contemporary trends have gained significant momentum. ${newsInspiration.summary} `
+    : `In our study of ${unitTitle.toLowerCase()}, certain combinations of words form natural partnerships that immediately signal linguistic fluency. `;
+
   const paragraphs: string[] = [
-    `In our study of ${unitTitle.toLowerCase()}, certain combinations of words form natural partnerships that immediately signal linguistic fluency. ${p1Sentences.join(' ')}`,
+    `${introPrefix}${p1Sentences.join(' ')}`,
     `When observing modern communication patterns, these phrases appear across diverse professional and personal contexts. ${p2Sentences.join(' ')} Recognizing these patterns allows learners to express complex thoughts with precision.`,
   ];
 
@@ -379,9 +403,18 @@ function generateOfflinePassage(
     turkishSummary: `Bu okuma metni, ${unitTitle} ünitesindeki temel kollokasyonları ("${chunks.slice(0, 3).join('", "')}") bağlam içinde sunarak doğal dil kullanımını pekiştirmeyi amaçlamaktadır.`,
     vocabularyList: vocabList,
     comprehensionQuestions: questions,
+    newsInspiration: newsInspiration
+      ? {
+          source: newsInspiration.source,
+          headline: newsInspiration.headline,
+          summary: newsInspiration.summary,
+          url: newsInspiration.url,
+        }
+      : undefined,
     createdAt: Date.now(),
   };
 }
+
 
 function generateFallbackQuestions(cols: Collocation[]): ComprehensionQuestion[] {
   const col1 = cols[0];

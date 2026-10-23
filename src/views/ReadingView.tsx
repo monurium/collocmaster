@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import {
@@ -33,6 +33,8 @@ import {
   X,
   Lightbulb,
   Search,
+  Globe,
+  ExternalLink,
 } from 'lucide-react';
 
 const GENRES: { id: ReadingGenre; label: string; icon: string }[] = [
@@ -67,10 +69,22 @@ export const ReadingView: React.FC = () => {
 
   const [selectedGenre, setSelectedGenre] = useState<ReadingGenre>('story');
 
-  // Multi-unit modal state
-  const [showUnitPickerModal, setShowUnitPickerModal] = useState<boolean>(false);
+  // Unit Dropdown state (In-place dropdown with checkboxes, search & filters)
+  const [isUnitDropdownOpen, setIsUnitDropdownOpen] = useState<boolean>(false);
   const [unitSearch, setUnitSearch] = useState<string>('');
   const [unitFilterLevel, setUnitFilterLevel] = useState<'All' | 'Intermediate' | 'Advanced'>('All');
+  const unitDropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (unitDropdownRef.current && !unitDropdownRef.current.contains(event.target as Node)) {
+        setIsUnitDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Active Passage State (Starts empty, no auto-generate on load)
   const [passage, setPassage] = useState<GeneratedReadingPassage | null>(null);
@@ -376,39 +390,164 @@ export const ReadingView: React.FC = () => {
 
       {/* ─── Minimal & Clean Generator Control Card ─── */}
       <div className="card p-4 sm:p-5 space-y-3.5 bg-gradient-to-br from-[#111927] via-[#111927] to-[#0D1522] border-[#1E2D45] shadow-xl">
-        {/* Row 1: Unit Selection (No counts, just clean selection) */}
-        <div>
-          <div className="flex items-center justify-between mb-2">
-            <button
-              onClick={() => setShowUnitPickerModal(true)}
-              className="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-indigo-600/20 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600/30 transition-all flex items-center gap-1.5"
-            >
-              <BookOpen className="w-3.5 h-3.5 text-indigo-400" />
-              <span>Ünite Seç ({selectedUnitNumbers.length})</span>
-            </button>
+        {/* Row 1: Unit Selection Dropdown (Selected units visible inside dropdown only) */}
+        <div className="relative" ref={unitDropdownRef}>
+          <div className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1.5 flex items-center justify-between">
+            <span className="flex items-center gap-1.5">
+              <BookOpen className="w-3 h-3 text-indigo-400" />
+              <span>Ünite Seç</span>
+            </span>
+            <span className="text-[10px] text-zinc-400 font-medium">
+              {selectedUnitNumbers.length === 1
+                ? '1 ünite seçili'
+                : `${selectedUnitNumbers.length} ünite seçili`}
+            </span>
           </div>
 
-          {/* Selected unit chips pill bar */}
-          <div className="flex flex-wrap items-center gap-1.5 p-2 rounded-xl bg-[#0F172A] border border-[#1E2D45]">
-            {selectedUnits.map((u) => (
-              <span
-                key={`${u.level}_${u.unitNumber}`}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-[#162235] text-zinc-200 border border-[#23334d]"
-              >
-                <span className="text-indigo-400 font-bold">U{u.unitNumber}</span>
-                <span className="text-zinc-300 max-w-[150px] truncate">{u.unitTitle}</span>
-                {selectedUnitNumbers.length > 1 && (
-                  <button
-                    onClick={() => toggleUnit(u.unitNumber)}
-                    className="hover:text-rose-400 text-zinc-500 ml-0.5"
-                    title="Kaldır"
-                  >
-                    <X className="w-3 h-3" />
-                  </button>
+          {/* Dropdown Trigger Button */}
+          <button
+            type="button"
+            onClick={() => setIsUnitDropdownOpen(!isUnitDropdownOpen)}
+            className="w-full bg-[#0F172A] hover:bg-[#131D2E] border border-[#1E2D45] hover:border-indigo-500/50 rounded-xl px-3.5 py-2.5 text-xs text-left transition-all flex items-center justify-between shadow-inner group"
+          >
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="w-2 h-2 rounded-full bg-indigo-500 shrink-0 shadow-sm shadow-indigo-500/50" />
+              <div className="truncate font-medium text-white">
+                {selectedUnits.length === 1 ? (
+                  <span>
+                    <strong className="text-indigo-400 mr-1.5">Unit {selectedUnits[0].unitNumber}:</strong>
+                    {selectedUnits[0].unitTitle}
+                  </span>
+                ) : (
+                  <span>
+                    <strong className="text-indigo-400 mr-1.5">{selectedUnits.length} Ünite Seçili:</strong>
+                    {selectedUnits.map((u) => `Unit ${u.unitNumber}`).join(', ')}
+                  </span>
                 )}
-              </span>
-            ))}
-          </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-1.5 text-zinc-400 group-hover:text-white shrink-0 ml-2">
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  isUnitDropdownOpen ? 'rotate-180 text-indigo-400' : ''
+                }`}
+              />
+            </div>
+          </button>
+
+          {/* Dropdown Menu Popover */}
+          {isUnitDropdownOpen && (
+            <div className="absolute left-0 right-0 top-full mt-1.5 z-40 bg-[#111927] border border-[#1E2D45] rounded-2xl p-3 shadow-2xl space-y-2.5 animate-fadeIn">
+              {/* Search & Level Filters */}
+              <div className="flex flex-col sm:flex-row gap-2">
+                <div className="relative flex-1">
+                  <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500" />
+                  <input
+                    type="text"
+                    value={unitSearch}
+                    onChange={(e) => setUnitSearch(e.target.value)}
+                    placeholder="Ünite ara..."
+                    className="w-full bg-[#162235] border border-[#23334d] rounded-xl pl-9 pr-3 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500"
+                  />
+                </div>
+
+                <div className="flex items-center gap-1 bg-[#162235] p-1 rounded-xl shrink-0">
+                  {(['All', 'Intermediate', 'Advanced'] as const).map((lvl) => (
+                    <button
+                      key={lvl}
+                      type="button"
+                      onClick={() => setUnitFilterLevel(lvl)}
+                      className={`px-2 py-0.5 rounded-lg text-[10px] font-bold transition-all ${
+                        unitFilterLevel === lvl
+                          ? 'bg-indigo-600 text-white shadow-sm'
+                          : 'text-zinc-400 hover:text-white'
+                      }`}
+                    >
+                      {lvl}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Quick Bulk Selection Buttons */}
+              <div className="flex items-center justify-between text-[11px] text-zinc-400 px-0.5">
+                <span>{filteredUnitsForModal.length} ünite listelendi</span>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const allFiltered = filteredUnitsForModal.map((u) => u.unitNumber);
+                      setSelectedUnitNumbers(Array.from(new Set([...selectedUnitNumbers, ...allFiltered])));
+                    }}
+                    className="text-indigo-400 hover:text-indigo-300 font-bold"
+                  >
+                    Görünenleri Seç
+                  </button>
+                  <span className="text-zinc-600">•</span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (filteredUnitsForModal.length > 0) {
+                        setSelectedUnitNumbers([filteredUnitsForModal[0].unitNumber]);
+                      }
+                    }}
+                    className="text-zinc-500 hover:text-zinc-300"
+                  >
+                    İlkine Sıfırla
+                  </button>
+                </div>
+              </div>
+
+              {/* Scrollable Unit List with Checkboxes */}
+              <div className="max-h-56 overflow-y-auto space-y-1 pr-1 scrollbar-thin">
+                {filteredUnitsForModal.map((u) => {
+                  const isSelected = selectedUnitNumbers.includes(u.unitNumber);
+                  return (
+                    <div
+                      key={`${u.level}_${u.unitNumber}`}
+                      onClick={() => toggleUnit(u.unitNumber)}
+                      className={`p-2 rounded-xl border cursor-pointer transition-all flex items-center justify-between text-xs ${
+                        isSelected
+                          ? 'bg-indigo-600/20 border-indigo-500 text-white'
+                          : 'bg-[#131D2E] border-[#1E2D45] text-zinc-300 hover:bg-[#162235]'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <div
+                          className={`w-4 h-4 rounded flex items-center justify-center border shrink-0 text-xs ${
+                            isSelected
+                              ? 'bg-indigo-600 border-indigo-400 text-white'
+                              : 'border-[#23334d] text-transparent'
+                          }`}
+                        >
+                          <Check className="w-3 h-3 stroke-[3]" />
+                        </div>
+                        <div className="truncate">
+                          <span className="text-indigo-400 font-bold mr-1.5">Unit {u.unitNumber}</span>
+                          <span className="text-zinc-200">{u.unitTitle}</span>
+                        </div>
+                      </div>
+                      <span className="text-[10px] text-zinc-500 shrink-0 ml-2">{u.level}</span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Dropdown Footer */}
+              <div className="pt-2 border-t border-[#1E2D45] flex items-center justify-between">
+                <span className="text-[11px] text-zinc-400 font-medium">
+                  {selectedUnitNumbers.length} ünite seçildi
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setIsUnitDropdownOpen(false)}
+                  className="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs"
+                >
+                  Tamam
+                </button>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Row 2: Compact Genre Selector (Sleek Horizontal Segmented Bar) */}
@@ -521,6 +660,30 @@ export const ReadingView: React.FC = () => {
                 <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans mt-1">
                   {passage.title}
                 </h2>
+
+                {/* News Inspiration Badge */}
+                {passage.newsInspiration && (
+                  <div className="flex items-center gap-2 mt-2 px-3 py-1.5 rounded-xl bg-[#162235]/80 border border-[#23334d] text-xs text-zinc-300 font-sans">
+                    <Globe className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                    <span className="text-[10px] uppercase font-bold text-cyan-400 tracking-wider shrink-0">
+                      Güncel Kaynak İlhamı:
+                    </span>
+                    <span className="font-semibold text-white shrink-0">{passage.newsInspiration.source}</span>
+                    <span className="text-zinc-500">•</span>
+                    <span className="text-zinc-300 truncate">"{passage.newsInspiration.headline}"</span>
+                    {passage.newsInspiration.url && (
+                      <a
+                        href={passage.newsInspiration.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-zinc-500 hover:text-cyan-300 ml-auto shrink-0 p-0.5"
+                        title="Kaynağı Aç"
+                      >
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Utility actions: Audio, Bookmark, Copy */}
@@ -796,141 +959,6 @@ export const ReadingView: React.FC = () => {
         </div>
       )}
 
-      {/* ─── MULTI-UNIT SELECTION MODAL ─── */}
-      {showUnitPickerModal && (
-        <div
-          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn"
-          onClick={() => setShowUnitPickerModal(false)}
-        >
-          <div
-            className="w-full max-w-xl max-h-[85vh] bg-[#111927] border border-[#1E2D45] rounded-3xl p-5 shadow-2xl flex flex-col space-y-3.5 animate-scaleUp overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header */}
-            <div className="flex items-center justify-between pb-2 border-b border-[#1E2D45]">
-              <div className="flex items-center gap-2">
-                <BookOpen className="w-4 h-4 text-indigo-400" />
-                <h3 className="text-sm font-extrabold text-white">Ünite Seç ({selectedUnitNumbers.length})</h3>
-              </div>
-              <button
-                onClick={() => setShowUnitPickerModal(false)}
-                className="p-1 rounded-lg text-zinc-500 hover:text-white"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            {/* Search & Level Filters */}
-            <div className="flex flex-col sm:flex-row gap-2">
-              <div className="relative flex-1">
-                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500" />
-                <input
-                  type="text"
-                  value={unitSearch}
-                  onChange={(e) => setUnitSearch(e.target.value)}
-                  placeholder="Ünite ara..."
-                  className="w-full bg-[#162235] border border-[#23334d] rounded-xl pl-9 pr-3 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500"
-                />
-              </div>
-
-              <div className="flex items-center gap-1 bg-[#162235] p-1 rounded-xl shrink-0">
-                {(['All', 'Intermediate', 'Advanced'] as const).map((lvl) => (
-                  <button
-                    key={lvl}
-                    onClick={() => setUnitFilterLevel(lvl)}
-                    className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all ${
-                      unitFilterLevel === lvl
-                        ? 'bg-indigo-600 text-white shadow-sm'
-                        : 'text-zinc-400 hover:text-white'
-                    }`}
-                  >
-                    {lvl}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Quick Bulk Selection Buttons */}
-            <div className="flex items-center justify-between text-xs text-zinc-400 pt-1">
-              <span>{filteredUnitsForModal.length} ünite listelendi</span>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => {
-                    const allFiltered = filteredUnitsForModal.map((u) => u.unitNumber);
-                    setSelectedUnitNumbers(Array.from(new Set([...selectedUnitNumbers, ...allFiltered])));
-                  }}
-                  className="text-indigo-400 hover:text-indigo-300 font-bold text-[11px]"
-                >
-                  Görünenleri Seç
-                </button>
-                <span>•</span>
-                <button
-                  onClick={() => {
-                    if (filteredUnitsForModal.length > 0) {
-                      setSelectedUnitNumbers([filteredUnitsForModal[0].unitNumber]);
-                    }
-                  }}
-                  className="text-zinc-500 hover:text-zinc-300 text-[11px]"
-                >
-                  İlkine Sıfırla
-                </button>
-              </div>
-            </div>
-
-            {/* Scrollable Unit Grid (No collocation count displayed) */}
-            <div className="flex-1 overflow-y-auto space-y-1.5 pr-1 scrollbar-thin max-h-72">
-              {filteredUnitsForModal.map((u) => {
-                const isSelected = selectedUnitNumbers.includes(u.unitNumber);
-                return (
-                  <div
-                    key={`${u.level}_${u.unitNumber}`}
-                    onClick={() => toggleUnit(u.unitNumber)}
-                    className={`p-2.5 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${
-                      isSelected
-                        ? 'bg-indigo-600/20 border-indigo-500 text-white'
-                        : 'bg-[#131D2E] border-[#1E2D45] text-zinc-300 hover:bg-[#162235]'
-                    }`}
-                  >
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <div
-                        className={`w-5 h-5 rounded-md flex items-center justify-center border shrink-0 text-xs ${
-                          isSelected
-                            ? 'bg-indigo-600 border-indigo-400 text-white'
-                            : 'border-[#23334d] text-transparent'
-                        }`}
-                      >
-                        <Check className="w-3.5 h-3.5 stroke-[3]" />
-                      </div>
-                      <div className="truncate">
-                        <div className="text-xs font-bold flex items-center gap-1.5">
-                          <span className="text-indigo-400">Unit {u.unitNumber}</span>
-                          <span className="truncate">{u.unitTitle}</span>
-                        </div>
-                        <div className="text-[10px] text-zinc-500">
-                          {u.level}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Footer */}
-            <div className="pt-2 border-t border-[#1E2D45] flex items-center justify-between">
-              <span className="text-xs text-zinc-400">
-                {selectedUnitNumbers.length} ünite seçildi
-              </span>
-              <button
-                onClick={() => setShowUnitPickerModal(false)}
-                className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs"
-              >
-                Uygula
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* ─── VOCABULARY DETAIL MODAL ─── */}
       {activeVocabItem && (

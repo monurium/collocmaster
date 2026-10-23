@@ -117,5 +117,12 @@ export interface GeneratedReadingPassage {
   turkishSummary?: string;
   vocabularyList: PassageVocabularyItem[];
   comprehensionQuestions: ComprehensionQuestion[];
+  newsInspiration?: {
+    source: string;
+    headline: string;
+    summary?: string;
+    url?: string;
+  };
   createdAt: number;
 }
+

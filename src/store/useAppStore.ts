@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { Collocation, SRSItem, ReviewLog, Grade, DashboardMetrics, UnitSummary } from '../types';
+import { Collocation, SRSItem, ReviewLog, Grade, DashboardMetrics, UnitSummary, GeneratedReadingPassage } from '../types';
 import { SEED_COLLOCATIONS } from '../data/seedData';
 import { 
   calculateSM2, 
@@ -18,6 +18,7 @@ export interface UserSettings {
   haptics: boolean;
   soundEffects: boolean;
   eyeComfort: boolean;
+  deepseekApiKey?: string;
 }
 
 export type StudyLevel = 'All' | 'Intermediate' | 'Advanced';
@@ -29,6 +30,7 @@ export interface AppState {
   reviewLogs: ReviewLog[];
   settings: UserSettings;
   activeLevel: StudyLevel;
+  savedPassages: GeneratedReadingPassage[];
 
   // Actions
   setActiveLevel: (level: StudyLevel) => void;
@@ -42,6 +44,8 @@ export interface AppState {
   getCardsForUnit: (unitNumber: number, level?: 'Intermediate' | 'Advanced') => Collocation[];
   addCustomCollocation: (col: Omit<Collocation, 'id'>) => Collocation;
   deleteCollocation: (id: string) => void;
+  savePassage: (passage: GeneratedReadingPassage) => void;
+  deletePassage: (id: string) => void;
   updateSettings: (newSettings: Partial<UserSettings>) => void;
   exportDataJSON: () => string;
   importDataJSON: (jsonString: string) => { success: boolean; error?: string };
@@ -55,6 +59,7 @@ const DEFAULT_SETTINGS: UserSettings = {
   haptics: true,
   soundEffects: true,
   eyeComfort: false,
+  deepseekApiKey: '',
 };
 
 // Initialize default SRS map for seed data
@@ -79,6 +84,7 @@ export const useAppStore = create<AppState>()(
       reviewLogs: [],
       settings: DEFAULT_SETTINGS,
       activeLevel: 'All',
+      savedPassages: [],
 
       setActiveLevel: (level: StudyLevel) => {
         set({ activeLevel: level });
@@ -228,6 +234,26 @@ export const useAppStore = create<AppState>()(
         }));
       },
 
+      savePassage: (passage: GeneratedReadingPassage) => {
+        set((state) => {
+          const exists = state.savedPassages.some((p) => p.id === passage.id);
+          if (exists) {
+            return {
+              savedPassages: state.savedPassages.map((p) => (p.id === passage.id ? passage : p)),
+            };
+          }
+          return {
+            savedPassages: [passage, ...state.savedPassages],
+          };
+        });
+      },
+
+      deletePassage: (id: string) => {
+        set((state) => ({
+          savedPassages: state.savedPassages.filter((p) => p.id !== id),
+        }));
+      },
+
       getMetrics: (): DashboardMetrics => {
         const { collocations, srsItems, reviewLogs } = get();
         const now = Date.now();
@@ -336,6 +362,7 @@ export const useAppStore = create<AppState>()(
         reviewLogs: state.reviewLogs,
         settings: state.settings,
         activeLevel: state.activeLevel,
+        savedPassages: state.savedPassages || [],
       }),
       onRehydrateStorage: () => (state) => {
         if (state) {

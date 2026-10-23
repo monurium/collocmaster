@@ -9,6 +9,7 @@ import {
   GraduationCap,
   FileCheck2,
   Puzzle,
+  BookMarked,
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 
@@ -19,6 +20,7 @@ export const Navbar: React.FC = () => {
   const navItems = [
     { to: '/', icon: <LayoutDashboard className="w-4 h-4" />, label: 'Dashboard', exact: true },
     { to: '/units', icon: <BookOpen className="w-4 h-4" />, label: 'Units' },
+    { to: '/reading', icon: <BookMarked className="w-4 h-4 text-cyan-400" />, label: 'Reading' },
     { to: '/study', icon: <GraduationCap className="w-4 h-4" />, label: 'Cards', badge: metrics.dueTodayCount },
     { to: '/quiz', icon: <FileCheck2 className="w-4 h-4" />, label: 'Quiz' },
     { to: '/match', icon: <Puzzle className="w-4 h-4" />, label: 'Match' },

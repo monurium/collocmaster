@@ -24,6 +24,7 @@ import {
   Calendar,
   Sparkles,
   ChevronDown,
+  BookMarked,
 } from 'lucide-react';
 
 const BOOK_TIPS = [
@@ -271,6 +272,37 @@ export const Dashboard: React.FC = () => {
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
+      </div>
+
+      {/* ── AI Reading Lab Banner ── */}
+      <div
+        onClick={() => navigate('/reading')}
+        className="p-5 rounded-3xl bg-gradient-to-r from-indigo-950/60 via-[#131D2E] to-cyan-950/40 border border-indigo-500/30 hover:border-indigo-500/60 transition-all cursor-pointer shadow-xl hover:shadow-indigo-500/10 group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+      >
+        <div className="flex items-start sm:items-center gap-4">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 shrink-0 group-hover:scale-105 transition-transform">
+            <BookMarked className="w-6 h-6" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[10px] font-black uppercase tracking-wider text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 px-2 py-0.5 rounded-md">
+                NEW FEATURE • DEEPSEEK AI
+              </span>
+              <span className="text-xs text-zinc-400 hidden sm:inline">• Contextual Storyteller</span>
+            </div>
+            <h3 className="text-base sm:text-lg font-black text-white group-hover:text-indigo-300 transition-colors">
+              AI Reading Lab: Generate Stories from any Unit
+            </h3>
+            <p className="text-xs text-zinc-400 mt-0.5 leading-relaxed">
+              Weave target collocations into natural stories, dialogues, or business cases with instant cloze testing and quizzes.
+            </p>
+          </div>
+        </div>
+
+        <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 group-hover:bg-indigo-500 text-white font-bold text-xs transition-all shadow-md shadow-indigo-600/30 shrink-0 self-stretch sm:self-auto justify-center">
+          <span>Launch AI Reader</span>
+          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </button>
       </div>
 
       {/* ── Daily Collocation Tip Box ── */}

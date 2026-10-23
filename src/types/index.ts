@@ -84,3 +84,37 @@ export interface DashboardMetrics {
   dueTodayCount: number;
   newCardsCount: number;
 }
+
+export type ReadingGenre = 'story' | 'workplace' | 'academic' | 'dialogue' | 'news';
+
+export interface ComprehensionQuestion {
+  id: string;
+  question: string;
+  options: string[];
+  correctAnswer: number; // index 0..3
+  explanation: string;
+}
+
+export interface PassageVocabularyItem {
+  chunk: string;
+  type?: string;
+  meaning: string;
+  meaningTr?: string;
+  contextSentence?: string;
+}
+
+export interface GeneratedReadingPassage {
+  id: string;
+  unitNumber: number;
+  unitTitle: string;
+  level: 'Intermediate' | 'Advanced';
+  title: string;
+  genre: ReadingGenre;
+  difficulty: 'Intermediate' | 'Advanced';
+  targetCollocations: string[];
+  paragraphs: string[];
+  turkishSummary?: string;
+  vocabularyList: PassageVocabularyItem[];
+  comprehensionQuestions: ComprehensionQuestion[];
+  createdAt: number;
+}

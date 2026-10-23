@@ -9,6 +9,7 @@ const StudySession = lazy(() => import('./views/StudySession').then(m => ({ defa
 const QuizView = lazy(() => import('./views/QuizView').then(m => ({ default: m.QuizView })));
 const MatchGame = lazy(() => import('./views/MatchGame').then(m => ({ default: m.MatchGame })));
 const Library = lazy(() => import('./views/Library').then(m => ({ default: m.Library })));
+const ReadingView = lazy(() => import('./views/ReadingView').then(m => ({ default: m.ReadingView })));
 const Settings = lazy(() => import('./views/Settings').then(m => ({ default: m.Settings })));
 
 const RouteFallback: React.FC = () => (
@@ -47,6 +48,7 @@ export const App: React.FC = () => {
               <Route path="/study"    element={<StudySession />} />
               <Route path="/quiz"     element={<QuizView />} />
               <Route path="/match"    element={<MatchGame />} />
+              <Route path="/reading"  element={<ReadingView />} />
               <Route path="/library"  element={<Library />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="*"         element={<Navigate to="/" replace />} />

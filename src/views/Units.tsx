@@ -20,6 +20,7 @@ import {
   Check,
   CheckSquare,
   Languages,
+  BookMarked,
 } from 'lucide-react';
 
 type UnitTheme = 'all' | 'basics' | 'verbs_adverbs' | 'everyday' | 'work_academic' | 'concepts';
@@ -354,13 +355,25 @@ export const UnitsView: React.FC = () => {
               </div>
 
               {/* Action buttons */}
-              <div className="grid grid-cols-3 gap-2 pt-4 mt-3 border-t border-[#1E2D45]">
+              <div className="grid grid-cols-4 gap-1.5 pt-3 mt-3 border-t border-[#1E2D45]">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate('/reading', { state: { unitNumber: unit.unitNumber, level: unit.level } });
+                  }}
+                  className="flex items-center justify-center gap-1 py-1.5 px-1 rounded-xl text-xs font-semibold bg-emerald-600/15 hover:bg-emerald-600/25 text-emerald-300 border border-emerald-500/30 transition-all hover:scale-[1.02]"
+                  title="Generate AI Reading Story from this unit"
+                >
+                  <BookMarked className="w-3.5 h-3.5" />
+                  <span>Story</span>
+                </button>
+
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     navigate('/study', { state: { unitNumber: unit.unitNumber, level: unit.level } });
                   }}
-                  className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl text-xs font-semibold bg-indigo-600/15 hover:bg-indigo-600/25 text-indigo-300 border border-indigo-500/30 transition-all hover:scale-[1.02]"
+                  className="flex items-center justify-center gap-1 py-1.5 px-1 rounded-xl text-xs font-semibold bg-indigo-600/15 hover:bg-indigo-600/25 text-indigo-300 border border-indigo-500/30 transition-all hover:scale-[1.02]"
                   title="Study this unit with Flashcards"
                 >
                   <GraduationCap className="w-3.5 h-3.5" />
@@ -372,7 +385,7 @@ export const UnitsView: React.FC = () => {
                     e.stopPropagation();
                     navigate('/quiz', { state: { unitNumber: unit.unitNumber, level: unit.level } });
                   }}
-                  className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl text-xs font-semibold bg-cyan-600/15 hover:bg-cyan-600/25 text-cyan-300 border border-cyan-500/30 transition-all hover:scale-[1.02]"
+                  className="flex items-center justify-center gap-1 py-1.5 px-1 rounded-xl text-xs font-semibold bg-cyan-600/15 hover:bg-cyan-600/25 text-cyan-300 border border-cyan-500/30 transition-all hover:scale-[1.02]"
                   title="Take a sentence completion quiz"
                 >
                   <FileCheck2 className="w-3.5 h-3.5" />
@@ -384,7 +397,7 @@ export const UnitsView: React.FC = () => {
                     e.stopPropagation();
                     navigate('/match', { state: { unitNumber: unit.unitNumber, level: unit.level } });
                   }}
-                  className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl text-xs font-semibold bg-amber-600/15 hover:bg-amber-600/25 text-amber-300 border border-amber-500/30 transition-all hover:scale-[1.02]"
+                  className="flex items-center justify-center gap-1 py-1.5 px-1 rounded-xl text-xs font-semibold bg-amber-600/15 hover:bg-amber-600/25 text-amber-300 border border-amber-500/30 transition-all hover:scale-[1.02]"
                   title="Play collocation match"
                 >
                   <Puzzle className="w-3.5 h-3.5" />
@@ -426,8 +439,17 @@ export const UnitsView: React.FC = () => {
 
           <div className="flex items-center gap-2 w-full sm:w-auto justify-end shrink-0">
             <button
+              onClick={() => navigate('/reading', { state: { unitNumbers: selectedUnitNumbers } })}
+              className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-600/30 transition-all active:scale-95"
+              title="Generate AI reading passage from selected units"
+            >
+              <BookMarked className="w-3.5 h-3.5" />
+              <span>AI Story</span>
+            </button>
+
+            <button
               onClick={() => navigate('/study', { state: { unitNumbers: selectedUnitNumbers } })}
-              className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/30 transition-all active:scale-95"
+              className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/30 transition-all active:scale-95"
             >
               <GraduationCap className="w-3.5 h-3.5" />
               <span>Cards</span>
@@ -587,6 +609,17 @@ export const UnitsView: React.FC = () => {
                 Close
               </button>
               <div className="flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    const u = selectedUnit;
+                    setSelectedUnit(null);
+                    navigate('/reading', { state: { unitNumber: u.unitNumber, level: u.level } });
+                  }}
+                  className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border border-emerald-500/30 transition-all"
+                >
+                  <BookMarked className="w-3.5 h-3.5" />
+                  AI Story
+                </button>
                 <button
                   onClick={() => {
                     const u = selectedUnit;

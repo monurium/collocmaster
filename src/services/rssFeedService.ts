@@ -54,6 +54,36 @@ export const GENRE_RSS_FEEDS: Record<ReadingGenre, RssFeedConfig[]> = {
     { source: 'NPR Life & Culture', url: 'https://feeds.npr.org/1008/rss.xml' },
     { source: 'Reader\'s Digest True Stories', url: 'https://www.rd.com/feed/' },
   ],
+  technology: [
+    { source: 'TechCrunch', url: 'https://techcrunch.com/feed/' },
+    { source: 'The Verge', url: 'https://www.theverge.com/rss/index.xml' },
+    { source: 'Wired News', url: 'https://www.wired.com/feed/rss' },
+    { source: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index' },
+    { source: 'MIT Technology Review', url: 'https://www.technologyreview.com/feed/' },
+    { source: 'Engadget', url: 'https://www.engadget.com/rss.xml' },
+    { source: 'BBC Technology', url: 'https://feeds.bbci.co.uk/news/technology/rss.xml' },
+    { source: 'VentureBeat', url: 'https://venturebeat.com/feed/' },
+  ],
+  sports: [
+    { source: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/rss.xml' },
+    { source: 'ESPN Top News', url: 'https://www.espn.com/espn/rss/news' },
+    { source: 'Sky Sports News', url: 'https://www.skysports.com/rss/12040' },
+    { source: 'The Guardian Sport', url: 'https://www.theguardian.com/sport/rss' },
+    { source: 'Sports Illustrated', url: 'https://www.si.com/rss/news.rss' },
+    { source: 'Reuters Sports', url: 'https://news.google.com/rss/search?q=reuters+sports+news&hl=en-US&gl=US&ceid=US:en' },
+    { source: 'The Athletic / NYT', url: 'https://news.google.com/rss/search?q=the+athletic+football+sports&hl=en-US&gl=US&ceid=US:en' },
+    { source: 'Olympic News Channel', url: 'https://news.google.com/rss/search?q=olympic+sports+news&hl=en-US&gl=US&ceid=US:en' },
+  ],
+  entertainment: [
+    { source: 'Variety Magazine', url: 'https://variety.com/feed/' },
+    { source: 'The Hollywood Reporter', url: 'https://www.hollywoodreporter.com/feed/' },
+    { source: 'Rolling Stone Culture', url: 'https://www.rollingstone.com/feed/' },
+    { source: 'People Entertainment', url: 'https://people.com/feed/' },
+    { source: 'Billboard Music', url: 'https://www.billboard.com/feed/' },
+    { source: 'BBC Entertainment', url: 'https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml' },
+    { source: 'Vanity Fair Culture', url: 'https://www.vanityfair.com/feed/culture/rss' },
+    { source: 'Entertainment Weekly', url: 'https://ew.com/feed/' },
+  ],
   dialogue: [
     { source: 'TED Ideas & Conversations', url: 'https://ideas.ted.com/feed/' },
     { source: 'NPR Fresh Air Dialogues', url: 'https://feeds.npr.org/13/rss.xml' },
@@ -65,6 +95,7 @@ export const GENRE_RSS_FEEDS: Record<ReadingGenre, RssFeedConfig[]> = {
     { source: 'The Economist Asks (Podcasts)', url: 'https://news.google.com/rss/search?q=economist+asks+interview&hl=en-US&gl=US&ceid=US:en' },
   ],
 };
+
 
 // Rich curated real-world backup pool to guarantee instant, 100% resilient response
 const CURATED_RECENT_STORIES: Record<ReadingGenre, NewsInspiration[]> = {
@@ -196,6 +227,102 @@ const CURATED_RECENT_STORIES: Record<ReadingGenre, NewsInspiration[]> = {
       url: 'https://www.newyorker.com',
     },
   ],
+  technology: [
+    {
+      source: 'TechCrunch',
+      headline: 'Next-Generation Autonomous Drones Revolutionize Mountain Search and Rescue',
+      summary: 'Emergency response teams test thermal-imaging drone fleets capable of navigating dense blizzards to deliver life-saving supplies to stranded mountaineers.',
+      url: 'https://techcrunch.com',
+    },
+    {
+      source: 'The Verge',
+      headline: 'Open-Source AI Models Challenge Commercial Monopolies in Everyday Computing',
+      summary: 'Independent developer coalitions achieve breakthrough performance benchmarks on local desktop hardware without cloud dependency.',
+      url: 'https://theverge.com',
+    },
+    {
+      source: 'Wired News',
+      headline: 'Quantum Encryption Breakthrough Protects Subsea Fiber-Optic Backbones',
+      summary: 'Telecommunication engineers deploy quantum key distribution across continental underwater cables to safeguard critical banking infrastructure.',
+      url: 'https://wired.com',
+    },
+    {
+      source: 'Ars Technica',
+      headline: 'Solid-State Battery Breakthrough Paves Way for Thousand-Kilometer Electric Trips',
+      summary: 'Materials scientists create ceramic electrolyte layers that resist degradation even under rapid charging temperatures.',
+      url: 'https://arstechnica.com',
+    },
+    {
+      source: 'MIT Technology Review',
+      headline: 'Neuro-Prosthetic Implants Enable Paralyzed Patients to Type with Natural Fluency',
+      summary: 'High-density micro-electrode arrays translate motor cortex intention signals directly into fluent text on computer screens.',
+      url: 'https://technologyreview.com',
+    },
+  ],
+  sports: [
+    {
+      source: 'BBC Sport',
+      headline: 'Underdog Football Club Clinches Historic Continental Title in Extra Time Thriller',
+      summary: 'Tactical discipline, high pressing, and an injury-time volley capped off an extraordinary Cinderella campaign against the reigning champions.',
+      url: 'https://bbc.com/sport',
+    },
+    {
+      source: 'The Guardian Sport',
+      headline: 'The Science of Marathon Pacing: How Modern Athletes Defy Human Limits',
+      summary: 'Elite distance runners combine advanced biomechanical footwear and real-time lactate sensors to shave crucial seconds off world records.',
+      url: 'https://theguardian.com/sport',
+    },
+    {
+      source: 'ESPN',
+      headline: 'Championship Finals Showcase the Decisive Impact of Bench Depth',
+      summary: 'When star starters faced foul trouble, reserve playmakers took command of the court to stage an unforgettable fourth-quarter comeback.',
+      url: 'https://espn.com',
+    },
+    {
+      source: 'Sky Sports',
+      headline: 'Formula Racing Teams Adopt Sustainable Bio-Fuels Ahead of New Regulations',
+      summary: 'Engineers engineer hybrid power units that maintain ferocious torque while drastically curbing trackside emissions.',
+      url: 'https://skysports.com',
+    },
+    {
+      source: 'Sports Illustrated',
+      headline: 'The Psychology of Clutch Performance: Why Certain Athletes Thrive Under Fire',
+      summary: 'Sports psychologists explore visualization routines and heart-rate coherence practices that enable champions to execute flawless free-throws.',
+      url: 'https://si.com',
+    },
+  ],
+  entertainment: [
+    {
+      source: 'Variety Magazine',
+      headline: 'Independent Cinema Dominates International Film Festival Nominations',
+      summary: 'Character-driven low-budget dramas and nuanced coming-of-age portraits outperform blockbuster franchises in critical praise and jury ballots.',
+      url: 'https://variety.com',
+    },
+    {
+      source: 'Rolling Stone',
+      headline: 'Vinyl Records Outsell Digital Downloads as Fans Seek Tangible Music Rituals',
+      summary: 'Audiophiles and younger listeners alike celebrate physical gatefold packaging, analog warmth, and intentional album listening experiences.',
+      url: 'https://rollingstone.com',
+    },
+    {
+      source: 'The Hollywood Reporter',
+      headline: 'Behind the Scenes of Groundbreaking Practical Effects in Modern Filmmaking',
+      summary: 'Visionary directors blend miniature model craft with digital compositing to create authentic, tactile cinematic worlds.',
+      url: 'https://hollywoodreporter.com',
+    },
+    {
+      source: 'Billboard Music',
+      headline: 'Cross-Genre Collaborations Redefine Global Streaming Charts',
+      summary: 'Fusion tracks combining acoustic folk traditions with electronic synth production capture massive multicultural audiences worldwide.',
+      url: 'https://billboard.com',
+    },
+    {
+      source: 'People Magazine',
+      headline: 'Celebrity Philanthropists Fund Music and Arts Education in Underserved Schools',
+      summary: 'Prominent actors and musicians launch nationwide foundations to supply state-of-the-art instruments and rehearsal spaces for youth.',
+      url: 'https://people.com',
+    },
+  ],
   dialogue: [
     {
       source: 'TED Ideas & Conversations',
@@ -229,6 +356,7 @@ const CURATED_RECENT_STORIES: Record<ReadingGenre, NewsInspiration[]> = {
     },
   ],
 };
+
 
 /**
  * Parses RSS XML string into clean headlines & summaries

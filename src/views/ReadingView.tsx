@@ -39,11 +39,15 @@ import {
 
 const GENRES: { id: ReadingGenre; label: string; icon: string }[] = [
   { id: 'story', label: 'Story', icon: '📖' },
+  { id: 'news', label: 'News', icon: '📰' },
+  { id: 'technology', label: 'Technology', icon: '💻' },
   { id: 'workplace', label: 'Workplace', icon: '💼' },
   { id: 'academic', label: 'Academic', icon: '🎓' },
+  { id: 'sports', label: 'Sports', icon: '⚽' },
+  { id: 'entertainment', label: 'Entertainment', icon: '🎬' },
   { id: 'dialogue', label: 'Dialogue', icon: '☕' },
-  { id: 'news', label: 'News', icon: '📰' },
 ];
+
 
 export const ReadingView: React.FC = () => {
   const location = useLocation();

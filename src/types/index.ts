@@ -85,7 +85,15 @@ export interface DashboardMetrics {
   newCardsCount: number;
 }
 
-export type ReadingGenre = 'story' | 'workplace' | 'academic' | 'dialogue' | 'news';
+export type ReadingGenre =
+  | 'story'
+  | 'news'
+  | 'technology'
+  | 'workplace'
+  | 'academic'
+  | 'sports'
+  | 'entertainment'
+  | 'dialogue';
 
 export interface ComprehensionQuestion {
   id: string;

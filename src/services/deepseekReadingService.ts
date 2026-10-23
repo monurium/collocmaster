@@ -99,11 +99,15 @@ export interface GeneratePassageOptions {
 
 const GENRE_PROMPTS: Record<ReadingGenre, string> = {
   story: 'an engaging, character-driven short narrative or story with natural dialogue and rich situational imagery',
+  news: 'an authentic journalistic feature or magazine article with compelling headlines and journalistic narrative style',
+  technology: 'a cutting-edge technology article examining breakthroughs in artificial intelligence, engineering, cybersecurity, software, or digital society',
   workplace: 'a realistic workplace/business case study or professional office scenario involving teamwork, decision-making, and modern workplace challenges',
   academic: 'a well-reasoned, informative academic/scientific essay or analysis examining contemporary trends or research',
+  sports: 'an exhilarating, high-energy sports journalism article focusing on athletic determination, match strategy, tournament drama, or sporting culture',
+  entertainment: 'a lively, vibrant entertainment magazine piece covering cinema, music, celebrity culture, streaming trends, or behind-the-scenes artistic stories',
   dialogue: 'a dynamic, lively conversation between two articulate native speakers discussing personal, cultural, or career matters',
-  news: 'an authentic journalistic feature or magazine article with compelling headlines and journalistic narrative style',
 };
+
 
 /**
  * Clean and parse JSON response from LLM output (handles ```json fences)

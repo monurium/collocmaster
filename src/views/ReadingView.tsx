@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import {
@@ -72,7 +72,7 @@ export const ReadingView: React.FC = () => {
   const [unitSearch, setUnitSearch] = useState<string>('');
   const [unitFilterLevel, setUnitFilterLevel] = useState<'All' | 'Intermediate' | 'Advanced'>('All');
 
-  // Active Passage State
+  // Active Passage State (Starts empty, no auto-generate on load)
   const [passage, setPassage] = useState<GeneratedReadingPassage | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingPhase, setLoadingPhase] = useState<string>('');
@@ -112,10 +112,10 @@ export const ReadingView: React.FC = () => {
   }, [selectedUnits]);
 
   const combinedTitle = useMemo(() => {
-    if (selectedUnits.length === 0) return 'Selected Units';
+    if (selectedUnits.length === 0) return 'Seçilen Üniteler';
     if (selectedUnits.length === 1) return `Unit ${selectedUnits[0].unitNumber}: ${selectedUnits[0].unitTitle}`;
     const nums = [...selectedUnits].map((u) => u.unitNumber).sort((a, b) => a - b).join(', ');
-    return `Units ${nums} (${selectedUnits.length} Units)`;
+    return `Units ${nums}`;
   }, [selectedUnits]);
 
   const primaryLevel = useMemo(() => {
@@ -131,10 +131,10 @@ export const ReadingView: React.FC = () => {
     return savedPassages.some((p) => p.id === passage.id);
   }, [savedPassages, passage]);
 
-  // Handle generation (always 5 collocations)
+  // Handle generation on user click (never automatically on mount)
   const handleGenerate = async () => {
     if (combinedCollocations.length === 0) {
-      setErrorMsg('Please select at least one unit with collocations.');
+      setErrorMsg('Lütfen en az bir ünite seçin.');
       return;
     }
 
@@ -146,10 +146,10 @@ export const ReadingView: React.FC = () => {
     handleStopAudio();
 
     const phases = [
-      'Scanning selected units corpus...',
-      'DeepSeek AI is weaving 5 target collocations into an authentic story...',
-      'Validating CEFR level and natural idiomatic flow...',
-      'Formulating reading comprehension and cloze challenge...',
+      'Seçilen ünitelerin kollokasyonları taranıyor...',
+      'DeepSeek AI 5 hedef kollokasyonu metne doğal olarak dağıtıyor...',
+      'Cambridge CEFR seviyesi ve akıcı anlatım doğrulanıyor...',
+      'Okuma ve anlama görevleri oluşturuluyor...',
     ];
 
     let pIdx = 0;
@@ -167,26 +167,19 @@ export const ReadingView: React.FC = () => {
         level: primaryLevel,
         collocations: combinedCollocations,
         genre: selectedGenre,
-        numCollocations: 5, // FIXED TO 5 COLLOCATIONS
+        numCollocations: 5,
       });
 
       setPassage(generated);
       if (settings.soundEffects) playChime('complete');
     } catch (err: unknown) {
-      setErrorMsg(err instanceof Error ? err.message : 'Failed to generate passage.');
+      setErrorMsg(err instanceof Error ? err.message : 'Hikaye üretilemedi.');
       if (settings.soundEffects) playChime('again');
     } finally {
       clearInterval(interval);
       setLoading(false);
     }
   };
-
-  // Initial auto-generate on first visit
-  useEffect(() => {
-    if (!passage && combinedCollocations.length > 0) {
-      handleGenerate();
-    }
-  }, [selectedUnitNumbers]);
 
   // Audio Playback
   const handlePlayAudio = () => {
@@ -276,7 +269,7 @@ export const ReadingView: React.FC = () => {
     return list.filter((u) => u.unitTitle.toLowerCase().includes(q) || `unit ${u.unitNumber}`.includes(q));
   }, [summaries, unitFilterLevel, unitSearch]);
 
-  // Render paragraph with clickable or cloze-blank collocations
+  // Render paragraph with clickable or cloze-blank collocations with elegant font
   const renderParagraphContent = (paragraph: string) => {
     if (!passage) return paragraph;
 
@@ -312,8 +305,8 @@ export const ReadingView: React.FC = () => {
                 setRevealedChunks((prev) => ({ ...prev, [matchChunk.toLowerCase()]: true }));
                 if (settings.soundEffects) playChime('flip');
               }}
-              title="Click to reveal collocation"
-              className="inline-flex items-center px-2 py-0.5 mx-1 rounded-lg text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30 transition-all cursor-pointer animate-pulse"
+              title="Kollokasyonu görmek için tıkla"
+              className="inline-flex items-center px-2 py-0.5 mx-1 rounded-md text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30 transition-all cursor-pointer animate-pulse align-baseline"
             >
               [ ? ? ? ? ]
             </button>
@@ -327,14 +320,14 @@ export const ReadingView: React.FC = () => {
               setActiveVocabItem(vocabItem);
               if (settings.autoAudio) speakCollocation(matchChunk, settings.speechRate);
             }}
-            className={`inline-flex items-center gap-1 px-2 py-0.5 mx-0.5 rounded-lg text-sm font-bold transition-all ${
+            className={`inline-flex items-center gap-1 px-1.5 py-0.5 mx-0.5 rounded-md font-serif font-semibold text-inherit transition-all align-baseline ${
               isCloze
                 ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 ring-1 ring-emerald-500/20'
-                : 'bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 hover:bg-indigo-500/30 hover:text-white hover:scale-105'
+                : 'bg-indigo-500/15 text-indigo-200 border-b-2 border-indigo-400 hover:bg-indigo-500/30 hover:text-white'
             }`}
           >
             <span>{part}</span>
-            <span className="text-[10px] opacity-60">✦</span>
+            <span className="text-[10px] font-sans opacity-60">✦</span>
           </button>
         );
       }
@@ -350,10 +343,10 @@ export const ReadingView: React.FC = () => {
         <div>
           <div className="flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-wider mb-0.5">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-            AI Reading Lab & Storyteller
+            AI Reading Lab
           </div>
           <h1 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
-            Contextual Passage Generator
+            Okuma ve Hikaye Metni
           </h1>
         </div>
 
@@ -364,12 +357,12 @@ export const ReadingView: React.FC = () => {
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-[#131D2E] border border-[#1E2D45] text-zinc-300 hover:text-white hover:border-indigo-500/40 transition-all shadow-sm"
           >
             <BookMarked className="w-3.5 h-3.5 text-amber-400" />
-            <span>Saved Stories ({savedPassages.length})</span>
+            <span>Kayıtlı Metinler ({savedPassages.length})</span>
           </button>
 
           <button
             onClick={() => navigate('/settings')}
-            title="Manage DeepSeek API Key"
+            title="DeepSeek API Ayarları"
             className={`p-1.5 rounded-xl border text-xs font-bold transition-all ${
               hasApiKey
                 ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300'
@@ -381,23 +374,17 @@ export const ReadingView: React.FC = () => {
         </div>
       </div>
 
-      {/* ─── Streamlined & Compact Generator Control Card ─── */}
+      {/* ─── Minimal & Clean Generator Control Card ─── */}
       <div className="card p-4 sm:p-5 space-y-3.5 bg-gradient-to-br from-[#111927] via-[#111927] to-[#0D1522] border-[#1E2D45] shadow-xl">
-        {/* Row 1: Multi-Unit Selection Header & Chips */}
+        {/* Row 1: Unit Selection (No counts, just clean selection) */}
         <div>
-          <div className="flex items-center justify-between mb-1.5">
-            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-1.5">
-              <BookOpen className="w-3.5 h-3.5 text-indigo-400" />
-              <span>Target Units ({selectedUnitNumbers.length})</span>
-              <span className="text-[10px] text-zinc-500 font-normal lowercase">• {combinedCollocations.length} collocations pool</span>
-            </label>
-
+          <div className="flex items-center justify-between mb-2">
             <button
               onClick={() => setShowUnitPickerModal(true)}
-              className="px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-600/20 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600/30 transition-all flex items-center gap-1"
+              className="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-indigo-600/20 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600/30 transition-all flex items-center gap-1.5"
             >
-              <span>+ Select Units</span>
-              <span className="text-[10px] bg-indigo-500 text-white px-1.5 rounded-full font-mono">{selectedUnitNumbers.length}</span>
+              <BookOpen className="w-3.5 h-3.5 text-indigo-400" />
+              <span>Ünite Seç ({selectedUnitNumbers.length})</span>
             </button>
           </div>
 
@@ -406,15 +393,15 @@ export const ReadingView: React.FC = () => {
             {selectedUnits.map((u) => (
               <span
                 key={`${u.level}_${u.unitNumber}`}
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium bg-[#162235] text-zinc-200 border border-[#23334d]"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-[#162235] text-zinc-200 border border-[#23334d]"
               >
                 <span className="text-indigo-400 font-bold">U{u.unitNumber}</span>
-                <span className="text-zinc-300 max-w-[140px] truncate">{u.unitTitle}</span>
+                <span className="text-zinc-300 max-w-[150px] truncate">{u.unitTitle}</span>
                 {selectedUnitNumbers.length > 1 && (
                   <button
                     onClick={() => toggleUnit(u.unitNumber)}
                     className="hover:text-rose-400 text-zinc-500 ml-0.5"
-                    title="Remove unit"
+                    title="Kaldır"
                   >
                     <X className="w-3 h-3" />
                   </button>
@@ -428,7 +415,7 @@ export const ReadingView: React.FC = () => {
         <div>
           <div className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1.5 flex items-center gap-1">
             <Layers className="w-3 h-3 text-cyan-400" />
-            <span>Story Genre</span>
+            <span>Tür</span>
           </div>
 
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
@@ -449,25 +436,43 @@ export const ReadingView: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom bar: Status info + Fixed 5 Collocations Badge + Generate Button */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-2 border-t border-[#1E2D45]">
-          <div className="flex items-center gap-2 text-xs text-zinc-400">
-            <span className="px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 font-bold font-mono text-[11px] border border-cyan-500/25">
-              5 Collocations
-            </span>
-            <span className="text-zinc-500 text-[11px]">woven into narrative</span>
-          </div>
-
+        {/* Bottom bar: Generate Button */}
+        <div className="flex items-center justify-end pt-2 border-t border-[#1E2D45]">
           <button
             onClick={handleGenerate}
             disabled={loading}
-            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/25 disabled:opacity-60 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99]"
+            className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/25 disabled:opacity-60 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99]"
           >
             <Sparkles className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
-            <span>{loading ? 'Generating Story...' : 'Generate AI Story'}</span>
+            <span>{loading ? 'Metin Oluşturuluyor...' : 'Generate AI Story'}</span>
           </button>
         </div>
       </div>
+
+      {/* ─── Ready Placeholder State (Shown until user generates) ─── */}
+      {!passage && !loading && (
+        <div className="card p-8 sm:p-12 text-center space-y-3.5 bg-gradient-to-b from-[#111927] to-[#0D1522] border-[#1E2D45] rounded-3xl animate-fadeIn">
+          <div className="w-14 h-14 mx-auto rounded-2xl bg-indigo-600/15 border border-indigo-500/25 flex items-center justify-center text-indigo-400">
+            <BookMarked className="w-7 h-7" />
+          </div>
+          <div>
+            <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+              Okuma Metni Oluşturmaya Hazır
+            </h3>
+            <p className="text-xs text-zinc-400 max-w-md mx-auto mt-1 leading-relaxed">
+              Ünitelerinizi ve hikaye türünüzü belirledikten sonra{' '}
+              <strong className="text-indigo-300">"Generate AI Story"</strong> butonuna tıklayarak metninizi üretebilirsiniz.
+            </p>
+          </div>
+          <button
+            onClick={handleGenerate}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-bold text-xs shadow-lg shadow-indigo-600/25 hover:from-indigo-500 hover:to-cyan-400 transition-all hover:scale-105"
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Generate AI Story</span>
+          </button>
+        </div>
+      )}
 
       {/* ─── Loading State Card ─── */}
       {loading && (
@@ -476,7 +481,7 @@ export const ReadingView: React.FC = () => {
             <Sparkles className="w-6 h-6 text-indigo-400 animate-spin" />
           </div>
           <div>
-            <h3 className="text-sm font-bold text-white tracking-wide">Crafting Reading Passage</h3>
+            <h3 className="text-sm font-bold text-white tracking-wide">Metin Oluşturuluyor</h3>
             <p className="text-xs text-indigo-300 font-mono mt-1">{loadingPhase}</p>
           </div>
           <div className="max-w-xs mx-auto w-full bg-[#1A263C] h-1.5 rounded-full overflow-hidden">
@@ -495,26 +500,25 @@ export const ReadingView: React.FC = () => {
         </div>
       )}
 
-      {/* ─── Generated Story Display ─── */}
+      {/* ─── Generated Story Display with Editorial Typography ─── */}
       {passage && !loading && (
         <div className="space-y-4 animate-fadeIn">
           {/* Main Story Canvas */}
-          <div className="card p-5 sm:p-7 bg-[#0F172A] border-[#1E2D45] rounded-3xl shadow-2xl relative overflow-hidden">
+          <div className="card p-6 sm:p-9 bg-[#0F172A] border-[#1E2D45] rounded-3xl shadow-2xl relative overflow-hidden">
             {/* Header info */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-4 mb-4 border-b border-[#1E2D45] gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-4 mb-5 border-b border-[#1E2D45] gap-3">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-black uppercase tracking-wider bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">
+                  <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-black uppercase tracking-wider bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 font-sans">
                     {passage.unitNumbers && passage.unitNumbers.length > 1
                       ? `Units ${passage.unitNumbers.sort((a,b)=>a-b).join(', ')}`
                       : `Unit ${passage.unitNumber}`} • {passage.level}
                   </span>
-                  <span className="px-2 py-0.5 rounded-lg text-[10px] font-bold uppercase bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                  <span className="px-2 py-0.5 rounded-lg text-[10px] font-bold uppercase bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-sans">
                     {passage.genre}
                   </span>
-                  <span className="text-xs text-zinc-500">• 5 collocations</span>
                 </div>
-                <h2 className="text-lg sm:text-xl font-black text-white tracking-tight">
+                <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans mt-1">
                   {passage.title}
                 </h2>
               </div>
@@ -523,12 +527,12 @@ export const ReadingView: React.FC = () => {
               <div className="flex items-center gap-2">
                 <button
                   onClick={handlePlayAudio}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all border ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold font-sans transition-all border ${
                     isPlayingAudio
                       ? 'bg-rose-500/15 border-rose-500/30 text-rose-300 animate-pulse'
                       : 'bg-[#162235] border-[#23334d] text-zinc-300 hover:text-white hover:border-indigo-500/40'
                   }`}
-                  title={isPlayingAudio ? 'Stop Narration' : 'Read Story Aloud'}
+                  title={isPlayingAudio ? 'Durdur' : 'Sesli Oku'}
                 >
                   {isPlayingAudio ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 text-emerald-400" />}
                   <span>{isPlayingAudio ? 'Stop' : 'Listen'}</span>
@@ -541,7 +545,7 @@ export const ReadingView: React.FC = () => {
                       ? 'bg-amber-500/15 border-amber-500/30 text-amber-300'
                       : 'bg-[#162235] border-[#23334d] text-zinc-400 hover:text-zinc-200'
                   }`}
-                  title={isCurrentSaved ? 'Remove from Saved' : 'Save this story'}
+                  title={isCurrentSaved ? 'Kayıtlılardan Kaldır' : 'Kaydet'}
                 >
                   {isCurrentSaved ? <BookmarkCheck className="w-4 h-4 text-amber-400" /> : <Bookmark className="w-4 h-4" />}
                 </button>
@@ -549,7 +553,7 @@ export const ReadingView: React.FC = () => {
                 <button
                   onClick={handleCopyPassage}
                   className="p-1.5 rounded-xl bg-[#162235] border border-[#23334d] text-zinc-400 hover:text-white transition-all"
-                  title="Copy story & collocations to clipboard"
+                  title="Panoya Kopyala"
                 >
                   {copyFeedback ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                 </button>
@@ -557,7 +561,7 @@ export const ReadingView: React.FC = () => {
             </div>
 
             {/* Mode Switcher Tabs */}
-            <div className="flex items-center gap-1 bg-[#131D2E] p-1 rounded-2xl border border-[#1E2D45] mb-5 max-w-md">
+            <div className="flex items-center gap-1 bg-[#131D2E] p-1 rounded-2xl border border-[#1E2D45] mb-6 max-w-md font-sans">
               <button
                 onClick={() => setActiveTab('read')}
                 className={`flex-1 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
@@ -599,27 +603,27 @@ export const ReadingView: React.FC = () => {
               </button>
             </div>
 
-            {/* TAB 1 & 2: Passage Text (Read & Cloze) */}
+            {/* TAB 1 & 2: Editorial Serif Story Text (Read & Cloze) */}
             {(activeTab === 'read' || activeTab === 'cloze') && (
-              <div className="space-y-4 text-base sm:text-lg leading-relaxed text-zinc-200">
+              <div className="space-y-5 text-lg sm:text-[19px] font-serif leading-[1.88] text-slate-200 tracking-[0.01em]">
                 {activeTab === 'cloze' && (
-                  <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-200 text-xs flex items-center justify-between mb-3">
-                    <span>💡 Challenge: Click any blank <strong>[ ? ? ? ? ]</strong> to reveal the collocation!</span>
+                  <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-200 text-xs font-sans flex items-center justify-between mb-4">
+                    <span>💡 Boşluklara tıklayarak kollokasyonları açabilirsiniz.</span>
                     <button
                       onClick={() => {
                         const all: Record<string, boolean> = {};
                         passage.targetCollocations.forEach((c) => (all[c.toLowerCase()] = true));
                         setRevealedChunks(all);
                       }}
-                      className="px-2 py-0.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold shrink-0 ml-2"
+                      className="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold shrink-0 ml-2 font-sans"
                     >
-                      Reveal All
+                      Hepsini Aç
                     </button>
                   </div>
                 )}
 
                 {passage.paragraphs.map((p, idx) => (
-                  <p key={idx} className="indent-2 sm:indent-4 font-normal">
+                  <p key={idx} className="indent-3 sm:indent-5 font-normal">
                     {renderParagraphContent(p)}
                   </p>
                 ))}
@@ -628,10 +632,10 @@ export const ReadingView: React.FC = () => {
 
             {/* TAB 3: Comprehension Quiz */}
             {activeTab === 'quiz' && (
-              <div className="space-y-5 animate-fadeIn">
+              <div className="space-y-5 animate-fadeIn font-sans">
                 <div className="p-3.5 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-200 text-xs flex items-center gap-2">
                   <HelpCircle className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span>Answer the reading comprehension questions below to verify your understanding.</span>
+                  <span>Metne dayalı anlama sorularını yanıtlayarak bağlamsal öğreniminizi pekiştirin.</span>
                 </div>
 
                 {passage.comprehensionQuestions.map((q, qIndex) => {
@@ -643,7 +647,7 @@ export const ReadingView: React.FC = () => {
                       className="p-4 rounded-2xl bg-[#131D2E] border border-[#1E2D45] space-y-2.5"
                     >
                       <h4 className="text-sm font-bold text-white flex items-start gap-2">
-                        <span className="w-5 h-5 rounded-full bg-indigo-500/20 text-indigo-300 text-xs flex items-center justify-center shrink-0 mt-0.5">
+                        <span className="w-5 h-5 rounded-full bg-indigo-500/20 text-indigo-300 text-xs flex items-center justify-center shrink-0 mt-0.5 font-mono">
                           {qIndex + 1}
                         </span>
                         <span>{q.question}</span>
@@ -687,7 +691,7 @@ export const ReadingView: React.FC = () => {
 
                       {quizSubmitted && (
                         <div className="pt-2 text-xs text-zinc-400 border-t border-[#1E2D45] leading-relaxed">
-                          <strong className="text-indigo-300">Explanation:</strong> {q.explanation}
+                          <strong className="text-indigo-300">Açıklama:</strong> {q.explanation}
                         </div>
                       )}
                     </div>
@@ -696,7 +700,7 @@ export const ReadingView: React.FC = () => {
 
                 <div className="flex items-center justify-between pt-1">
                   <div className="text-xs text-zinc-400">
-                    {Object.keys(userAnswers).length} of {passage.comprehensionQuestions.length} answered
+                    {Object.keys(userAnswers).length} / {passage.comprehensionQuestions.length} cevaplandı
                   </div>
 
                   {!quizSubmitted ? (
@@ -708,7 +712,7 @@ export const ReadingView: React.FC = () => {
                       disabled={Object.keys(userAnswers).length === 0}
                       className="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs transition-all shadow-md shadow-cyan-600/25 disabled:opacity-50"
                     >
-                      Submit Quiz
+                      Cevapları Kontrol Et
                     </button>
                   ) : (
                     <button
@@ -718,7 +722,7 @@ export const ReadingView: React.FC = () => {
                       }}
                       className="px-4 py-2 rounded-xl bg-[#162235] text-zinc-300 font-bold text-xs hover:text-white"
                     >
-                      Retry Quiz
+                      Tekrar Dene
                     </button>
                   )}
                 </div>
@@ -727,7 +731,7 @@ export const ReadingView: React.FC = () => {
 
             {/* TAB 4: Vocabulary Glossary */}
             {activeTab === 'vocab' && (
-              <div className="space-y-2.5 animate-fadeIn">
+              <div className="space-y-2.5 animate-fadeIn font-sans">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {passage.vocabularyList.map((v, i) => (
                     <div
@@ -741,7 +745,7 @@ export const ReadingView: React.FC = () => {
                         <button
                           onClick={() => speakCollocation(v.chunk, settings.speechRate)}
                           className="p-1 rounded-lg bg-[#162235] text-zinc-400 hover:text-indigo-300"
-                          title="Listen pronunciation"
+                          title="Telaffuz dinle"
                         >
                           <Volume2 className="w-3.5 h-3.5" />
                         </button>
@@ -757,7 +761,7 @@ export const ReadingView: React.FC = () => {
                       )}
 
                       {v.contextSentence && (
-                        <p className="text-[11px] italic text-zinc-500 border-l-2 border-indigo-500/40 pl-2 mt-1">
+                        <p className="text-[11px] italic text-zinc-500 border-l-2 border-indigo-500/40 pl-2 mt-1 font-serif">
                           "{v.contextSentence}"
                         </p>
                       )}
@@ -769,7 +773,7 @@ export const ReadingView: React.FC = () => {
 
             {/* Turkish Summary Accordion */}
             {passage.turkishSummary && (
-              <div className="mt-6 pt-4 border-t border-[#1E2D45]">
+              <div className="mt-6 pt-4 border-t border-[#1E2D45] font-sans">
                 <button
                   onClick={() => setShowTurkishSummary(!showTurkishSummary)}
                   className="w-full flex items-center justify-between text-xs font-bold text-zinc-400 hover:text-zinc-200 py-1"
@@ -806,7 +810,7 @@ export const ReadingView: React.FC = () => {
             <div className="flex items-center justify-between pb-2 border-b border-[#1E2D45]">
               <div className="flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-indigo-400" />
-                <h3 className="text-sm font-extrabold text-white">Select Units for Story ({selectedUnitNumbers.length})</h3>
+                <h3 className="text-sm font-extrabold text-white">Ünite Seç ({selectedUnitNumbers.length})</h3>
               </div>
               <button
                 onClick={() => setShowUnitPickerModal(false)}
@@ -824,7 +828,7 @@ export const ReadingView: React.FC = () => {
                   type="text"
                   value={unitSearch}
                   onChange={(e) => setUnitSearch(e.target.value)}
-                  placeholder="Search units..."
+                  placeholder="Ünite ara..."
                   className="w-full bg-[#162235] border border-[#23334d] rounded-xl pl-9 pr-3 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500"
                 />
               </div>
@@ -848,7 +852,7 @@ export const ReadingView: React.FC = () => {
 
             {/* Quick Bulk Selection Buttons */}
             <div className="flex items-center justify-between text-xs text-zinc-400 pt-1">
-              <span>{filteredUnitsForModal.length} units listed</span>
+              <span>{filteredUnitsForModal.length} ünite listelendi</span>
               <div className="flex gap-2">
                 <button
                   onClick={() => {
@@ -857,7 +861,7 @@ export const ReadingView: React.FC = () => {
                   }}
                   className="text-indigo-400 hover:text-indigo-300 font-bold text-[11px]"
                 >
-                  Select All Visible
+                  Görünenleri Seç
                 </button>
                 <span>•</span>
                 <button
@@ -868,12 +872,12 @@ export const ReadingView: React.FC = () => {
                   }}
                   className="text-zinc-500 hover:text-zinc-300 text-[11px]"
                 >
-                  Reset to First
+                  İlkine Sıfırla
                 </button>
               </div>
             </div>
 
-            {/* Scrollable Unit Grid */}
+            {/* Scrollable Unit Grid (No collocation count displayed) */}
             <div className="flex-1 overflow-y-auto space-y-1.5 pr-1 scrollbar-thin max-h-72">
               {filteredUnitsForModal.map((u) => {
                 const isSelected = selectedUnitNumbers.includes(u.unitNumber);
@@ -903,7 +907,7 @@ export const ReadingView: React.FC = () => {
                           <span className="truncate">{u.unitTitle}</span>
                         </div>
                         <div className="text-[10px] text-zinc-500">
-                          {u.level} • {u.totalCount} collocations
+                          {u.level}
                         </div>
                       </div>
                     </div>
@@ -915,13 +919,13 @@ export const ReadingView: React.FC = () => {
             {/* Footer */}
             <div className="pt-2 border-t border-[#1E2D45] flex items-center justify-between">
               <span className="text-xs text-zinc-400">
-                {selectedUnitNumbers.length} units selected ({combinedCollocations.length} collocations)
+                {selectedUnitNumbers.length} ünite seçildi
               </span>
               <button
                 onClick={() => setShowUnitPickerModal(false)}
                 className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs"
               >
-                Apply Selection
+                Uygula
               </button>
             </div>
           </div>
@@ -957,7 +961,7 @@ export const ReadingView: React.FC = () => {
 
             <div className="space-y-2">
               <div>
-                <div className="text-[10px] uppercase font-bold text-zinc-500">Definition</div>
+                <div className="text-[10px] uppercase font-bold text-zinc-500">Tanım</div>
                 <div className="text-xs text-zinc-200 mt-0.5 leading-relaxed">{activeVocabItem.meaning}</div>
               </div>
 
@@ -970,8 +974,8 @@ export const ReadingView: React.FC = () => {
 
               {activeVocabItem.contextSentence && (
                 <div>
-                  <div className="text-[10px] uppercase font-bold text-zinc-500">Context in Story</div>
-                  <div className="text-xs italic text-zinc-400 mt-0.5 border-l-2 border-indigo-500/40 pl-2">
+                  <div className="text-[10px] uppercase font-bold text-zinc-500">Metindeki Bağlam</div>
+                  <div className="text-xs italic text-zinc-400 mt-0.5 border-l-2 border-indigo-500/40 pl-2 font-serif">
                     "{activeVocabItem.contextSentence}"
                   </div>
                 </div>
@@ -984,13 +988,13 @@ export const ReadingView: React.FC = () => {
                 className="flex-1 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md shadow-indigo-600/20"
               >
                 <Volume2 className="w-3.5 h-3.5" />
-                <span>Listen Audio</span>
+                <span>Sesli Oku</span>
               </button>
               <button
                 onClick={() => setActiveVocabItem(null)}
                 className="px-4 py-2 rounded-xl bg-[#162235] text-zinc-300 font-bold text-xs hover:text-white"
               >
-                Close
+                Kapat
               </button>
             </div>
           </div>
@@ -1010,7 +1014,7 @@ export const ReadingView: React.FC = () => {
             <div className="flex items-center justify-between pb-2 border-b border-[#1E2D45]">
               <div className="flex items-center gap-2">
                 <BookMarked className="w-4 h-4 text-amber-400" />
-                <h3 className="text-sm font-extrabold text-white">Saved Reading Stories</h3>
+                <h3 className="text-sm font-extrabold text-white">Kayıtlı Okuma Metinleri</h3>
               </div>
               <button
                 onClick={() => setShowSavedModal(false)}
@@ -1024,7 +1028,7 @@ export const ReadingView: React.FC = () => {
               {savedPassages.length === 0 ? (
                 <div className="text-center py-10 text-zinc-500 text-xs">
                   <Bookmark className="w-8 h-8 text-zinc-600 mx-auto mb-2" />
-                  No stories saved yet. Click the bookmark icon on any story to save it here!
+                  Henüz kayıtlı metin yok. Beğendiğiniz hikayeleri yer imi simgesine tıklayarak buraya kaydedebilirsiniz!
                 </div>
               ) : (
                 savedPassages.map((p) => (
@@ -1059,7 +1063,7 @@ export const ReadingView: React.FC = () => {
                       <h4 className="text-xs font-bold text-white group-hover:text-indigo-300 transition-colors">
                         {p.title}
                       </h4>
-                      <p className="text-[11px] text-zinc-400 line-clamp-1 mt-0.5">
+                      <p className="text-[11px] text-zinc-400 line-clamp-1 mt-0.5 font-serif">
                         {p.paragraphs[0]}
                       </p>
                     </div>
@@ -1077,14 +1081,14 @@ export const ReadingView: React.FC = () => {
                           setShowSavedModal(false);
                         }}
                         className="p-1.5 rounded-xl bg-indigo-600/20 text-indigo-300 hover:bg-indigo-600/40 text-xs font-bold"
-                        title="Read this story"
+                        title="Metni Oku"
                       >
                         <Eye className="w-3.5 h-3.5" />
                       </button>
                       <button
                         onClick={() => deletePassage(p.id)}
                         className="p-1.5 rounded-xl bg-rose-500/10 text-rose-400 hover:bg-rose-500/20 text-xs font-bold"
-                        title="Delete saved story"
+                        title="Sil"
                       >
                         <X className="w-3.5 h-3.5" />
                       </button>
@@ -1099,7 +1103,7 @@ export const ReadingView: React.FC = () => {
                 onClick={() => setShowSavedModal(false)}
                 className="px-4 py-1.5 rounded-xl bg-[#162235] text-zinc-300 font-bold text-xs hover:text-white"
               >
-                Close
+                Kapat
               </button>
             </div>
           </div>

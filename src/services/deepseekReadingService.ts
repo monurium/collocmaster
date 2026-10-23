@@ -171,9 +171,12 @@ Your task is to write an authentic, high-quality English reading passage specifi
 
 CRITICAL REQUIREMENTS:
 1. Genre & Style: Write ${genreDescription}.
-2. Target Level: ${targetCefr}. Ensure vocabulary and sentence structures naturally align with this CEFR level.
-3. Natural Collocation Integration: Seamlessly integrate the specified target collocations into the narrative. They must sound completely natural, contextual, and unforced (NOT like a grammar exercise list).
-4. Length: 2 to 4 coherent paragraphs (total 180 to 280 words).
+2. Target Level: ${targetCefr}. Ensure vocabulary, tone, and sentence structures naturally align with this CEFR level.
+3. Natural & Even Distribution:
+   - The 5 target collocations MUST be naturally and evenly spaced across the entire passage (e.g., 1 to 2 collocations per paragraph across beginning, middle, and ending).
+   - NEVER bunch, crowd, or list multiple collocations in the same sentence or consecutive clauses.
+   - Each collocation must emerge organically and convincingly from the storyline or discussion, making the reading experience smooth, literary, and authentic.
+4. Length: 2 to 4 coherent, well-crafted paragraphs (total 180 to 280 words).
 5. Output Format: You MUST reply with STRICT, VALID JSON ONLY. Do NOT wrap in markdown code blocks if possible. Output pure JSON with the exact keys described.
 
 JSON Schema:

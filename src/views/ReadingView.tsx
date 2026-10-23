@@ -130,7 +130,7 @@ export const ReadingView: React.FC = () => {
   }, [selectedUnits]);
 
   const combinedTitle = useMemo(() => {
-    if (selectedUnits.length === 0) return 'Seçilen Üniteler';
+    if (selectedUnits.length === 0) return 'Selected Units';
     if (selectedUnits.length === 1) return `Unit ${selectedUnits[0].unitNumber}: ${selectedUnits[0].unitTitle}`;
     const nums = [...selectedUnits].map((u) => u.unitNumber).sort((a, b) => a - b).join(', ');
     return `Units ${nums}`;
@@ -152,7 +152,7 @@ export const ReadingView: React.FC = () => {
   // Handle generation on user click (never automatically on mount)
   const handleGenerate = async () => {
     if (combinedCollocations.length === 0) {
-      setErrorMsg('Lütfen en az bir ünite seçin.');
+      setErrorMsg('Please select at least one unit.');
       return;
     }
 
@@ -164,10 +164,10 @@ export const ReadingView: React.FC = () => {
     handleStopAudio();
 
     const phases = [
-      'Seçilen ünitelerin kollokasyonları taranıyor...',
-      'DeepSeek AI 5 hedef kollokasyonu metne doğal olarak dağıtıyor...',
-      'Cambridge CEFR seviyesi ve akıcı anlatım doğrulanıyor...',
-      'Okuma ve anlama görevleri oluşturuluyor...',
+      'Scanning target unit collocations...',
+      'DeepSeek AI naturally weaving 5 target collocations...',
+      'Validating CEFR level and authentic flow...',
+      'Generating reading comprehension and vocabulary tasks...',
     ];
 
     let pIdx = 0;
@@ -191,13 +191,14 @@ export const ReadingView: React.FC = () => {
       setPassage(generated);
       if (settings.soundEffects) playChime('complete');
     } catch (err: unknown) {
-      setErrorMsg(err instanceof Error ? err.message : 'Hikaye üretilemedi.');
+      setErrorMsg(err instanceof Error ? err.message : 'Failed to generate story.');
       if (settings.soundEffects) playChime('again');
     } finally {
       clearInterval(interval);
       setLoading(false);
     }
   };
+
 
   // Audio Playback
   const handlePlayAudio = () => {
@@ -364,7 +365,7 @@ export const ReadingView: React.FC = () => {
             AI Reading Lab
           </div>
           <h1 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
-            Okuma ve Hikaye Metni
+            AI Reading & Stories
           </h1>
         </div>
 
@@ -375,12 +376,12 @@ export const ReadingView: React.FC = () => {
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-[#131D2E] border border-[#1E2D45] text-zinc-300 hover:text-white hover:border-indigo-500/40 transition-all shadow-sm"
           >
             <BookMarked className="w-3.5 h-3.5 text-amber-400" />
-            <span>Kayıtlı Metinler ({savedPassages.length})</span>
+            <span>Saved Stories ({savedPassages.length})</span>
           </button>
 
           <button
             onClick={() => navigate('/settings')}
-            title="DeepSeek API Ayarları"
+            title="DeepSeek API Settings"
             className={`p-1.5 rounded-xl border text-xs font-bold transition-all ${
               hasApiKey
                 ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300'
@@ -399,12 +400,12 @@ export const ReadingView: React.FC = () => {
           <div className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1.5 flex items-center justify-between">
             <span className="flex items-center gap-1.5">
               <BookOpen className="w-3 h-3 text-indigo-400" />
-              <span>Ünite Seç</span>
+              <span>Target Units</span>
             </span>
             <span className="text-[10px] text-zinc-400 font-medium">
               {selectedUnitNumbers.length === 1
-                ? '1 ünite seçili'
-                : `${selectedUnitNumbers.length} ünite seçili`}
+                ? '1 unit selected'
+                : `${selectedUnitNumbers.length} units selected`}
             </span>
           </div>
 
@@ -424,7 +425,7 @@ export const ReadingView: React.FC = () => {
                   </span>
                 ) : (
                   <span>
-                    <strong className="text-indigo-400 mr-1.5">{selectedUnits.length} Ünite Seçili:</strong>
+                    <strong className="text-indigo-400 mr-1.5">{selectedUnits.length} Units Selected:</strong>
                     {selectedUnits.map((u) => `Unit ${u.unitNumber}`).join(', ')}
                   </span>
                 )}
@@ -450,7 +451,7 @@ export const ReadingView: React.FC = () => {
                     type="text"
                     value={unitSearch}
                     onChange={(e) => setUnitSearch(e.target.value)}
-                    placeholder="Ünite ara..."
+                    placeholder="Search units..."
                     className="w-full bg-[#162235] border border-[#23334d] rounded-xl pl-9 pr-3 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500"
                   />
                 </div>
@@ -475,7 +476,7 @@ export const ReadingView: React.FC = () => {
 
               {/* Quick Bulk Selection Buttons */}
               <div className="flex items-center justify-between text-[11px] text-zinc-400 px-0.5">
-                <span>{filteredUnitsForModal.length} ünite listelendi</span>
+                <span>{filteredUnitsForModal.length} units listed</span>
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
@@ -485,7 +486,7 @@ export const ReadingView: React.FC = () => {
                     }}
                     className="text-indigo-400 hover:text-indigo-300 font-bold"
                   >
-                    Görünenleri Seç
+                    Select All Visible
                   </button>
                   <span className="text-zinc-600">•</span>
                   <button
@@ -497,7 +498,7 @@ export const ReadingView: React.FC = () => {
                     }}
                     className="text-zinc-500 hover:text-zinc-300"
                   >
-                    İlkine Sıfırla
+                    Reset to First
                   </button>
                 </div>
               </div>
@@ -540,14 +541,14 @@ export const ReadingView: React.FC = () => {
               {/* Dropdown Footer */}
               <div className="pt-2 border-t border-[#1E2D45] flex items-center justify-between">
                 <span className="text-[11px] text-zinc-400 font-medium">
-                  {selectedUnitNumbers.length} ünite seçildi
+                  {selectedUnitNumbers.length} units selected
                 </span>
                 <button
                   type="button"
                   onClick={() => setIsUnitDropdownOpen(false)}
                   className="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs"
                 >
-                  Tamam
+                  Done
                 </button>
               </div>
             </div>
@@ -558,7 +559,7 @@ export const ReadingView: React.FC = () => {
         <div>
           <div className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1.5 flex items-center gap-1">
             <Layers className="w-3 h-3 text-cyan-400" />
-            <span>Tür</span>
+            <span>Genre</span>
           </div>
 
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
@@ -587,7 +588,7 @@ export const ReadingView: React.FC = () => {
             className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/25 disabled:opacity-60 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99]"
           >
             <Sparkles className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
-            <span>{loading ? 'Metin Oluşturuluyor...' : 'Generate AI Story'}</span>
+            <span>{loading ? 'Generating Story...' : 'Generate AI Story'}</span>
           </button>
         </div>
       </div>
@@ -600,11 +601,11 @@ export const ReadingView: React.FC = () => {
           </div>
           <div>
             <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
-              Okuma Metni Oluşturmaya Hazır
+              Ready to Generate AI Story
             </h3>
             <p className="text-xs text-zinc-400 max-w-md mx-auto mt-1 leading-relaxed">
-              Ünitelerinizi ve hikaye türünüzü belirledikten sonra{' '}
-              <strong className="text-indigo-300">"Generate AI Story"</strong> butonuna tıklayarak metninizi üretebilirsiniz.
+              Select your target units and preferred genre above, then click{' '}
+              <strong className="text-indigo-300">"Generate AI Story"</strong> to create a tailored reading passage.
             </p>
           </div>
           <button
@@ -624,7 +625,7 @@ export const ReadingView: React.FC = () => {
             <Sparkles className="w-6 h-6 text-indigo-400 animate-spin" />
           </div>
           <div>
-            <h3 className="text-sm font-bold text-white tracking-wide">Metin Oluşturuluyor</h3>
+            <h3 className="text-sm font-bold text-white tracking-wide">Generating Reading Passage</h3>
             <p className="text-xs text-indigo-300 font-mono mt-1">{loadingPhase}</p>
           </div>
           <div className="max-w-xs mx-auto w-full bg-[#1A263C] h-1.5 rounded-full overflow-hidden">
@@ -632,6 +633,7 @@ export const ReadingView: React.FC = () => {
           </div>
         </div>
       )}
+
 
       {/* Error Message */}
       {errorMsg && !loading && (
@@ -670,7 +672,7 @@ export const ReadingView: React.FC = () => {
                   <div className="flex items-center gap-2 mt-2 px-3 py-1.5 rounded-xl bg-[#162235]/80 border border-[#23334d] text-xs text-zinc-300 font-sans">
                     <Globe className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                     <span className="text-[10px] uppercase font-bold text-cyan-400 tracking-wider shrink-0">
-                      Güncel Kaynak İlhamı:
+                      Inspired by Recent News:
                     </span>
                     <span className="font-semibold text-white shrink-0">{passage.newsInspiration.source}</span>
                     <span className="text-zinc-500">•</span>
@@ -681,7 +683,7 @@ export const ReadingView: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-zinc-500 hover:text-cyan-300 ml-auto shrink-0 p-0.5"
-                        title="Kaynağı Aç"
+                        title="View Source Article"
                       >
                         <ExternalLink className="w-3 h-3" />
                       </a>
@@ -699,7 +701,7 @@ export const ReadingView: React.FC = () => {
                       ? 'bg-rose-500/15 border-rose-500/30 text-rose-300 animate-pulse'
                       : 'bg-[#162235] border-[#23334d] text-zinc-300 hover:text-white hover:border-indigo-500/40'
                   }`}
-                  title={isPlayingAudio ? 'Durdur' : 'Sesli Oku'}
+                  title={isPlayingAudio ? 'Stop audio' : 'Listen audio'}
                 >
                   {isPlayingAudio ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 text-emerald-400" />}
                   <span>{isPlayingAudio ? 'Stop' : 'Listen'}</span>
@@ -712,7 +714,7 @@ export const ReadingView: React.FC = () => {
                       ? 'bg-amber-500/15 border-amber-500/30 text-amber-300'
                       : 'bg-[#162235] border-[#23334d] text-zinc-400 hover:text-zinc-200'
                   }`}
-                  title={isCurrentSaved ? 'Kayıtlılardan Kaldır' : 'Kaydet'}
+                  title={isCurrentSaved ? 'Remove from saved' : 'Save story'}
                 >
                   {isCurrentSaved ? <BookmarkCheck className="w-4 h-4 text-amber-400" /> : <Bookmark className="w-4 h-4" />}
                 </button>
@@ -720,12 +722,13 @@ export const ReadingView: React.FC = () => {
                 <button
                   onClick={handleCopyPassage}
                   className="p-1.5 rounded-xl bg-[#162235] border border-[#23334d] text-zinc-400 hover:text-white transition-all"
-                  title="Panoya Kopyala"
+                  title="Copy to clipboard"
                 >
                   {copyFeedback ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
             </div>
+
 
             {/* Mode Switcher Tabs */}
             <div className="flex items-center gap-1 bg-[#131D2E] p-1 rounded-2xl border border-[#1E2D45] mb-6 max-w-md font-sans">
@@ -775,7 +778,7 @@ export const ReadingView: React.FC = () => {
               <div className="space-y-5 text-lg sm:text-[19px] font-serif leading-[1.88] text-slate-200 tracking-[0.01em]">
                 {activeTab === 'cloze' && (
                   <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-200 text-xs font-sans flex items-center justify-between mb-4">
-                    <span>💡 Boşluklara tıklayarak kollokasyonları açabilirsiniz.</span>
+                    <span>💡 Click on the blanks to reveal the hidden collocations.</span>
                     <button
                       onClick={() => {
                         const all: Record<string, boolean> = {};
@@ -784,7 +787,7 @@ export const ReadingView: React.FC = () => {
                       }}
                       className="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold shrink-0 ml-2 font-sans"
                     >
-                      Hepsini Aç
+                      Reveal All
                     </button>
                   </div>
                 )}
@@ -802,7 +805,7 @@ export const ReadingView: React.FC = () => {
               <div className="space-y-5 animate-fadeIn font-sans">
                 <div className="p-3.5 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-200 text-xs flex items-center gap-2">
                   <HelpCircle className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span>Metne dayalı anlama sorularını yanıtlayarak bağlamsal öğreniminizi pekiştirin.</span>
+                  <span>Test your reading comprehension and contextual retention with questions based on the passage.</span>
                 </div>
 
                 {passage.comprehensionQuestions.map((q, qIndex) => {
@@ -858,7 +861,7 @@ export const ReadingView: React.FC = () => {
 
                       {quizSubmitted && (
                         <div className="pt-2 text-xs text-zinc-400 border-t border-[#1E2D45] leading-relaxed">
-                          <strong className="text-indigo-300">Açıklama:</strong> {q.explanation}
+                          <strong className="text-indigo-300">Explanation:</strong> {q.explanation}
                         </div>
                       )}
                     </div>
@@ -867,7 +870,7 @@ export const ReadingView: React.FC = () => {
 
                 <div className="flex items-center justify-between pt-1">
                   <div className="text-xs text-zinc-400">
-                    {Object.keys(userAnswers).length} / {passage.comprehensionQuestions.length} cevaplandı
+                    {Object.keys(userAnswers).length} / {passage.comprehensionQuestions.length} answered
                   </div>
 
                   {!quizSubmitted ? (
@@ -879,7 +882,7 @@ export const ReadingView: React.FC = () => {
                       disabled={Object.keys(userAnswers).length === 0}
                       className="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs transition-all shadow-md shadow-cyan-600/25 disabled:opacity-50"
                     >
-                      Cevapları Kontrol Et
+                      Check Answers
                     </button>
                   ) : (
                     <button
@@ -889,7 +892,7 @@ export const ReadingView: React.FC = () => {
                       }}
                       className="px-4 py-2 rounded-xl bg-[#162235] text-zinc-300 font-bold text-xs hover:text-white"
                     >
-                      Tekrar Dene
+                      Try Again
                     </button>
                   )}
                 </div>
@@ -912,7 +915,7 @@ export const ReadingView: React.FC = () => {
                         <button
                           onClick={() => speakCollocation(v.chunk, settings.speechRate)}
                           className="p-1 rounded-lg bg-[#162235] text-zinc-400 hover:text-indigo-300"
-                          title="Telaffuz dinle"
+                          title="Listen pronunciation"
                         >
                           <Volume2 className="w-3.5 h-3.5" />
                         </button>
@@ -947,7 +950,7 @@ export const ReadingView: React.FC = () => {
                 >
                   <span className="flex items-center gap-1.5 text-emerald-400">
                     <Languages className="w-3.5 h-3.5" />
-                    <span>Türkçe Özet & Ana Fikir</span>
+                    <span>Turkish Summary & Key Takeaways</span>
                   </span>
                   {showTurkishSummary ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
                 </button>
@@ -993,20 +996,20 @@ export const ReadingView: React.FC = () => {
 
             <div className="space-y-2">
               <div>
-                <div className="text-[10px] uppercase font-bold text-zinc-500">Tanım</div>
+                <div className="text-[10px] uppercase font-bold text-zinc-500">Definition</div>
                 <div className="text-xs text-zinc-200 mt-0.5 leading-relaxed">{activeVocabItem.meaning}</div>
               </div>
 
               {activeVocabItem.meaningTr && (
                 <div className="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-                  <div className="text-[10px] uppercase font-bold text-emerald-400">Türkçe Anlam</div>
+                  <div className="text-[10px] uppercase font-bold text-emerald-400">Turkish Meaning</div>
                   <div className="text-xs font-semibold text-emerald-200 mt-0.5">{activeVocabItem.meaningTr}</div>
                 </div>
               )}
 
               {activeVocabItem.contextSentence && (
                 <div>
-                  <div className="text-[10px] uppercase font-bold text-zinc-500">Metindeki Bağlam</div>
+                  <div className="text-[10px] uppercase font-bold text-zinc-500">Context in Story</div>
                   <div className="text-xs italic text-zinc-400 mt-0.5 border-l-2 border-indigo-500/40 pl-2 font-serif">
                     "{activeVocabItem.contextSentence}"
                   </div>
@@ -1020,13 +1023,13 @@ export const ReadingView: React.FC = () => {
                 className="flex-1 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md shadow-indigo-600/20"
               >
                 <Volume2 className="w-3.5 h-3.5" />
-                <span>Sesli Oku</span>
+                <span>Listen Audio</span>
               </button>
               <button
                 onClick={() => setActiveVocabItem(null)}
                 className="px-4 py-2 rounded-xl bg-[#162235] text-zinc-300 font-bold text-xs hover:text-white"
               >
-                Kapat
+                Close
               </button>
             </div>
           </div>
@@ -1046,7 +1049,7 @@ export const ReadingView: React.FC = () => {
             <div className="flex items-center justify-between pb-2 border-b border-[#1E2D45]">
               <div className="flex items-center gap-2">
                 <BookMarked className="w-4 h-4 text-amber-400" />
-                <h3 className="text-sm font-extrabold text-white">Kayıtlı Okuma Metinleri</h3>
+                <h3 className="text-sm font-extrabold text-white">Saved Reading Stories</h3>
               </div>
               <button
                 onClick={() => setShowSavedModal(false)}
@@ -1060,7 +1063,7 @@ export const ReadingView: React.FC = () => {
               {savedPassages.length === 0 ? (
                 <div className="text-center py-10 text-zinc-500 text-xs">
                   <Bookmark className="w-8 h-8 text-zinc-600 mx-auto mb-2" />
-                  Henüz kayıtlı metin yok. Beğendiğiniz hikayeleri yer imi simgesine tıklayarak buraya kaydedebilirsiniz!
+                  No saved stories yet. Bookmark your favorite stories to review them anytime!
                 </div>
               ) : (
                 savedPassages.map((p) => (
@@ -1113,14 +1116,14 @@ export const ReadingView: React.FC = () => {
                           setShowSavedModal(false);
                         }}
                         className="p-1.5 rounded-xl bg-indigo-600/20 text-indigo-300 hover:bg-indigo-600/40 text-xs font-bold"
-                        title="Metni Oku"
+                        title="Read Story"
                       >
                         <Eye className="w-3.5 h-3.5" />
                       </button>
                       <button
                         onClick={() => deletePassage(p.id)}
                         className="p-1.5 rounded-xl bg-rose-500/10 text-rose-400 hover:bg-rose-500/20 text-xs font-bold"
-                        title="Sil"
+                        title="Delete"
                       >
                         <X className="w-3.5 h-3.5" />
                       </button>
@@ -1135,12 +1138,13 @@ export const ReadingView: React.FC = () => {
                 onClick={() => setShowSavedModal(false)}
                 className="px-4 py-1.5 rounded-xl bg-[#162235] text-zinc-300 font-bold text-xs hover:text-white"
               >
-                Kapat
+                Close
               </button>
             </div>
           </div>
         </div>
       )}
+
     </div>
   );
 };

@@ -106,6 +106,7 @@ export interface PassageVocabularyItem {
 export interface GeneratedReadingPassage {
   id: string;
   unitNumber: number;
+  unitNumbers?: number[];
   unitTitle: string;
   level: 'Intermediate' | 'Advanced';
   title: string;

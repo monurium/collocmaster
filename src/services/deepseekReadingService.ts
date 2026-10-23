@@ -86,7 +86,8 @@ export async function testDeepSeekConnection(keyToTest?: string): Promise<{
 }
 
 export interface GeneratePassageOptions {
-  unitNumber: number;
+  unitNumber?: number;
+  unitNumbers?: number[];
   unitTitle: string;
   level: 'Intermediate' | 'Advanced';
   collocations: Collocation[];
@@ -125,27 +126,33 @@ export async function generateReadingPassage(
 ): Promise<GeneratedReadingPassage> {
   const {
     unitNumber,
+    unitNumbers,
     unitTitle,
     level,
     collocations,
     genre = 'story',
-    numCollocations = 7,
     apiKeyOverride,
   } = options;
 
+  const effectiveUnitNumber = unitNumber || (unitNumbers && unitNumbers[0]) || 1;
+  const unitLabel = unitNumbers && unitNumbers.length > 1
+    ? `Units ${[...unitNumbers].sort((a, b) => a - b).join(', ')}`
+    : `Unit ${effectiveUnitNumber}`;
+
   const apiKey = (apiKeyOverride || getActiveApiKey()).trim();
 
-  // Shuffle and pick target collocations from the unit
+  // Pick exactly 5 target collocations from the combined units
+  const TARGET_COUNT = 5;
   const shuffled = [...collocations].sort(() => 0.5 - Math.random());
-  const selectedCols = shuffled.slice(0, Math.min(numCollocations, shuffled.length));
+  const selectedCols = shuffled.slice(0, Math.min(TARGET_COUNT, shuffled.length));
 
   if (selectedCols.length === 0) {
-    throw new Error('No collocations available in this unit.');
+    throw new Error('No collocations available in the selected units.');
   }
 
   // If no API key is configured, fallback to offline generator
   if (!apiKey) {
-    return generateOfflinePassage(unitNumber, unitTitle, level, selectedCols, genre);
+    return generateOfflinePassage(effectiveUnitNumber, unitTitle, level, selectedCols, genre, unitNumbers);
   }
 
   const collocationsPayload = selectedCols.map((c) => ({
@@ -215,11 +222,11 @@ JSON Schema:
   ]
 }`;
 
-  const userPrompt = `Unit: Unit ${unitNumber} - "${unitTitle}" (${level} Level)
-Selected Target Collocations to incorporate:
+  const userPrompt = `Curriculum Focus: ${unitLabel} - "${unitTitle}" (${level} Level)
+Selected 5 Target Collocations to weave into the text:
 ${JSON.stringify(collocationsPayload, null, 2)}
 
-Create an authentic, memorable ${genre} incorporating these collocations naturally. Return strict JSON.`;
+Create an authentic, memorable ${genre} incorporating these 5 collocations naturally into the context. Return strict JSON.`;
 
   try {
     const response = await fetch('https://api.deepseek.com/chat/completions', {
@@ -262,7 +269,8 @@ Create an authentic, memorable ${genre} incorporating these collocations natural
     // Validate and build final structure
     const passage: GeneratedReadingPassage = {
       id: `passage_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
-      unitNumber,
+      unitNumber: effectiveUnitNumber,
+      unitNumbers: unitNumbers && unitNumbers.length > 0 ? unitNumbers : [effectiveUnitNumber],
       unitTitle,
       level,
       title: parsed.title || `Reading Passage: ${unitTitle}`,
@@ -302,7 +310,7 @@ Create an authentic, memorable ${genre} incorporating these collocations natural
   } catch (err: unknown) {
     console.warn('DeepSeek generation failed, falling back to curated passage:', err);
     // If it was a network error or key error, provide curated offline passage but also inform user if needed
-    return generateOfflinePassage(unitNumber, unitTitle, level, selectedCols, genre);
+    return generateOfflinePassage(effectiveUnitNumber, unitTitle, level, selectedCols, genre, unitNumbers);
   }
 }
 
@@ -314,7 +322,8 @@ function generateOfflinePassage(
   unitTitle: string,
   level: 'Intermediate' | 'Advanced',
   selectedCols: Collocation[],
-  genre: ReadingGenre
+  genre: ReadingGenre,
+  unitNumbers?: number[]
 ): GeneratedReadingPassage {
   const chunks = selectedCols.map((c) => c.chunk);
   const title = `A Closer Look: ${unitTitle}`;
@@ -356,6 +365,7 @@ function generateOfflinePassage(
   return {
     id: `passage_offline_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
     unitNumber,
+    unitNumbers: unitNumbers && unitNumbers.length > 0 ? unitNumbers : [unitNumber],
     unitTitle,
     level,
     title,

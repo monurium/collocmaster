@@ -589,42 +589,48 @@ export const ReadingView: React.FC = () => {
           )}
         </div>
 
-        {/* Row 2: Compact Genre Selector (Sleek Horizontal Segmented Bar) */}
+        {/* Row 2: Genre Selector (Downward Responsive Grid) */}
         <div>
-          <div className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1.5 flex items-center gap-1">
+          <div className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-2 flex items-center gap-1">
             <Layers className="w-3 h-3 text-cyan-400" />
             <span>Genre</span>
           </div>
 
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none no-scrollbar">
-            {GENRES.map((g) => (
-              <button
-                key={g.id}
-                onClick={() => setSelectedGenre(g.id)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 shrink-0 ${
-                  selectedGenre === g.id
-                    ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-md shadow-indigo-600/30 ring-1 ring-indigo-400/60 scale-[1.02]'
-                    : 'bg-[#131D2E] text-zinc-400 hover:text-zinc-100 hover:bg-[#182438] border border-[#1E2D45]'
-                }`}
-              >
-                <span>{g.icon}</span>
-                <span>{g.label}</span>
-              </button>
-            ))}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-0.5">
+            {GENRES.map((g) => {
+              const isSelected = selectedGenre === g.id;
+              return (
+                <button
+                  key={g.id}
+                  type="button"
+                  onClick={() => setSelectedGenre(g.id)}
+                  className={`px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 border text-left ${
+                    isSelected
+                      ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white border-indigo-400 shadow-md shadow-indigo-600/30 ring-1 ring-indigo-400/50 scale-[1.01]'
+                      : 'bg-[#131D2E] text-zinc-300 hover:text-white hover:bg-[#182438] border-[#1E2D45]'
+                  }`}
+                >
+                  <span className="text-base shrink-0">{g.icon}</span>
+                  <span className="truncate">{g.label}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        {/* Bottom bar: Generate Button */}
-        <div className="flex items-center justify-end pt-2 border-t border-[#1E2D45]">
-          <button
-            onClick={handleGenerate}
-            disabled={loading}
-            className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/25 disabled:opacity-60 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99]"
-          >
-            <Sparkles className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
-            <span>{loading ? 'Generating Story...' : 'Generate AI Story'}</span>
-          </button>
-        </div>
+        {/* Upper generate button shown ONLY when a passage already exists so initial screen has only the bottom button */}
+        {passage && (
+          <div className="flex items-center justify-end pt-2 border-t border-[#1E2D45]">
+            <button
+              onClick={handleGenerate}
+              disabled={loading}
+              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/25 disabled:opacity-60 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99]"
+            >
+              <Sparkles className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
+              <span>{loading ? 'Generating Story...' : 'Generate AI Story'}</span>
+            </button>
+          </div>
+        )}
       </div>
 
       {/* ─── Ready Placeholder State (Shown until user generates) ─── */}

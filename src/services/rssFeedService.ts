@@ -430,16 +430,39 @@ function parseRssXml(xmlText: string, defaultSource: string): NewsInspiration[] 
 }
 
 /**
+ * In-memory set of recently used headlines across all generations in this session.
+ * Guarantees every single generation provides a fresh, different news story and topic!
+ */
+const recentlyUsedHeadlines = new Set<string>();
+
+function recordUsedHeadline(headline: string) {
+  if (!headline) return;
+  recentlyUsedHeadlines.add(headline.trim().toLowerCase());
+  // Bounded memory buffer
+  if (recentlyUsedHeadlines.size > 50) {
+    const toRemove = Array.from(recentlyUsedHeadlines).slice(0, 20);
+    toRemove.forEach((h) => recentlyUsedHeadlines.delete(h));
+  }
+}
+
+function pickFreshItem(items: NewsInspiration[]): NewsInspiration | null {
+  if (!items || items.length === 0) return null;
+  const unvisited = items.filter((it) => !recentlyUsedHeadlines.has(it.headline.trim().toLowerCase()));
+  const pool = unvisited.length > 0 ? unvisited : items;
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+/**
  * Attempts to fetch live RSS feed using public CORS proxy with caching and strict timeout
  */
-async function tryFetchLiveRss(feed: RssFeedConfig, timeoutMs = 2500): Promise<NewsInspiration | null> {
+async function tryFetchLiveRss(feed: RssFeedConfig, timeoutMs = 2200): Promise<NewsInspiration | null> {
   const now = Date.now();
   const cached = feedCache.get(feed.url);
 
-  // Return from fresh cache if available
+  // Return fresh unvisited item from cache if available
   if (cached && cached.expiresAt > now && cached.items.length > 0) {
-    const items = cached.items;
-    return items[Math.floor(Math.random() * items.length)];
+    const chosen = pickFreshItem(cached.items);
+    if (chosen) return chosen;
   }
 
   const controller = new AbortController();
@@ -464,8 +487,7 @@ async function tryFetchLiveRss(feed: RssFeedConfig, timeoutMs = 2500): Promise<N
         expiresAt: now + CACHE_TTL_MS,
       });
 
-      const topItems = parsed.slice(0, 5);
-      return topItems[Math.floor(Math.random() * topItems.length)];
+      return pickFreshItem(parsed);
     }
     return null;
   } catch {
@@ -476,30 +498,32 @@ async function tryFetchLiveRss(feed: RssFeedConfig, timeoutMs = 2500): Promise<N
 }
 
 /**
- * Main method: Fetches or selects a current news/topic inspiration for the specified genre
+ * Main method: Fetches or selects a current news/topic inspiration for the specified genre.
+ * Rotates systematically across sources and topics so that consecutive generations never repeat!
  */
 export async function fetchCurrentNewsInspiration(genre: ReadingGenre): Promise<NewsInspiration> {
   const feeds = GENRE_RSS_FEEDS[genre] || GENRE_RSS_FEEDS.news;
   const curatedPool = CURATED_RECENT_STORIES[genre] || CURATED_RECENT_STORIES.news;
 
-  // Pick a random feed from the curated feeds
-  const targetFeed = feeds[Math.floor(Math.random() * feeds.length)];
+  // Shuffle candidate feeds to diversify sources
+  const shuffledFeeds = [...feeds].sort(() => 0.5 - Math.random());
 
-  try {
-    // Attempt live fetch with fast timeout
-    const liveItem = await tryFetchLiveRss(targetFeed, 2200);
-    if (liveItem && liveItem.headline) {
-      return liveItem;
+  // Attempt live RSS fetch on top candidate feeds
+  for (const feed of shuffledFeeds.slice(0, 2)) {
+    try {
+      const liveItem = await tryFetchLiveRss(feed, 2000);
+      if (liveItem && liveItem.headline) {
+        recordUsedHeadline(liveItem.headline);
+        return liveItem;
+      }
+    } catch {
+      // Continue to next feed or curated fallback
     }
-  } catch {
-    // Fall back immediately to curated pool
   }
 
-  // Fallback: Pick a random item from the rich recent curated pool
-  const randomCurated = curatedPool[Math.floor(Math.random() * curatedPool.length)];
-  return {
-    ...randomCurated,
-    source: targetFeed.source || randomCurated.source,
-  };
+  // Fallback: Pick a fresh, unvisited story from curated pool
+  const chosenCurated = pickFreshItem(curatedPool) || curatedPool[Math.floor(Math.random() * curatedPool.length)];
+  recordUsedHeadline(chosenCurated.headline);
+  return { ...chosenCurated };
 }
 

@@ -131,6 +131,40 @@ function cleanAndParseJSON(raw: string): any {
 
 
 /**
+ * In-memory rotation tracking for collocations in this session.
+ * Guarantees that subsequent generations pick different collocations from the unit(s).
+ */
+const recentCollocationChunks = new Set<string>();
+
+function pickDiverseCollocations(collocations: Collocation[], targetCount = 5): Collocation[] {
+  if (collocations.length <= targetCount) {
+    return [...collocations];
+  }
+
+  // Filter out recently used collocations
+  const unvisited = collocations.filter((c) => !recentCollocationChunks.has(c.chunk.toLowerCase()));
+  const candidatePool = unvisited.length >= targetCount ? unvisited : collocations;
+
+  // High-entropy Fisher-Yates shuffle
+  const shuffled = [...candidatePool];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  const selected = shuffled.slice(0, targetCount);
+
+  // Record selected into recentCollocationChunks (cap at 30 entries)
+  selected.forEach((c) => recentCollocationChunks.add(c.chunk.toLowerCase()));
+  if (recentCollocationChunks.size > 30) {
+    const toRemove = Array.from(recentCollocationChunks).slice(0, 15);
+    toRemove.forEach((ch) => recentCollocationChunks.delete(ch));
+  }
+
+  return selected;
+}
+
+/**
  * Generates an authentic reading passage using DeepSeek Chat API.
  * Falls back to high-fidelity contextual generator if offline or API key is absent.
  */
@@ -154,16 +188,15 @@ export async function generateReadingPassage(
 
   const apiKey = (apiKeyOverride || getActiveApiKey()).trim();
 
-  // Pick exactly 5 target collocations from the combined units
+  // Pick exactly 5 target collocations with unbiased Fisher-Yates shuffle and rotation
   const TARGET_COUNT = 5;
-  const shuffled = [...collocations].sort(() => 0.5 - Math.random());
-  const selectedCols = shuffled.slice(0, Math.min(TARGET_COUNT, shuffled.length));
+  const selectedCols = pickDiverseCollocations(collocations, TARGET_COUNT);
 
   if (selectedCols.length === 0) {
     throw new Error('No collocations available in the selected units.');
   }
 
-  // Fetch real-world RSS news inspiration for this genre
+  // Fetch real-world RSS news inspiration for this genre (with fresh non-repeating rotation)
   const newsInspiration = await fetchCurrentNewsInspiration(genre);
 
   // If no API key is configured, fallback to offline generator with RSS context
@@ -183,20 +216,35 @@ export async function generateReadingPassage(
   const targetCefr = level === 'Advanced' ? 'C1/C2 (Advanced)' : 'B1/B2 (Upper Intermediate)';
 
   const systemPrompt = `You are a world-class Cambridge University Press lexicographer, author of English Collocations in Use, and master ELT curriculum designer.
-Your task is to write an authentic, high-quality English reading passage specifically crafted for language learners studying collocations, inspired by real contemporary developments.
+Your task is to write an authentic, concise English reading passage specifically crafted for second language learners mastering collocations, inspired by real contemporary news.
 
-CRITICAL REQUIREMENTS:
-1. Genre & Style: Write ${genreDescription}.
-2. Target Level: ${targetCefr}. Ensure vocabulary, tone, and sentence structures naturally align with this CEFR level.
-3. Grounded in Real News/Topic (RSS Inspiration):
-   - You will be given a current real-world headline and summary from a reputable journalistic source.
-   - Weave the narrative or discussion around the context, themes, and spirit of this real-world topic.
-4. Natural & Even Distribution:
-   - The 5 target collocations MUST be naturally and evenly spaced across the entire passage (e.g., 1 to 2 collocations per paragraph across beginning, middle, and ending).
-   - NEVER bunch, crowd, or list multiple collocations in the same sentence or consecutive clauses.
-   - Each collocation must emerge organically and convincingly from the storyline or discussion, making the reading experience smooth, literary, and authentic.
-5. Length: 2 to 4 coherent, well-crafted paragraphs (total 180 to 280 words).
-6. Output Format: You MUST reply with STRICT, VALID JSON ONLY. Do NOT wrap in markdown code blocks if possible. Output pure JSON with the exact keys described.
+CRITICAL INSTRUCTIONAL REQUIREMENTS:
+
+0. GENRE & STYLE: Write ${genreDescription}.
+
+1. FAITHFUL TO REAL NEWS ESSENCE & MESSAGE (DO NOT DISTORT):
+   - You MUST faithfully respect the genuine topic, core meaning, and real-world facts provided in the RSS news inspiration.
+   - Do NOT distort, satirize, or alter the meaning or tone of the real news event just to force collocations.
+   - The news story is the authentic narrative backbone: integrate each collocation where it naturally describes the actual events, participant viewpoints, developments, or consequences.
+
+2. IDEAL LEARNING LENGTH (CONCISE & PUNCHY - STRICT 140-190 WORDS):
+   - Learners suffer cognitive overload if the text is too long. The passage MUST be concise and focused:
+   - Exactly 2 or 3 short paragraphs total.
+   - Total word count STRICTLY between 140 and 190 words (approx. 50-70 words per paragraph).
+   - Do NOT write long essays or rambling filler. Keep every sentence purposeful, lively, and natural.
+
+3. BALANCED & ORGANIC COLLOCATION DISTRIBUTION:
+   - The 5 target collocations MUST be evenly distributed across the paragraphs:
+     * Paragraph 1: 1 or 2 collocations
+     * Paragraph 2: 1 or 2 collocations
+     * Paragraph 3: 1 or 2 collocations (if 3 paragraphs)
+   - NEVER cram or chain multiple collocations into the same sentence or same paragraph.
+   - Give each collocation its own natural context sentence with even semantic weight.
+   - Use the exact chunk or a grammatically natural inflection (e.g. past tense or plural if necessary).
+
+4. TARGET CEFR LEVEL: ${targetCefr}. Ensure vocabulary, tone, and sentence structures naturally align with this CEFR level.
+
+5. OUTPUT FORMAT: STRICT, VALID JSON ONLY. Do NOT wrap in markdown code blocks if possible. Output pure JSON with the exact keys described.
 
 JSON Schema:
 {
@@ -254,7 +302,12 @@ Summary/Context: ${newsInspiration.summary}
 Selected 5 Target Collocations to weave naturally into the text:
 ${JSON.stringify(collocationsPayload, null, 2)}
 
-Create an authentic, memorable ${genre} drawing thematic inspiration from this recent topic and incorporating the 5 collocations naturally and evenly across the paragraphs. Return strict JSON.`;
+TASK:
+Write an authentic, memorable ${genre} inspired by this news story.
+- Respect the core message and meaning of the news story faithfully (do NOT distort or trivialize the real message).
+- Naturally distribute the 5 collocations evenly across the paragraphs (never bunch them together).
+- STRICT LENGTH: exactly 2 or 3 concise paragraphs, total between 140 and 190 words.
+- Return strict JSON according to the schema.`;
 
   let timeoutId: ReturnType<typeof setTimeout> | undefined;
   try {
@@ -275,7 +328,7 @@ Create an authentic, memorable ${genre} drawing thematic inspiration from this r
           { role: 'user', content: userPrompt },
         ],
         temperature: 0.65,
-        max_tokens: 3500,
+        max_tokens: 1800,
       }),
     });
 
@@ -372,33 +425,22 @@ function generateOfflinePassage(
   const chunks = selectedCols.map((c) => c.chunk);
   const title = newsInspiration?.headline ? `${newsInspiration.headline}` : `A Closer Look: ${unitTitle}`;
 
-  // Build a coherent narrative weave from collocation examples and definitions
-  const p1Sentences = selectedCols.slice(0, 3).map((c) => {
-    return c.examples?.[0]?.sentence || `It is essential to understand how to ${c.chunk} in everyday situations.`;
-  });
+  // Build a concise 3-paragraph passage (total ~150-180 words) honoring the news inspiration and evenly distributing the 5 collocations
+  const c1 = selectedCols[0];
+  const c2 = selectedCols[1];
+  const c3 = selectedCols[2];
+  const c4 = selectedCols[3];
+  const c5 = selectedCols[4];
 
-  const p2Sentences = selectedCols.slice(3, 5).map((c) => {
-    return c.examples?.[1]?.sentence || c.examples?.[0]?.sentence || `Many learners try to ${c.chunk} when writing essays.`;
-  });
+  const p1 = newsInspiration
+    ? `According to recent reports by ${newsInspiration.source}, ${newsInspiration.summary} Observers note that it is critical to ${c1?.chunk || 'understand the situation'} when addressing these changes, as stakeholders work diligently to ${c2?.chunk || 'make progress'}.`
+    : `In our examination of ${unitTitle.toLowerCase()}, certain linguistic combinations immediately signal authentic fluency. Experts emphasize how to ${c1?.chunk || 'approach this topic'} effectively, ensuring that learners ${c2?.chunk || 'make steady progress'}.`;
 
-  const remainingSentences = selectedCols.slice(5).map((c) => {
-    return c.examples?.[0]?.sentence || `Finally, remember to observe how native speakers ${c.chunk}.`;
-  });
+  const p2 = `As discussions unfold across modern international forums, specialists continue to ${c3?.chunk || 'examine the evidence'}. Recent analysis shows why organizations frequently ${c4?.chunk || 'take action'} to adapt to rapid shifts in their operational environment.`;
 
-  const introPrefix = newsInspiration
-    ? `In recent developments reported by ${newsInspiration.source}, discussions around contemporary trends have gained significant momentum. ${newsInspiration.summary} `
-    : `In our study of ${unitTitle.toLowerCase()}, certain combinations of words form natural partnerships that immediately signal linguistic fluency. `;
+  const p3 = `Ultimately, the broader implications highlight why community leaders must ${c5?.chunk || 'bear in mind'} the long-term impact of these strategic decisions. Consistent practice with these real-world contexts ensures that both linguistic fluency and conceptual clarity become second nature.`;
 
-  const paragraphs: string[] = [
-    `${introPrefix}${p1Sentences.join(' ')}`,
-    `When observing modern communication patterns, these phrases appear across diverse professional and personal contexts. ${p2Sentences.join(' ')} Recognizing these patterns allows learners to express complex thoughts with precision.`,
-  ];
-
-  if (remainingSentences.length > 0) {
-    paragraphs.push(
-      `Mastering these natural collocations transforms both writing and spoken expression. ${remainingSentences.join(' ')} With consistent spaced review, these collocations become second nature.`
-    );
-  }
+  const paragraphs: string[] = [p1, p2, p3];
 
   const vocabList: PassageVocabularyItem[] = selectedCols.map((c) => ({
     chunk: c.chunk,

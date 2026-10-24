@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAppStore } from '../store/useAppStore';
 import {
@@ -123,13 +124,56 @@ export const ReadingView: React.FC = () => {
   const [copyFeedback, setCopyFeedback] = useState<boolean>(false);
   const storyCanvasRef = useRef<HTMLDivElement>(null);
 
+  // Prevent background scrolling when vocabulary modal or saved stories drawer is open
+  useEffect(() => {
+    if (activeVocabItem || showSavedModal) {
+      const originalBodyOverflow = document.body.style.overflow;
+      const originalHtmlOverflow = document.documentElement.style.overflow;
+      const originalPaddingRight = document.body.style.paddingRight;
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+      if (scrollBarWidth > 0) {
+        document.body.style.paddingRight = `${scrollBarWidth}px`;
+      }
+
+      const handleWheel = (e: WheelEvent) => {
+        const target = e.target as HTMLElement;
+        if (!target.closest('.modal-content-scrollable')) {
+          e.preventDefault();
+        }
+      };
+
+      const handleTouch = (e: TouchEvent) => {
+        const target = e.target as HTMLElement;
+        if (!target.closest('.modal-content-scrollable')) {
+          e.preventDefault();
+        }
+      };
+
+      window.addEventListener('wheel', handleWheel, { passive: false });
+      window.addEventListener('touchmove', handleTouch, { passive: false });
+
+      return () => {
+        document.body.style.overflow = originalBodyOverflow;
+        document.documentElement.style.overflow = originalHtmlOverflow;
+        document.body.style.paddingRight = originalPaddingRight;
+        window.removeEventListener('wheel', handleWheel);
+        window.removeEventListener('touchmove', handleTouch);
+      };
+    }
+  }, [activeVocabItem, showSavedModal]);
+
   // Smoothly switch tab and scroll to top of story canvas
   const switchTabAndScroll = (tab: 'read' | 'cloze' | 'quiz' | 'vocab') => {
     setActiveTab(tab);
-    if (storyCanvasRef.current) {
-      const topOffset = storyCanvasRef.current.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: Math.max(0, topOffset), behavior: 'smooth' });
-    }
+    setTimeout(() => {
+      if (storyCanvasRef.current) {
+        const topOffset = storyCanvasRef.current.getBoundingClientRect().top + window.scrollY - 75;
+        window.scrollTo({ top: Math.max(0, topOffset), behavior: 'smooth' });
+      }
+    }, 40);
   };
 
   // Selected units data
@@ -778,61 +822,103 @@ export const ReadingView: React.FC = () => {
 
 
             {/* Mode Switcher Tabs (Sticky under navbar for seamless switching during scroll) */}
-            <div className="sticky top-[64px] z-20 backdrop-blur-xl bg-[#0F172A]/90 p-1 rounded-2xl border border-[#1E2D45] mb-6 max-w-md font-sans shadow-lg shadow-black/20">
-              <button
-                onClick={() => setActiveTab('read')}
-                className={`flex-1 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
-                  activeTab === 'read' ? 'bg-indigo-600 text-white shadow-sm' : 'text-zinc-400 hover:text-white'
-                }`}
-              >
-                <Eye className="w-3.5 h-3.5" />
-                <span>Read</span>
-              </button>
+            {/* ─── 4-Step Learning Pipeline Sticky Header ─── */}
+            <div className="sticky top-[64px] z-20 backdrop-blur-xl bg-[#0B1120]/95 p-1.5 rounded-2xl border border-[#1E2D45] mb-6 font-sans shadow-2xl shadow-black/40">
+              <div className="grid grid-cols-4 gap-1 sm:gap-2">
+                {[
+                  { id: 'read', stepNum: 1, step: 'Step 1', label: 'Story', icon: Eye, activeColor: 'from-indigo-600 to-indigo-500' },
+                  { id: 'cloze', stepNum: 2, step: 'Step 2', label: 'Cloze', icon: Lightbulb, activeColor: 'from-amber-600 to-amber-500' },
+                  { id: 'quiz', stepNum: 3, step: 'Step 3', label: `Quiz (${passage.comprehensionQuestions.length})`, icon: HelpCircle, activeColor: 'from-cyan-600 to-cyan-500' },
+                  { id: 'vocab', stepNum: 4, step: 'Step 4', label: `Glossary (${passage.vocabularyList.length})`, icon: BookOpen, activeColor: 'from-emerald-600 to-emerald-500' },
+                ].map((t) => {
+                  const isActive = activeTab === t.id;
+                  const currentStepNum = activeTab === 'read' ? 1 : activeTab === 'cloze' ? 2 : activeTab === 'quiz' ? 3 : 4;
+                  const isCompleted = t.stepNum < currentStepNum;
+                  const Icon = t.icon;
+                  return (
+                    <button
+                      key={t.id}
+                      onClick={() => switchTabAndScroll(t.id as any)}
+                      className={`relative py-2 px-1 sm:px-2 rounded-xl text-xs font-bold transition-all flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 ${
+                        isActive
+                          ? `bg-gradient-to-r ${t.activeColor} text-white shadow-lg shadow-indigo-600/30 ring-1 ring-white/30 scale-[1.01]`
+                          : isCompleted
+                          ? 'text-emerald-300 hover:text-white hover:bg-emerald-500/10'
+                          : 'text-zinc-400 hover:text-white hover:bg-[#162235]/60'
+                      }`}
+                    >
+                      <span
+                        className={`text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider px-1 sm:px-1.5 py-0.5 rounded-md shrink-0 flex items-center gap-0.5 ${
+                          isActive
+                            ? 'bg-black/20 text-white'
+                            : isCompleted
+                            ? 'bg-emerald-500/20 text-emerald-300'
+                            : 'bg-[#1E2D45] text-zinc-400'
+                        }`}
+                      >
+                        {isCompleted ? <Check className="w-2.5 h-2.5 stroke-[3]" /> : t.step}
+                      </span>
+                      <span className="flex items-center gap-1 truncate">
+                        <Icon className="w-3.5 h-3.5 shrink-0" />
+                        <span className="truncate">{t.label}</span>
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
 
-              <button
-                onClick={() => setActiveTab('cloze')}
-                className={`flex-1 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
-                  activeTab === 'cloze' ? 'bg-amber-600 text-white shadow-sm' : 'text-zinc-400 hover:text-white'
-                }`}
-              >
-                <Lightbulb className="w-3.5 h-3.5" />
-                <span>Cloze Test</span>
-              </button>
-
-              <button
-                onClick={() => setActiveTab('quiz')}
-                className={`flex-1 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
-                  activeTab === 'quiz' ? 'bg-cyan-600 text-white shadow-sm' : 'text-zinc-400 hover:text-white'
-                }`}
-              >
-                <HelpCircle className="w-3.5 h-3.5" />
-                <span>Quiz ({passage.comprehensionQuestions.length})</span>
-              </button>
-
-              <button
-                onClick={() => setActiveTab('vocab')}
-                className={`flex-1 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
-                  activeTab === 'vocab' ? 'bg-emerald-600 text-white shadow-sm' : 'text-zinc-400 hover:text-white'
-                }`}
-              >
-                <BookOpen className="w-3.5 h-3.5" />
-                <span>Glossary</span>
-              </button>
+              {/* Learning Journey Progress Track */}
+              <div className="w-full bg-[#162235] h-1.5 rounded-full mt-1.5 overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-emerald-400 transition-all duration-500 ease-out"
+                  style={{
+                    width:
+                      activeTab === 'read'
+                        ? '25%'
+                        : activeTab === 'cloze'
+                        ? '50%'
+                        : activeTab === 'quiz'
+                        ? '75%'
+                        : '100%',
+                  }}
+                />
+              </div>
             </div>
 
             {/* TAB 1 & 2: Editorial Serif Story Text (Read & Cloze) */}
             {(activeTab === 'read' || activeTab === 'cloze') && (
-              <div className="space-y-5 text-lg sm:text-[19px] font-serif leading-[1.88] text-slate-200 tracking-[0.01em]">
+              <div className="space-y-5 text-lg sm:text-[19px] font-serif leading-[1.88] text-slate-200 tracking-[0.01em] animate-fadeIn">
+                {/* Step 1 Mission Banner */}
+                {activeTab === 'read' && (
+                  <div className="p-3.5 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-200 text-xs font-sans flex items-center justify-between mb-5">
+                    <div className="flex items-center gap-2">
+                      <Eye className="w-4 h-4 text-indigo-400 shrink-0" />
+                      <span><strong>Step 1 of 4: Contextual Reading</strong> • Read the story naturally. Click any underlined collocation to preview its definition, Turkish meaning & audio.</span>
+                    </div>
+                    <button
+                      onClick={() => switchTabAndScroll('cloze')}
+                      className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold text-indigo-300 hover:text-white ml-2 shrink-0"
+                    >
+                      <span>Next: Cloze</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </button>
+                  </div>
+                )}
+
+                {/* Step 2 Mission Banner */}
                 {activeTab === 'cloze' && (
-                  <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-200 text-xs font-sans flex items-center justify-between mb-4">
-                    <span>💡 Click on the blanks to reveal the hidden collocations.</span>
+                  <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/25 text-amber-200 text-xs font-sans flex items-center justify-between mb-5">
+                    <div className="flex items-center gap-2">
+                      <Lightbulb className="w-4 h-4 text-amber-400 shrink-0" />
+                      <span><strong>Step 2 of 4: Active Recall</strong> • 5 key collocations are blanked out. Test your memory by recalling them before clicking to reveal.</span>
+                    </div>
                     <button
                       onClick={() => {
                         const all: Record<string, boolean> = {};
                         passage.targetCollocations.forEach((c) => (all[c.toLowerCase()] = true));
                         setRevealedChunks(all);
                       }}
-                      className="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold shrink-0 ml-2 font-sans"
+                      className="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold shrink-0 ml-2 font-sans text-[11px]"
                     >
                       Reveal All
                     </button>
@@ -845,26 +931,26 @@ export const ReadingView: React.FC = () => {
                   </p>
                 ))}
 
-                {/* ─── Bottom Next Step Action Bar for Read & Cloze modes ─── */}
+                {/* ─── Bottom Next Step Action Bar for Read mode ─── */}
                 {activeTab === 'read' && (
-                  <div className="mt-8 pt-5 border-t border-[#1E2D45] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans bg-[#131D2E]/60 -mx-6 sm:-mx-9 px-6 sm:px-9 py-4 rounded-b-3xl">
+                  <div className="mt-8 pt-5 border-t border-[#1E2D45] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans bg-[#131D2E]/80 -mx-6 sm:-mx-9 px-6 sm:px-9 py-4 rounded-b-3xl">
                     <div>
                       <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-300">
-                        <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-                        <span>Finished reading? Test your memory:</span>
+                        <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400" />
+                        <span>Step 1 Completed: Finished Reading</span>
                       </div>
                       <p className="text-[11px] text-zinc-400 mt-0.5">
-                        Reinforce the 5 collocations through active recall before moving on.
+                        Reinforce the 5 collocations in Step 2 through active memory recall.
                       </p>
                     </div>
 
                     <div className="flex items-center gap-2 flex-wrap">
                       <button
                         onClick={() => switchTabAndScroll('cloze')}
-                        className="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-bold text-xs transition-all shadow-md shadow-amber-600/25 flex items-center gap-1.5 active:scale-95"
+                        className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-bold text-xs transition-all shadow-md shadow-amber-600/25 flex items-center gap-1.5 active:scale-95"
                       >
                         <Lightbulb className="w-3.5 h-3.5" />
-                        <span>Cloze Challenge</span>
+                        <span>Continue to Step 2: Cloze Test</span>
                         <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
                       </button>
 
@@ -873,38 +959,39 @@ export const ReadingView: React.FC = () => {
                         className="px-3.5 py-2 rounded-xl bg-[#162235] hover:bg-[#1E2D45] border border-[#23334d] text-cyan-300 font-bold text-xs transition-all flex items-center gap-1.5 active:scale-95"
                       >
                         <HelpCircle className="w-3.5 h-3.5 text-cyan-400" />
-                        <span>Comprehension Quiz</span>
+                        <span>Step 3: Quiz</span>
                       </button>
 
                       <button
                         onClick={() => switchTabAndScroll('vocab')}
                         className="px-3 py-2 rounded-xl text-zinc-400 hover:text-white font-semibold text-xs transition-all"
                       >
-                        Glossary
+                        Step 4: Glossary
                       </button>
                     </div>
                   </div>
                 )}
 
+                {/* ─── Bottom Next Step Action Bar for Cloze mode ─── */}
                 {activeTab === 'cloze' && (
-                  <div className="mt-8 pt-5 border-t border-[#1E2D45] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans bg-[#131D2E]/60 -mx-6 sm:-mx-9 px-6 sm:px-9 py-4 rounded-b-3xl">
+                  <div className="mt-8 pt-5 border-t border-[#1E2D45] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans bg-[#131D2E]/80 -mx-6 sm:-mx-9 px-6 sm:px-9 py-4 rounded-b-3xl">
                     <div>
                       <div className="flex items-center gap-1.5 text-xs font-bold text-amber-300">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>Active recall practiced!</span>
+                        <span>Step 2 Completed: Active Recall Practiced!</span>
                       </div>
                       <p className="text-[11px] text-zinc-400 mt-0.5">
-                        Now evaluate your overall narrative comprehension and collocation usage.
+                        Now evaluate your overall narrative comprehension in Step 3.
                       </p>
                     </div>
 
                     <div className="flex items-center gap-2 flex-wrap">
                       <button
                         onClick={() => switchTabAndScroll('quiz')}
-                        className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white font-bold text-xs transition-all shadow-md shadow-cyan-600/25 flex items-center gap-1.5 active:scale-95"
+                        className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white font-bold text-xs transition-all shadow-md shadow-cyan-600/25 flex items-center gap-1.5 active:scale-95"
                       >
                         <HelpCircle className="w-3.5 h-3.5" />
-                        <span>Take Quiz</span>
+                        <span>Continue to Step 3: Quiz</span>
                         <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
                       </button>
 
@@ -913,7 +1000,7 @@ export const ReadingView: React.FC = () => {
                         className="px-3.5 py-2 rounded-xl bg-[#162235] hover:bg-[#1E2D45] border border-[#23334d] text-emerald-300 font-bold text-xs transition-all flex items-center gap-1.5 active:scale-95"
                       >
                         <BookOpen className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>Glossary</span>
+                        <span>Step 4: Glossary</span>
                       </button>
 
                       <button
@@ -931,9 +1018,19 @@ export const ReadingView: React.FC = () => {
             {/* TAB 3: Comprehension Quiz */}
             {activeTab === 'quiz' && (
               <div className="space-y-5 animate-fadeIn font-sans">
-                <div className="p-3.5 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-200 text-xs flex items-center gap-2">
-                  <HelpCircle className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span>Test your reading comprehension and contextual retention with questions based on the passage.</span>
+                {/* Step 3 Mission Banner */}
+                <div className="p-3.5 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-200 text-xs font-sans flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <HelpCircle className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span><strong>Step 3 of 4: Comprehension Check</strong> • Test your narrative comprehension and contextual retention with questions based on the passage.</span>
+                  </div>
+                  <button
+                    onClick={() => switchTabAndScroll('vocab')}
+                    className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold text-cyan-300 hover:text-white ml-2 shrink-0"
+                  >
+                    <span>Skip to Glossary</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </button>
                 </div>
 
                 {passage.comprehensionQuestions.map((q, qIndex) => {
@@ -1025,24 +1122,25 @@ export const ReadingView: React.FC = () => {
                   )}
                 </div>
 
-                {/* Bottom Next-Step Action Bar */}
-                <div className="pt-4 mt-6 border-t border-[#1E2D45] flex items-center justify-between flex-wrap gap-3">
+                {/* Bottom Next-Step Action Bar for Quiz */}
+                <div className="mt-8 pt-5 border-t border-[#1E2D45] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans bg-[#131D2E]/80 -mx-6 sm:-mx-9 px-6 sm:px-9 py-4 rounded-b-3xl">
                   <div>
-                    <span className="text-xs font-semibold text-zinc-300 block">
-                      Next Step in Your Learning Flow
-                    </span>
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-cyan-300">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+                      <span>Step 3 Completed: Comprehension Tested</span>
+                    </div>
                     <p className="text-[11px] text-zinc-400 mt-0.5">
-                      Review key vocabulary chunks, generate another contextual story, or revisit the text.
+                      Finish your study loop by reviewing the detailed vocabulary glossary in Step 4.
                     </p>
                   </div>
 
                   <div className="flex items-center gap-2 flex-wrap">
                     <button
                       onClick={() => switchTabAndScroll('vocab')}
-                      className="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-xs transition-all shadow-md shadow-emerald-600/25 flex items-center gap-1.5 active:scale-95"
+                      className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-xs transition-all shadow-md shadow-emerald-600/25 flex items-center gap-1.5 active:scale-95"
                     >
                       <BookOpen className="w-3.5 h-3.5" />
-                      <span>Review Glossary</span>
+                      <span>Continue to Step 4: Glossary</span>
                       <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
                     </button>
 
@@ -1069,7 +1167,15 @@ export const ReadingView: React.FC = () => {
 
             {/* TAB 4: Vocabulary Glossary */}
             {activeTab === 'vocab' && (
-              <div className="space-y-2.5 animate-fadeIn font-sans">
+              <div className="space-y-4 animate-fadeIn font-sans">
+                {/* Step 4 Mission Banner */}
+                <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-200 text-xs font-sans flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <BookOpen className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span><strong>Step 4 of 4: Vocabulary Deep Dive</strong> • Review all 5 collocations with complete definitions, Turkish meanings, and context sentences.</span>
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {passage.vocabularyList.map((v, i) => (
                     <div
@@ -1107,14 +1213,15 @@ export const ReadingView: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Bottom Next-Step Action Bar */}
-                <div className="pt-4 mt-6 border-t border-[#1E2D45] flex items-center justify-between flex-wrap gap-3">
+                {/* Bottom Next-Step Action Bar for Vocab */}
+                <div className="mt-8 pt-5 border-t border-[#1E2D45] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans bg-[#131D2E]/80 -mx-6 sm:-mx-9 px-6 sm:px-9 py-4 rounded-b-3xl">
                   <div>
-                    <span className="text-xs font-semibold text-zinc-300 block">
-                      Ready for the Next Challenge?
-                    </span>
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-300">
+                      <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                      <span>All 4 Learning Steps Completed! 🎉</span>
+                    </div>
                     <p className="text-[11px] text-zinc-400 mt-0.5">
-                      Generate a fresh story with these units or test yourself with the fill-in-the-blank cloze challenge.
+                      You've read, recalled, tested, and reviewed. Generate a new story to practice more collocations!
                     </p>
                   </div>
 
@@ -1122,7 +1229,7 @@ export const ReadingView: React.FC = () => {
                     <button
                       onClick={handleGenerate}
                       disabled={loading}
-                      className="px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs transition-all shadow-md shadow-indigo-600/25 flex items-center gap-1.5 active:scale-95 disabled:opacity-50"
+                      className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs transition-all shadow-lg shadow-indigo-600/30 flex items-center gap-1.5 active:scale-95 disabled:opacity-50"
                     >
                       <Sparkles className="w-3.5 h-3.5" />
                       <span>Generate Next Story</span>
@@ -1134,7 +1241,7 @@ export const ReadingView: React.FC = () => {
                       className="px-3.5 py-2 rounded-xl bg-[#162235] hover:bg-[#1E2D45] border border-[#23334d] text-indigo-300 font-bold text-xs transition-all flex items-center gap-1.5 active:scale-95"
                     >
                       <Layers className="w-3.5 h-3.5 text-indigo-400" />
-                      <span>Cloze Test</span>
+                      <span>Step 2: Cloze</span>
                     </button>
 
                     <button
@@ -1142,7 +1249,7 @@ export const ReadingView: React.FC = () => {
                       className="px-3 py-2 rounded-xl text-zinc-400 hover:text-white font-semibold text-xs transition-all flex items-center gap-1"
                     >
                       <RotateCcw className="w-3.5 h-3.5" />
-                      <span>Read Story</span>
+                      <span>Step 1: Story</span>
                     </button>
                   </div>
                 </div>
@@ -1176,73 +1283,76 @@ export const ReadingView: React.FC = () => {
 
 
       {/* ─── VOCABULARY DETAIL MODAL ─── */}
-      {activeVocabItem && (
-        <div
-          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn"
-          onClick={() => setActiveVocabItem(null)}
-        >
+      {activeVocabItem &&
+        createPortal(
           <div
-            className="w-full max-w-md bg-[#111927] border border-indigo-500/40 rounded-3xl p-5 shadow-2xl space-y-3.5 animate-scaleUp"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn overscroll-none touch-none"
+            onClick={() => setActiveVocabItem(null)}
+            onWheel={(e) => e.stopPropagation()}
           >
-            <div className="flex items-start justify-between">
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-md">
-                  {activeVocabItem.type || 'Collocation'}
-                </span>
-                <h3 className="text-lg font-black text-white mt-1">
-                  {activeVocabItem.chunk}
-                </h3>
-              </div>
-              <button
-                onClick={() => setActiveVocabItem(null)}
-                className="p-1 rounded-lg text-zinc-500 hover:text-white"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            <div className="space-y-2">
-              <div>
-                <div className="text-[10px] uppercase font-bold text-zinc-500">Definition</div>
-                <div className="text-xs text-zinc-200 mt-0.5 leading-relaxed">{activeVocabItem.meaning}</div>
-              </div>
-
-              {activeVocabItem.meaningTr && (
-                <div className="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-                  <div className="text-[10px] uppercase font-bold text-emerald-400">Turkish Meaning</div>
-                  <div className="text-xs font-semibold text-emerald-200 mt-0.5">{activeVocabItem.meaningTr}</div>
-                </div>
-              )}
-
-              {activeVocabItem.contextSentence && (
+            <div
+              className="w-full max-w-md bg-[#111927] border border-indigo-500/40 rounded-3xl p-5 shadow-2xl space-y-3.5 animate-scaleUp modal-content-scrollable max-h-[90vh] overflow-y-auto overscroll-contain"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-start justify-between">
                 <div>
-                  <div className="text-[10px] uppercase font-bold text-zinc-500">Context in Story</div>
-                  <div className="text-xs italic text-zinc-400 mt-0.5 border-l-2 border-indigo-500/40 pl-2 font-serif">
-                    "{activeVocabItem.contextSentence}"
-                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-md">
+                    {activeVocabItem.type || 'Collocation'}
+                  </span>
+                  <h3 className="text-lg font-black text-white mt-1">
+                    {activeVocabItem.chunk}
+                  </h3>
                 </div>
-              )}
-            </div>
+                <button
+                  onClick={() => setActiveVocabItem(null)}
+                  className="p-1 rounded-lg text-zinc-500 hover:text-white"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
 
-            <div className="flex gap-2 pt-2 border-t border-[#1E2D45]">
-              <button
-                onClick={() => speakCollocation(activeVocabItem.chunk, settings.speechRate)}
-                className="flex-1 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md shadow-indigo-600/20"
-              >
-                <Volume2 className="w-3.5 h-3.5" />
-                <span>Listen Audio</span>
-              </button>
-              <button
-                onClick={() => setActiveVocabItem(null)}
-                className="px-4 py-2 rounded-xl bg-[#162235] text-zinc-300 font-bold text-xs hover:text-white"
-              >
-                Close
-              </button>
+              <div className="space-y-2">
+                <div>
+                  <div className="text-[10px] uppercase font-bold text-zinc-500">Definition</div>
+                  <div className="text-xs text-zinc-200 mt-0.5 leading-relaxed">{activeVocabItem.meaning}</div>
+                </div>
+
+                {activeVocabItem.meaningTr && (
+                  <div className="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+                    <div className="text-[10px] uppercase font-bold text-emerald-400">Turkish Meaning</div>
+                    <div className="text-xs font-semibold text-emerald-200 mt-0.5">{activeVocabItem.meaningTr}</div>
+                  </div>
+                )}
+
+                {activeVocabItem.contextSentence && (
+                  <div>
+                    <div className="text-[10px] uppercase font-bold text-zinc-500">Context in Story</div>
+                    <div className="text-xs italic text-zinc-400 mt-0.5 border-l-2 border-indigo-500/40 pl-2 font-serif">
+                      "{activeVocabItem.contextSentence}"
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div className="flex gap-2 pt-2 border-t border-[#1E2D45]">
+                <button
+                  onClick={() => speakCollocation(activeVocabItem.chunk, settings.speechRate)}
+                  className="flex-1 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md shadow-indigo-600/20"
+                >
+                  <Volume2 className="w-3.5 h-3.5" />
+                  <span>Listen Audio</span>
+                </button>
+                <button
+                  onClick={() => setActiveVocabItem(null)}
+                  className="px-4 py-2 rounded-xl bg-[#162235] text-zinc-300 font-bold text-xs hover:text-white"
+                >
+                  Close
+                </button>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
 
       {/* ─── SAVED STORIES MODAL ─── */}
       {showSavedModal && (

@@ -35,6 +35,8 @@ import {
   Search,
   Globe,
   ExternalLink,
+  ArrowRight,
+  RotateCcw,
 } from 'lucide-react';
 
 const GENRES: { id: ReadingGenre; label: string; icon: string }[] = [
@@ -119,6 +121,16 @@ export const ReadingView: React.FC = () => {
   // Saved stories drawer state
   const [showSavedModal, setShowSavedModal] = useState<boolean>(false);
   const [copyFeedback, setCopyFeedback] = useState<boolean>(false);
+  const storyCanvasRef = useRef<HTMLDivElement>(null);
+
+  // Smoothly switch tab and scroll to top of story canvas
+  const switchTabAndScroll = (tab: 'read' | 'cloze' | 'quiz' | 'vocab') => {
+    setActiveTab(tab);
+    if (storyCanvasRef.current) {
+      const topOffset = storyCanvasRef.current.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: Math.max(0, topOffset), behavior: 'smooth' });
+    }
+  };
 
   // Selected units data
   const selectedUnits = useMemo(() => {
@@ -678,7 +690,7 @@ export const ReadingView: React.FC = () => {
       {passage && !loading && (
         <div className="space-y-4 animate-fadeIn">
           {/* Main Story Canvas */}
-          <div className="card p-6 sm:p-9 bg-[#0F172A] border-[#1E2D45] rounded-3xl shadow-2xl relative overflow-hidden">
+          <div ref={storyCanvasRef} className="card p-6 sm:p-9 bg-[#0F172A] border-[#1E2D45] rounded-3xl shadow-2xl relative overflow-hidden">
             {/* Header info */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-4 mb-5 border-b border-[#1E2D45] gap-3">
               <div>
@@ -759,8 +771,8 @@ export const ReadingView: React.FC = () => {
             </div>
 
 
-            {/* Mode Switcher Tabs */}
-            <div className="flex items-center gap-1 bg-[#131D2E] p-1 rounded-2xl border border-[#1E2D45] mb-6 max-w-md font-sans">
+            {/* Mode Switcher Tabs (Sticky under navbar for seamless switching during scroll) */}
+            <div className="sticky top-[64px] z-20 backdrop-blur-xl bg-[#0F172A]/90 p-1 rounded-2xl border border-[#1E2D45] mb-6 max-w-md font-sans shadow-lg shadow-black/20">
               <button
                 onClick={() => setActiveTab('read')}
                 className={`flex-1 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
@@ -826,6 +838,87 @@ export const ReadingView: React.FC = () => {
                     {renderParagraphContent(p)}
                   </p>
                 ))}
+
+                {/* ─── Bottom Next Step Action Bar for Read & Cloze modes ─── */}
+                {activeTab === 'read' && (
+                  <div className="mt-8 pt-5 border-t border-[#1E2D45] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans bg-[#131D2E]/60 -mx-6 sm:-mx-9 px-6 sm:px-9 py-4 rounded-b-3xl">
+                    <div>
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-300">
+                        <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                        <span>Finished reading? Test your memory:</span>
+                      </div>
+                      <p className="text-[11px] text-zinc-400 mt-0.5">
+                        Reinforce the 5 collocations through active recall before moving on.
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <button
+                        onClick={() => switchTabAndScroll('cloze')}
+                        className="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-bold text-xs transition-all shadow-md shadow-amber-600/25 flex items-center gap-1.5 active:scale-95"
+                      >
+                        <Lightbulb className="w-3.5 h-3.5" />
+                        <span>Cloze Challenge</span>
+                        <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
+                      </button>
+
+                      <button
+                        onClick={() => switchTabAndScroll('quiz')}
+                        className="px-3.5 py-2 rounded-xl bg-[#162235] hover:bg-[#1E2D45] border border-[#23334d] text-cyan-300 font-bold text-xs transition-all flex items-center gap-1.5 active:scale-95"
+                      >
+                        <HelpCircle className="w-3.5 h-3.5 text-cyan-400" />
+                        <span>Comprehension Quiz</span>
+                      </button>
+
+                      <button
+                        onClick={() => switchTabAndScroll('vocab')}
+                        className="px-3 py-2 rounded-xl text-zinc-400 hover:text-white font-semibold text-xs transition-all"
+                      >
+                        Glossary
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {activeTab === 'cloze' && (
+                  <div className="mt-8 pt-5 border-t border-[#1E2D45] flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans bg-[#131D2E]/60 -mx-6 sm:-mx-9 px-6 sm:px-9 py-4 rounded-b-3xl">
+                    <div>
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-amber-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>Active recall practiced!</span>
+                      </div>
+                      <p className="text-[11px] text-zinc-400 mt-0.5">
+                        Now evaluate your overall narrative comprehension and collocation usage.
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <button
+                        onClick={() => switchTabAndScroll('quiz')}
+                        className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white font-bold text-xs transition-all shadow-md shadow-cyan-600/25 flex items-center gap-1.5 active:scale-95"
+                      >
+                        <HelpCircle className="w-3.5 h-3.5" />
+                        <span>Take Quiz</span>
+                        <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
+                      </button>
+
+                      <button
+                        onClick={() => switchTabAndScroll('vocab')}
+                        className="px-3.5 py-2 rounded-xl bg-[#162235] hover:bg-[#1E2D45] border border-[#23334d] text-emerald-300 font-bold text-xs transition-all flex items-center gap-1.5 active:scale-95"
+                      >
+                        <BookOpen className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>Glossary</span>
+                      </button>
+
+                      <button
+                        onClick={() => switchTabAndScroll('read')}
+                        className="px-3 py-2 rounded-xl text-zinc-400 hover:text-white font-semibold text-xs transition-all"
+                      >
+                        Full Text
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             )}
 
@@ -925,6 +1018,46 @@ export const ReadingView: React.FC = () => {
                     </button>
                   )}
                 </div>
+
+                {/* Bottom Next-Step Action Bar */}
+                <div className="pt-4 mt-6 border-t border-[#1E2D45] flex items-center justify-between flex-wrap gap-3">
+                  <div>
+                    <span className="text-xs font-semibold text-zinc-300 block">
+                      Next Step in Your Learning Flow
+                    </span>
+                    <p className="text-[11px] text-zinc-400 mt-0.5">
+                      Review key vocabulary chunks, generate another contextual story, or revisit the text.
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <button
+                      onClick={() => switchTabAndScroll('vocab')}
+                      className="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-xs transition-all shadow-md shadow-emerald-600/25 flex items-center gap-1.5 active:scale-95"
+                    >
+                      <BookOpen className="w-3.5 h-3.5" />
+                      <span>Review Glossary</span>
+                      <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
+                    </button>
+
+                    <button
+                      onClick={handleGenerate}
+                      disabled={loading}
+                      className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs transition-all flex items-center gap-1.5 shadow-md shadow-indigo-600/25 active:scale-95 disabled:opacity-50"
+                    >
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>Generate Next Story</span>
+                    </button>
+
+                    <button
+                      onClick={() => switchTabAndScroll('read')}
+                      className="px-3 py-2 rounded-xl text-zinc-400 hover:text-white font-semibold text-xs transition-all flex items-center gap-1"
+                    >
+                      <RotateCcw className="w-3.5 h-3.5" />
+                      <span>Full Text</span>
+                    </button>
+                  </div>
+                </div>
               </div>
             )}
 
@@ -966,6 +1099,46 @@ export const ReadingView: React.FC = () => {
                       )}
                     </div>
                   ))}
+                </div>
+
+                {/* Bottom Next-Step Action Bar */}
+                <div className="pt-4 mt-6 border-t border-[#1E2D45] flex items-center justify-between flex-wrap gap-3">
+                  <div>
+                    <span className="text-xs font-semibold text-zinc-300 block">
+                      Ready for the Next Challenge?
+                    </span>
+                    <p className="text-[11px] text-zinc-400 mt-0.5">
+                      Generate a fresh story with these units or test yourself with the fill-in-the-blank cloze challenge.
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <button
+                      onClick={handleGenerate}
+                      disabled={loading}
+                      className="px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs transition-all shadow-md shadow-indigo-600/25 flex items-center gap-1.5 active:scale-95 disabled:opacity-50"
+                    >
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>Generate Next Story</span>
+                      <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
+                    </button>
+
+                    <button
+                      onClick={() => switchTabAndScroll('cloze')}
+                      className="px-3.5 py-2 rounded-xl bg-[#162235] hover:bg-[#1E2D45] border border-[#23334d] text-indigo-300 font-bold text-xs transition-all flex items-center gap-1.5 active:scale-95"
+                    >
+                      <Layers className="w-3.5 h-3.5 text-indigo-400" />
+                      <span>Cloze Test</span>
+                    </button>
+
+                    <button
+                      onClick={() => switchTabAndScroll('read')}
+                      className="px-3 py-2 rounded-xl text-zinc-400 hover:text-white font-semibold text-xs transition-all flex items-center gap-1"
+                    >
+                      <RotateCcw className="w-3.5 h-3.5" />
+                      <span>Read Story</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
